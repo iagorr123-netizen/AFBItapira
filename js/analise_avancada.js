@@ -113,25 +113,34 @@ function preencherFiltros() {
 
 function aplicarFiltros() {
     const col = CONFIG.columns;
-    const ano = document.getElementById('filtroAno').value;
-    const corte = document.getElementById('filtroCorte').value;
-    const variedade = document.getElementById('filtroVariedade').value;
-    const talhao = document.getElementById('filtroTalhao').value;
 
-    // Filtrar dados
+    // Pegar múltiplas seleções
+    const anosSelect = document.getElementById('filtroAno');
+    const anosArray = Array.from(anosSelect.selectedOptions).map(o => o.value).filter(v => v);
+
+    const cortesSelect = document.getElementById('filtroCorte');
+    const cortesArray = Array.from(cortesSelect.selectedOptions).map(o => o.value).filter(v => v);
+
+    const variedadesSelect = document.getElementById('filtroVariedade');
+    const variedadesArray = Array.from(variedadesSelect.selectedOptions).map(o => o.value).filter(v => v);
+
+    const talhoesSelect = document.getElementById('filtroTalhao');
+    const talhoesArray = Array.from(talhoesSelect.selectedOptions).map(o => o.value).filter(v => v);
+
+    // Filtrar dados - aceita qualquer um dos valores selecionados
     dadosFiltrados = dadosColheita.filter(row => {
-        const matchAno = !ano || row[col.ano] == ano;
+        // Se nenhum selecionado, considera como selecionado todos
+        const matchAno = anosArray.length === 0 || anosArray.includes(row[col.ano]);
 
         // Normalizar corte para comparação (1,5 = 1.5)
         let matchCorte = true;
-        if (corte) {
+        if (cortesArray.length > 0) {
             const corteRow = parseFloat(String(row[col.numCorte]).replace(',', '.'));
-            const corteFilter = parseFloat(corte);
-            matchCorte = corteRow === corteFilter;
+            matchCorte = cortesArray.some(c => corteRow === parseFloat(c));
         }
 
-        const matchVariedade = !variedade || row[col.variedade] === variedade;
-        const matchTalhao = !talhao || row[col.talhao] == talhao;
+        const matchVariedade = variedadesArray.length === 0 || variedadesArray.includes(row[col.variedade]);
+        const matchTalhao = talhoesArray.length === 0 || talhoesArray.some(t => row[col.talhao] == t);
 
         return matchAno && matchCorte && matchVariedade && matchTalhao;
     });
