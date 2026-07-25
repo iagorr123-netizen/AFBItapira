@@ -202,6 +202,8 @@
             const c = CONFIG.columns;
             let dados = obterDadosFiltrados();
 
+            console.log('📊 calcularKPIs - filtroAno:', filtroAno, 'dados.length:', dados.length);
+
             // Aplicar filtros adicionais se necessário
             if (filtroAtivo) {
                 dados = dados.filter(r => {
@@ -264,6 +266,7 @@
                 if (tipoFiltro === 'corte') nomeFiltro = `Corte: ${filtroAtivo}`;
                 filtroTexto = `<div style="text-align: center; margin-bottom: 10px; font-size: 0.9rem; color: #2ecc71; font-weight: bold;">🔍 ${nomeFiltro}</div>`;
             }
+            console.log('✅ Atualizando KPIs - Produtividade:', mediaProdutividade.toFixed(2), 'Total:', tC, 'Área:', tA);
             document.getElementById('kpis').innerHTML = filtroTexto + `
                 <div class="kpi-card"><div class="kpi-label">Produtividade</div><div class="kpi-value">${n > 0 ? mediaProdutividade.toFixed(2) : '0'}</div><div class="kpi-unit">TCH/ha</div></div>
                 <div class="kpi-card"><div class="kpi-label">Total Colhido</div><div class="kpi-value">${parseInt(tC).toLocaleString('pt-BR')}</div><div class="kpi-unit">toneladas</div></div>
@@ -331,8 +334,9 @@
             dados.forEach(r => {
                 const a = r[c.ano];
                 const p = parseFloat(r[c.produtividade]) || 0;
-                if (!am[a]) am[a] = { t: 0, n: 0 };
-                am[a].t += p; am[a].n++;
+                const area = parseFloat(r[c.areaColhida]) || 0;
+                if (!am[a]) am[a] = { sumPond: 0, sumArea: 0 };
+                am[a].sumPond += p * area; am[a].sumArea += area;
             });
             const as = Object.keys(am).sort((x, y) => x - y);
             if (chartTendencia) chartTendencia.destroy();
@@ -341,8 +345,8 @@
                 data: {
                     labels: as,
                     datasets: [{
-                        label: 'Média',
-                        data: as.map(a => (am[a].t/am[a].n).toFixed(2)),
+                        label: 'Média Ponderada',
+                        data: as.map(a => (am[a].sumArea > 0 ? am[a].sumPond/am[a].sumArea : 0).toFixed(2)),
                         borderColor: '#2ecc71',
                         backgroundColor: 'rgba(46, 204, 113, 0.1)',
                         borderWidth: 3,
