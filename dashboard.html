@@ -53,7 +53,13 @@
         </ul>
     </nav>
     <div class="container">
-        <h2 class="page-title">📊 Dashboard de Consolidação</h2>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+            <h2 class="page-title">📊 Dashboard de Consolidação</h2>
+            <div style="display: flex; gap: 10px;">
+                <button id="btnHistorico" onclick="filtrarAno('historico')" style="padding: 10px 20px; background: #2ecc71; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">📊 Histórico (até 2025)</button>
+                <button id="btnProjecao" onclick="filtrarAno('projecao')" style="padding: 10px 20px; background: #95a5a6; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">🔮 Projeção 2026</button>
+            </div>
+        </div>
         <div class="kpis" id="kpis"></div>
         <div class="charts-container">
             <div class="chart-box"><div class="chart-title">📊 Distribuição de Talhões</div><div class="chart-canvas"><canvas id="chartDistribuicao"></canvas></div></div>
@@ -77,6 +83,7 @@
         let chartDistribuicao, chartVariedade, chartTendencia, chartCorte;
         let filtroAtivo = null;
         let tipoFiltro = null;
+        let filtroAno = 'historico'; // historico ou projecao
 
         function init() {
             let t = 0;
@@ -92,9 +99,19 @@
             }, 100);
         }
         function obterDadosFiltrados() {
-            if (!filtroAtivo) return dadosColheita;
             const c = CONFIG.columns;
-            return dadosColheita.filter(r => {
+            let dados = dadosColheita;
+
+            // Filtrar por ano (histórico ou projeção)
+            if (filtroAno === 'historico') {
+                dados = dados.filter(r => parseInt(r[c.ano]) <= 2025);
+            } else if (filtroAno === 'projecao') {
+                dados = dados.filter(r => parseInt(r[c.ano]) === 2026);
+            }
+
+            // Filtrar por produtividade/variedade/ano/corte
+            if (!filtroAtivo) return dados;
+            return dados.filter(r => {
                 if (tipoFiltro === 'produtividade') {
                     const p = parseFloat(r[c.produtividade]);
                     if (filtroAtivo === 'excelente') return p >= 100;
@@ -117,6 +134,21 @@
                 tipoFiltro = tipo;
                 filtroAtivo = valor;
             }
+            calcularKPIs();
+            criarGraficos();
+            atualizarStatus();
+            preencherAtividades();
+        }
+
+        function filtrarAno(tipo) {
+            filtroAno = tipo;
+            tipoFiltro = null;
+            filtroAtivo = null;
+
+            // Atualizar botões
+            document.getElementById('btnHistorico').style.background = tipo === 'historico' ? '#2ecc71' : '#95a5a6';
+            document.getElementById('btnProjecao').style.background = tipo === 'projecao' ? '#2ecc71' : '#95a5a6';
+
             calcularKPIs();
             criarGraficos();
             atualizarStatus();
