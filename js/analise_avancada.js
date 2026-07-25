@@ -116,7 +116,10 @@ function aplicarFiltros() {
 
     // Pegar múltiplas seleções
     const anosSelect = document.getElementById('filtroAno');
-    const anosArray = Array.from(anosSelect.selectedOptions).map(o => o.value).filter(v => v);
+    const anosArray = Array.from(anosSelect.selectedOptions)
+        .map(o => o.value)
+        .filter(v => v)
+        .map(Number);
 
     const cortesSelect = document.getElementById('filtroCorte');
     const cortesArray = Array.from(cortesSelect.selectedOptions).map(o => o.value).filter(v => v);
@@ -132,7 +135,7 @@ function aplicarFiltros() {
     // Filtrar dados - aceita qualquer um dos valores selecionados
     dadosFiltrados = dadosColheita.filter(row => {
         // Se nenhum selecionado, considera como selecionado todos
-        const anoRow = String(row[col.ano]);
+        const anoRow = parseInt(row[col.ano]);
         const matchAno = anosArray.length === 0 || anosArray.includes(anoRow);
 
         // Normalizar corte para comparação (1,5 = 1.5)
