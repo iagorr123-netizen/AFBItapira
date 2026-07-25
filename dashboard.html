@@ -303,7 +303,9 @@
                 }
             });
             // Pegar TODAS as variedades de dadosColheita (não só do filtro)
-            const todasVariedades = [...new Set(dadosColheita.map(r => r[c.variedade]))].sort();
+            console.log('DEBUG: c.variedade =', c.variedade);
+            console.log('DEBUG: Primeiros 3 registros:', dadosColheita.slice(0, 3).map(r => ({variedade: r[c.variedade], index: c.variedade})));
+            const todasVariedades = [...new Set(dadosColheita.map(r => r[c.variedade]).filter(v => v))].sort();
             console.log('🌾 Variedades encontradas:', todasVariedades.length, todasVariedades);
             const vm = {};
             // Inicializar com 0
