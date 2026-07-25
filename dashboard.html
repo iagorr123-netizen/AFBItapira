@@ -240,8 +240,8 @@
             }
             document.getElementById('kpis').innerHTML = filtroTexto + `
                 <div class="kpi-card"><div class="kpi-label">Produtividade</div><div class="kpi-value">${n > 0 ? mediaProdutividade.toFixed(2) : '0'}</div><div class="kpi-unit">TCH/ha</div></div>
-                <div class="kpi-card"><div class="kpi-label">Total Colhido</div><div class="kpi-value">${tC.toFixed(0)}</div><div class="kpi-unit">TCH</div></div>
-                <div class="kpi-card"><div class="kpi-label">Área Colhida</div><div class="kpi-value">${tA.toFixed(0)}</div><div class="kpi-unit">ha</div></div>
+                <div class="kpi-card"><div class="kpi-label">Total Colhido</div><div class="kpi-value">${parseInt(tC).toLocaleString('pt-BR')}</div><div class="kpi-unit">TCH</div></div>
+                <div class="kpi-card"><div class="kpi-label">Área Colhida</div><div class="kpi-value">${parseInt(tA).toLocaleString('pt-BR')}</div><div class="kpi-unit">ha</div></div>
                 <div class="kpi-card"><div class="kpi-label">Talhões</div><div class="kpi-value">${n_talhoes}</div><div class="kpi-unit">únicos</div></div>
             `;
         }
