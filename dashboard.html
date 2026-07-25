@@ -95,7 +95,8 @@
     </nav>
     <div class="container">
         <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 30px;">
-            <button id="btnHistorico" onclick="filtrarAno('historico')" style="padding: 8px 15px; background: #2ecc71; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 0.9rem;">📊 Histórico (até 2025)</button>
+            <button id="btnTodos" onclick="filtrarAno('todos')" style="padding: 8px 15px; background: #2ecc71; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 0.9rem;">📋 Todos os Dados</button>
+            <button id="btnHistorico" onclick="filtrarAno('historico')" style="padding: 8px 15px; background: #95a5a6; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 0.9rem;">📊 Histórico (até 2025)</button>
             <button id="btnProjecao" onclick="filtrarAno('projecao')" style="padding: 8px 15px; background: #95a5a6; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 0.9rem;">🔮 Projeção 2026</button>
         </div>
         <div class="kpis" id="kpis"></div>
@@ -121,7 +122,7 @@
         let chartDistribuicao, chartVariedade, chartTendencia, chartCorte;
         let filtroAtivo = null;
         let tipoFiltro = null;
-        let filtroAno = null; // null = todos, 'historico' ou 'projecao'
+        let filtroAno = 'todos'; // 'todos', 'historico' ou 'projecao'
 
         function init() {
             let t = 0;
@@ -140,12 +141,13 @@
             const c = CONFIG.columns;
             let dados = dadosColheita;
 
-            // Filtrar por ano (histórico ou projeção)
+            // Filtrar por ano (todos, histórico ou projeção)
             if (filtroAno === 'historico') {
                 dados = dados.filter(r => parseInt(r[c.ano]) <= 2025);
             } else if (filtroAno === 'projecao') {
                 dados = dados.filter(r => parseInt(r[c.ano]) === 2026);
             }
+            // Se filtroAno === 'todos', não filtra por ano (mostra tudo)
 
             // Filtrar por produtividade/variedade/ano/corte
             if (!filtroAtivo) return dados;
@@ -184,6 +186,7 @@
             filtroAtivo = null;
 
             // Atualizar botões
+            document.getElementById('btnTodos').style.background = tipo === 'todos' ? '#2ecc71' : '#95a5a6';
             document.getElementById('btnHistorico').style.background = tipo === 'historico' ? '#2ecc71' : '#95a5a6';
             document.getElementById('btnProjecao').style.background = tipo === 'projecao' ? '#2ecc71' : '#95a5a6';
 
