@@ -304,6 +304,7 @@
             });
             // Pegar TODAS as variedades de dadosColheita (não só do filtro)
             const todasVariedades = [...new Set(dadosColheita.map(r => r[c.variedade]))].sort();
+            console.log('🌾 Variedades encontradas:', todasVariedades.length, todasVariedades);
             const vm = {};
             // Inicializar com 0
             todasVariedades.forEach(v => {
