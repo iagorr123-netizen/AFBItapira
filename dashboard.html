@@ -143,7 +143,8 @@
 
             // Filtrar por ano (todos, histórico ou projeção)
             if (filtroAno === 'historico') {
-                dados = dados.filter(r => parseInt(r[c.ano]) < 2025);
+                dados = dados.filter(r => parseInt(r[c.ano]) <= 2025);
+                console.log('📊 Histórico (<= 2025):', dados.length, 'registros');
             } else if (filtroAno === 'projecao') {
                 dados = dados.filter(r => parseInt(r[c.ano]) === 2026);
             }
