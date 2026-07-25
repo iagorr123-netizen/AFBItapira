@@ -198,9 +198,12 @@
             const dados = obterDadosFiltrados();
             let tC = 0, tA = 0, n = 0;
             let n_talhoes = 0;
+            let sumPonderado = 0; // Produtividade × Área
+            let sumArea = 0; // Soma das áreas
+
             const talhoesMedia = {};
 
-            // Calcular produtividade média por talhão único
+            // Calcular produtividade média ponderada pela área colhida
             dados.forEach(r => {
                 const talhao = r[c.talhao];
                 const prod = parseFloat(r[c.produtividade]) || 0;
@@ -211,22 +214,20 @@
                 tA += areaColhida;
                 n++;
 
+                // Média ponderada
+                sumPonderado += prod * areaColhida;
+                sumArea += areaColhida;
+
                 if (!talhoesMedia[talhao]) {
-                    talhoesMedia[talhao] = { sum: 0, count: 0 };
+                    talhoesMedia[talhao] = { sumPond: 0, sumArea: 0 };
                     n_talhoes++;
                 }
-                talhoesMedia[talhao].sum += prod;
-                talhoesMedia[talhao].count++;
+                talhoesMedia[talhao].sumPond += prod * areaColhida;
+                talhoesMedia[talhao].sumArea += areaColhida;
             });
 
-            // Calcular média das médias dos talhões
-            let mediaProdutividade = 0;
-            Object.keys(talhoesMedia).forEach(t => {
-                mediaProdutividade += talhoesMedia[t].sum / talhoesMedia[t].count;
-            });
-            if (n_talhoes > 0) {
-                mediaProdutividade = mediaProdutividade / n_talhoes;
-            }
+            // Calcular média ponderada
+            const mediaProdutividade = sumArea > 0 ? sumPonderado / sumArea : 0;
 
             let filtroTexto = '';
             if (filtroAtivo) {

@@ -34,18 +34,26 @@
                 let totalProd2026 = 0;
                 let count2026 = 0;
 
-                // Média por talhão único
+                // Média por talhão único e média ponderada
                 const talhoesHistorico = {};
                 const talhoes2026 = {};
+                let sumPonderadoHistorico = 0;
+                let sumAreaHistorico = 0;
+                let sumPonderado2026 = 0;
+                let sumArea2026 = 0;
 
                 dadosColheita.forEach(r => {
                     const ano = parseInt(r[c.ano]);
                     const talhao = r[c.talhao];
                     const prod = parseFloat(r[c.produtividade]);
+                    const area = parseFloat(r[c.areaColhida]) || 0;
 
                     if (ano <= 2025) {
                         totalProd += prod;
                         countHistorico++;
+                        sumPonderadoHistorico += prod * area;
+                        sumAreaHistorico += area;
+
                         if (!talhoesHistorico[talhao]) {
                             talhoesHistorico[talhao] = { sum: 0, count: 0 };
                         }
@@ -54,6 +62,9 @@
                     } else if (ano === 2026) {
                         totalProd2026 += prod;
                         count2026++;
+                        sumPonderado2026 += prod * area;
+                        sumArea2026 += area;
+
                         if (!talhoes2026[talhao]) {
                             talhoes2026[talhao] = { sum: 0, count: 0 };
                         }
@@ -68,6 +79,10 @@
                     sumMediaTalhoes += talhoesHistorico[t].sum / talhoesHistorico[t].count;
                 });
                 const mediaPorTalhao = (sumMediaTalhoes / Object.keys(talhoesHistorico).length).toFixed(2);
+
+                // Calcular média ponderada
+                const mediaPonderadaHistorico = (sumAreaHistorico > 0 ? sumPonderadoHistorico / sumAreaHistorico : 0).toFixed(2);
+                const mediaPonderada2026 = (sumArea2026 > 0 ? sumPonderado2026 / sumArea2026 : 0).toFixed(2);
 
                 const mediaHistorica = (totalProd / countHistorico).toFixed(2);
                 const mediaProjecao = (totalProd2026 / count2026).toFixed(2);
@@ -90,17 +105,25 @@
                     </div>
 
                     <div class="resultado">
-                        <div class="label">Projeção (2026)</div>
-                        <div class="valor">${mediaProjecao}</div>
+                        <div class="label">Média Ponderada (por Área Colhida) ⭐</div>
+                        <div class="valor">${mediaPonderadaHistorico}</div>
                         <div style="font-size: 0.9rem; color: #666; margin-top: 10px;">
-                            Registros: ${count2026}
+                            Área total: ${sumAreaHistorico.toFixed(2)} ha
+                        </div>
+                    </div>
+
+                    <div class="resultado">
+                        <div class="label">Projeção (2026) - Média Ponderada</div>
+                        <div class="valor">${mediaPonderada2026}</div>
+                        <div style="font-size: 0.9rem; color: #666; margin-top: 10px;">
+                            Área total: ${sumArea2026.toFixed(2)} ha
                         </div>
                     </div>
 
                     <div class="comparacao">
                         <div class="label">Comparação com seu valor (81,30)</div>
                         <div style="font-size: 1.2rem;">
-                            ${mediaPorTalhao === "81.30" ? "✅ CORRETO (Média por Talhão)!" : mediaPorTalhao == 81.30 ? "✅ CORRETO!" : `Média por Talhão: ${mediaPorTalhao} (Diferença: ${(parseFloat(mediaPorTalhao) - 81.30).toFixed(2)})`}
+                            ${mediaPonderadaHistorico === "81.30" ? "✅ CORRETO (Média Ponderada)!" : Math.abs(parseFloat(mediaPonderadaHistorico) - 81.30) < 0.01 ? "✅ PRATICAMENTE CORRETO!" : `Média Ponderada: ${mediaPonderadaHistorico} (Diferença: ${(parseFloat(mediaPonderadaHistorico) - 81.30).toFixed(2)})`}
                         </div>
                     </div>
                 `;
