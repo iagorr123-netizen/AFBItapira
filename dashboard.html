@@ -195,7 +195,28 @@
 
         function calcularKPIs() {
             const c = CONFIG.columns;
-            const dados = obterDadosFiltrados();
+            let dados = dadosColheita;
+
+            // Filtrar apenas dados até 2025 (sem 2026)
+            dados = dados.filter(r => parseInt(r[c.ano]) <= 2025);
+
+            // Aplicar outros filtros se necessário
+            if (filtroAtivo) {
+                dados = dados.filter(r => {
+                    if (tipoFiltro === 'produtividade') {
+                        const p = parseFloat(r[c.produtividade]);
+                        if (filtroAtivo === 'excelente') return p >= 100;
+                        if (filtroAtivo === 'bom') return p >= 80 && p < 100;
+                        if (filtroAtivo === 'medio') return p >= 60 && p < 80;
+                        if (filtroAtivo === 'baixo') return p < 60;
+                    }
+                    if (tipoFiltro === 'variedade') return r[c.variedade] === filtroAtivo;
+                    if (tipoFiltro === 'ano') return r[c.ano] === filtroAtivo;
+                    if (tipoFiltro === 'corte') return String(r[c.numCorte]).replace(',', '.') === filtroAtivo;
+                    return true;
+                });
+            }
+
             let tC = 0, tA = 0, tAP = 0, n = 0;
             let n_talhoes = 0;
             let sumPonderado = 0; // Produtividade × Área
