@@ -155,6 +155,7 @@ function atualizarMetricas() {
     let totalAreaColhida = 0;
     let totalAreaPlantada = 0;
     let contRegistros = 0;
+    let sumPonderado = 0;
 
     dadosFiltrados.forEach(row => {
         const prod = parseFloat(row[col.produtividade]) || 0;
@@ -166,10 +167,11 @@ function atualizarMetricas() {
         totalColhido += tonelada;
         totalAreaColhida += areaColhida;
         totalAreaPlantada += areaPlantada;
+        sumPonderado += prod * areaColhida;
         contRegistros++;
     });
 
-    const produtividadeMedia = contRegistros > 0 ? (totalProdutividade / contRegistros).toFixed(2) : 0;
+    const produtividadeMedia = totalAreaColhida > 0 ? (sumPonderado / totalAreaColhida).toFixed(2) : 0;
     const areaNaoColhida = Math.max(0, (totalAreaPlantada - totalAreaColhida).toFixed(2));
 
     document.getElementById('metricaProdutividade').textContent = produtividadeMedia;
@@ -193,11 +195,15 @@ function atualizarGraficoTCHCorte() {
         if (!consolidacao[corteNum]) {
             consolidacao[corteNum] = {
                 totalProd: 0,
+                totalArea: 0,
                 count: 0
             };
         }
 
-        consolidacao[corteNum].totalProd += parseFloat(row[col.produtividade]) || 0;
+        const areaColhida = parseFloat(row[col.areaColhida]) || 0;
+        const prod = parseFloat(row[col.produtividade]) || 0;
+        consolidacao[corteNum].totalProd += prod * areaColhida;
+        consolidacao[corteNum].totalArea += areaColhida;
         consolidacao[corteNum].count++;
     });
 
@@ -208,7 +214,7 @@ function atualizarGraficoTCHCorte() {
     const dados = Object.keys(consolidacao)
         .map(Number)
         .sort((a, b) => a - b)
-        .map(c => (consolidacao[c].totalProd / consolidacao[c].count).toFixed(2));
+        .map(c => (consolidacao[c].totalArea > 0 ? (consolidacao[c].totalProd / consolidacao[c].totalArea).toFixed(2) : 0));
 
     if (chartTCHCorte) {
         chartTCHCorte.data.labels = labels;
@@ -249,17 +255,21 @@ function atualizarGraficoProdAnual() {
         if (!consolidacao[ano]) {
             consolidacao[ano] = {
                 totalProd: 0,
+                totalArea: 0,
                 count: 0
             };
         }
 
-        consolidacao[ano].totalProd += parseFloat(row[col.produtividade]) || 0;
+        const areaColhida = parseFloat(row[col.areaColhida]) || 0;
+        const prod = parseFloat(row[col.produtividade]) || 0;
+        consolidacao[ano].totalProd += prod * areaColhida;
+        consolidacao[ano].totalArea += areaColhida;
         consolidacao[ano].count++;
     });
 
     const labels = Object.keys(consolidacao).sort((a, b) => a - b).map(a => a.toString());
     const dados = Object.keys(consolidacao).sort((a, b) => a - b).map(a =>
-        (consolidacao[a].totalProd / consolidacao[a].count).toFixed(2)
+        (consolidacao[a].totalArea > 0 ? (consolidacao[a].totalProd / consolidacao[a].totalArea).toFixed(2) : 0)
     );
 
     if (chartProdAnual) {
