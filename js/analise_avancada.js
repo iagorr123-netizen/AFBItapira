@@ -127,10 +127,13 @@ function aplicarFiltros() {
     const talhoesSelect = document.getElementById('filtroTalhao');
     const talhoesArray = Array.from(talhoesSelect.selectedOptions).map(o => o.value).filter(v => v);
 
+    console.log('📊 Filtros aplicados:', { anosArray, cortesArray, variedadesArray, talhoesArray });
+
     // Filtrar dados - aceita qualquer um dos valores selecionados
     dadosFiltrados = dadosColheita.filter(row => {
         // Se nenhum selecionado, considera como selecionado todos
-        const matchAno = anosArray.length === 0 || anosArray.includes(row[col.ano]);
+        const anoRow = String(row[col.ano]);
+        const matchAno = anosArray.length === 0 || anosArray.includes(anoRow);
 
         // Normalizar corte para comparação (1,5 = 1.5)
         let matchCorte = true;
