@@ -302,20 +302,27 @@
                     }
                 }
             });
+            // Pegar TODAS as variedades de dadosColheita (não só do filtro)
+            const todasVariedades = [...new Set(dadosColheita.map(r => r[c.variedade]))].sort();
             const vm = {};
+            // Inicializar com 0
+            todasVariedades.forEach(v => {
+                vm[v] = { sumPond: 0, sumArea: 0 };
+            });
+            // Calcular com dados filtrados
             dados.forEach(r => {
                 const v = r[c.variedade];
                 const p = parseFloat(r[c.produtividade]) || 0;
-                if (!vm[v]) vm[v] = { t: 0, n: 0 };
-                vm[v].t += p; vm[v].n++;
+                const area = parseFloat(r[c.areaColhida]) || 0;
+                vm[v].sumPond += p * area;
+                vm[v].sumArea += area;
             });
-            const vs = Object.keys(vm).sort();
             if (chartVariedade) chartVariedade.destroy();
             chartVariedade = new Chart(document.getElementById('chartVariedade').getContext('2d'), {
                 type: 'bar',
                 data: {
-                    labels: vs,
-                    datasets: [{label: 'TCH/ha', data: vs.map(v => (vm[v].t/vm[v].n).toFixed(2)), backgroundColor: '#3498db'}]
+                    labels: todasVariedades,
+                    datasets: [{label: 'TCH/ha', data: todasVariedades.map(v => (vm[v].sumArea > 0 ? vm[v].sumPond/vm[v].sumArea : 0).toFixed(2)), backgroundColor: '#3498db'}]
                 },
                 options: {
                     responsive: true,
