@@ -181,6 +181,7 @@
         }
 
         function filtrarAno(tipo) {
+            console.log('🔵 filtrarAno chamado com tipo:', tipo);
             filtroAno = tipo;
             tipoFiltro = null;
             filtroAtivo = null;
@@ -190,6 +191,7 @@
             document.getElementById('btnHistorico').style.background = tipo === 'historico' ? '#2ecc71' : '#95a5a6';
             document.getElementById('btnProjecao').style.background = tipo === 'projecao' ? '#2ecc71' : '#95a5a6';
 
+            console.log('🟡 Chamando calcularKPIs com filtroAno:', filtroAno);
             calcularKPIs();
             criarGraficos();
             atualizarStatus();
