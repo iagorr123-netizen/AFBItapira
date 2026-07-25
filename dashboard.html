@@ -330,7 +330,10 @@
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    scales: { y: { beginAtZero: true } },
+                    scales: {
+                        x: { ticks: { maxRotation: 45, minRotation: 45 } },
+                        y: { beginAtZero: true }
+                    },
                     plugins: { legend: { display: false } },
                     onClick: (evt, activeElements) => {
                         if (activeElements.length > 0) {
