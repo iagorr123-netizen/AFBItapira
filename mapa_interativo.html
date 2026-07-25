@@ -111,32 +111,33 @@
 
         .legenda {
             background: white;
-            padding: 12px;
-            border-radius: 6px;
-            margin-top: 15px;
+            padding: 8px;
+            border-radius: 4px;
+            margin-top: 10px;
             border: 1px solid #e0e0e0;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            font-size: 0.75rem;
         }
 
         .legenda-titulo {
             font-weight: bold;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: #2c3e50;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
         .legenda-item {
             display: flex;
             align-items: center;
-            margin-bottom: 6px;
-            font-size: 0.8rem;
+            margin-bottom: 4px;
+            font-size: 0.7rem;
         }
 
         .legenda-cor {
-            width: 16px;
-            height: 16px;
-            border-radius: 3px;
-            margin-right: 8px;
+            width: 14px;
+            height: 14px;
+            border-radius: 2px;
+            margin-right: 6px;
             border: 1px solid #ccc;
         }
 
@@ -241,6 +242,16 @@
                     console.error('❌ dadosColheita não ficou disponível');
                 }
             }, 100);
+        });
+
+        // Aumentar zoom do mapa para mobile
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const mapa = window.mapaInterativo;
+                if (mapa) {
+                    mapa.setZoom(15);
+                }
+            }, 2000);
         });
     </script>
 </body>
