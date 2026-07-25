@@ -196,7 +196,7 @@
         function calcularKPIs() {
             const c = CONFIG.columns;
             const dados = obterDadosFiltrados();
-            let tC = 0, tA = 0, n = 0;
+            let tC = 0, tA = 0, tAP = 0, n = 0;
             let n_talhoes = 0;
             let sumPonderado = 0; // Produtividade × Área
             let sumArea = 0; // Soma das áreas
@@ -209,9 +209,11 @@
                 const prod = parseFloat(r[c.produtividade]) || 0;
                 const toneladaColhida = parseFloat(r[c.toneladaColhida]) || 0;
                 const areaColhida = parseFloat(r[c.areaColhida]) || 0;
+                const areaPlantada = parseFloat(r[c.areaPlantada]) || 0;
 
                 tC += toneladaColhida;
                 tA += areaColhida;
+                tAP += areaPlantada;
                 n++;
 
                 // Média ponderada
@@ -228,6 +230,7 @@
 
             // Calcular média ponderada
             const mediaProdutividade = sumArea > 0 ? sumPonderado / sumArea : 0;
+            const areaNaoColhida = Math.max(0, tAP - tA);
 
             let filtroTexto = '';
             if (filtroAtivo) {
@@ -240,9 +243,9 @@
             }
             document.getElementById('kpis').innerHTML = filtroTexto + `
                 <div class="kpi-card"><div class="kpi-label">Produtividade</div><div class="kpi-value">${n > 0 ? mediaProdutividade.toFixed(2) : '0'}</div><div class="kpi-unit">TCH/ha</div></div>
-                <div class="kpi-card"><div class="kpi-label">Total Colhido</div><div class="kpi-value">${parseInt(tC).toLocaleString('pt-BR')}</div><div class="kpi-unit">TCH</div></div>
+                <div class="kpi-card"><div class="kpi-label">Total Colhido</div><div class="kpi-value">${parseInt(tC).toLocaleString('pt-BR')}</div><div class="kpi-unit">toneladas</div></div>
                 <div class="kpi-card"><div class="kpi-label">Área Colhida</div><div class="kpi-value">${parseInt(tA).toLocaleString('pt-BR')}</div><div class="kpi-unit">ha</div></div>
-                <div class="kpi-card"><div class="kpi-label">Talhões</div><div class="kpi-value">${n_talhoes}</div><div class="kpi-unit">únicos</div></div>
+                <div class="kpi-card"><div class="kpi-label">Área Não Colhida</div><div class="kpi-value">${parseInt(areaNaoColhida).toLocaleString('pt-BR')}</div><div class="kpi-unit">ha</div></div>
             `;
         }
         function criarGraficos() {
