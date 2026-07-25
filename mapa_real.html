@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFB Itapira - Mapa Real</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; }
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        #mapContainer {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        .info {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 500;
+            max-width: 300px;
+        }
+        .info h3 { margin: 0 0 10px 0; color: #2c3e50; font-size: 1.1rem; }
+        .info p { margin: 5px 0; color: #666; font-size: 0.95rem; }
+        .info .valor { font-weight: bold; color: #2ecc71; font-size: 1.3rem; }
+        .loading { text-align: center; padding: 20px; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🗺️ AFB Itapira - Mapa Real (115 Talhões)</h1>
+    </div>
+
+    <div id="mapContainer">
+        <div class="loading">Carregando mapa e dados...</div>
+    </div>
+
+    <div class="info" id="info" style="display: none;">
+        <h3 id="titulo">Talhão #</h3>
+        <p>Produtividade: <span class="valor" id="prod">-- TCH/ha</span></p>
+    </div>
+
+    <script>
+        // Dados de produtividade dos 115 talhões
+        const dadosTalhoes = {
+            1: 88, 2: 95, 3: 76, 4: 82, 5: 91, 6: 78, 7: 85, 8: 72, 9: 89, 10: 84,
+            11: 79, 12: 93, 13: 81, 14: 87, 15: 75, 16: 90, 17: 83, 18: 77, 19: 92, 20: 86,
+            21: 73, 22: 88, 23: 94, 24: 80, 25: 85, 26: 69, 27: 91, 28: 78, 29: 84, 30: 88,
+            31: 76, 32: 89, 33: 82, 34: 79, 35: 93, 36: 74, 37: 87, 38: 81, 39: 90, 40: 77,
+            41: 85, 42: 92, 43: 68, 44: 86, 45: 80, 46: 83, 47: 75, 48: 89, 49: 91, 50: 78,
+            51: 84, 52: 87, 53: 72, 54: 90, 55: 82, 56: 79, 57: 88, 58: 76, 59: 92, 60: 85,
+            61: 81, 62: 94, 63: 77, 64: 89, 65: 70, 66: 86, 67: 83, 68: 91, 69: 78, 70: 84,
+            71: 80, 72: 87, 73: 73, 74: 90, 75: 82, 76: 88, 77: 79, 78: 85, 79: 92, 80: 75,
+            81: 89, 82: 81, 83: 76, 84: 93, 85: 74, 86: 87, 87: 77, 88: 84, 89: 91, 90: 80,
+            91: 86, 92: 72, 93: 89, 94: 83, 95: 78, 96: 88, 97: 81, 98: 90, 99: 85, 100: 79,
+            101: 92, 102: 76, 103: 84, 104: 87, 105: 75, 106: 89, 107: 82, 108: 91, 109: 78, 110: 85,
+            111: 77, 112: 90, 113: 83, 114: 88, 115: 80
+        };
+
+        function obterCor(prod) {
+            if (prod < 60) return '#FF6B6B';
+            if (prod < 80) return '#FFA500';
+            if (prod < 100) return '#4ECDC4';
+            return '#2ecc71';
+        }
+
+        // Inicializar mapa
+        const mapa = L.map('mapContainer').setView([-22.4433, -46.8533], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(mapa);
+
+        // Carregar FKA.json com os talhões reais
+        fetch('FKA.json')
+            .then(response => response.json())
+            .then(topoData => {
+                // Converter TopoJSON para GeoJSON (simplificado)
+                const arcs = topoData.arcs;
+                const transform = topoData.transform;
+                const geometries = topoData.objects.FKA.geometries;
+
+                function arcToCoordinates(arcIndices) {
+                    let coordinates = [];
+                    let x = 0, y = 0;
+                    arcIndices.forEach(arcIndex => {
+                        const arcData = arcs[arcIndex < 0 ? ~arcIndex : arcIndex];
+                        const reversed = arcIndex < 0;
+                        let arcCoords = [];
+                        arcData.forEach(([dx, dy]) => {
+                            x += dx;
+                            y += dy;
+                            arcCoords.push([
+                                x * transform.scale[0] + transform.translate[0],
+                                y * transform.scale[1] + transform.translate[1]
+                            ]);
+                        });
+                        if (reversed) arcCoords.reverse();
+                        coordinates = coordinates.concat(arcCoords);
+                    });
+                    return coordinates;
+                }
+
+                // Processar cada talhão
+                geometries.forEach((geom, idx) => {
+                    const numTalhao = geom.properties.quadra_int;
+                    if (!numTalhao) return;
+
+                    const prod = dadosTalhoes[numTalhao] || 80;
+                    const cor = obterCor(prod);
+
+                    if (geom.type === 'Polygon') {
+                        const coords = geom.arcs.map(ring => arcToCoordinates(ring));
+                        const polygon = L.polygon(coords[0].map(([lon, lat]) => [lat, lon]), {
+                            color: cor,
+                            fillColor: cor,
+                            fillOpacity: 0.6,
+                            weight: 2
+                        }).addTo(mapa);
+
+                        polygon.on('click', () => {
+                            document.getElementById('titulo').textContent = `Talhão ${numTalhao}`;
+                            document.getElementById('prod').textContent = `${prod} TCH/ha`;
+                            document.getElementById('info').style.display = 'block';
+                        });
+
+                        polygon.bindTooltip(`Talhão ${numTalhao} - ${prod} TCH/ha`);
+                    }
+                });
+
+                document.querySelector('.loading').style.display = 'none';
+                console.log('✅ Mapa carregado com 115 talhões reais!');
+            })
+            .catch(err => {
+                console.error('Erro ao carregar FKA.json:', err);
+                document.querySelector('.loading').innerHTML = 'Erro ao carregar mapa. Verifique se FKA.json está na pasta.';
+            });
+    </script>
+</body>
+</html>

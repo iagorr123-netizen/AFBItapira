@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFB Itapira - Visualização</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f0f0f0; }
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .header h1 { font-size: 1.2rem; margin: 0; }
+        #mapContainer {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: calc(100vh - 60px);
+        }
+        .info {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 500;
+            max-width: 300px;
+        }
+        .info h3 { margin: 0 0 10px 0; color: #2c3e50; font-size: 1.1rem; }
+        .info p { margin: 5px 0; color: #666; font-size: 0.95rem; }
+        .info .valor { font-weight: bold; color: #2ecc71; font-size: 1.3rem; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🗺️ AFB Itapira - Mapa Interativo</h1>
+    </div>
+
+    <div id="mapContainer"></div>
+
+    <div class="info" id="info" style="display: none;">
+        <h3 id="titulo">Talhão #</h3>
+        <p>Produtividade: <span class="valor" id="prod">-- TCH/ha</span></p>
+        <p id="detalhes" style="font-size: 0.85rem; margin-top: 10px; color: #999;">Clique para mais detalhes</p>
+    </div>
+
+    <script>
+        // Inicializar mapa
+        const mapa = L.map('mapContainer').setView([-22.4433, -46.8533], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(mapa);
+
+        // Cores por produtividade
+        function obterCor(prod) {
+            if (prod < 60) return '#FF6B6B';
+            if (prod < 80) return '#FFA500';
+            if (prod < 100) return '#4ECDC4';
+            return '#2ecc71';
+        }
+
+        // Dados de exemplo (talhões da fazenda)
+        const talhoes = [
+            {
+                nome: "Talhão 01",
+                coords: [[-22.440, -46.850], [-22.445, -46.850], [-22.445, -46.845], [-22.440, -46.845]],
+                produtividade: 85,
+                area: 34.23,
+                variedade: "CTC 4",
+                ultimoCorte: "Corte 4 (2025)"
+            },
+            {
+                nome: "Talhão 02",
+                coords: [[-22.440, -46.855], [-22.445, -46.855], [-22.445, -46.850], [-22.440, -46.850]],
+                produtividade: 92,
+                area: 41.50,
+                variedade: "RB 6928",
+                ultimoCorte: "Corte 3 (2025)"
+            },
+            {
+                nome: "Talhão 03",
+                coords: [[-22.435, -46.850], [-22.440, -46.850], [-22.440, -46.845], [-22.435, -46.845]],
+                produtividade: 78,
+                area: 28.95,
+                variedade: "CTC 11",
+                ultimoCorte: "Corte 4 (2025)"
+            },
+            {
+                nome: "Talhão 04",
+                coords: [[-22.450, -46.850], [-22.455, -46.850], [-22.455, -46.845], [-22.450, -46.845]],
+                produtividade: 105,
+                area: 39.67,
+                variedade: "RB 5952",
+                ultimoCorte: "Corte 2 (2025)"
+            },
+            {
+                nome: "Talhão 05",
+                coords: [[-22.450, -46.855], [-22.455, -46.855], [-22.455, -46.850], [-22.450, -46.850]],
+                produtividade: 65,
+                area: 25.43,
+                variedade: "CTC 4",
+                ultimoCorte: "Corte 3 (2025)"
+            }
+        ];
+
+        // Adicionar talhões ao mapa
+        talhoes.forEach(t => {
+            const polygon = L.polygon(t.coords, {
+                color: obterCor(t.produtividade),
+                fillColor: obterCor(t.produtividade),
+                fillOpacity: 0.6,
+                weight: 2
+            }).addTo(mapa);
+
+            polygon.on('click', () => {
+                document.getElementById('titulo').textContent = t.nome;
+                document.getElementById('prod').textContent = t.produtividade + ' TCH/ha';
+                document.getElementById('detalhes').innerHTML = `
+                    <strong>Área:</strong> ${t.area} ha<br>
+                    <strong>Variedade:</strong> ${t.variedade}<br>
+                    <strong>Último Corte:</strong> ${t.ultimoCorte}
+                `;
+                document.getElementById('info').style.display = 'block';
+            });
+
+            polygon.bindTooltip(`${t.nome} - ${t.produtividade} TCH/ha`);
+        });
+
+        // Mostrar primeiro talhão por padrão
+        document.getElementById('titulo').textContent = talhoes[0].nome;
+        document.getElementById('prod').textContent = talhoes[0].produtividade + ' TCH/ha';
+        document.getElementById('detalhes').innerHTML = `
+            <strong>Área:</strong> ${talhoes[0].area} ha<br>
+            <strong>Variedade:</strong> ${talhoes[0].variedade}<br>
+            <strong>Último Corte:</strong> ${talhoes[0].ultimoCorte}
+        `;
+        document.getElementById('info').style.display = 'block';
+    </script>
+</body>
+</html>

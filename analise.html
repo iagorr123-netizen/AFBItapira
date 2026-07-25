@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise - AFB Itapira</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="images/logoafb.jpg" alt="AFB Logo" class="logo-img">
+                <h1 class="logo">AFB Itapira - Consolidação de Cana</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">🏠 Início</a></li>
+                <li><a href="dashboard.html" class="nav-link">📊 Dashboard</a></li>
+                <li><a href="relatorios.html" class="nav-link">📋 Relatórios</a></li>
+                <li><a href="analise.html" class="nav-link active">📈 Análise</a></li>
+                <li><a href="gerenciamento.html" class="nav-link">⚙️ Gerenciamento</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h2>📈 Análise Estatística e Insights</h2>
+
+        <div id="carregando" class="loading">
+            <div class="spinner"></div>
+            <p>Carregando dados para análise...</p>
+        </div>
+
+        <div id="conteudo" style="display: none;">
+            <!-- Métricas Estatísticas -->
+            <div class="chart-container">
+                <h3>📊 Estatísticas Descritivas</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Métrica</th>
+                            <th>Produtividade (TCH/ha)</th>
+                            <th>Tonelada Colhida (TCH)</th>
+                            <th>Área Colhida (ha)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaEstatisticas"></tbody>
+                </table>
+            </div>
+
+            <!-- Análise de Variância por Talhão -->
+            <div class="chart-container">
+                <h3>Variação de Produtividade entre Talhões</h3>
+                <div class="chart-wrapper">
+                    <canvas id="chartVarianciaProducao"></canvas>
+                </div>
+            </div>
+
+            <!-- Comparação Variedades -->
+            <div class="chart-container">
+                <h3>Produtividade Média por Variedade</h3>
+                <div class="chart-wrapper">
+                    <canvas id="chartVariedadesComparacao"></canvas>
+                </div>
+            </div>
+
+            <!-- Performance por Corte -->
+            <div class="chart-container">
+                <h3>Análise de Performance - Número de Cortes</h3>
+                <div class="chart-wrapper">
+                    <canvas id="chartPerformanceCorte"></canvas>
+                </div>
+            </div>
+
+            <!-- Top e Bottom Performers -->
+            <div class="dashboard-grid">
+                <div class="chart-container">
+                    <h3>🏆 Top 5 Talhões (Produtividade)</h3>
+                    <table id="tabelaTop5"></table>
+                </div>
+
+                <div class="chart-container">
+                    <h3>⚠️ Talhões com Menor Produtividade</h3>
+                    <table id="tabelaBottom5"></table>
+                </div>
+            </div>
+
+            <!-- Insights -->
+            <div class="chart-container">
+                <h3>💡 Insights Principais</h3>
+                <div id="insightsPrincipais"></div>
+            </div>
+
+            <!-- Recomendações -->
+            <div class="chart-container">
+                <h3>🎯 Recomendações</h3>
+                <div id="recomendacoes"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 AFB Holding - Itapira, SP | Sistema de Consolidação de Dados</p>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/dados.js"></script>
+    <script>
+        function calcularEstatisticas(valores) {
+            const sorted = valores.sort((a, b) => a - b);
+            const len = sorted.length;
+            const media = valores.reduce((a, b) => a + b, 0) / len;
+            const mediana = len % 2 === 0 ?
+                (sorted[len / 2 - 1] + sorted[len / 2]) / 2 :
+                sorted[Math.floor(len / 2)];
+            const min = sorted[0];
+            const max = sorted[len - 1];
+
+            const variancia = valores.reduce((sum, val) => sum + Math.pow(val - media, 2), 0) / len;
+            const desvio = Math.sqrt(variancia);
+
+            return { media, mediana, min, max, desvio };
+        }
+
+        async function inicializarAnalise() {
+            let tentativas = 0;
+            while (dadosColheita.length === 0 && tentativas < 30) {
+                await new Promise(resolve => setTimeout(resolve, 100));
+                tentativas++;
+            }
+
+            if (dadosColheita.length === 0) {
+                document.getElementById('carregando').innerHTML = '<div class="alert alert-error">Erro ao carregar dados.</div>';
+                return;
+            }
+
+            gerarEstatisticas();
+            criarGraficos();
+            gerarInsights();
+
+            document.getElementById('carregando').style.display = 'none';
+            document.getElementById('conteudo').style.display = 'block';
+        }
+
+        function gerarEstatisticas() {
+            const col = CONFIG.columns;
+            const produtividades = [];
+            const toneladas = [];
+            const areas = [];
+
+            dadosColheita.forEach(row => {
+                const prod = parseFloat(row[col.produtividade]) || 0;
+                const ton = parseFloat(row[col.toneladaColhida]) || 0;
+                const area = parseFloat(row[col.areaColhida]) || 0;
+
+                if (prod > 0) produtividades.push(prod);
+                if (ton > 0) toneladas.push(ton);
+                if (area > 0) areas.push(area);
+            });
+
+            const estProd = calcularEstatisticas(produtividades);
+            const estTon = calcularEstatisticas(toneladas);
+            const estArea = calcularEstatisticas(areas);
+
+            const tabela = document.getElementById('tabelaEstatisticas');
+            tabela.innerHTML = `
+                <tr>
+                    <td><strong>Média</strong></td>
+                    <td>${estProd.media.toFixed(2)}</td>
+                    <td>${estTon.media.toFixed(2)}</td>
+                    <td>${estArea.media.toFixed(2)}</td>
+                </tr>
+                <tr>
+                    <td><strong>Mediana</strong></td>
+                    <td>${estProd.mediana.toFixed(2)}</td>
+                    <td>${estTon.mediana.toFixed(2)}</td>
+                    <td>${estArea.mediana.toFixed(2)}</td>
+                </tr>
+                <tr>
+                    <td><strong>Mínimo</strong></td>
+                    <td>${estProd.min.toFixed(2)}</td>
+                    <td>${estTon.min.toFixed(2)}</td>
+                    <td>${estArea.min.toFixed(2)}</td>
+                </tr>
+                <tr>
+                    <td><strong>Máximo</strong></td>
+                    <td>${estProd.max.toFixed(2)}</td>
+                    <td>${estTon.max.toFixed(2)}</td>
+                    <td>${estArea.max.toFixed(2)}</td>
+                </tr>
+                <tr>
+                    <td><strong>Desvio Padrão</strong></td>
+                    <td>${estProd.desvio.toFixed(2)}</td>
+                    <td>${estTon.desvio.toFixed(2)}</td>
+                    <td>${estArea.desvio.toFixed(2)}</td>
+                </tr>
+            `;
+        }
+
+        function criarGraficos() {
+            criarGraficoVariancia();
+            criarGraficoVariedadesComparacao();
+            criarGraficoPerformanceCorte();
+            preencherTabelasTop5();
+        }
+
+        function criarGraficoVariancia() {
+            const talhoes = obterConsolidacaoPorTalhao();
+            const labels = talhoes.map(t => `T${t.talhao}`);
+            const dados = talhoes.map(t => parseFloat(t.produtividadeMedia));
+
+            const ctx = document.getElementById('chartVarianciaProducao').getContext('2d');
+            new Chart(ctx, {
+                type: 'scatter',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Produtividade por Talhão',
+                        data: dados.map((d, i) => ({x: i + 1, y: d})),
+                        backgroundColor: CONFIG.colors.primary,
+                        borderColor: CONFIG.colors.primary,
+                        borderWidth: 2,
+                        radius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: { title: { display: true, text: 'Talhões' } },
+                        y: { title: { display: true, text: 'Produtividade (TCH/ha)' } }
+                    }
+                }
+            });
+        }
+
+        function criarGraficoVariedadesComparacao() {
+            const variedades = obterConsolidacaoPorVariedade();
+            const labels = variedades.map(v => v.variedade);
+            const dados = variedades.map(v => parseFloat(v.produtividadeMedia));
+
+            const ctx = document.getElementById('chartVariedadesComparacao').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Produtividade Média',
+                        data: dados,
+                        backgroundColor: CONFIG.colors.secondary,
+                        borderColor: CONFIG.colors.secondary,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: { y: { beginAtZero: true } }
+                }
+            });
+        }
+
+        function criarGraficoPerformanceCorte() {
+            const cortes = obterConsolidacaoPorCorte();
+            const labels = cortes.map(c => `Corte ${c.corte}`);
+            const produtividade = cortes.map(c => parseFloat(c.produtividadeMedia));
+            const toneladas = cortes.map(c => parseFloat(c.totalTonelada));
+
+            const ctx = document.getElementById('chartPerformanceCorte').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Produtividade (TCH/ha)',
+                            data: produtividade,
+                            backgroundColor: CONFIG.colors.primary,
+                            yAxisID: 'y'
+                        },
+                        {
+                            label: 'Total (TCH)',
+                            data: toneladas,
+                            backgroundColor: CONFIG.colors.warning,
+                            yAxisID: 'y1'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: { mode: 'index', intersect: false },
+                    scales: {
+                        y: { type: 'linear', position: 'left', title: { display: true, text: 'Produtividade' } },
+                        y1: { type: 'linear', position: 'right', title: { display: true, text: 'Total' } }
+                    }
+                }
+            });
+        }
+
+        function preencherTabelasTop5() {
+            const talhoes = obterConsolidacaoPorTalhao();
+
+            // Top 5
+            const top5 = talhoes.slice(0, 5);
+            const tabelaTop = document.getElementById('tabelaTop5');
+            tabelaTop.innerHTML = '<thead><tr><th>Talhão</th><th>Produtividade</th></tr></thead><tbody>';
+            top5.forEach(t => {
+                tabelaTop.innerHTML += `<tr><td>Talhão ${t.talhao}</td><td>${t.produtividadeMedia} TCH/ha</td></tr>`;
+            });
+            tabelaTop.innerHTML += '</tbody>';
+
+            // Bottom 5
+            const bottom5 = talhoes.slice(-5).reverse();
+            const tabelaBottom = document.getElementById('tabelaBottom5');
+            tabelaBottom.innerHTML = '<thead><tr><th>Talhão</th><th>Produtividade</th></tr></thead><tbody>';
+            bottom5.forEach(t => {
+                tabelaBottom.innerHTML += `<tr><td>Talhão ${t.talhao}</td><td>${t.produtividadeMedia} TCH/ha</td></tr>`;
+            });
+            tabelaBottom.innerHTML += '</tbody>';
+        }
+
+        function gerarInsights() {
+            const col = CONFIG.columns;
+            const consolidacao = obterConsolidacaoGeral();
+            const talhoes = obterConsolidacaoPorTalhao();
+            const variedades = obterConsolidacaoPorVariedade();
+
+            let insights = '<ul>';
+
+            // Insight 1: Melhor talhão
+            if (talhoes.length > 0) {
+                insights += `<li>🏆 Melhor talhão: <strong>Talhão ${talhoes[0].talhao}</strong> com produtividade de ${talhoes[0].produtividadeMedia} TCH/ha</li>`;
+            }
+
+            // Insight 2: Variedade mais produtiva
+            if (variedades.length > 0) {
+                insights += `<li>🌾 Variedade mais produtiva: <strong>${variedades[0].variedade}</strong> com ${variedades[0].produtividadeMedia} TCH/ha</li>`;
+            }
+
+            // Insight 3: Distribuição
+            insights += `<li>📊 Média de produtividade da fazenda: <strong>${consolidacao.produtividadeMedia} TCH/ha</strong></li>`;
+
+            // Insight 4: Variação
+            const produtividades = [];
+            dadosColheita.forEach(row => {
+                const prod = parseFloat(row[col.produtividade]) || 0;
+                if (prod > 0) produtividades.push(prod);
+            });
+            if (produtividades.length > 0) {
+                const media = produtividades.reduce((a, b) => a + b) / produtividades.length;
+                const max = Math.max(...produtividades);
+                const min = Math.min(...produtividades);
+                const variacao = ((max - min) / media * 100).toFixed(1);
+                insights += `<li>📈 Variação de produtividade: ${variacao}% (de ${min} a ${max} TCH/ha)</li>`;
+            }
+
+            insights += '</ul>';
+            document.getElementById('insightsPrincipais').innerHTML = insights;
+
+            // Recomendações
+            let recomendacoes = '<ul>';
+            if (talhoes.length > 0) {
+                const melhor = talhoes[0];
+                const pior = talhoes[talhoes.length - 1];
+                const diferenca = parseFloat(melhor.produtividadeMedia) - parseFloat(pior.produtividadeMedia);
+
+                if (diferenca > 10) {
+                    recomendacoes += `<li>✓ Investigar fatores de sucesso do Talhão ${melhor.talhao} e aplicar em outros talhões</li>`;
+                }
+
+                if (pior.produtividadeMedia < consolidacao.produtividadeMedia * 0.7) {
+                    recomendacoes += `<li>⚠️ Revisar Talhão ${pior.talhao} - produtividade abaixo da média</li>`;
+                }
+            }
+
+            if (variedades.length > 1) {
+                recomendacoes += `<li>✓ Aumentar área plantada com ${variedades[0].variedade} (variedade mais produtiva)</li>`;
+            }
+
+            recomendacoes += '<li>✓ Manter monitoramento contínuo de produtividade por corte</li>';
+            recomendacoes += '</ul>';
+            document.getElementById('recomendacoes').innerHTML = recomendacoes;
+        }
+
+        document.addEventListener('DOMContentLoaded', inicializarAnalise);
+    </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise Avançada - AFB Itapira</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- XLSX para Excel (DEVE VIR PRIMEIRO!) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <!-- Leaflet para mapas -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <!-- Chart.js para gráficos -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        #mapContainer {
+            width: 100%;
+            height: 500px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="images/logoafb.jpg" alt="AFB Logo" class="logo-img">
+                <h1 class="logo">AFB Itapira - Consolidação de Cana</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Início</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li><a href="analise_avancada.html" class="nav-link active">Análise</a></li>
+                <li><a href="relatorios.html" class="nav-link">Relatórios</a></li>
+                <li><a href="gerenciamento.html" class="nav-link">Gerenciamento</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h2>📊 Análise Avançada de Colheita</h2>
+
+        <div id="carregando" class="loading">
+            <div class="spinner"></div>
+            <p>Carregando dados...</p>
+        </div>
+
+        <div id="conteudo" style="display: none;">
+            <!-- Filtros - Igual ao Power BI -->
+            <div class="filters">
+                <div class="filter-group">
+                    <label>Ano</label>
+                    <select id="filtroAno" onchange="aplicarFiltros()">
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Corte</label>
+                    <select id="filtroCorte" onchange="aplicarFiltros()">
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Variedade</label>
+                    <select id="filtroVariedade" onchange="aplicarFiltros()">
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Talhão</label>
+                    <select id="filtroTalhao" onchange="aplicarFiltros()">
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Cards de Métricas - Igual ao Power BI -->
+            <div class="dashboard-grid">
+                <div class="metric-card">
+                    <div class="metric-label">Produtividade Média TCH</div>
+                    <div class="metric-value"><span id="metricaProdutividade">0</span></div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Total Colhido em Toneladas</div>
+                    <div class="metric-value"><span id="metricaTotalColhido">0</span><span class="metric-unit">TCH</span></div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Área Não Colhida</div>
+                    <div class="metric-value"><span id="metricaAreaNaoColhida">0</span><span class="metric-unit">ha</span></div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Área Colhida em Hectares</div>
+                    <div class="metric-value"><span id="metricaAreaColhida">0</span><span class="metric-unit">ha</span></div>
+                </div>
+            </div>
+
+            <!-- Gráfico TCH médio por Corte -->
+            <div class="chart-container">
+                <h3>TCH Médio por Corte</h3>
+                <div class="chart-wrapper">
+                    <canvas id="chartTCHCorte"></canvas>
+                </div>
+            </div>
+
+            <!-- Gráfico Produtividade Anual -->
+            <div class="chart-container">
+                <h3>Produtividade Média Anual</h3>
+                <div class="chart-wrapper">
+                    <canvas id="chartProdAnual"></canvas>
+                </div>
+            </div>
+
+            <!-- Tabela Detalhada -->
+            <div class="chart-container">
+                <h3>📋 Dados Detalhados</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ano</th>
+                                <th>Talhão</th>
+                                <th>Variedade</th>
+                                <th>Corte</th>
+                                <th>Área Colhida (ha)</th>
+                                <th>Produtividade (TCH/ha)</th>
+                                <th>Total (TCH)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaDetalhada"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Mapa da Fazenda -->
+            <div class="chart-container">
+                <h3>🗺️ Mapa da Fazenda - Talhões</h3>
+                <div id="mapStatus"></div>
+                <div id="mapContainer"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 AFB Holding - Itapira, SP | Sistema de Consolidação de Dados</p>
+    </footer>
+
+    <script src="js/setup.js"></script>
+    <script src="js/dados_embedded.js"></script>
+    <!-- <script src="js/mapa.js"></script> -->
+    <script src="js/analise_avancada.js"></script>
+    <script>
+        // Inicializar mapa após carregar dados (análise será inicializada pelo js/analise_avancada.js)
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                if (typeof inicializarMapaFazenda === 'function') {
+                    inicializarMapaFazenda('mapContainer');
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento - AFB Itapira</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="images/logoafb.jpg" alt="AFB Logo" class="logo-img">
+                <h1 class="logo">AFB Itapira - Consolidação de Cana</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">🏠 Início</a></li>
+                <li><a href="dashboard.html" class="nav-link">📊 Dashboard</a></li>
+                <li><a href="relatorios.html" class="nav-link">📋 Relatórios</a></li>
+                <li><a href="analise.html" class="nav-link">📈 Análise</a></li>
+                <li><a href="gerenciamento.html" class="nav-link active">⚙️ Gerenciamento</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h2>⚙️ Gerenciamento de Dados</h2>
+
+        <div id="carregando" class="loading">
+            <div class="spinner"></div>
+            <p>Carregando dados...</p>
+        </div>
+
+        <div id="conteudo" style="display: none;">
+            <!-- Abas de Gerenciamento -->
+            <div class="filters">
+                <button onclick="mostrarAba('novo')" class="tab-btn active">➕ Adicionar Novo Registro</button>
+                <button onclick="mostrarAba('editar')" class="tab-btn">✏️ Editar Registros</button>
+                <button onclick="mostrarAba('importar')" class="tab-btn">📥 Importar Dados</button>
+            </div>
+
+            <!-- Aba: Novo Registro -->
+            <div id="abaNovoRegistro" class="chart-container aba-conteudo">
+                <h3>Adicionar Novo Registro de Colheita</h3>
+                <form id="formNovoRegistro" onsubmit="adicionarRegistro(event)">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label for="ano">Ano da Colheita *</label>
+                            <input type="number" id="ano" name="ano" required min="2000" max="2099">
+                        </div>
+                        <div class="form-group">
+                            <label for="talhao">Talhão *</label>
+                            <input type="number" id="talhao" name="talhao" required min="1" step="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="variedade">Variedade *</label>
+                            <input type="text" id="variedade" name="variedade" placeholder="Ex: CTC 11, RB 5952" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="numCorte">Número do Corte *</label>
+                            <input type="number" id="numCorte" name="numCorte" required min="1" step="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="areaPlantada">Área Plantada (ha) *</label>
+                            <input type="number" id="areaPlantada" name="areaPlantada" required min="0" step="0.01">
+                        </div>
+                        <div class="form-group">
+                            <label for="areaColhida">Área Colhida (ha) *</label>
+                            <input type="number" id="areaColhida" name="areaColhida" required min="0" step="0.01">
+                        </div>
+                        <div class="form-group">
+                            <label for="produtividade">Produtividade (TCH/ha) *</label>
+                            <input type="number" id="produtividade" name="produtividade" required min="0" step="0.1">
+                        </div>
+                        <div class="form-group">
+                            <label for="tonelada">Tonelada Colhida (TCH) *</label>
+                            <input type="number" id="tonelada" name="tonelada" required min="0" step="0.01">
+                        </div>
+                    </div>
+                    <button type="submit">✅ Adicionar Registro</button>
+                </form>
+                <div id="alertaNovoRegistro"></div>
+            </div>
+
+            <!-- Aba: Editar Registros -->
+            <div id="abaEditarRegistros" class="chart-container aba-conteudo" style="display: none;">
+                <h3>Editar Registros Existentes</h3>
+                <div class="filters">
+                    <div class="filter-group">
+                        <label>Filtrar por Talhão</label>
+                        <select id="filtroTalhao" onchange="atualizarTabelaEditar()">
+                            <option value="">Todos</option>
+                        </select>
+                    </div>
+                    <button onclick="atualizarTabelaEditar()" class="secondary">🔄 Atualizar</button>
+                </div>
+                <div class="table-container" style="margin-top: 1.5rem;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Talhão</th>
+                                <th>Variedade</th>
+                                <th>Corte</th>
+                                <th>Produtividade</th>
+                                <th>Tonelada</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaEditarRegistros"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Aba: Importar Dados -->
+            <div id="abaImportarDados" class="chart-container aba-conteudo" style="display: none;">
+                <h3>Importar Dados do Excel</h3>
+                <div class="form-group">
+                    <label for="arquivoImportar">Selecione um arquivo Excel (.xlsx)</label>
+                    <input type="file" id="arquivoImportar" accept=".xlsx" onchange="processarArquivoImportacao(event)">
+                </div>
+                <div id="previewImportacao" style="margin-top: 1.5rem;"></div>
+                <button onclick="confirmarImportacao()" class="secondary" style="margin-top: 1rem; display: none;" id="botaoConfirmarImportacao">
+                    ✅ Confirmar Importação
+                </button>
+            </div>
+
+            <!-- Resumo de Dados -->
+            <div class="chart-container" style="margin-top: 2rem;">
+                <h3>📊 Resumo de Dados</h3>
+                <p>Total de registros: <strong id="totalRegistros">0</strong></p>
+                <p>Última atualização: <strong id="ultimaAtualizacao">Nunca</strong></p>
+                <button onclick="exportarDadosAtualizados()" class="secondary">
+                    📥 Exportar Dados Atualizados
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 AFB Holding - Itapira, SP | Sistema de Consolidação de Dados</p>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/dados.js"></script>
+    <script>
+        let registrosCriados = [];
+        let arquivoParaImportar = null;
+
+        async function inicializarGerenciamento() {
+            let tentativas = 0;
+            while (dadosColheita.length === 0 && tentativas < 30) {
+                await new Promise(resolve => setTimeout(resolve, 100));
+                tentativas++;
+            }
+
+            if (dadosColheita.length === 0) {
+                document.getElementById('carregando').innerHTML = '<div class="alert alert-error">Erro ao carregar dados.</div>';
+                return;
+            }
+
+            preencherFiltroTalhao();
+            atualizarResumo();
+
+            document.getElementById('carregando').style.display = 'none';
+            document.getElementById('conteudo').style.display = 'block';
+        }
+
+        function mostrarAba(aba) {
+            document.querySelectorAll('.aba-conteudo').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+
+            switch(aba) {
+                case 'novo':
+                    document.getElementById('abaNovoRegistro').style.display = 'block';
+                    break;
+                case 'editar':
+                    document.getElementById('abaEditarRegistros').style.display = 'block';
+                    atualizarTabelaEditar();
+                    break;
+                case 'importar':
+                    document.getElementById('abaImportarDados').style.display = 'block';
+                    break;
+            }
+
+            event.target.classList.add('active');
+        }
+
+        function adicionarRegistro(event) {
+            event.preventDefault();
+
+            const novoRegistro = {
+                'Ano Colheita ': parseInt(document.getElementById('ano').value),
+                'Talhão': parseInt(document.getElementById('talhao').value),
+                'Variedade': document.getElementById('variedade').value,
+                'Número do Corte': parseInt(document.getElementById('numCorte').value),
+                'Area Plantada': parseFloat(document.getElementById('areaPlantada').value),
+                'Area Colhida': parseFloat(document.getElementById('areaColhida').value),
+                'Produtividade TCH': parseFloat(document.getElementById('produtividade').value),
+                'Tonelada Colhida': parseFloat(document.getElementById('tonelada').value)
+            };
+
+            dadosColheita.push(novoRegistro);
+            registrosCriados.push(novoRegistro);
+
+            document.getElementById('formNovoRegistro').reset();
+
+            const alerta = document.getElementById('alertaNovoRegistro');
+            alerta.innerHTML = '<div class="alert alert-success">✅ Registro adicionado com sucesso!</div>';
+            setTimeout(() => alerta.innerHTML = '', 3000);
+
+            atualizarResumo();
+        }
+
+        function preencherFiltroTalhao() {
+            const talhoes = new Set();
+            dadosColheita.forEach(row => {
+                if (row['Talhão']) talhoes.add(row['Talhão']);
+            });
+
+            const select = document.getElementById('filtroTalhao');
+            Array.from(talhoes).sort((a, b) => a - b).forEach(t => {
+                const option = document.createElement('option');
+                option.value = t;
+                option.textContent = `Talhão ${t}`;
+                select.appendChild(option);
+            });
+        }
+
+        function atualizarTabelaEditar() {
+            const filtroTalhao = document.getElementById('filtroTalhao').value;
+            const tbody = document.getElementById('tabelaEditarRegistros');
+            tbody.innerHTML = '';
+
+            let registrosFiltrados = dadosColheita;
+            if (filtroTalhao) {
+                registrosFiltrados = dadosColheita.filter(r => r['Talhão'] == filtroTalhao);
+            }
+
+            registrosFiltrados.slice(0, 20).forEach((row, idx) => {
+                const linha = document.createElement('tr');
+                linha.innerHTML = `
+                    <td>${row['Talhão']}</td>
+                    <td>${row['Variedade']}</td>
+                    <td>${row['Número do Corte']}</td>
+                    <td>${parseFloat(row['Produtividade TCH']).toFixed(2)}</td>
+                    <td>${parseFloat(row['Tonelada Colhida']).toFixed(2)}</td>
+                    <td>
+                        <button onclick="editarRegistro(${idx})" class="secondary" style="padding: 0.3rem 0.6rem; font-size: 0.8rem;">✏️</button>
+                        <button onclick="deletarRegistro(${idx})" class="secondary" style="padding: 0.3rem 0.6rem; font-size: 0.8rem; background-color: #e74c3c;">🗑️</button>
+                    </td>
+                `;
+                tbody.appendChild(linha);
+            });
+        }
+
+        function editarRegistro(idx) {
+            alert('Funcionalidade de edição em desenvolvimento');
+        }
+
+        function deletarRegistro(idx) {
+            if (confirm('Tem certeza que deseja deletar este registro?')) {
+                dadosColheita.splice(idx, 1);
+                atualizarTabelaEditar();
+                atualizarResumo();
+            }
+        }
+
+        function processarArquivoImportacao(event) {
+            const arquivo = event.target.files[0];
+            if (!arquivo) return;
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const arrayBuffer = e.target.result;
+                    const workbook = XLSX.read(arrayBuffer, { type: 'array' });
+                    const ws = workbook.Sheets[workbook.SheetNames[0]];
+                    const dados = XLSX.utils.sheet_to_json(ws);
+
+                    arquivoParaImportar = dados;
+
+                    const preview = `
+                        <div class="alert alert-success">
+                            ✅ Arquivo lido com sucesso!<br>
+                            Total de registros: <strong>${dados.length}</strong>
+                        </div>
+                        <h4>Primeiros 5 registros:</h4>
+                        <table style="margin-top: 1rem;">
+                            <thead><tr><th>Talhão</th><th>Variedade</th><th>Produtividade</th><th>Tonelada</th></tr></thead>
+                            <tbody>
+                    `;
+
+                    dados.slice(0, 5).forEach(row => {
+                        const preview2 = preview + `
+                            <tr>
+                                <td>${row['Talhão']}</td>
+                                <td>${row['Variedade']}</td>
+                                <td>${row['Produtividade TCH']}</td>
+                                <td>${row['Tonelada Colhida']}</td>
+                            </tr>
+                        `;
+                    });
+
+                    document.getElementById('previewImportacao').innerHTML = preview + '</tbody></table>';
+                    document.getElementById('botaoConfirmarImportacao').style.display = 'inline-block';
+                } catch (error) {
+                    document.getElementById('previewImportacao').innerHTML = `<div class="alert alert-error">❌ Erro ao ler arquivo: ${error.message}</div>`;
+                }
+            };
+            reader.readAsArrayBuffer(arquivo);
+        }
+
+        function confirmarImportacao() {
+            if (!arquivoParaImportar) return;
+
+            arquivoParaImportar.forEach(row => {
+                dadosColheita.push(row);
+            });
+
+            document.getElementById('previewImportacao').innerHTML = '<div class="alert alert-success">✅ Importação realizada com sucesso!</div>';
+            document.getElementById('botaoConfirmarImportacao').style.display = 'none';
+            document.getElementById('arquivoImportar').value = '';
+            arquivoParaImportar = null;
+
+            atualizarResumo();
+        }
+
+        function atualizarResumo() {
+            document.getElementById('totalRegistros').textContent = dadosColheita.length;
+            document.getElementById('ultimaAtualizacao').textContent = new Date().toLocaleString('pt-BR');
+        }
+
+        function exportarDadosAtualizados() {
+            const ws = XLSX.utils.json_to_sheet(dadosColheita);
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, "Colheita");
+            XLSX.writeFile(wb, `Dados_Colheita_${new Date().toISOString().split('T')[0]}.xlsx`);
+        }
+
+        document.addEventListener('DOMContentLoaded', inicializarGerenciamento);
+    </script>
+</body>
+</html>

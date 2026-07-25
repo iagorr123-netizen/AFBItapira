@@ -1,0 +1,2360 @@
+[
+  {
+    "numero": 1,
+    "variedades": [
+      "CTC 11",
+      "RB 6928",
+      "RB 7515"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 15424.4,
+    "area_plantada": 17.7,
+    "area_colhida": 177.05,
+    "area_nao_colhida": 0,
+    "produtividade_media": 87.38,
+    "registros": 11
+  },
+  {
+    "numero": 2,
+    "variedades": [
+      "CTC 11",
+      "RB 6928",
+      "RB 7515"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 18977.1,
+    "area_plantada": 24.52,
+    "area_colhida": 213.15,
+    "area_nao_colhida": 0,
+    "produtividade_media": 95.4,
+    "registros": 11
+  },
+  {
+    "numero": 3,
+    "variedades": [
+      "CTC 4",
+      "RB 7515"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 13654.44,
+    "area_plantada": 20.67,
+    "area_colhida": 176.64,
+    "area_nao_colhida": 0,
+    "produtividade_media": 73.34,
+    "registros": 11
+  },
+  {
+    "numero": 4,
+    "variedades": [
+      "RB 7515"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019
+    ],
+    "cortes": [],
+    "total_tonelada": 3300.15,
+    "area_plantada": 9.76,
+    "area_colhida": 48.8,
+    "area_nao_colhida": 0,
+    "produtividade_media": 67.63,
+    "registros": 5
+  },
+  {
+    "numero": 5,
+    "variedades": [
+      "CTC 11",
+      "RB 5952"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 26378.78,
+    "area_plantada": 44.43,
+    "area_colhida": 297.17,
+    "area_nao_colhida": 0,
+    "produtividade_media": 77.41,
+    "registros": 11
+  },
+  {
+    "numero": 6,
+    "variedades": [
+      "CTC 11"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ],
+    "cortes": [],
+    "total_tonelada": 7901.57,
+    "area_plantada": 18.3,
+    "area_colhida": 109.8,
+    "area_nao_colhida": 0,
+    "produtividade_media": 71.96,
+    "registros": 6
+  },
+  {
+    "numero": 7,
+    "variedades": [
+      "CTC 11"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ],
+    "cortes": [],
+    "total_tonelada": 4693.79,
+    "area_plantada": 9.98,
+    "area_colhida": 59.88,
+    "area_nao_colhida": 0,
+    "produtividade_media": 78.39,
+    "registros": 6
+  },
+  {
+    "numero": 8,
+    "variedades": [
+      "CTC 9001",
+      "RB 5952",
+      "RB 7515"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 8342.69,
+    "area_plantada": 11.01,
+    "area_colhida": 99.41,
+    "area_nao_colhida": 0,
+    "produtividade_media": 84.72,
+    "registros": 11
+  },
+  {
+    "numero": 9,
+    "variedades": [
+      "RB 7515"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019
+    ],
+    "cortes": [],
+    "total_tonelada": 4300.74,
+    "area_plantada": 14.39,
+    "area_colhida": 71.95,
+    "area_nao_colhida": 0,
+    "produtividade_media": 59.77,
+    "registros": 5
+  },
+  {
+    "numero": 10,
+    "variedades": [
+      "CTC 11",
+      "CTC 4"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 5290.39,
+    "area_plantada": 7.32,
+    "area_colhida": 80.05,
+    "area_nao_colhida": 0,
+    "produtividade_media": 65.75,
+    "registros": 12
+  },
+  {
+    "numero": 12,
+    "variedades": [
+      "CTC 11",
+      "CTC 4"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 4105.75,
+    "area_plantada": 4.91,
+    "area_colhida": 55.46,
+    "area_nao_colhida": 0,
+    "produtividade_media": 74.02,
+    "registros": 12
+  },
+  {
+    "numero": 14,
+    "variedades": [
+      "CTC 11",
+      "CTC 4"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 5610.32,
+    "area_plantada": 7.56,
+    "area_colhida": 87.52,
+    "area_nao_colhida": 0,
+    "produtividade_media": 63.96,
+    "registros": 12
+  },
+  {
+    "numero": 15,
+    "variedades": [
+      "CTC 11",
+      "CTC 4",
+      "CTC 9001"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 8367.48,
+    "area_plantada": 12.58,
+    "area_colhida": 120.21,
+    "area_nao_colhida": 0,
+    "produtividade_media": 68.36,
+    "registros": 11
+  },
+  {
+    "numero": 16,
+    "variedades": [
+      "CTC 4"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 9575.22,
+    "area_plantada": 12.88,
+    "area_colhida": 138.06,
+    "area_nao_colhida": 0,
+    "produtividade_media": 69.51,
+    "registros": 12
+  },
+  {
+    "numero": 17,
+    "variedades": [
+      "CTC 11",
+      "CTC 4"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 7897.47,
+    "area_plantada": 9.63,
+    "area_colhida": 114.27,
+    "area_nao_colhida": 0,
+    "produtividade_media": 69.06,
+    "registros": 12
+  },
+  {
+    "numero": 18,
+    "variedades": [
+      "CTC 9001",
+      "RB 6928",
+      "RB 7515"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 3415.65,
+    "area_plantada": 4.38,
+    "area_colhida": 47.34,
+    "area_nao_colhida": 0,
+    "produtividade_media": 72.2,
+    "registros": 11
+  },
+  {
+    "numero": 19,
+    "variedades": [
+      "CTC 9001",
+      "RB 6928",
+      "RB 7515"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 8481.01,
+    "area_plantada": 13.29,
+    "area_colhida": 123.35,
+    "area_nao_colhida": 0,
+    "produtividade_media": 74.97,
+    "registros": 11
+  },
+  {
+    "numero": 20,
+    "variedades": [
+      "CTC 11",
+      "CTC 4"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 4375.66,
+    "area_plantada": 5.08,
+    "area_colhida": 60.02,
+    "area_nao_colhida": 0,
+    "produtividade_media": 72.86,
+    "registros": 12
+  },
+  {
+    "numero": 21,
+    "variedades": [
+      "CTC 4",
+      "RB 6928",
+      "RB 7515"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 11698.15,
+    "area_plantada": 21.59,
+    "area_colhida": 184.83,
+    "area_nao_colhida": 0,
+    "produtividade_media": 64.27,
+    "registros": 11
+  },
+  {
+    "numero": 22,
+    "variedades": [
+      "CTC 9001",
+      "RB 6928",
+      "RB 7515"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 16855.35,
+    "area_plantada": 20.18,
+    "area_colhida": 187.9,
+    "area_nao_colhida": 0,
+    "produtividade_media": 92.94,
+    "registros": 11
+  },
+  {
+    "numero": 23,
+    "variedades": [
+      "CTC 9003",
+      "RB 6928",
+      "RB 7515"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 3373.35,
+    "area_plantada": 8.61,
+    "area_colhida": 46.34,
+    "area_nao_colhida": 0,
+    "produtividade_media": 63.76,
+    "registros": 7
+  },
+  {
+    "numero": 24,
+    "variedades": [
+      "CTC 11",
+      "CTC 14",
+      "CTC 9001"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 6694.51,
+    "area_plantada": 12.21,
+    "area_colhida": 77.02,
+    "area_nao_colhida": 0,
+    "produtividade_media": 77.93,
+    "registros": 10
+  },
+  {
+    "numero": 25,
+    "variedades": [
+      "CTC 11",
+      "CTC 14",
+      "CTC 9001"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 10652.69,
+    "area_plantada": 25.17,
+    "area_colhida": 123.68,
+    "area_nao_colhida": 0,
+    "produtividade_media": 84.25,
+    "registros": 11
+  },
+  {
+    "numero": 26,
+    "variedades": [
+      "CTC 11",
+      "CTC 14",
+      "CTC 9001"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 8539.35,
+    "area_plantada": 19.11,
+    "area_colhida": 112.99,
+    "area_nao_colhida": 0,
+    "produtividade_media": 92.78,
+    "registros": 11
+  },
+  {
+    "numero": 27,
+    "variedades": [
+      "CTC 11",
+      "CTC 14",
+      "CTC 9003"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 15648.18,
+    "area_plantada": 28.0,
+    "area_colhida": 169.6,
+    "area_nao_colhida": 0,
+    "produtividade_media": 92.1,
+    "registros": 11
+  },
+  {
+    "numero": 28,
+    "variedades": [
+      "CTC 11",
+      "CTC 14",
+      "CTC 9003"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 16799.98,
+    "area_plantada": 33.37,
+    "area_colhida": 193.5,
+    "area_nao_colhida": 0,
+    "produtividade_media": 70.43,
+    "registros": 11
+  },
+  {
+    "numero": 29,
+    "variedades": [
+      "CTC 9001",
+      "RB 5414",
+      "SP 2847"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 20001.56,
+    "area_plantada": 39.88,
+    "area_colhida": 207.39,
+    "area_nao_colhida": 0,
+    "produtividade_media": 108.26,
+    "registros": 9
+  },
+  {
+    "numero": 30,
+    "variedades": [
+      "CTC 4",
+      "SP 2847"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 18654.56,
+    "area_plantada": 34.23,
+    "area_colhida": 187.05,
+    "area_nao_colhida": 0,
+    "produtividade_media": 91.87,
+    "registros": 9
+  },
+  {
+    "numero": 31,
+    "variedades": [
+      "CTC 11",
+      "CTC 14",
+      "CTC 9003"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 10154.81,
+    "area_plantada": 16.71,
+    "area_colhida": 116.23,
+    "area_nao_colhida": 0,
+    "produtividade_media": 87.57,
+    "registros": 9
+  },
+  {
+    "numero": 32,
+    "variedades": [
+      "CTC 11",
+      "CTC 9004",
+      "RB 6928",
+      "SP 2847"
+    ],
+    "anos": [
+      2015,
+      2017,
+      2018,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 5956.86,
+    "area_plantada": 12.26,
+    "area_colhida": 66.93,
+    "area_nao_colhida": 0,
+    "produtividade_media": 88.53,
+    "registros": 8
+  },
+  {
+    "numero": 33,
+    "variedades": [
+      "CTC 9003",
+      "RB 6928",
+      "SP 2847"
+    ],
+    "anos": [
+      2015,
+      2017,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 7645.97,
+    "area_plantada": 9.34,
+    "area_colhida": 79.11,
+    "area_nao_colhida": 0,
+    "produtividade_media": 129.21,
+    "registros": 11
+  },
+  {
+    "numero": 34,
+    "variedades": [
+      "CTC 14"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018
+    ],
+    "cortes": [],
+    "total_tonelada": 1563.7,
+    "area_plantada": 5.22,
+    "area_colhida": 20.88,
+    "area_nao_colhida": 0,
+    "produtividade_media": 74.89,
+    "registros": 4
+  },
+  {
+    "numero": 35,
+    "variedades": [
+      "CTC 14"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018
+    ],
+    "cortes": [],
+    "total_tonelada": 984.02,
+    "area_plantada": 2.91,
+    "area_colhida": 11.64,
+    "area_nao_colhida": 0,
+    "produtividade_media": 84.54,
+    "registros": 4
+  },
+  {
+    "numero": 36,
+    "variedades": [
+      "CTC 14"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018
+    ],
+    "cortes": [],
+    "total_tonelada": 1436.29,
+    "area_plantada": 5.81,
+    "area_colhida": 23.24,
+    "area_nao_colhida": 0,
+    "produtividade_media": 61.8,
+    "registros": 4
+  },
+  {
+    "numero": 37,
+    "variedades": [
+      "CTC 14"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018
+    ],
+    "cortes": [],
+    "total_tonelada": 1251.35,
+    "area_plantada": 4.58,
+    "area_colhida": 18.32,
+    "area_nao_colhida": 0,
+    "produtividade_media": 68.3,
+    "registros": 4
+  },
+  {
+    "numero": 38,
+    "variedades": [
+      "CTC 14"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018
+    ],
+    "cortes": [],
+    "total_tonelada": 505.13,
+    "area_plantada": 2.09,
+    "area_colhida": 8.36,
+    "area_nao_colhida": 0,
+    "produtividade_media": 60.42,
+    "registros": 4
+  },
+  {
+    "numero": 39,
+    "variedades": [
+      "CTC 14"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018
+    ],
+    "cortes": [],
+    "total_tonelada": 1059.5,
+    "area_plantada": 4.88,
+    "area_colhida": 19.52,
+    "area_nao_colhida": 0,
+    "produtividade_media": 54.28,
+    "registros": 4
+  },
+  {
+    "numero": 40,
+    "variedades": [
+      "SP 2847"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018
+    ],
+    "cortes": [],
+    "total_tonelada": 1001.58,
+    "area_plantada": 4.01,
+    "area_colhida": 16.04,
+    "area_nao_colhida": 0,
+    "produtividade_media": 62.44,
+    "registros": 4
+  },
+  {
+    "numero": 41,
+    "variedades": [
+      "SP 2847"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018
+    ],
+    "cortes": [],
+    "total_tonelada": 1127.02,
+    "area_plantada": 3.73,
+    "area_colhida": 14.92,
+    "area_nao_colhida": 0,
+    "produtividade_media": 75.54,
+    "registros": 4
+  },
+  {
+    "numero": 42,
+    "variedades": [
+      "SP 2847"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018
+    ],
+    "cortes": [],
+    "total_tonelada": 1607.48,
+    "area_plantada": 6.06,
+    "area_colhida": 24.24,
+    "area_nao_colhida": 0,
+    "produtividade_media": 66.31,
+    "registros": 4
+  },
+  {
+    "numero": 43,
+    "variedades": [
+      "SP 2847"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018
+    ],
+    "cortes": [],
+    "total_tonelada": 1298.02,
+    "area_plantada": 4.58,
+    "area_colhida": 18.32,
+    "area_nao_colhida": 0,
+    "produtividade_media": 70.85,
+    "registros": 4
+  },
+  {
+    "numero": 44,
+    "variedades": [
+      "SP 2847"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018
+    ],
+    "cortes": [],
+    "total_tonelada": 945.11,
+    "area_plantada": 2.98,
+    "area_colhida": 11.92,
+    "area_nao_colhida": 0,
+    "produtividade_media": 79.29,
+    "registros": 4
+  },
+  {
+    "numero": 45,
+    "variedades": [
+      "CTC 11",
+      "RB 6928"
+    ],
+    "anos": [
+      2015,
+      2017,
+      2018,
+      2019,
+      2020
+    ],
+    "cortes": [],
+    "total_tonelada": 6571.82,
+    "area_plantada": 10.69,
+    "area_colhida": 53.41,
+    "area_nao_colhida": 0,
+    "produtividade_media": 209.74,
+    "registros": 6
+  },
+  {
+    "numero": 46,
+    "variedades": [
+      "CTC 11",
+      "RB 6928"
+    ],
+    "anos": [
+      2015,
+      2017,
+      2018,
+      2019,
+      2020
+    ],
+    "cortes": [],
+    "total_tonelada": 3359.95,
+    "area_plantada": 5.86,
+    "area_colhida": 29.29,
+    "area_nao_colhida": 0,
+    "produtividade_media": 114.7,
+    "registros": 5
+  },
+  {
+    "numero": 47,
+    "variedades": [
+      "CTC 11"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ],
+    "cortes": [],
+    "total_tonelada": 2513.76,
+    "area_plantada": 7.73,
+    "area_colhida": 46.18,
+    "area_nao_colhida": 0,
+    "produtividade_media": 54.44,
+    "registros": 6
+  },
+  {
+    "numero": 48,
+    "variedades": [
+      "CTC 11"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ],
+    "cortes": [],
+    "total_tonelada": 1348.22,
+    "area_plantada": 4.19,
+    "area_colhida": 25.14,
+    "area_nao_colhida": 0,
+    "produtividade_media": 53.63,
+    "registros": 6
+  },
+  {
+    "numero": 52,
+    "variedades": [
+      "CTC 11",
+      "RB 5952",
+      "SP 2847"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 8719.93,
+    "area_plantada": 13.63,
+    "area_colhida": 121.53,
+    "area_nao_colhida": 0,
+    "produtividade_media": 72.87,
+    "registros": 11
+  },
+  {
+    "numero": 53,
+    "variedades": [
+      "CTC 11",
+      "CTC 9001"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 15380.29,
+    "area_plantada": 22.19,
+    "area_colhida": 198.53,
+    "area_nao_colhida": 0,
+    "produtividade_media": 78.02,
+    "registros": 11
+  },
+  {
+    "numero": 54,
+    "variedades": [
+      "CTC 4",
+      "CTC 9001",
+      "SP 2847"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 11778.3,
+    "area_plantada": 14.75,
+    "area_colhida": 138.14,
+    "area_nao_colhida": 0,
+    "produtividade_media": 84.86,
+    "registros": 11
+  },
+  {
+    "numero": 55,
+    "variedades": [
+      "CTC 4",
+      "CTC 9001",
+      "SP 2847"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 13234.5,
+    "area_plantada": 21.94,
+    "area_colhida": 151.34,
+    "area_nao_colhida": 0,
+    "produtividade_media": 89.34,
+    "registros": 11
+  },
+  {
+    "numero": 56,
+    "variedades": [
+      "SP 2847"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019
+    ],
+    "cortes": [],
+    "total_tonelada": 4354.99,
+    "area_plantada": 10.37,
+    "area_colhida": 51.85,
+    "area_nao_colhida": 0,
+    "produtividade_media": 83.99,
+    "registros": 5
+  },
+  {
+    "numero": 57,
+    "variedades": [
+      "SP 2847"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019
+    ],
+    "cortes": [],
+    "total_tonelada": 3332.2,
+    "area_plantada": 11.04,
+    "area_colhida": 55.2,
+    "area_nao_colhida": 0,
+    "produtividade_media": 60.37,
+    "registros": 5
+  },
+  {
+    "numero": 58,
+    "variedades": [
+      "CTC 9001",
+      "RB 6928",
+      "SP 2847"
+    ],
+    "anos": [
+      2015,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 39319.69,
+    "area_plantada": 51.11,
+    "area_colhida": 434.68,
+    "area_nao_colhida": 0,
+    "produtividade_media": 88.02,
+    "registros": 10
+  },
+  {
+    "numero": 59,
+    "variedades": [
+      "SP 2847"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019
+    ],
+    "cortes": [],
+    "total_tonelada": 2592.04,
+    "area_plantada": 6.59,
+    "area_colhida": 32.95,
+    "area_nao_colhida": 0,
+    "produtividade_media": 78.67,
+    "registros": 5
+  },
+  {
+    "numero": 60,
+    "variedades": [
+      "SP 2847"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019
+    ],
+    "cortes": [],
+    "total_tonelada": 3219.75,
+    "area_plantada": 6.79,
+    "area_colhida": 33.95,
+    "area_nao_colhida": 0,
+    "produtividade_media": 94.84,
+    "registros": 5
+  },
+  {
+    "numero": 61,
+    "variedades": [
+      "CTC 11",
+      "CTC 4",
+      "RB 5952"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 813.84,
+    "area_plantada": 1.1,
+    "area_colhida": 10.3,
+    "area_nao_colhida": 0,
+    "produtividade_media": 79.27,
+    "registros": 11
+  },
+  {
+    "numero": 62,
+    "variedades": [
+      "CTC 11",
+      "CTC 4",
+      "RB 5952"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 7339.4,
+    "area_plantada": 9.31,
+    "area_colhida": 100.73,
+    "area_nao_colhida": 0,
+    "produtividade_media": 72.84,
+    "registros": 11
+  },
+  {
+    "numero": 63,
+    "variedades": [
+      "CTC 11"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ],
+    "cortes": [],
+    "total_tonelada": 3715.13,
+    "area_plantada": 7.8,
+    "area_colhida": 46.72,
+    "area_nao_colhida": 0,
+    "produtividade_media": 79.51,
+    "registros": 6
+  },
+  {
+    "numero": 64,
+    "variedades": [
+      "CTC 11",
+      "CTC 9001"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 15134.99,
+    "area_plantada": 19.93,
+    "area_colhida": 188.38,
+    "area_nao_colhida": 0,
+    "produtividade_media": 79.04,
+    "registros": 12
+  },
+  {
+    "numero": 65,
+    "variedades": [
+      "CTC 11",
+      "CTC 9001"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 8541.17,
+    "area_plantada": 8.68,
+    "area_colhida": 103.45,
+    "area_nao_colhida": 0,
+    "produtividade_media": 82.59,
+    "registros": 12
+  },
+  {
+    "numero": 66,
+    "variedades": [
+      "CTC 11",
+      "CTC 9001"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 9425.05,
+    "area_plantada": 10.02,
+    "area_colhida": 112.77,
+    "area_nao_colhida": 0,
+    "produtividade_media": 83.46,
+    "registros": 12
+  },
+  {
+    "numero": 67,
+    "variedades": [
+      "CTC 11",
+      "CTC 9001"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 13683.12,
+    "area_plantada": 13.96,
+    "area_colhida": 166.29,
+    "area_nao_colhida": 0,
+    "produtividade_media": 82.27,
+    "registros": 12
+  },
+  {
+    "numero": 69,
+    "variedades": [
+      "CTC 11",
+      "CTC 9001"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 6744.79,
+    "area_plantada": 7.47,
+    "area_colhida": 87.19,
+    "area_nao_colhida": 0,
+    "produtividade_media": 77.23,
+    "registros": 12
+  },
+  {
+    "numero": 73,
+    "variedades": [
+      "CTC 11"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ],
+    "cortes": [],
+    "total_tonelada": 3036.53,
+    "area_plantada": 5.8,
+    "area_colhida": 40.6,
+    "area_nao_colhida": 0,
+    "produtividade_media": 74.79,
+    "registros": 7
+  },
+  {
+    "numero": 74,
+    "variedades": [
+      "CTC 11"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ],
+    "cortes": [],
+    "total_tonelada": 3988.55,
+    "area_plantada": 8.66,
+    "area_colhida": 51.94,
+    "area_nao_colhida": 0,
+    "produtividade_media": 76.79,
+    "registros": 6
+  },
+  {
+    "numero": 75,
+    "variedades": [
+      "CTC 11"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ],
+    "cortes": [],
+    "total_tonelada": 3583.52,
+    "area_plantada": 5.67,
+    "area_colhida": 33.82,
+    "area_nao_colhida": 0,
+    "produtividade_media": 105.86,
+    "registros": 6
+  },
+  {
+    "numero": 76,
+    "variedades": [
+      "CTC 11"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ],
+    "cortes": [],
+    "total_tonelada": 2021.03,
+    "area_plantada": 3.21,
+    "area_colhida": 19.19,
+    "area_nao_colhida": 0,
+    "produtividade_media": 105.7,
+    "registros": 6
+  },
+  {
+    "numero": 77,
+    "variedades": [
+      "CTC 11"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ],
+    "cortes": [],
+    "total_tonelada": 5869.95,
+    "area_plantada": 9.03,
+    "area_colhida": 54.18,
+    "area_nao_colhida": 0,
+    "produtividade_media": 108.34,
+    "registros": 6
+  },
+  {
+    "numero": 78,
+    "variedades": [
+      "CTC 11"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ],
+    "cortes": [],
+    "total_tonelada": 1968.94,
+    "area_plantada": 3.88,
+    "area_colhida": 23.28,
+    "area_nao_colhida": 0,
+    "produtividade_media": 84.58,
+    "registros": 6
+  },
+  {
+    "numero": 79,
+    "variedades": [
+      "CTC 11",
+      "CTC 4"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 11712.31,
+    "area_plantada": 24.95,
+    "area_colhida": 163.22,
+    "area_nao_colhida": 0,
+    "produtividade_media": 63.55,
+    "registros": 12
+  },
+  {
+    "numero": 80,
+    "variedades": [
+      "CTC 11"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ],
+    "cortes": [],
+    "total_tonelada": 2299.21,
+    "area_plantada": 7.3,
+    "area_colhida": 43.8,
+    "area_nao_colhida": 0,
+    "produtividade_media": 52.49,
+    "registros": 6
+  },
+  {
+    "numero": 81,
+    "variedades": [
+      "CTC 11"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ],
+    "cortes": [],
+    "total_tonelada": 2311.29,
+    "area_plantada": 5.89,
+    "area_colhida": 41.23,
+    "area_nao_colhida": 0,
+    "produtividade_media": 56.06,
+    "registros": 7
+  },
+  {
+    "numero": 82,
+    "variedades": [
+      "CTC 11"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ],
+    "cortes": [],
+    "total_tonelada": 2228.06,
+    "area_plantada": 5.46,
+    "area_colhida": 38.22,
+    "area_nao_colhida": 0,
+    "produtividade_media": 59.98,
+    "registros": 8
+  },
+  {
+    "numero": 83,
+    "variedades": [
+      "CTC 11",
+      "CTC 4"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 5402.94,
+    "area_plantada": 8.25,
+    "area_colhida": 72.55,
+    "area_nao_colhida": 0,
+    "produtividade_media": 76.03,
+    "registros": 11
+  },
+  {
+    "numero": 84,
+    "variedades": [
+      "CTC 11",
+      "CTC 4"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 8469.44,
+    "area_plantada": 16.54,
+    "area_colhida": 114.91,
+    "area_nao_colhida": 0,
+    "produtividade_media": 72.04,
+    "registros": 12
+  },
+  {
+    "numero": 85,
+    "variedades": [
+      "CTC 11",
+      "CTC 4",
+      "RB 5952"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 2917.12,
+    "area_plantada": 3.67,
+    "area_colhida": 38.24,
+    "area_nao_colhida": 0,
+    "produtividade_media": 77.07,
+    "registros": 11
+  },
+  {
+    "numero": 86,
+    "variedades": [
+      "CTC 11",
+      "CTC 4",
+      "RB 5014"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 2195.71,
+    "area_plantada": 3.01,
+    "area_colhida": 30.71,
+    "area_nao_colhida": 0,
+    "produtividade_media": 72.26,
+    "registros": 11
+  },
+  {
+    "numero": 87,
+    "variedades": [
+      "CTC 11",
+      "CTC 4"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 16965.11,
+    "area_plantada": 20.76,
+    "area_colhida": 246.46,
+    "area_nao_colhida": 0,
+    "produtividade_media": 68.79,
+    "registros": 12
+  },
+  {
+    "numero": 88,
+    "variedades": [
+      "CTC 14"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018
+    ],
+    "cortes": [],
+    "total_tonelada": 1007.64,
+    "area_plantada": 4.16,
+    "area_colhida": 16.64,
+    "area_nao_colhida": 0,
+    "produtividade_media": 60.55,
+    "registros": 4
+  },
+  {
+    "numero": 89,
+    "variedades": [
+      "CTC 14"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018
+    ],
+    "cortes": [],
+    "total_tonelada": 958.65,
+    "area_plantada": 3.3,
+    "area_colhida": 13.2,
+    "area_nao_colhida": 0,
+    "produtividade_media": 72.62,
+    "registros": 4
+  },
+  {
+    "numero": 90,
+    "variedades": [
+      "CTC 14"
+    ],
+    "anos": [
+      2015,
+      2016,
+      2017,
+      2018
+    ],
+    "cortes": [],
+    "total_tonelada": 2308.41,
+    "area_plantada": 9.75,
+    "area_colhida": 39.0,
+    "area_nao_colhida": 0,
+    "produtividade_media": 59.19,
+    "registros": 4
+  },
+  {
+    "numero": 91,
+    "variedades": [
+      "RB 6928"
+    ],
+    "anos": [
+      2017,
+      2018,
+      2019,
+      2020
+    ],
+    "cortes": [],
+    "total_tonelada": 14202.01,
+    "area_plantada": 48.55,
+    "area_colhida": 156.66,
+    "area_nao_colhida": 0,
+    "produtividade_media": 94.98,
+    "registros": 4
+  },
+  {
+    "numero": 92,
+    "variedades": [
+      "RB 5952",
+      "RB 6928"
+    ],
+    "anos": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 37967.29,
+    "area_plantada": 96.93,
+    "area_colhida": 427.13,
+    "area_nao_colhida": 0,
+    "produtividade_media": 78.71,
+    "registros": 8
+  },
+  {
+    "numero": 93,
+    "variedades": [
+      "CTC 4",
+      "CTC 9003"
+    ],
+    "anos": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 15977.87,
+    "area_plantada": 27.53,
+    "area_colhida": 181.63,
+    "area_nao_colhida": 0,
+    "produtividade_media": 92.18,
+    "registros": 7
+  },
+  {
+    "numero": 94,
+    "variedades": [
+      "CTC 4"
+    ],
+    "anos": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 19589.4,
+    "area_plantada": 36.92,
+    "area_colhida": 240.18,
+    "area_nao_colhida": 0,
+    "produtividade_media": 80.86,
+    "registros": 7
+  },
+  {
+    "numero": 95,
+    "variedades": [
+      "CTC 4",
+      "CTC 9003"
+    ],
+    "anos": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 21675.22,
+    "area_plantada": 38.32,
+    "area_colhida": 261.14,
+    "area_nao_colhida": 0,
+    "produtividade_media": 83.09,
+    "registros": 7
+  },
+  {
+    "numero": 96,
+    "variedades": [
+      "CTC 11",
+      "RB 5952"
+    ],
+    "anos": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 5032.5,
+    "area_plantada": 12.28,
+    "area_colhida": 61.25,
+    "area_nao_colhida": 0,
+    "produtividade_media": 68.55,
+    "registros": 6
+  },
+  {
+    "numero": 97,
+    "variedades": [
+      "CTC 4",
+      "CTC 9003"
+    ],
+    "anos": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 2458.43,
+    "area_plantada": 6.47,
+    "area_colhida": 31.06,
+    "area_nao_colhida": 0,
+    "produtividade_media": 65.99,
+    "registros": 6
+  },
+  {
+    "numero": 98,
+    "variedades": [
+      "CTC 4",
+      "RB 5014"
+    ],
+    "anos": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 4733.86,
+    "area_plantada": 14.93,
+    "area_colhida": 74.21,
+    "area_nao_colhida": 0,
+    "produtividade_media": 52.84,
+    "registros": 6
+  },
+  {
+    "numero": 99,
+    "variedades": [
+      "CTC 11",
+      "RB 5952"
+    ],
+    "anos": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 12274.62,
+    "area_plantada": 31.11,
+    "area_colhida": 154.9,
+    "area_nao_colhida": 0,
+    "produtividade_media": 66.18,
+    "registros": 6
+  },
+  {
+    "numero": 100,
+    "variedades": [
+      "CTC 11",
+      "CTC 4",
+      "RB 5952"
+    ],
+    "anos": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 8357.65,
+    "area_plantada": 19.1,
+    "area_colhida": 113.96,
+    "area_nao_colhida": 0,
+    "produtividade_media": 73.35,
+    "registros": 6
+  },
+  {
+    "numero": 101,
+    "variedades": [
+      "CTC 11",
+      "CTC 9003"
+    ],
+    "anos": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 10557.5,
+    "area_plantada": 24.85,
+    "area_colhida": 149.0,
+    "area_nao_colhida": 0,
+    "produtividade_media": 70.86,
+    "registros": 6
+  },
+  {
+    "numero": 102,
+    "variedades": [
+      "CTC 4",
+      "CTC 9002"
+    ],
+    "anos": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 11618.83,
+    "area_plantada": 26.5,
+    "area_colhida": 158.74,
+    "area_nao_colhida": 0,
+    "produtividade_media": 73.19,
+    "registros": 6
+  },
+  {
+    "numero": 103,
+    "variedades": [
+      "CTC 11",
+      "CTC 20",
+      "CTC 9003"
+    ],
+    "anos": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 5365.86,
+    "area_plantada": 12.59,
+    "area_colhida": 73.34,
+    "area_nao_colhida": 0,
+    "produtividade_media": 73.14,
+    "registros": 6
+  },
+  {
+    "numero": 104,
+    "variedades": [
+      "CTC 4",
+      "RB 5952"
+    ],
+    "anos": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 5638.35,
+    "area_plantada": 19.32,
+    "area_colhida": 96.44,
+    "area_nao_colhida": 0,
+    "produtividade_media": 48.64,
+    "registros": 6
+  },
+  {
+    "numero": 105,
+    "variedades": [
+      "CTC 4"
+    ],
+    "anos": [
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 17258.36,
+    "area_plantada": 38.37,
+    "area_colhida": 191.21,
+    "area_nao_colhida": 0,
+    "produtividade_media": 90.23,
+    "registros": 5
+  },
+  {
+    "numero": 106,
+    "variedades": [
+      "CTC 9001",
+      "RB 5014",
+      "RB 5952"
+    ],
+    "anos": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 5076.71,
+    "area_plantada": 12.29,
+    "area_colhida": 64.7,
+    "area_nao_colhida": 0,
+    "produtividade_media": 80.22,
+    "registros": 6
+  },
+  {
+    "numero": 108,
+    "variedades": [
+      "CTC 9001"
+    ],
+    "anos": [
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 6215.49,
+    "area_plantada": 13.48,
+    "area_colhida": 67.4,
+    "area_nao_colhida": 0,
+    "produtividade_media": 92.22,
+    "registros": 5
+  },
+  {
+    "numero": 109,
+    "variedades": [
+      "CTC 9001"
+    ],
+    "anos": [
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cortes": [],
+    "total_tonelada": 13765.54,
+    "area_plantada": 45.7,
+    "area_colhida": 137.1,
+    "area_nao_colhida": 0,
+    "produtividade_media": 65.71,
+    "registros": 5
+  }
+]

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios - AFB Itapira</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="images/logoafb.jpg" alt="AFB Logo" class="logo-img">
+                <h1 class="logo">AFB Itapira - Consolidação de Cana</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">🏠 Início</a></li>
+                <li><a href="dashboard.html" class="nav-link">📊 Dashboard</a></li>
+                <li><a href="relatorios.html" class="nav-link active">📋 Relatórios</a></li>
+                <li><a href="analise.html" class="nav-link">📈 Análise</a></li>
+                <li><a href="gerenciamento.html" class="nav-link">⚙️ Gerenciamento</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h2>📋 Relatórios Consolidados</h2>
+
+        <div id="carregando" class="loading">
+            <div class="spinner"></div>
+            <p>Carregando dados...</p>
+        </div>
+
+        <div id="conteudo" style="display: none;">
+            <!-- Filtros e opções de relatório -->
+            <div class="filters">
+                <div class="filter-group">
+                    <label>Tipo de Relatório</label>
+                    <select id="tipoRelatorio">
+                        <option value="geral">Geral</option>
+                        <option value="talhao">Por Talhão</option>
+                        <option value="variedade">Por Variedade</option>
+                        <option value="corte">Por Corte</option>
+                        <option value="ano">Por Ano</option>
+                    </select>
+                </div>
+                <button onclick="gerarRelatorio()">Gerar Relatório</button>
+                <button onclick="exportarExcel()" class="secondary">📥 Exportar Excel</button>
+                <button onclick="imprimirRelatorio()" class="secondary">🖨️ Imprimir</button>
+            </div>
+
+            <!-- Relatório Geral -->
+            <div id="relatorioGeral" class="chart-container" style="display: none;">
+                <h3>Relatório Geral de Colheita</h3>
+                <table>
+                    <tr>
+                        <td><strong>Total de Toneladas Colhidas:</strong></td>
+                        <td id="relTotalTonelada">-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Área Total Colhida:</strong></td>
+                        <td id="relTotalArea">-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Produtividade Média:</strong></td>
+                        <td id="relProdMedia">-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total de Talhões:</strong></td>
+                        <td id="relNumTalhoes">-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total de Registros:</strong></td>
+                        <td id="relNumRegistros">-</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Tabela de Relatório -->
+            <div class="table-container" id="tabelaRelatorio" style="display: none; margin-top: 2rem;">
+                <table id="tabelaDados">
+                    <thead id="tabelaCabecalho"></thead>
+                    <tbody id="tabelaCorpo"></tbody>
+                </table>
+            </div>
+
+            <!-- Resumo após gerar -->
+            <div id="resumoRelatorio" style="display: none; margin-top: 2rem;">
+                <div class="chart-container">
+                    <h3>📊 Resumo do Relatório</h3>
+                    <p id="resumoTexto"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 AFB Holding - Itapira, SP | Sistema de Consolidação de Dados</p>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/dados.js"></script>
+    <script>
+        let relatorioAtual = null;
+
+        async function inicializarRelatorios() {
+            let tentativas = 0;
+            while (dadosColheita.length === 0 && tentativas < 30) {
+                await new Promise(resolve => setTimeout(resolve, 100));
+                tentativas++;
+            }
+
+            if (dadosColheita.length === 0) {
+                document.getElementById('carregando').innerHTML = '<div class="alert alert-error">Erro ao carregar dados.</div>';
+                return;
+            }
+
+            document.getElementById('carregando').style.display = 'none';
+            document.getElementById('conteudo').style.display = 'block';
+        }
+
+        function gerarRelatorio() {
+            const tipo = document.getElementById('tipoRelatorio').value;
+
+            document.getElementById('relatorioGeral').style.display = 'none';
+            document.getElementById('tabelaRelatorio').style.display = 'none';
+            document.getElementById('resumoRelatorio').style.display = 'none';
+
+            switch(tipo) {
+                case 'geral':
+                    gerarRelatorioGeral();
+                    break;
+                case 'talhao':
+                    gerarRelatorioPorTalhao();
+                    break;
+                case 'variedade':
+                    gerarRelatorioPorVariedade();
+                    break;
+                case 'corte':
+                    gerarRelatorioPorCorte();
+                    break;
+                case 'ano':
+                    gerarRelatorioPorAno();
+                    break;
+            }
+
+            document.getElementById('tabelaRelatorio').style.display = 'block';
+            document.getElementById('resumoRelatorio').style.display = 'block';
+        }
+
+        function gerarRelatorioGeral() {
+            const consolidacao = obterConsolidacaoGeral();
+            document.getElementById('relatorioGeral').style.display = 'block';
+            document.getElementById('relTotalTonelada').textContent = consolidacao.totalToneladaColhida + ' TCH';
+            document.getElementById('relTotalArea').textContent = consolidacao.totalAreaColhida + ' ha';
+            document.getElementById('relProdMedia').textContent = consolidacao.produtividadeMedia + ' TCH/ha';
+            document.getElementById('numTalhoes').textContent = consolidacao.numTalhoes;
+            document.getElementById('relNumRegistros').textContent = consolidacao.numRegistros;
+
+            // Tabela de resumo
+            const cabecalho = document.getElementById('tabelaCabecalho');
+            const corpo = document.getElementById('tabelaCorpo');
+            cabecalho.innerHTML = '<tr><th>Métrica</th><th>Valor</th></tr>';
+            corpo.innerHTML = '';
+
+            const metricas = [
+                ['Total de Toneladas', consolidacao.totalToneladaColhida + ' TCH'],
+                ['Área Total', consolidacao.totalAreaColhida + ' ha'],
+                ['Produtividade Média', consolidacao.produtividadeMedia + ' TCH/ha'],
+                ['Total de Talhões', consolidacao.numTalhoes],
+                ['Total de Registros', consolidacao.numRegistros]
+            ];
+
+            metricas.forEach(m => {
+                const linha = document.createElement('tr');
+                linha.innerHTML = `<td><strong>${m[0]}</strong></td><td>${m[1]}</td>`;
+                corpo.appendChild(linha);
+            });
+
+            relatorioAtual = consolidacao;
+            document.getElementById('resumoTexto').textContent =
+                `Consolidação geral de ${consolidacao.numRegistros} registros de colheita em ${consolidacao.numTalhoes} talhões, totalizando ${consolidacao.totalToneladaColhida} TCH com produtividade média de ${consolidacao.produtividadeMedia} TCH/ha.`;
+        }
+
+        function gerarRelatorioPorTalhao() {
+            const talhoes = obterConsolidacaoPorTalhao();
+            const cabecalho = document.getElementById('tabelaCabecalho');
+            const corpo = document.getElementById('tabelaCorpo');
+
+            cabecalho.innerHTML = `
+                <tr>
+                    <th>Talhão</th>
+                    <th>Total (TCH)</th>
+                    <th>Área (ha)</th>
+                    <th>Produtividade</th>
+                    <th>Registros</th>
+                    <th>Variedades</th>
+                </tr>
+            `;
+            corpo.innerHTML = '';
+
+            talhoes.forEach(t => {
+                const linha = document.createElement('tr');
+                linha.innerHTML = `
+                    <td><strong>${t.talhao}</strong></td>
+                    <td>${parseFloat(t.totalTonelada).toFixed(2)}</td>
+                    <td>${parseFloat(t.totalArea).toFixed(2)}</td>
+                    <td>${t.produtividadeMedia}</td>
+                    <td>${t.registros}</td>
+                    <td>${t.variedades.join(', ')}</td>
+                `;
+                corpo.appendChild(linha);
+            });
+
+            relatorioAtual = talhoes;
+            document.getElementById('resumoTexto').textContent =
+                `Relatório detalhado de ${talhoes.length} talhões com produção consolidada.`;
+        }
+
+        function gerarRelatorioPorVariedade() {
+            const variedades = obterConsolidacaoPorVariedade();
+            const cabecalho = document.getElementById('tabelaCabecalho');
+            const corpo = document.getElementById('tabelaCorpo');
+
+            cabecalho.innerHTML = `
+                <tr>
+                    <th>Variedade</th>
+                    <th>Total (TCH)</th>
+                    <th>Área (ha)</th>
+                    <th>Produtividade</th>
+                    <th>Registros</th>
+                    <th>Talhões</th>
+                </tr>
+            `;
+            corpo.innerHTML = '';
+
+            variedades.forEach(v => {
+                const linha = document.createElement('tr');
+                linha.innerHTML = `
+                    <td><strong>${v.variedade}</strong></td>
+                    <td>${parseFloat(v.totalTonelada).toFixed(2)}</td>
+                    <td>${parseFloat(v.totalArea).toFixed(2)}</td>
+                    <td>${v.produtividadeMedia}</td>
+                    <td>${v.registros}</td>
+                    <td>${v.talhoes.join(', ')}</td>
+                `;
+                corpo.appendChild(linha);
+            });
+
+            relatorioAtual = variedades;
+            document.getElementById('resumoTexto').textContent =
+                `Relatório de ${variedades.length} variedades de cana plantadas.`;
+        }
+
+        function gerarRelatorioPorCorte() {
+            const cortes = obterConsolidacaoPorCorte();
+            const cabecalho = document.getElementById('tabelaCabecalho');
+            const corpo = document.getElementById('tabelaCorpo');
+
+            cabecalho.innerHTML = `
+                <tr>
+                    <th>Corte</th>
+                    <th>Total (TCH)</th>
+                    <th>Área (ha)</th>
+                    <th>Produtividade</th>
+                    <th>Registros</th>
+                </tr>
+            `;
+            corpo.innerHTML = '';
+
+            cortes.forEach(c => {
+                const linha = document.createElement('tr');
+                linha.innerHTML = `
+                    <td><strong>Corte ${c.corte}</strong></td>
+                    <td>${parseFloat(c.totalTonelada).toFixed(2)}</td>
+                    <td>${parseFloat(c.totalArea).toFixed(2)}</td>
+                    <td>${c.produtividadeMedia}</td>
+                    <td>${c.registros}</td>
+                `;
+                corpo.appendChild(linha);
+            });
+
+            relatorioAtual = cortes;
+            document.getElementById('resumoTexto').textContent =
+                `Relatório de ${cortes.length} diferentes cortes de cana.`;
+        }
+
+        function gerarRelatorioPorAno() {
+            const anos = obterConsolidacaoPorAno();
+            const cabecalho = document.getElementById('tabelaCabecalho');
+            const corpo = document.getElementById('tabelaCorpo');
+
+            cabecalho.innerHTML = `
+                <tr>
+                    <th>Ano</th>
+                    <th>Total (TCH)</th>
+                    <th>Área (ha)</th>
+                    <th>Produtividade</th>
+                    <th>Registros</th>
+                </tr>
+            `;
+            corpo.innerHTML = '';
+
+            anos.forEach(a => {
+                const linha = document.createElement('tr');
+                linha.innerHTML = `
+                    <td><strong>${a.ano}</strong></td>
+                    <td>${parseFloat(a.totalTonelada).toFixed(2)}</td>
+                    <td>${parseFloat(a.totalArea).toFixed(2)}</td>
+                    <td>${a.produtividadeMedia}</td>
+                    <td>${a.registros}</td>
+                `;
+                corpo.appendChild(linha);
+            });
+
+            relatorioAtual = anos;
+            document.getElementById('resumoTexto').textContent =
+                `Relatório de ${anos.length} anos de colheita.`;
+        }
+
+        function exportarExcel() {
+            if (!relatorioAtual) {
+                alert('Gere um relatório primeiro!');
+                return;
+            }
+
+            const tipo = document.getElementById('tipoRelatorio').value;
+            const nomeArquivo = `Relatorio_${tipo}_${new Date().toISOString().split('T')[0]}.xlsx`;
+
+            const ws = XLSX.utils.json_to_sheet(relatorioAtual);
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, "Relatório");
+            XLSX.writeFile(wb, nomeArquivo);
+        }
+
+        function imprimirRelatorio() {
+            window.print();
+        }
+
+        document.addEventListener('DOMContentLoaded', inicializarRelatorios);
+    </script>
+</body>
+</html>

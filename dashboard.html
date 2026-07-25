@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - AFB Itapira</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f7fa; }
+        .navbar { background: #2c3e50; color: white; padding: 15px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 30px; z-index: 1000; width: 100%; }
+        .navbar h1 { font-size: 1.5rem; flex: 1; margin: 0; color: white; line-height: 1; font-weight: bold; }
+        .navbar ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
+        .navbar li { list-style: none; }
+        .navbar a { color: white; text-decoration: none; padding: 8px 12px; border-radius: 4px; transition: 0.2s; display: inline-block; line-height: 1; font-weight: 600; }
+        .navbar a:hover { background: rgba(255,255,255,0.1); }
+        .navbar a.active { background: #2ecc71; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 30px 20px; }
+        .page-title { font-size: 2rem; color: #2c3e50; margin-bottom: 30px; }
+        .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 40px; }
+        .kpi-card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 5px solid #2ecc71; }
+        .kpi-label { font-size: 0.9rem; color: #7f8c8d; text-transform: uppercase; margin-bottom: 10px; }
+        .kpi-value { font-size: 2.5rem; font-weight: bold; color: #2c3e50; }
+        .kpi-unit { font-size: 0.9rem; color: #95a5a6; }
+        .charts-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; margin-bottom: 40px; }
+        .chart-box { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); height: 400px; display: flex; flex-direction: column; }
+        .chart-title { font-size: 1.2rem; font-weight: bold; color: #2c3e50; margin-bottom: 20px; }
+        .chart-canvas { flex: 1; position: relative; }
+        .status-container { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 40px; }
+        .status-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .status-item { padding: 20px; border-radius: 8px; text-align: center; color: white; font-weight: bold; }
+        .status-excelente { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+        .status-bom { background: linear-gradient(135deg, #4ECDC4, #3ba8a0); }
+        .status-medio { background: linear-gradient(135deg, #FFA500, #e89400); }
+        .status-baixo { background: linear-gradient(135deg, #FF6B6B, #e63946); }
+        .status-numero { font-size: 2.5rem; display: block; margin: 10px 0; }
+        .activities-container { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .activities-table { width: 100%; border-collapse: collapse; }
+        .activities-table th { background: #f8f9fa; padding: 12px; text-align: left; font-weight: bold; color: #2c3e50; border-bottom: 2px solid #e0e0e0; }
+        .activities-table td { padding: 12px; border-bottom: 1px solid #e0e0e0; color: #555; }
+        .activities-table tr:hover { background: #f8f9fa; }
+        .talhao-badge { background: #2ecc71; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1 style="font-weight: 900 !important;">📊 AFB Itapira - Dashboard</h1>
+        <ul>
+            <li><a href="dashboard.html" class="active">Dashboard</a></li>
+            <li><a href="mapa_interativo.html">Mapa</a></li>
+            <li><a href="analise_avancada.html">Análise</a></li>
+            <li><a href="index.html">Início</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2 class="page-title">📊 Dashboard de Consolidação</h2>
+        <div class="kpis" id="kpis"></div>
+        <div class="charts-container">
+            <div class="chart-box"><div class="chart-title">📊 Distribuição de Talhões</div><div class="chart-canvas"><canvas id="chartDistribuicao"></canvas></div></div>
+            <div class="chart-box"><div class="chart-title">🌾 Produtividade por Variedade</div><div class="chart-canvas"><canvas id="chartVariedade"></canvas></div></div>
+            <div class="chart-box"><div class="chart-title">📈 Tendência de Produtividade</div><div class="chart-canvas"><canvas id="chartTendencia"></canvas></div></div>
+            <div class="chart-box"><div class="chart-title">📍 Média TCH por Corte</div><div class="chart-canvas"><canvas id="chartCorte"></canvas></div></div>
+        </div>
+        <div class="status-container">
+            <h3 style="margin-bottom: 20px;">🎯 Status dos Talhões</h3>
+            <div class="status-grid" id="statusGrid"></div>
+        </div>
+        <div class="activities-container">
+            <h3 style="margin-bottom: 20px;">📋 Últimos Cortes (Top 20)</h3>
+            <table class="activities-table"><thead><tr><th>Talhão</th><th>Variedade</th><th>Corte</th><th>Ano</th><th>TCH/ha</th><th>Área (ha)</th></tr></thead><tbody id="activitiesTbody"></tbody></table>
+        </div>
+    </div>
+    <script src="js/setup.js"></script>
+    <script src="js/dados_embedded.js"></script>
+    <script src="js/talhoes_embedded.js"></script>
+    <script>
+        let chartDistribuicao, chartVariedade, chartTendencia, chartCorte;
+        let filtroAtivo = null;
+        let tipoFiltro = null;
+
+        function init() {
+            let t = 0;
+            const i = setInterval(() => {
+                t++;
+                if (typeof dadosColheita !== 'undefined' && dadosColheita.length > 0) {
+                    clearInterval(i);
+                    calcularKPIs();
+                    criarGraficos();
+                    atualizarStatus();
+                    preencherAtividades();
+                } else if (t >= 50) clearInterval(i);
+            }, 100);
+        }
+        function obterDadosFiltrados() {
+            if (!filtroAtivo) return dadosColheita;
+            const c = CONFIG.columns;
+            return dadosColheita.filter(r => {
+                if (tipoFiltro === 'produtividade') {
+                    const p = parseFloat(r[c.produtividade]);
+                    if (filtroAtivo === 'excelente') return p >= 100;
+                    if (filtroAtivo === 'bom') return p >= 80 && p < 100;
+                    if (filtroAtivo === 'medio') return p >= 60 && p < 80;
+                    if (filtroAtivo === 'baixo') return p < 60;
+                }
+                if (tipoFiltro === 'variedade') return r[c.variedade] === filtroAtivo;
+                if (tipoFiltro === 'ano') return r[c.ano] === filtroAtivo;
+                if (tipoFiltro === 'corte') return String(r[c.numCorte]).replace(',', '.') === filtroAtivo;
+                return true;
+            });
+        }
+
+        function setarFiltro(tipo, valor) {
+            if (tipoFiltro === tipo && filtroAtivo === valor) {
+                tipoFiltro = null;
+                filtroAtivo = null;
+            } else {
+                tipoFiltro = tipo;
+                filtroAtivo = valor;
+            }
+            calcularKPIs();
+            criarGraficos();
+            atualizarStatus();
+            preencherAtividades();
+        }
+
+        function calcularKPIs() {
+            const c = CONFIG.columns;
+            const dados = obterDadosFiltrados();
+            let tP = 0, tC = 0, tA = 0, n = 0;
+            dados.forEach(r => {
+                tP += parseFloat(r[c.produtividade]) || 0;
+                tC += parseFloat(r[c.toneladaColhida]) || 0;
+                tA += parseFloat(r[c.areaColhida]) || 0;
+                n++;
+            });
+            let filtroTexto = '';
+            if (filtroAtivo) {
+                let nomeFiltro = filtroAtivo;
+                if (tipoFiltro === 'produtividade') nomeFiltro = filtroAtivo.toUpperCase();
+                if (tipoFiltro === 'variedade') nomeFiltro = `Variedade: ${filtroAtivo}`;
+                if (tipoFiltro === 'ano') nomeFiltro = `Ano: ${filtroAtivo}`;
+                if (tipoFiltro === 'corte') nomeFiltro = `Corte: ${filtroAtivo}`;
+                filtroTexto = `<div style="text-align: center; margin-bottom: 10px; font-size: 0.9rem; color: #2ecc71; font-weight: bold;">🔍 ${nomeFiltro}</div>`;
+            }
+            document.getElementById('kpis').innerHTML = filtroTexto + `
+                <div class="kpi-card"><div class="kpi-label">Produtividade</div><div class="kpi-value">${n > 0 ? (tP/n).toFixed(2) : '0'}</div><div class="kpi-unit">TCH/ha</div></div>
+                <div class="kpi-card"><div class="kpi-label">Total Colhido</div><div class="kpi-value">${(tC/1000).toFixed(1)}</div><div class="kpi-unit">mil TCH</div></div>
+                <div class="kpi-card"><div class="kpi-label">Área Colhida</div><div class="kpi-value">${tA.toFixed(0)}</div><div class="kpi-unit">ha</div></div>
+                <div class="kpi-card"><div class="kpi-label">Registros</div><div class="kpi-value">${n}</div><div class="kpi-unit">cortes</div></div>
+            `;
+        }
+        function criarGraficos() {
+            const c = CONFIG.columns;
+            const dados = obterDadosFiltrados();
+            let e=0, b=0, m=0, l=0;
+            dados.forEach(r => {
+                const p = parseFloat(r[c.produtividade]);
+                if (p >= 100) e++; else if (p >= 80) b++; else if (p >= 60) m++; else l++;
+            });
+            if (chartDistribuicao) chartDistribuicao.destroy();
+            chartDistribuicao = new Chart(document.getElementById('chartDistribuicao').getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Excelente (>100)', 'Bom (80-100)', 'Médio (60-80)', 'Baixo (<60)'],
+                    datasets: [{data: [e,b,m,l], backgroundColor: ['#2ecc71', '#4ECDC4', '#FFA500', '#FF6B6B']}]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'bottom' } },
+                    onClick: (evt, activeElements) => {
+                        if (activeElements.length > 0) {
+                            const idx = activeElements[0].index;
+                            const categorias = ['excelente', 'bom', 'medio', 'baixo'];
+                            setarFiltro('produtividade', categorias[idx]);
+                        }
+                    }
+                }
+            });
+            const vm = {};
+            dados.forEach(r => {
+                const v = r[c.variedade];
+                const p = parseFloat(r[c.produtividade]) || 0;
+                if (!vm[v]) vm[v] = { t: 0, n: 0 };
+                vm[v].t += p; vm[v].n++;
+            });
+            const vs = Object.keys(vm).sort();
+            if (chartVariedade) chartVariedade.destroy();
+            chartVariedade = new Chart(document.getElementById('chartVariedade').getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: vs,
+                    datasets: [{label: 'TCH/ha', data: vs.map(v => (vm[v].t/vm[v].n).toFixed(2)), backgroundColor: '#3498db'}]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: { y: { beginAtZero: true } },
+                    plugins: { legend: { display: false } },
+                    onClick: (evt, activeElements) => {
+                        if (activeElements.length > 0) {
+                            const idx = activeElements[0].index;
+                            setarFiltro('variedade', vs[idx]);
+                        }
+                    }
+                }
+            });
+            const am = {};
+            dados.forEach(r => {
+                const a = r[c.ano];
+                const p = parseFloat(r[c.produtividade]) || 0;
+                if (!am[a]) am[a] = { t: 0, n: 0 };
+                am[a].t += p; am[a].n++;
+            });
+            const as = Object.keys(am).sort((x, y) => x - y);
+            if (chartTendencia) chartTendencia.destroy();
+            chartTendencia = new Chart(document.getElementById('chartTendencia').getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: as,
+                    datasets: [{
+                        label: 'Média',
+                        data: as.map(a => (am[a].t/am[a].n).toFixed(2)),
+                        borderColor: '#2ecc71',
+                        backgroundColor: 'rgba(46, 204, 113, 0.1)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4,
+                        pointRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: { y: { beginAtZero: true } },
+                    plugins: { legend: { display: false } },
+                    onClick: (evt, activeElements) => {
+                        if (activeElements.length > 0) {
+                            const idx = activeElements[0].index;
+                            setarFiltro('ano', as[idx]);
+                        }
+                    }
+                }
+            });
+            const cm = {};
+            dados.forEach(r => {
+                const co = parseFloat(String(r[c.numCorte]).replace(',', '.'));
+                const p = parseFloat(r[c.produtividade]) || 0;
+                if (!isNaN(co)) {
+                    if (!cm[co]) cm[co] = { t: 0, n: 0 };
+                    cm[co].t += p; cm[co].n++;
+                }
+            });
+            const cs = Object.keys(cm).map(Number).sort((x, y) => x - y);
+            if (chartCorte) chartCorte.destroy();
+            chartCorte = new Chart(document.getElementById('chartCorte').getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: cs.map(co => 'Corte ' + co),
+                    datasets: [{label: 'TCH/ha', data: cs.map(co => (cm[co].t/cm[co].n).toFixed(2)), backgroundColor: '#9b59b6'}]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: { y: { beginAtZero: true } },
+                    plugins: { legend: { display: false } },
+                    onClick: (evt, activeElements) => {
+                        if (activeElements.length > 0) {
+                            const idx = activeElements[0].index;
+                            setarFiltro('corte', String(cs[idx]));
+                        }
+                    }
+                }
+            });
+        }
+        function atualizarStatus() {
+            const c = CONFIG.columns;
+            const dadosTodos = dadosColheita;
+            let e=0, b=0, m=0, l=0;
+            dadosTodos.forEach(r => {
+                const p = parseFloat(r[c.produtividade]);
+                if (p >= 100) e++; else if (p >= 80) b++; else if (p >= 60) m++; else l++;
+            });
+            const ativo = tipoFiltro === 'produtividade';
+            document.getElementById('statusGrid').innerHTML = `
+                <div class="status-item status-excelente" style="cursor: pointer; opacity: ${ativo && filtroAtivo === 'excelente' ? 1 : 0.7}; border: ${ativo && filtroAtivo === 'excelente' ? '3px solid white' : 'none'};" onclick="setarFiltro('produtividade', 'excelente');"><span class="status-numero">${e}</span><span>Excelente (>100)</span></div>
+                <div class="status-item status-bom" style="cursor: pointer; opacity: ${ativo && filtroAtivo === 'bom' ? 1 : 0.7}; border: ${ativo && filtroAtivo === 'bom' ? '3px solid white' : 'none'};" onclick="setarFiltro('produtividade', 'bom');"><span class="status-numero">${b}</span><span>Bom (80-100)</span></div>
+                <div class="status-item status-medio" style="cursor: pointer; opacity: ${ativo && filtroAtivo === 'medio' ? 1 : 0.7}; border: ${ativo && filtroAtivo === 'medio' ? '3px solid white' : 'none'};" onclick="setarFiltro('produtividade', 'medio');"><span class="status-numero">${m}</span><span>Médio (60-80)</span></div>
+                <div class="status-item status-baixo" style="cursor: pointer; opacity: ${ativo && filtroAtivo === 'baixo' ? 1 : 0.7}; border: ${ativo && filtroAtivo === 'baixo' ? '3px solid white' : 'none'};" onclick="setarFiltro('produtividade', 'baixo');"><span class="status-numero">${l}</span><span>Baixo (<60)</span></div>
+            `;
+        }
+        function preencherAtividades() {
+            const c = CONFIG.columns;
+            const dados = obterDadosFiltrados();
+            const at = dados.sort((x, y) => parseInt(y[c.ano]) - parseInt(x[c.ano])).slice(0, 20);
+            const tb = document.getElementById('activitiesTbody');
+            tb.innerHTML = at.map(r => `
+                <tr>
+                    <td><span class="talhao-badge">Talhão ${r[c.talhao]}</span></td>
+                    <td>${r[c.variedade]}</td>
+                    <td>Corte ${r[c.numCorte]}</td>
+                    <td>${r[c.ano]}</td>
+                    <td><strong>${parseFloat(r[c.produtividade]).toFixed(2)}</strong></td>
+                    <td>${parseFloat(r[c.areaColhida]).toFixed(2)}</td>
+                </tr>
+            `).join('');
+        }
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
