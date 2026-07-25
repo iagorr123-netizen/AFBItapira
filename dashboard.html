@@ -196,13 +196,38 @@
         function calcularKPIs() {
             const c = CONFIG.columns;
             const dados = obterDadosFiltrados();
-            let tP = 0, tC = 0, tA = 0, n = 0;
+            let tC = 0, tA = 0, n = 0;
+            let n_talhoes = 0;
+            const talhoesMedia = {};
+
+            // Calcular produtividade média por talhão único
             dados.forEach(r => {
-                tP += parseFloat(r[c.produtividade]) || 0;
-                tC += parseFloat(r[c.toneladaColhida]) || 0;
-                tA += parseFloat(r[c.areaColhida]) || 0;
+                const talhao = r[c.talhao];
+                const prod = parseFloat(r[c.produtividade]) || 0;
+                const toneladaColhida = parseFloat(r[c.toneladaColhida]) || 0;
+                const areaColhida = parseFloat(r[c.areaColhida]) || 0;
+
+                tC += toneladaColhida;
+                tA += areaColhida;
                 n++;
+
+                if (!talhoesMedia[talhao]) {
+                    talhoesMedia[talhao] = { sum: 0, count: 0 };
+                    n_talhoes++;
+                }
+                talhoesMedia[talhao].sum += prod;
+                talhoesMedia[talhao].count++;
             });
+
+            // Calcular média das médias dos talhões
+            let mediaProdutividade = 0;
+            Object.keys(talhoesMedia).forEach(t => {
+                mediaProdutividade += talhoesMedia[t].sum / talhoesMedia[t].count;
+            });
+            if (n_talhoes > 0) {
+                mediaProdutividade = mediaProdutividade / n_talhoes;
+            }
+
             let filtroTexto = '';
             if (filtroAtivo) {
                 let nomeFiltro = filtroAtivo;
@@ -213,10 +238,10 @@
                 filtroTexto = `<div style="text-align: center; margin-bottom: 10px; font-size: 0.9rem; color: #2ecc71; font-weight: bold;">🔍 ${nomeFiltro}</div>`;
             }
             document.getElementById('kpis').innerHTML = filtroTexto + `
-                <div class="kpi-card"><div class="kpi-label">Produtividade</div><div class="kpi-value">${n > 0 ? (tP/n).toFixed(2) : '0'}</div><div class="kpi-unit">TCH/ha</div></div>
+                <div class="kpi-card"><div class="kpi-label">Produtividade</div><div class="kpi-value">${n > 0 ? mediaProdutividade.toFixed(2) : '0'}</div><div class="kpi-unit">TCH/ha</div></div>
                 <div class="kpi-card"><div class="kpi-label">Total Colhido</div><div class="kpi-value">${(tC/1000).toFixed(1)}</div><div class="kpi-unit">mil TCH</div></div>
                 <div class="kpi-card"><div class="kpi-label">Área Colhida</div><div class="kpi-value">${tA.toFixed(0)}</div><div class="kpi-unit">ha</div></div>
-                <div class="kpi-card"><div class="kpi-label">Registros</div><div class="kpi-value">${n}</div><div class="kpi-unit">cortes</div></div>
+                <div class="kpi-card"><div class="kpi-label">Talhões</div><div class="kpi-value">${n_talhoes}</div><div class="kpi-unit">únicos</div></div>
             `;
         }
         function criarGraficos() {
