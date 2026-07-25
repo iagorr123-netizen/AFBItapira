@@ -70,26 +70,27 @@
 
         .info-talhao {
             background: white;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 12px;
-            border-left: 4px solid #2ecc71;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border-left: 5px solid #2ecc71;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         .info-label {
-            font-size: 0.75rem;
-            color: #95a5a6;
+            font-size: 0.85rem;
+            color: #7f8c8d;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: 600;
         }
 
         .info-valor {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: bold;
             color: #2c3e50;
+            margin-bottom: 5px;
         }
 
         .info-valor.grande {
@@ -210,6 +211,11 @@
         <!-- Painel de Dados -->
         <div class="painel-dados">
             <div class="painel-titulo">📊 Dados do Talhão</div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 15px;">
+                <button id="btnTodosMapa" onclick="filtrarAnoMapa('todos')" style="padding: 8px 15px; background: #2ecc71; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 0.9rem;">📋 Todos</button>
+                <button id="btnHistoricoMapa" onclick="filtrarAnoMapa('historico')" style="padding: 8px 15px; background: #95a5a6; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 0.9rem;">📊 Histórico</button>
+                <button id="btnProjecaoMapa" onclick="filtrarAnoMapa('projecao')" style="padding: 8px 15px; background: #95a5a6; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 0.9rem;">🔮 Projeção</button>
+            </div>
             <div id="painelConteudo" style="min-height: 200px; flex: 1; overflow-y: auto;">
                 <div class="talhao-nao-selecionado">
                     👆 Clique em um talhão no mapa para ver os detalhes
@@ -227,6 +233,15 @@
     <script src="js/talhoes_embedded.js"></script>
     <script src="js/mapa_topojson.js"></script>
     <script>
+        let filtroAnoMapa = 'todos';
+
+        function filtrarAnoMapa(tipo) {
+            filtroAnoMapa = tipo;
+            document.getElementById('btnTodosMapa').style.background = tipo === 'todos' ? '#2ecc71' : '#95a5a6';
+            document.getElementById('btnHistoricoMapa').style.background = tipo === 'historico' ? '#2ecc71' : '#95a5a6';
+            document.getElementById('btnProjecaoMapa').style.background = tipo === 'projecao' ? '#2ecc71' : '#95a5a6';
+        }
+
         // Inicializar mapa após carregar todos os dados
         document.addEventListener('DOMContentLoaded', () => {
             let tentativas = 0;
