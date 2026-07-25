@@ -175,9 +175,9 @@ function atualizarMetricas() {
     const areaNaoColhida = Math.max(0, (totalAreaPlantada - totalAreaColhida).toFixed(2));
 
     document.getElementById('metricaProdutividade').textContent = produtividadeMedia;
-    document.getElementById('metricaTotalColhido').textContent = totalColhido.toFixed(0);
-    document.getElementById('metricaAreaNaoColhida').textContent = areaNaoColhida;
-    document.getElementById('metricaAreaColhida').textContent = totalAreaColhida.toFixed(2);
+    document.getElementById('metricaTotalColhido').textContent = parseInt(totalColhido).toLocaleString('pt-BR');
+    document.getElementById('metricaAreaNaoColhida').textContent = parseInt(areaNaoColhida).toLocaleString('pt-BR');
+    document.getElementById('metricaAreaColhida').textContent = totalAreaColhida.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
 }
 
 function atualizarGraficoTCHCorte() {
