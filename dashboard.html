@@ -198,9 +198,9 @@
 
         function calcularKPIs() {
             const c = CONFIG.columns;
-            let dados = dadosColheita;
+            let dados = obterDadosFiltrados();
 
-            // Aplicar filtros de ano se necessário (Histórico ou Projeção)
+            // Aplicar filtros adicionais se necessário
             if (filtroAtivo) {
                 dados = dados.filter(r => {
                     if (tipoFiltro === 'produtividade') {
