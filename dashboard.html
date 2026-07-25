@@ -23,7 +23,8 @@
         .kpi-value { font-size: 2.5rem; font-weight: bold; color: #2c3e50; }
         .kpi-unit { font-size: 0.9rem; color: #95a5a6; }
         .charts-container { display: flex; flex-wrap: wrap; gap: 30px; margin-bottom: 40px; }
-        .chart-box { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); height: 400px; display: flex; flex-direction: column; }
+        .chart-box { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); height: 400px; display: flex; flex-direction: column; min-height: 400px; }
+        .chart-box:first-child { height: 450px; } /* Gráfico de pizza com mais espaço */
         .chart-title { font-size: 1.2rem; font-weight: bold; color: #2c3e50; margin-bottom: 20px; }
         .chart-canvas { flex: 1; position: relative; }
         .status-container { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 40px; }
@@ -53,7 +54,7 @@
             .activities-table td { padding: 6px 4px; font-size: 0.7rem; }
             .talhao-badge { padding: 2px 6px; font-size: 0.65rem; }
         }
-        .talhao-badge { background: #2ecc71; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; }
+        .talhao-badge { background: #2ecc71; color: white; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; font-weight: bold; display: inline-block; min-width: 80px; text-align: center; }
 
         @media (max-width: 768px) {
             .navbar { padding: 10px 8px; gap: 10px; }
