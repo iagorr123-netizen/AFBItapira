@@ -197,10 +197,7 @@
             const c = CONFIG.columns;
             let dados = dadosColheita;
 
-            // Filtrar apenas dados até 2025 (sem 2026)
-            dados = dados.filter(r => parseInt(r[c.ano]) <= 2025);
-
-            // Aplicar outros filtros se necessário
+            // Aplicar filtros de ano se necessário (Histórico ou Projeção)
             if (filtroAtivo) {
                 dados = dados.filter(r => {
                     if (tipoFiltro === 'produtividade') {
