@@ -23,7 +23,7 @@ function inicializarMapaInterativo() {
     }
 
     const centro = [-22.4433, -46.8533];
-    mapa = L.map('mapContainer').setView(centro, 13);
+    mapa = L.map('mapContainer').setView(centro, 15);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors',
