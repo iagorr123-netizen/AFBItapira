@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Média de Produtividade</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f5f7fa; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; }
+        .resultado { background: #e8f5e9; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 5px solid #2ecc71; }
+        .valor { font-size: 2rem; font-weight: bold; color: #2ecc71; }
+        .label { color: #666; font-size: 0.9rem; margin-bottom: 10px; }
+        .comparacao { background: #fff3e0; padding: 15px; border-radius: 8px; margin-top: 20px; }
+        .loading { text-align: center; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Verificador de Média de Produtividade</h1>
+        <div id="resultado" class="loading">Carregando dados...</div>
+    </div>
+
+    <script src="js/setup.js"></script>
+    <script src="js/dados_embedded.js"></script>
+    <script>
+        setTimeout(() => {
+            if (typeof dadosColheita !== 'undefined' && dadosColheita.length > 0) {
+                const c = CONFIG.columns;
+
+                // Calcular média histórica (até 2025)
+                let totalProd = 0;
+                let countHistorico = 0;
+                let totalProd2026 = 0;
+                let count2026 = 0;
+
+                // Média por talhão único
+                const talhoesHistorico = {};
+                const talhoes2026 = {};
+
+                dadosColheita.forEach(r => {
+                    const ano = parseInt(r[c.ano]);
+                    const talhao = r[c.talhao];
+                    const prod = parseFloat(r[c.produtividade]);
+
+                    if (ano <= 2025) {
+                        totalProd += prod;
+                        countHistorico++;
+                        if (!talhoesHistorico[talhao]) {
+                            talhoesHistorico[talhao] = { sum: 0, count: 0 };
+                        }
+                        talhoesHistorico[talhao].sum += prod;
+                        talhoesHistorico[talhao].count++;
+                    } else if (ano === 2026) {
+                        totalProd2026 += prod;
+                        count2026++;
+                        if (!talhoes2026[talhao]) {
+                            talhoes2026[talhao] = { sum: 0, count: 0 };
+                        }
+                        talhoes2026[talhao].sum += prod;
+                        talhoes2026[talhao].count++;
+                    }
+                });
+
+                // Calcular média por talhão
+                let sumMediaTalhoes = 0;
+                Object.keys(talhoesHistorico).forEach(t => {
+                    sumMediaTalhoes += talhoesHistorico[t].sum / talhoesHistorico[t].count;
+                });
+                const mediaPorTalhao = (sumMediaTalhoes / Object.keys(talhoesHistorico).length).toFixed(2);
+
+                const mediaHistorica = (totalProd / countHistorico).toFixed(2);
+                const mediaProjecao = (totalProd2026 / count2026).toFixed(2);
+
+                const html = `
+                    <div class="resultado">
+                        <div class="label">Média Simples (todas as linhas)</div>
+                        <div class="valor">${mediaHistorica}</div>
+                        <div style="font-size: 0.9rem; color: #666; margin-top: 10px;">
+                            Registros: ${countHistorico}
+                        </div>
+                    </div>
+
+                    <div class="resultado">
+                        <div class="label">Média por Talhão Único</div>
+                        <div class="valor">${mediaPorTalhao}</div>
+                        <div style="font-size: 0.9rem; color: #666; margin-top: 10px;">
+                            Talhões únicos: ${Object.keys(talhoesHistorico).length}
+                        </div>
+                    </div>
+
+                    <div class="resultado">
+                        <div class="label">Projeção (2026)</div>
+                        <div class="valor">${mediaProjecao}</div>
+                        <div style="font-size: 0.9rem; color: #666; margin-top: 10px;">
+                            Registros: ${count2026}
+                        </div>
+                    </div>
+
+                    <div class="comparacao">
+                        <div class="label">Comparação com seu valor (81,30)</div>
+                        <div style="font-size: 1.2rem;">
+                            ${mediaPorTalhao === "81.30" ? "✅ CORRETO (Média por Talhão)!" : mediaPorTalhao == 81.30 ? "✅ CORRETO!" : `Média por Talhão: ${mediaPorTalhao} (Diferença: ${(parseFloat(mediaPorTalhao) - 81.30).toFixed(2)})`}
+                        </div>
+                    </div>
+                `;
+
+                document.getElementById('resultado').innerHTML = html;
+            } else {
+                document.getElementById('resultado').innerHTML = '<p style="color: #d32f2f;">Erro ao carregar dados!</p>';
+            }
+        }, 500);
+    </script>
+</body>
+</html>
