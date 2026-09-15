@@ -128,7 +128,7 @@
         <div class="mudas-reforma-container">
             <div class="chart-reforma-box"><div class="tabla-titulo">📊 Média TCH por Corte</div><div class="chart-canvas"><canvas id="chartCorteAux"></canvas></div></div>
             <div class="table-mudas-box"><div class="tabla-titulo"><span class="badge-info badge-mudas">🌱</span> Mudas 2026</div><div class="tabla-scroll"><table class="tabla-mudas"><thead><tr><th>Talhão</th><th>Variedade</th><th>Área (ha)</th><th>Valor (R$)</th><th>TCH</th><th>A. Plant (ha)</th></tr></thead><tbody id="tabelaMudas"></tbody></table></div></div></div>
-            <div class="table-reforma-box"><div class="tabla-titulo"><span class="badge-info badge-reforma">🔄</span> Reforma 2026</div><div class="tabla-scroll"><table class="tabla-reforma"><thead><tr><th>Talhão</th><th>Área (ha)</th><th>Investimento est. (R$)</th><th>-</th></tr></thead><tbody id="tabelaReforma"></tbody></table></div></div></div>
+            <div class="table-reforma-box"><div class="tabla-titulo"><span class="badge-info badge-reforma">🔄</span> Reforma 2026</div><div class="tabla-scroll"><table class="tabla-reforma"><thead><tr><th>Talhão</th><th>Área (ha)</th></tr></thead><tbody id="tabelaReforma"></tbody></table></div></div></div>
         </div>
         <div class="status-container">
             <h3 style="margin-bottom: 20px;">🎯 Status dos Talhões</h3>
@@ -511,8 +511,6 @@
                 <tr>
                     <td><span class="talhao-badge">Talhão ${r['Talhão']}</span></td>
                     <td>${r['Area'].toFixed(2)}</td>
-                    <td><span class="valor-info">R$ ${(r['Area'] * 2500).toLocaleString('pt-BR', {minimumFractionDigits: 0})}</span></td>
-                    <td>-</td>
                 </tr>
             `).join('');
         }
