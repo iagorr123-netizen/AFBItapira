@@ -9461,7 +9461,7 @@ let dadosColheita = [
 "Idade (meses)": null,
 "Idade (anos)": null,
 "Area Colhida": 20.67,
-"Produtividade TCH": 151.1,
+"Produtividade TCH": 75.55,
 "Tonelada Colhida": 1561.6185
 },
 {
@@ -9539,7 +9539,7 @@ let dadosColheita = [
 "Idade (meses)": null,
 "Idade (anos)": null,
 "Area Colhida": 10.25,
-"Produtividade TCH": 130.0,
+"Produtividade TCH": 65.0,
 "Tonelada Colhida": 666.25
 },
 {
@@ -9552,7 +9552,7 @@ let dadosColheita = [
 "Idade (meses)": null,
 "Idade (anos)": null,
 "Area Colhida": 9.629999999999999,
-"Produtividade TCH": 130.0,
+"Produtividade TCH": 65.0,
 "Tonelada Colhida": 625.95
 },
 {
@@ -9565,7 +9565,7 @@ let dadosColheita = [
 "Idade (meses)": null,
 "Idade (anos)": null,
 "Area Colhida": 4.25,
-"Produtividade TCH": 126.0,
+"Produtividade TCH": 63.0,
 "Tonelada Colhida": 267.75
 },
 {
@@ -9578,7 +9578,7 @@ let dadosColheita = [
 "Idade (meses)": null,
 "Idade (anos)": null,
 "Area Colhida": 13.0,
-"Produtividade TCH": 126.0,
+"Produtividade TCH": 63.0,
 "Tonelada Colhida": 819.0
 },
 {
@@ -9591,7 +9591,7 @@ let dadosColheita = [
 "Idade (meses)": null,
 "Idade (anos)": null,
 "Area Colhida": 5.08,
-"Produtividade TCH": 129.08,
+"Produtividade TCH": 64.54,
 "Tonelada Colhida": 327.8632
 },
 {
@@ -9604,7 +9604,7 @@ let dadosColheita = [
 "Idade (meses)": null,
 "Idade (anos)": null,
 "Area Colhida": 12.92,
-"Produtividade TCH": 124.0,
+"Produtividade TCH": 62.0,
 "Tonelada Colhida": 801.04
 },
 {
@@ -9708,7 +9708,7 @@ let dadosColheita = [
 "Idade (meses)": null,
 "Idade (anos)": null,
 "Area Colhida": 0.0,
-"Produtividade TCH": null,
+"Produtividade TCH": 0.0,
 "Tonelada Colhida": 0.0
 },
 {
@@ -9721,7 +9721,7 @@ let dadosColheita = [
 "Idade (meses)": null,
 "Idade (anos)": null,
 "Area Colhida": 0.0,
-"Produtividade TCH": null,
+"Produtividade TCH": 0.0,
 "Tonelada Colhida": 0.0
 },
 {
@@ -10020,7 +10020,7 @@ let dadosColheita = [
 "Idade (meses)": null,
 "Idade (anos)": null,
 "Area Colhida": 0.0,
-"Produtividade TCH": null,
+"Produtividade TCH": 0.0,
 "Tonelada Colhida": 0.0
 },
 {
