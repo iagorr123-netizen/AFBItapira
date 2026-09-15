@@ -216,12 +216,19 @@ function adicionarPoligonoInterativo(coords, numTalhao, cor, dadosTalhao) {
 function mostrarDadosTalhao(dados, cor) {
     // Calcular variação entre 2025 e 2026
     let variacao = 0;
+    let statusVariacao = 'ESTÁVEL';
+    let corVariacao = '#95a5a6';
+
     if (dados.tch2025 > 0) {
         variacao = (((dados.tch2026 || dados.tchUltimoAno) - dados.tch2025) / dados.tch2025) * 100;
+        corVariacao = variacao > 0.5 ? '#2ecc71' : variacao < -0.5 ? '#e74c3c' : '#95a5a6';
+        statusVariacao = variacao > 0.5 ? 'MELHORA' : variacao < -0.5 ? 'PIORA' : 'ESTÁVEL';
+    } else if (dados.tch2025 === 0 && (dados.tch2026 || dados.tchUltimoAno) > 0) {
+        // Talhão que era reforma e voltou a produzir
+        statusVariacao = 'RETORNO';
+        corVariacao = '#3498db';
+        variacao = 100; // Indefinido, mas marca como positivo
     }
-
-    const corVariacao = variacao > 0.5 ? '#2ecc71' : variacao < -0.5 ? '#e74c3c' : '#95a5a6';
-    const statusVariacao = variacao > 0.5 ? 'MELHORA' : variacao < -0.5 ? 'PIORA' : 'ESTÁVEL';
 
     const html = `
         <div class="info-talhao">
@@ -275,10 +282,10 @@ function mostrarDadosTalhao(dados, cor) {
                 <!-- Variação 2025 vs 2026 -->
                 <div style="margin-top: 12px; text-align: center; padding: 10px; background: ${corVariacao}; color: white; border-radius: 4px;">
                     <div style="font-weight: bold; font-size: 1.1rem;">
-                        ${statusVariacao}: ${variacao > 0 ? '+' : ''}${variacao.toFixed(1)}%
+                        ${statusVariacao}${statusVariacao === 'RETORNO' ? '' : ': ' + (variacao > 0 ? '+' : '') + variacao.toFixed(1) + '%'}
                     </div>
                     <div style="font-size: 0.75rem; font-style: italic; margin-top: 4px; opacity: 0.9;">
-                        de 2025 para 2026
+                        ${statusVariacao === 'RETORNO' ? 'Voltou a produzir em 2026' : 'de 2025 para 2026'}
                     </div>
                 </div>
             </div>
