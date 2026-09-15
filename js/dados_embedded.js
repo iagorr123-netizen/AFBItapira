@@ -10223,121 +10223,129 @@ let dadosColheita = [
 // Dados de Mudas - Reflexo Financeiro
 let dadosMudas = [
 {
-  "Ano": 2026,
-  "Talhão": 15,
-  "Variedade": "CTC 11",
-  "Área (ha)": 3.5,
-  "Custo Unitário (R$/muda)": 2.50,
-  "Mudas Produzidas": 8750,
-  "Custo Total (R$)": 21875.00,
-  "Preço Venda (R$/muda)": 3.80,
-  "Receita Esperada (R$)": 33250.00,
-  "Lucro (R$)": 11375.00,
-  "Margem (%)": 52.0
-},
-{
-  "Ano": 2026,
-  "Talhão": 18,
+  "Talhão": 104,
+  "Ano Colheita": 2026,
+  "Area Plantada": 19.16,
+  "Area Muda": 6.5,
+  "TCH": 120,
   "Variedade": "RB 5952",
-  "Área (ha)": 2.8,
-  "Custo Unitário (R$/muda)": 2.30,
-  "Mudas Produzidas": 7000,
-  "Custo Total (R$)": 16100.00,
-  "Preço Venda (R$/muda)": 3.50,
-  "Receita Esperada (R$)": 24500.00,
-  "Lucro (R$)": 8400.00,
-  "Margem (%)": 52.2
+  "Valores em Mudas": 80496
 },
 {
-  "Ano": 2026,
-  "Talhão": 22,
-  "Variedade": "CTC 4",
-  "Área (ha)": 2.0,
-  "Custo Unitário (R$/muda)": 2.40,
-  "Mudas Produzidas": 5000,
-  "Custo Total (R$)": 12000.00,
-  "Preço Venda (R$/muda)": 3.60,
-  "Receita Esperada (R$)": 18000.00,
-  "Lucro (R$)": 6000.00,
-  "Margem (%)": 50.0
+  "Talhão": 23,
+  "Ano Colheita": 2026,
+  "Area Plantada": 8.61,
+  "Area Muda": 8.61,
+  "TCH": 120,
+  "Variedade": "CTC 9003",
+  "Valores em Mudas": 106626.24
+},
+{
+  "Talhão": 98,
+  "Ano Colheita": 2026,
+  "Area Plantada": 14.49,
+  "Area Muda": 7,
+  "TCH": 120,
+  "Variedade": "RB 5014",
+  "Valores em Mudas": 86688
 }
 ];
 
 // Dados de Reforma - Custos e Retorno
 let dadosReforma = [
 {
-  "Ano": 2026,
-  "Talhão": 8,
-  "Variedade": "RB 5952",
-  "Área Reforma (ha)": 22.30,
-  "Custo Preparação (R$/ha)": 1200.00,
-  "Custo Muda (R$/ha)": 850.00,
-  "Custo Plantio (R$/ha)": 450.00,
-  "Custo Total (R$)": 57395.00,
-  "Produtividade Esperada (TCH/ha)": 75.0,
-  "Retorno 1º Corte (TCH)": 1672.50,
-  "Receita Esperada (R$/TCH)": 150.00,
-  "Receita 1º Corte (R$)": 250875.00,
-  "ROI 1º Corte (%)": 337.2
+  "Talhão": 1,
+  "Area": 16.46,
+  "Ano Colheita": 2026
 },
 {
-  "Ano": 2026,
-  "Talhão": 32,
-  "Variedade": "CTC 11",
-  "Área Reforma (ha)": 12.04,
-  "Custo Preparação (R$/ha)": 1200.00,
-  "Custo Muda (R$/ha)": 850.00,
-  "Custo Plantio (R$/ha)": 450.00,
-  "Custo Total (R$)": 30852.00,
-  "Produtividade Esperada (TCH/ha)": 82.0,
-  "Retorno 1º Corte (TCH)": 986.28,
-  "Receita Esperada (R$/TCH)": 150.00,
-  "Receita 1º Corte (R$)": 147942.00,
-  "ROI 1º Corte (%)": 379.3
+  "Talhão": 3,
+  "Area": 20.67,
+  "Ano Colheita": 2026
 },
 {
-  "Ano": 2026,
-  "Talhão": 61,
-  "Variedade": "CTC 4",
-  "Área Reforma (ha)": 1.10,
-  "Custo Preparação (R$/ha)": 1200.00,
-  "Custo Muda (R$/ha)": 850.00,
-  "Custo Plantio (R$/ha)": 450.00,
-  "Custo Total (R$)": 2816.00,
-  "Produtividade Esperada (TCH/ha)": 78.0,
-  "Retorno 1º Corte (TCH)": 85.80,
-  "Receita Esperada (R$/TCH)": 150.00,
-  "Receita 1º Corte (R$)": 12870.00,
-  "ROI 1º Corte (%)": 357.0
+  "Talhão": 5,
+  "Area": 43.99,
+  "Ano Colheita": 2026
 },
 {
-  "Ano": 2026,
-  "Talhão": 62,
-  "Variedade": "RB 5952",
-  "Área Reforma (ha)": 9.31,
-  "Custo Preparação (R$/ha)": 1200.00,
-  "Custo Muda (R$/ha)": 850.00,
-  "Custo Plantio (R$/ha)": 450.00,
-  "Custo Total (R$)": 23839.00,
-  "Produtividade Esperada (TCH/ha)": 72.0,
-  "Retorno 1º Corte (TCH)": 670.32,
-  "Receita Esperada (R$/TCH)": 150.00,
-  "Receita 1º Corte (R$)": 100548.00,
-  "ROI 1º Corte (%)": 321.8
+  "Talhão": 10,
+  "Area": 6.54,
+  "Ano Colheita": 2026
 },
 {
-  "Ano": 2026,
-  "Talhão": 85,
-  "Variedade": "CTC 11",
-  "Área Reforma (ha)": 3.67,
-  "Custo Preparação (R$/ha)": 1200.00,
-  "Custo Muda (R$/ha)": 850.00,
-  "Custo Plantio (R$/ha)": 450.00,
-  "Custo Total (R$)": 9397.00,
-  "Produtividade Esperada (TCH/ha)": 80.0,
-  "Retorno 1º Corte (TCH)": 293.60,
-  "Receita Esperada (R$/TCH)": 150.00,
-  "Receita 1º Corte (R$)": 44040.00,
-  "ROI 1º Corte (%)": 368.5
+  "Talhão": 12,
+  "Area": 4.91,
+  "Ano Colheita": 2026
+},
+{
+  "Talhão": 14,
+  "Area": 7.22,
+  "Ano Colheita": 2026
+},
+{
+  "Talhão": 16,
+  "Area": 10.25,
+  "Ano Colheita": 2026
+},
+{
+  "Talhão": 17,
+  "Area": 9.63,
+  "Ano Colheita": 2026
+},
+{
+  "Talhão": 18,
+  "Area": 4.25,
+  "Ano Colheita": 2026
+},
+{
+  "Talhão": 19,
+  "Area": 13,
+  "Ano Colheita": 2026
+},
+{
+  "Talhão": 20,
+  "Area": 5.08,
+  "Ano Colheita": 2026
+},
+{
+  "Talhão": 21,
+  "Area": 12.92,
+  "Ano Colheita": 2026
+},
+{
+  "Talhão": 64,
+  "Area": 19.93,
+  "Ano Colheita": 2026
+},
+{
+  "Talhão": 65,
+  "Area": 8.53,
+  "Ano Colheita": 2026
+},
+{
+  "Talhão": 66,
+  "Area": 9.05,
+  "Ano Colheita": 2026
+},
+{
+  "Talhão": 67,
+  "Area": 13.8,
+  "Ano Colheita": 2026
+},
+{
+  "Talhão": 69,
+  "Area": 7.26,
+  "Ano Colheita": 2026
+},
+{
+  "Talhão": 87,
+  "Area": 20.76,
+  "Ano Colheita": 2026
+},
+{
+  "Talhão": 94,
+  "Area": 34.94,
+  "Ano Colheita": 2026
 }
 ];

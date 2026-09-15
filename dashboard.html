@@ -127,8 +127,8 @@
         </div>
         <div class="mudas-reforma-container">
             <div class="chart-reforma-box"><div class="tabla-titulo">📊 Média TCH por Corte</div><div class="chart-canvas"><canvas id="chartCorteAux"></canvas></div></div>
-            <div class="table-mudas-box"><div class="tabla-titulo"><span class="badge-info badge-mudas">🌱</span> Mudas 2026</div><div class="tabla-scroll"><table class="tabla-mudas"><thead><tr><th>Talhão</th><th>Variedade</th><th>Área (ha)</th><th>Custo (R$)</th><th>Receita (R$)</th><th>Lucro (R$)</th></tr></thead><tbody id="tabelaMudas"></tbody></table></div></div></div>
-            <div class="table-reforma-box"><div class="tabla-titulo"><span class="badge-info badge-reforma">🔄</span> Reforma 2026</div><div class="tabla-scroll"><table class="tabla-reforma"><thead><tr><th>Talhão</th><th>Área (ha)</th><th>Investimento (R$)</th><th>ROI 1º Corte (%)</th></tr></thead><tbody id="tabelaReforma"></tbody></table></div></div></div>
+            <div class="table-mudas-box"><div class="tabla-titulo"><span class="badge-info badge-mudas">🌱</span> Mudas 2026</div><div class="tabla-scroll"><table class="tabla-mudas"><thead><tr><th>Talhão</th><th>Variedade</th><th>Área (ha)</th><th>Valor (R$)</th><th>TCH</th><th>A. Plant (ha)</th></tr></thead><tbody id="tabelaMudas"></tbody></table></div></div></div>
+            <div class="table-reforma-box"><div class="tabla-titulo"><span class="badge-info badge-reforma">🔄</span> Reforma 2026</div><div class="tabla-scroll"><table class="tabla-reforma"><thead><tr><th>Talhão</th><th>Área (ha)</th><th>Investimento est. (R$)</th><th>-</th></tr></thead><tbody id="tabelaReforma"></tbody></table></div></div></div>
         </div>
         <div class="status-container">
             <h3 style="margin-bottom: 20px;">🎯 Status dos Talhões</h3>
@@ -491,28 +491,28 @@
             `).join('');
         }
         function preencherMudas() {
-            if (typeof dadosMudas === 'undefined') return;
+            if (typeof dadosMudas === 'undefined' || !dadosMudas.length) return;
             const tb = document.getElementById('tabelaMudas');
             tb.innerHTML = dadosMudas.map(m => `
                 <tr>
                     <td><span class="talhao-badge">Talhão ${m['Talhão']}</span></td>
                     <td>${m['Variedade']}</td>
-                    <td>${m['Área (ha)'].toFixed(2)}</td>
-                    <td><span class="valor-info">R$ ${m['Custo Total (R$)'].toLocaleString('pt-BR', {minimumFractionDigits: 0})}</span></td>
-                    <td><span class="valor-info">R$ ${m['Receita Esperada (R$)'].toLocaleString('pt-BR', {minimumFractionDigits: 0})}</span></td>
-                    <td><span class="valor-positivo">+R$ ${m['Lucro (R$)'].toLocaleString('pt-BR', {minimumFractionDigits: 0})}</span></td>
+                    <td>${m['Area Muda'].toFixed(2)}</td>
+                    <td><span class="valor-positivo">R$ ${m['Valores em Mudas'].toLocaleString('pt-BR', {minimumFractionDigits: 0})}</span></td>
+                    <td>${m['TCH']}</td>
+                    <td>${m['Area Plantada'].toFixed(2)}</td>
                 </tr>
             `).join('');
         }
         function preencherReforma() {
-            if (typeof dadosReforma === 'undefined') return;
+            if (typeof dadosReforma === 'undefined' || !dadosReforma.length) return;
             const tb = document.getElementById('tabelaReforma');
             tb.innerHTML = dadosReforma.map(r => `
                 <tr>
                     <td><span class="talhao-badge">Talhão ${r['Talhão']}</span></td>
-                    <td>${r['Área Reforma (ha)'].toFixed(2)}</td>
-                    <td><span class="valor-info">R$ ${r['Custo Total (R$)'].toLocaleString('pt-BR', {minimumFractionDigits: 0})}</span></td>
-                    <td><span class="valor-positivo">${r['ROI 1º Corte (%)'].toFixed(1)}%</span></td>
+                    <td>${r['Area'].toFixed(2)}</td>
+                    <td><span class="valor-info">R$ ${(r['Area'] * 2500).toLocaleString('pt-BR', {minimumFractionDigits: 0})}</span></td>
+                    <td>-</td>
                 </tr>
             `).join('');
         }
