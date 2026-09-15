@@ -9707,7 +9707,7 @@ let dadosColheita = [
 "Data de Plantio": null,
 "Idade (meses)": null,
 "Idade (anos)": null,
-"Area Colhida": 39.88,
+"Area Colhida": 0.0,
 "Produtividade TCH": null,
 "Tonelada Colhida": 0.0
 },
@@ -9720,7 +9720,7 @@ let dadosColheita = [
 "Data de Plantio": null,
 "Idade (meses)": null,
 "Idade (anos)": null,
-"Area Colhida": 34.23,
+"Area Colhida": 0.0,
 "Produtividade TCH": null,
 "Tonelada Colhida": 0.0
 },
@@ -10019,7 +10019,7 @@ let dadosColheita = [
 "Data de Plantio": null,
 "Idade (meses)": null,
 "Idade (anos)": null,
-"Area Colhida": 14.49,
+"Area Colhida": 0.0,
 "Produtividade TCH": null,
 "Tonelada Colhida": 0.0
 },
@@ -10123,7 +10123,7 @@ let dadosColheita = [
 "Data de Plantio": null,
 "Idade (meses)": null,
 "Idade (anos)": null,
-"Area Colhida": 22.3,
+"Area Colhida": 0.0,
 "Produtividade TCH": 0.0,
 "Tonelada Colhida": 0.0
 },
@@ -10136,7 +10136,7 @@ let dadosColheita = [
 "Data de Plantio": null,
 "Idade (meses)": null,
 "Idade (anos)": null,
-"Area Colhida": 12.04,
+"Area Colhida": 0.0,
 "Produtividade TCH": 0.0,
 "Tonelada Colhida": 0.0
 },
@@ -10149,7 +10149,7 @@ let dadosColheita = [
 "Data de Plantio": null,
 "Idade (meses)": null,
 "Idade (anos)": null,
-"Area Colhida": 1.1,
+"Area Colhida": 0.0,
 "Produtividade TCH": 0.0,
 "Tonelada Colhida": 0.0
 },
@@ -10162,7 +10162,7 @@ let dadosColheita = [
 "Data de Plantio": null,
 "Idade (meses)": null,
 "Idade (anos)": null,
-"Area Colhida": 9.31,
+"Area Colhida": 0.0,
 "Produtividade TCH": 0.0,
 "Tonelada Colhida": 0.0
 },
@@ -10175,7 +10175,7 @@ let dadosColheita = [
 "Data de Plantio": null,
 "Idade (meses)": null,
 "Idade (anos)": null,
-"Area Colhida": 3.67,
+"Area Colhida": 0.0,
 "Produtividade TCH": 0.0,
 "Tonelada Colhida": 0.0
 },
@@ -10188,7 +10188,7 @@ let dadosColheita = [
 "Data de Plantio": null,
 "Idade (meses)": null,
 "Idade (anos)": null,
-"Area Colhida": 2.99,
+"Area Colhida": 0.0,
 "Produtividade TCH": 0.0,
 "Tonelada Colhida": 0.0
 },
@@ -10201,7 +10201,7 @@ let dadosColheita = [
 "Data de Plantio": null,
 "Idade (meses)": null,
 "Idade (anos)": null,
-"Area Colhida": 19.1,
+"Area Colhida": 0.0,
 "Produtividade TCH": 0.0,
 "Tonelada Colhida": 0.0
 },
@@ -10214,7 +10214,7 @@ let dadosColheita = [
 "Data de Plantio": null,
 "Idade (meses)": null,
 "Idade (anos)": null,
-"Area Colhida": 26.37,
+"Area Colhida": 0.0,
 "Produtividade TCH": 0.0,
 "Tonelada Colhida": 0.0
 }
