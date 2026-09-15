@@ -214,10 +214,10 @@ function adicionarPoligonoInterativo(coords, numTalhao, cor, dadosTalhao) {
 }
 
 function mostrarDadosTalhao(dados, cor) {
-    // Calcular variação entre 2025 e último ano
+    // Calcular variação entre 2025 e 2026
     let variacao = 0;
-    if (dados.tchUltimoAno > 0) {
-        variacao = ((dados.tch2025 - dados.tchUltimoAno) / dados.tchUltimoAno) * 100;
+    if (dados.tch2025 > 0) {
+        variacao = (((dados.tch2026 || dados.tchUltimoAno) - dados.tch2025) / dados.tch2025) * 100;
     }
 
     const corVariacao = variacao > 0.5 ? '#2ecc71' : variacao < -0.5 ? '#e74c3c' : '#95a5a6';
