@@ -321,12 +321,14 @@
                 vm[v].sumPond += p * area;
                 vm[v].sumArea += area;
             });
+            // Filtrar apenas variedades com dados
+            const variedadesComDados = todasVariedades.filter(v => vm[v].sumArea > 0);
             if (chartVariedade) chartVariedade.destroy();
             chartVariedade = new Chart(document.getElementById('chartVariedade').getContext('2d'), {
                 type: 'bar',
                 data: {
-                    labels: todasVariedades,
-                    datasets: [{label: 'TCH/ha', data: todasVariedades.map(v => (vm[v].sumArea > 0 ? vm[v].sumPond/vm[v].sumArea : 0).toFixed(2)), backgroundColor: '#3498db'}]
+                    labels: variedadesComDados,
+                    datasets: [{label: 'TCH/ha', data: variedadesComDados.map(v => (vm[v].sumPond/vm[v].sumArea).toFixed(2)), backgroundColor: '#3498db'}]
                 },
                 options: {
                     responsive: true,
