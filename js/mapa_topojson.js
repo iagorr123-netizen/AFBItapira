@@ -246,21 +246,21 @@ function mostrarDadosTalhao(dados, cor) {
 
         <!-- COMPARATIVO DESTACADO -->
         <div class="info-talhao" style="background: #f0f8ff; border-left: 4px solid #3498db; margin: 15px 0;">
-            <div class="info-label" style="color: #3498db; font-weight: bold;">COMPARATIVO: 2025 × ${dados.ultimoAno} × HISTÓRICO</div>
+            <div class="info-label" style="color: #3498db; font-weight: bold;">COMPARATIVO: 2026 × 2025 × HISTÓRICO</div>
 
             <div style="margin-top: 10px; padding: 10px; background: white; border-radius: 4px;">
                 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; text-align: center;">
+                    <!-- 2026 -->
+                    <div style="padding: 10px; background: #c8e6c9; border-radius: 4px;">
+                        <div style="font-size: 0.75rem; color: #666; font-weight: bold;">2026</div>
+                        <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">${dados.tch2026 || dados.tchUltimoAno || '-'}</div>
+                        <div style="font-size: 0.75rem; color: #999;">TCH/ha</div>
+                    </div>
+
                     <!-- 2025 -->
                     <div style="padding: 10px; background: #fff3cd; border-radius: 4px;">
                         <div style="font-size: 0.75rem; color: #666; font-weight: bold;">2025</div>
                         <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">${dados.tch2025}</div>
-                        <div style="font-size: 0.75rem; color: #999;">TCH/ha</div>
-                    </div>
-
-                    <!-- Último Ano -->
-                    <div style="padding: 10px; background: #e8f5e9; border-radius: 4px;">
-                        <div style="font-size: 0.75rem; color: #666; font-weight: bold;">${dados.ultimoAno}</div>
-                        <div style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">${dados.tchUltimoAno}</div>
                         <div style="font-size: 0.75rem; color: #999;">TCH/ha</div>
                     </div>
 
@@ -272,13 +272,13 @@ function mostrarDadosTalhao(dados, cor) {
                     </div>
                 </div>
 
-                <!-- Variação 2025 vs Último Ano -->
+                <!-- Variação 2025 vs 2026 -->
                 <div style="margin-top: 12px; text-align: center; padding: 10px; background: ${corVariacao}; color: white; border-radius: 4px;">
                     <div style="font-weight: bold; font-size: 1.1rem;">
                         ${statusVariacao}: ${variacao > 0 ? '+' : ''}${variacao.toFixed(1)}%
                     </div>
                     <div style="font-size: 0.75rem; font-style: italic; margin-top: 4px; opacity: 0.9;">
-                        de ${dados.ultimoAno} para 2025
+                        de 2025 para 2026
                     </div>
                 </div>
             </div>
