@@ -9428,7 +9428,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 1,
-"Variedade": null,
+"Variedade": "CTC 11",
 "Area Plantada": 16.46,
 "Número do Corte": 4,
 "Data de Plantio": null,
@@ -9441,7 +9441,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 2,
-"Variedade": null,
+"Variedade": "CTC 11",
 "Area Plantada": 21.96,
 "Número do Corte": 4,
 "Data de Plantio": null,
@@ -9454,7 +9454,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 3,
-"Variedade": null,
+"Variedade": "CTC 4",
 "Area Plantada": 20.67,
 "Número do Corte": 6,
 "Data de Plantio": null,
@@ -9467,7 +9467,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 5,
-"Variedade": null,
+"Variedade": "RB 5952",
 "Area Plantada": 43.99,
 "Número do Corte": 5,
 "Data de Plantio": null,
@@ -9480,7 +9480,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 10,
-"Variedade": null,
+"Variedade": "CTC 4",
 "Area Plantada": 6.54,
 "Número do Corte": 5,
 "Data de Plantio": null,
@@ -9493,7 +9493,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 12,
-"Variedade": null,
+"Variedade": "CTC 4",
 "Area Plantada": 4.91,
 "Número do Corte": 5,
 "Data de Plantio": null,
@@ -9506,7 +9506,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 14,
-"Variedade": null,
+"Variedade": "CTC 4",
 "Area Plantada": 7.22,
 "Número do Corte": 5,
 "Data de Plantio": null,
@@ -9519,7 +9519,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 15,
-"Variedade": null,
+"Variedade": "CTC 9001",
 "Area Plantada": 12.58,
 "Número do Corte": 3,
 "Data de Plantio": null,
@@ -9532,7 +9532,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 16,
-"Variedade": null,
+"Variedade": "CTC 4",
 "Area Plantada": 10.25,
 "Número do Corte": 5,
 "Data de Plantio": null,
@@ -9545,7 +9545,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 17,
-"Variedade": null,
+"Variedade": "CTC 4",
 "Area Plantada": 9.629999999999999,
 "Número do Corte": 5,
 "Data de Plantio": null,
@@ -9558,7 +9558,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 18,
-"Variedade": null,
+"Variedade": "CTC 9001",
 "Area Plantada": 4.25,
 "Número do Corte": 4,
 "Data de Plantio": null,
@@ -9571,7 +9571,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 19,
-"Variedade": null,
+"Variedade": "CTC 9001",
 "Area Plantada": 13.0,
 "Número do Corte": 4,
 "Data de Plantio": null,
@@ -9584,7 +9584,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 20,
-"Variedade": null,
+"Variedade": "CTC 4",
 "Area Plantada": 5.08,
 "Número do Corte": 5,
 "Data de Plantio": null,
@@ -9597,7 +9597,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 21,
-"Variedade": null,
+"Variedade": "CTC 4",
 "Area Plantada": 12.92,
 "Número do Corte": 5,
 "Data de Plantio": null,
@@ -9610,7 +9610,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 22,
-"Variedade": null,
+"Variedade": "CTC 9001",
 "Area Plantada": 19.76,
 "Número do Corte": 4,
 "Data de Plantio": null,
@@ -9623,7 +9623,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 23,
-"Variedade": null,
+"Variedade": "CTC 9003",
 "Area Plantada": 8.61,
 "Número do Corte": 1,
 "Data de Plantio": null,
@@ -9636,7 +9636,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 24,
-"Variedade": null,
+"Variedade": "CTC 9001",
 "Area Plantada": 12.12,
 "Número do Corte": 4,
 "Data de Plantio": null,
@@ -9649,7 +9649,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 25,
-"Variedade": null,
+"Variedade": "CTC 9001",
 "Area Plantada": 11.43,
 "Número do Corte": 4,
 "Data de Plantio": null,
@@ -9662,7 +9662,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 26,
-"Variedade": null,
+"Variedade": "CTC 9001",
 "Area Plantada": 19.0,
 "Número do Corte": 4,
 "Data de Plantio": null,
@@ -9675,7 +9675,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 27,
-"Variedade": null,
+"Variedade": "CTC 9003",
 "Area Plantada": 28.0,
 "Número do Corte": 4,
 "Data de Plantio": null,
@@ -9688,7 +9688,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 28,
-"Variedade": null,
+"Variedade": "CTC 9003",
 "Area Plantada": 33.37,
 "Número do Corte": 4,
 "Data de Plantio": null,
@@ -9701,7 +9701,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 29,
-"Variedade": null,
+"Variedade": "RB 5014",
 "Area Plantada": 39.88,
 "Número do Corte": 1,
 "Data de Plantio": null,
@@ -9714,7 +9714,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 30,
-"Variedade": null,
+"Variedade": "CTC 4",
 "Area Plantada": 34.23,
 "Número do Corte": 5,
 "Data de Plantio": null,
@@ -9727,7 +9727,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 31,
-"Variedade": null,
+"Variedade": "CTC 9003",
 "Area Plantada": 16.71,
 "Número do Corte": 1,
 "Data de Plantio": null,
@@ -9740,7 +9740,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 33,
-"Variedade": null,
+"Variedade": "CTC 9003",
 "Area Plantada": 8.81,
 "Número do Corte": 4,
 "Data de Plantio": null,
@@ -9753,7 +9753,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 52,
-"Variedade": null,
+"Variedade": "RB 5952",
 "Area Plantada": 13.63,
 "Número do Corte": 2,
 "Data de Plantio": null,
@@ -9766,7 +9766,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 53,
-"Variedade": null,
+"Variedade": "CTC 9001",
 "Area Plantada": 22.19,
 "Número do Corte": 3,
 "Data de Plantio": null,
@@ -9779,7 +9779,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 54,
-"Variedade": null,
+"Variedade": "CTC 9001",
 "Area Plantada": 14.75,
 "Número do Corte": 2,
 "Data de Plantio": null,
@@ -9792,7 +9792,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 55,
-"Variedade": null,
+"Variedade": "CTC 9001",
 "Area Plantada": 21.94,
 "Número do Corte": 2,
 "Data de Plantio": null,
@@ -9805,7 +9805,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 58,
-"Variedade": null,
+"Variedade": "CTC 9001",
 "Area Plantada": 51.11,
 "Número do Corte": 4,
 "Data de Plantio": null,
@@ -9818,7 +9818,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 64,
-"Variedade": null,
+"Variedade": "CTC 9001",
 "Area Plantada": 19.93,
 "Número do Corte": 5,
 "Data de Plantio": null,
@@ -9831,7 +9831,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 65,
-"Variedade": null,
+"Variedade": "CTC 9001",
 "Area Plantada": 8.53,
 "Número do Corte": 5,
 "Data de Plantio": null,
@@ -9844,7 +9844,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 66,
-"Variedade": null,
+"Variedade": "CTC 9001",
 "Area Plantada": 9.05,
 "Número do Corte": 5,
 "Data de Plantio": null,
@@ -9857,7 +9857,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 67,
-"Variedade": null,
+"Variedade": "CTC 9001",
 "Area Plantada": 13.8,
 "Número do Corte": 5,
 "Data de Plantio": null,
@@ -9870,7 +9870,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 69,
-"Variedade": null,
+"Variedade": "CTC 9001",
 "Area Plantada": 7.26,
 "Número do Corte": 5,
 "Data de Plantio": null,
@@ -9883,7 +9883,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 79,
-"Variedade": null,
+"Variedade": "CTC 4",
 "Area Plantada": 24.76,
 "Número do Corte": 5,
 "Data de Plantio": null,
@@ -9896,7 +9896,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 83,
-"Variedade": null,
+"Variedade": "CTC 4",
 "Area Plantada": 0.32,
 "Número do Corte": 5,
 "Data de Plantio": null,
@@ -9909,7 +9909,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 84,
-"Variedade": null,
+"Variedade": "CTC 4",
 "Area Plantada": 16.54,
 "Número do Corte": 5,
 "Data de Plantio": null,
@@ -9922,7 +9922,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 87,
-"Variedade": null,
+"Variedade": "CTC 4",
 "Area Plantada": 20.76,
 "Número do Corte": 5,
 "Data de Plantio": null,
@@ -9935,7 +9935,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 92,
-"Variedade": null,
+"Variedade": "CTC 9001",
 "Area Plantada": 39.67,
 "Número do Corte": 2,
 "Data de Plantio": null,
@@ -9948,7 +9948,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 93,
-"Variedade": null,
+"Variedade": "CTC 9003",
 "Area Plantada": 26.99,
 "Número do Corte": 1,
 "Data de Plantio": null,
@@ -9961,7 +9961,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 94,
-"Variedade": null,
+"Variedade": "CTC 4",
 "Area Plantada": 34.94,
 "Número do Corte": 7,
 "Data de Plantio": null,
@@ -9974,7 +9974,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 95,
-"Variedade": null,
+"Variedade": "CTC 4",
 "Area Plantada": 38.32,
 "Número do Corte": 1,
 "Data de Plantio": null,
@@ -9987,7 +9987,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 96,
-"Variedade": null,
+"Variedade": "RB 5952",
 "Area Plantada": 12.13,
 "Número do Corte": 1,
 "Data de Plantio": null,
@@ -10000,7 +10000,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 97,
-"Variedade": null,
+"Variedade": "CTC 9001",
 "Area Plantada": 6.47,
 "Número do Corte": 3,
 "Data de Plantio": null,
@@ -10013,7 +10013,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 98,
-"Variedade": null,
+"Variedade": "RB 5014",
 "Area Plantada": 14.49,
 "Número do Corte": 1,
 "Data de Plantio": null,
@@ -10026,7 +10026,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 99,
-"Variedade": null,
+"Variedade": "RB 5952",
 "Area Plantada": 30.46,
 "Número do Corte": 1,
 "Data de Plantio": null,
@@ -10039,7 +10039,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 101,
-"Variedade": null,
+"Variedade": "CTC 9003",
 "Area Plantada": 24.8,
 "Número do Corte": 2,
 "Data de Plantio": null,
@@ -10052,7 +10052,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 103,
-"Variedade": null,
+"Variedade": "CTC 9003",
 "Area Plantada": 12.59,
 "Número do Corte": 2,
 "Data de Plantio": null,
@@ -10065,7 +10065,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 104,
-"Variedade": null,
+"Variedade": "RB 5952",
 "Area Plantada": 19.16,
 "Número do Corte": 1,
 "Data de Plantio": null,
@@ -10078,7 +10078,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 105,
-"Variedade": null,
+"Variedade": "CTC 4",
 "Area Plantada": 38.05,
 "Número do Corte": 5,
 "Data de Plantio": null,
@@ -10091,7 +10091,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 108,
-"Variedade": null,
+"Variedade": "CV 7870",
 "Area Plantada": 13.48,
 "Número do Corte": 4,
 "Data de Plantio": null,
@@ -10104,7 +10104,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 109,
-"Variedade": null,
+"Variedade": "CTC 9001",
 "Area Plantada": 45.7,
 "Número do Corte": 3,
 "Data de Plantio": null,
@@ -10117,7 +10117,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 8,
-"Variedade": null,
+"Variedade": "CV 7870",
 "Area Plantada": 22.3,
 "Número do Corte": 1,
 "Data de Plantio": null,
@@ -10130,7 +10130,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 32,
-"Variedade": null,
+"Variedade": "CTC 4",
 "Area Plantada": 12.04,
 "Número do Corte": 1,
 "Data de Plantio": null,
@@ -10143,7 +10143,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 61,
-"Variedade": null,
+"Variedade": "RB 5952",
 "Area Plantada": 1.1,
 "Número do Corte": 1,
 "Data de Plantio": null,
@@ -10156,7 +10156,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 62,
-"Variedade": null,
+"Variedade": "RB 5952",
 "Area Plantada": 9.31,
 "Número do Corte": 1,
 "Data de Plantio": null,
@@ -10169,7 +10169,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 85,
-"Variedade": null,
+"Variedade": "RB 5952",
 "Area Plantada": 3.67,
 "Número do Corte": 1,
 "Data de Plantio": null,
@@ -10182,7 +10182,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 86,
-"Variedade": null,
+"Variedade": "RB 5014",
 "Area Plantada": 2.99,
 "Número do Corte": 1,
 "Data de Plantio": null,
@@ -10195,7 +10195,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 100,
-"Variedade": null,
+"Variedade": "RB 5952",
 "Area Plantada": 19.1,
 "Número do Corte": 1,
 "Data de Plantio": null,
@@ -10208,7 +10208,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2026,
 "Talhão": 102,
-"Variedade": null,
+"Variedade": "CTC 9006",
 "Area Plantada": 26.37,
 "Número do Corte": 1,
 "Data de Plantio": null,
