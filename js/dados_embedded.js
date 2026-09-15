@@ -10365,6 +10365,6 @@ let dadosReforma = [
   "Talhão": 94,
   "Area": 34.94,
   "Ano Colheita": 2026,
-  "Justificativa": "Repetir 4ª cana (produziu 82 ton no 7º corte)"
+  "Justificativa": "Ideia de repetir a CTC 4 nessa quadra porque produziu 82 ton no 7º corte (estamos reformando por causa do Coast cross)"
 }
 ];
