@@ -29,7 +29,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2025,
 "Talhão": 3,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 20.67,
 "Número do Corte": 5,
 "Data de Plantio": null,
@@ -68,7 +68,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2025,
 "Talhão": 10,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 6.54,
 "Número do Corte": 4,
 "Data de Plantio": null,
@@ -81,7 +81,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2025,
 "Talhão": 12,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 4.91,
 "Número do Corte": 4,
 "Data de Plantio": null,
@@ -94,7 +94,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2025,
 "Talhão": 14,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 7.22,
 "Número do Corte": 4,
 "Data de Plantio": null,
@@ -120,7 +120,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2025,
 "Talhão": 16,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 10.25,
 "Número do Corte": 4,
 "Data de Plantio": null,
@@ -133,7 +133,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2025,
 "Talhão": 17,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 9.63,
 "Número do Corte": 4,
 "Data de Plantio": null,
@@ -172,7 +172,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2025,
 "Talhão": 20,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 5.08,
 "Número do Corte": 3,
 "Data de Plantio": "2022-01-01 00:00:00",
@@ -185,7 +185,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2025,
 "Talhão": 21,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 12.92,
 "Número do Corte": 3,
 "Data de Plantio": null,
@@ -302,7 +302,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2025,
 "Talhão": 30,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 34.23,
 "Número do Corte": 4,
 "Data de Plantio": null,
@@ -432,7 +432,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2025,
 "Talhão": 62,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 9.31,
 "Número do Corte": 5,
 "Data de Plantio": null,
@@ -510,7 +510,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2025,
 "Talhão": 79,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 24.76,
 "Número do Corte": 4,
 "Data de Plantio": null,
@@ -523,7 +523,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2025,
 "Talhão": 83,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 0.32,
 "Número do Corte": 4,
 "Data de Plantio": null,
@@ -536,7 +536,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2025,
 "Talhão": 84,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 16.54,
 "Número do Corte": 4,
 "Data de Plantio": null,
@@ -575,7 +575,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2025,
 "Talhão": 87,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 20.76,
 "Número do Corte": 4,
 "Data de Plantio": null,
@@ -601,7 +601,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2025,
 "Talhão": 93,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 26.99,
 "Número do Corte": 6,
 "Data de Plantio": null,
@@ -614,7 +614,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2025,
 "Talhão": 94,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 34.94,
 "Número do Corte": 6,
 "Data de Plantio": null,
@@ -627,7 +627,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2025,
 "Talhão": 95,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 38.32,
 "Número do Corte": 6,
 "Data de Plantio": null,
@@ -679,7 +679,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2025,
 "Talhão": 100,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 19.1,
 "Número do Corte": 5,
 "Data de Plantio": null,
@@ -705,7 +705,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2025,
 "Talhão": 102,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 26.37,
 "Número do Corte": 5,
 "Data de Plantio": null,
@@ -744,7 +744,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2025,
 "Talhão": 105,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 38.05,
 "Número do Corte": 4,
 "Data de Plantio": null,
@@ -952,7 +952,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2015,
 "Talhão": 15,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 9.85,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -965,7 +965,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2015,
 "Talhão": 16,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 12.88,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -2031,7 +2031,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2016,
 "Talhão": 15,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 9.85,
 "Número do Corte": "3",
 "Data de Plantio": null,
@@ -2044,7 +2044,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2016,
 "Talhão": 16,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 12.88,
 "Número do Corte": "3",
 "Data de Plantio": null,
@@ -2993,7 +2993,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2017,
 "Talhão": 15,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 9.85,
 "Número do Corte": "4",
 "Data de Plantio": null,
@@ -3006,7 +3006,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2017,
 "Talhão": 16,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 12.88,
 "Número do Corte": "4",
 "Data de Plantio": null,
@@ -3994,7 +3994,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2018,
 "Talhão": 15,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 9.85,
 "Número do Corte": "5",
 "Data de Plantio": null,
@@ -4007,7 +4007,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2018,
 "Talhão": 16,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 12.88,
 "Número do Corte": "5",
 "Data de Plantio": null,
@@ -5034,7 +5034,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2019,
 "Talhão": 15,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 9.85,
 "Número do Corte": "6",
 "Data de Plantio": null,
@@ -5047,7 +5047,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2019,
 "Talhão": 16,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 12.88,
 "Número do Corte": "6",
 "Data de Plantio": null,
@@ -5710,7 +5710,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2020,
 "Talhão": 16,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 10.95,
 "Número do Corte": "7",
 "Data de Plantio": null,
@@ -6230,7 +6230,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2020,
 "Talhão": 93,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 17.53,
 "Número do Corte": "1,25",
 "Data de Plantio": null,
@@ -6243,7 +6243,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2020,
 "Talhão": 94,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 22.62,
 "Número do Corte": "1,25",
 "Data de Plantio": null,
@@ -6256,7 +6256,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2020,
 "Talhão": 95,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 36.9,
 "Número do Corte": "1,25",
 "Data de Plantio": null,
@@ -6295,7 +6295,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2021,
 "Talhão": 3,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 20.6,
 "Número do Corte": "1,5",
 "Data de Plantio": null,
@@ -6373,7 +6373,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2021,
 "Talhão": 16,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 10.95,
 "Número do Corte": "8",
 "Data de Plantio": null,
@@ -6568,7 +6568,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2021,
 "Talhão": 54,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 14.41,
 "Número do Corte": "1,5",
 "Data de Plantio": null,
@@ -6581,7 +6581,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2021,
 "Talhão": 55,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 21.59,
 "Número do Corte": "1,5",
 "Data de Plantio": null,
@@ -6620,7 +6620,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2021,
 "Talhão": 62,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 9.13,
 "Número do Corte": "1,5",
 "Data de Plantio": null,
@@ -6828,7 +6828,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2021,
 "Talhão": 93,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 27.53,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -6841,7 +6841,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2021,
 "Talhão": 94,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 36.92,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -6854,7 +6854,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2021,
 "Talhão": 95,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 36.9,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -6880,7 +6880,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2021,
 "Talhão": 97,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 6.04,
 "Número do Corte": "1,5",
 "Data de Plantio": null,
@@ -6893,7 +6893,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2021,
 "Talhão": 98,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 14.93,
 "Número do Corte": "1,5",
 "Data de Plantio": null,
@@ -6919,7 +6919,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2021,
 "Talhão": 100,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 18.94,
 "Número do Corte": "1,25",
 "Data de Plantio": null,
@@ -6945,7 +6945,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2021,
 "Talhão": 102,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 26.5,
 "Número do Corte": "1,25",
 "Data de Plantio": null,
@@ -6971,7 +6971,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2021,
 "Talhão": 104,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 19.32,
 "Número do Corte": "1,25",
 "Data de Plantio": null,
@@ -7023,7 +7023,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 3,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 20.6,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -7062,7 +7062,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 10,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 7.32,
 "Número do Corte": 1,
 "Data de Plantio": "2022-01-01 00:00:00",
@@ -7075,7 +7075,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 12,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 4.34,
 "Número do Corte": 1,
 "Data de Plantio": "2022-01-01 00:00:00",
@@ -7088,7 +7088,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 14,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 7.56,
 "Número do Corte": 1,
 "Data de Plantio": "2022-01-01 00:00:00",
@@ -7114,7 +7114,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 16,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 10.42,
 "Número do Corte": 1,
 "Data de Plantio": "2022-01-01 00:00:00",
@@ -7127,7 +7127,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 17,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 9.62,
 "Número do Corte": 1,
 "Data de Plantio": "2022-01-01 00:00:00",
@@ -7166,7 +7166,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 20,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 5.07,
 "Número do Corte": 1,
 "Data de Plantio": "2022-01-01 00:00:00",
@@ -7179,7 +7179,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 21,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 12.77,
 "Número do Corte": 1,
 "Data de Plantio": "2022-01-01 00:00:00",
@@ -7296,7 +7296,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 30,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 33.89,
 "Número do Corte": 1.5,
 "Data de Plantio": "2021-02-01 00:00:00",
@@ -7374,7 +7374,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 54,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 14.41,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -7387,7 +7387,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 55,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 21.59,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -7413,7 +7413,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 61,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 0.9,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -7426,7 +7426,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 62,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 9.13,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -7504,7 +7504,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 79,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 24.95,
 "Número do Corte": 1,
 "Data de Plantio": "2021-12-01 00:00:00",
@@ -7517,7 +7517,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 83,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 8.25,
 "Número do Corte": 1,
 "Data de Plantio": "2021-12-01 00:00:00",
@@ -7530,7 +7530,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 84,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 8.87,
 "Número do Corte": 1,
 "Data de Plantio": "2021-12-01 00:00:00",
@@ -7543,7 +7543,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 85,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 3.64,
 "Número do Corte": 1,
 "Data de Plantio": "2021-12-01 00:00:00",
@@ -7556,7 +7556,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 86,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 3.01,
 "Número do Corte": 1,
 "Data de Plantio": "2021-12-01 00:00:00",
@@ -7569,7 +7569,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 87,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 20.69,
 "Número do Corte": 1,
 "Data de Plantio": "2021-12-01 00:00:00",
@@ -7595,7 +7595,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 93,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 27.53,
 "Número do Corte": "3",
 "Data de Plantio": null,
@@ -7608,7 +7608,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 94,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 36.92,
 "Número do Corte": "3",
 "Data de Plantio": null,
@@ -7621,7 +7621,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 95,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 36.9,
 "Número do Corte": "3",
 "Data de Plantio": null,
@@ -7647,7 +7647,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 97,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 6.04,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -7660,7 +7660,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 98,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 14.93,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -7712,7 +7712,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 102,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 26.5,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -7738,7 +7738,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 104,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 19.32,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -7751,7 +7751,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2022,
 "Talhão": 105,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 38.37,
 "Número do Corte": 1.5,
 "Data de Plantio": "2021-03-01 00:00:00",
@@ -7829,7 +7829,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 3,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 20.6,
 "Número do Corte": "3",
 "Data de Plantio": null,
@@ -7868,7 +7868,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 10,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 7.32,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -7881,7 +7881,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 12,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 4.34,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -7894,7 +7894,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 14,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 7.56,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -7920,7 +7920,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 16,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 10.42,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -7933,7 +7933,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 17,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 9.62,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -7972,7 +7972,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 20,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 5.07,
 "Número do Corte": 1.5,
 "Data de Plantio": "2022-01-01 00:00:00",
@@ -7985,7 +7985,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 21,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 12.77,
 "Número do Corte": 1.5,
 "Data de Plantio": null,
@@ -8102,7 +8102,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 30,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 33.89,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -8180,7 +8180,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 54,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 14.41,
 "Número do Corte": "3",
 "Data de Plantio": null,
@@ -8193,7 +8193,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 55,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 21.59,
 "Número do Corte": "3",
 "Data de Plantio": null,
@@ -8219,7 +8219,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 61,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 0.9,
 "Número do Corte": "3",
 "Data de Plantio": null,
@@ -8232,7 +8232,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 62,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 9.13,
 "Número do Corte": "3",
 "Data de Plantio": null,
@@ -8310,7 +8310,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 79,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 24.95,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -8323,7 +8323,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 83,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 8.25,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -8336,7 +8336,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 84,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 8.87,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -8349,7 +8349,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 85,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 3.64,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -8362,7 +8362,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 86,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 3.01,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -8375,7 +8375,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 87,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 20.69,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -8401,7 +8401,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 93,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 27.53,
 "Número do Corte": "4",
 "Data de Plantio": null,
@@ -8414,7 +8414,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 94,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 36.92,
 "Número do Corte": "4",
 "Data de Plantio": null,
@@ -8427,7 +8427,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 95,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 36.9,
 "Número do Corte": "4",
 "Data de Plantio": null,
@@ -8453,7 +8453,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 97,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 6.04,
 "Número do Corte": "3",
 "Data de Plantio": null,
@@ -8466,7 +8466,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 98,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 14.93,
 "Número do Corte": "3",
 "Data de Plantio": null,
@@ -8518,7 +8518,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 102,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 26.5,
 "Número do Corte": "3",
 "Data de Plantio": null,
@@ -8544,7 +8544,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 104,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 19.32,
 "Número do Corte": "3",
 "Data de Plantio": null,
@@ -8557,7 +8557,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2023,
 "Talhão": 105,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 38.37,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -8635,7 +8635,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2024,
 "Talhão": 3,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 20.6,
 "Número do Corte": "4",
 "Data de Plantio": null,
@@ -8674,7 +8674,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2024,
 "Talhão": 10,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 7.32,
 "Número do Corte": "3",
 "Data de Plantio": null,
@@ -8687,7 +8687,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2024,
 "Talhão": 12,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 4.34,
 "Número do Corte": "3",
 "Data de Plantio": null,
@@ -8700,7 +8700,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2024,
 "Talhão": 14,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 7.56,
 "Número do Corte": "3",
 "Data de Plantio": null,
@@ -8726,7 +8726,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2024,
 "Talhão": 16,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 10.42,
 "Número do Corte": "3",
 "Data de Plantio": null,
@@ -8739,7 +8739,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2024,
 "Talhão": 17,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 9.62,
 "Número do Corte": "3",
 "Data de Plantio": null,
@@ -8778,7 +8778,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2024,
 "Talhão": 20,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 5.07,
 "Número do Corte": "2",
 "Data de Plantio": "2022-01-01 00:00:00",
@@ -8791,7 +8791,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2024,
 "Talhão": 21,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 12.77,
 "Número do Corte": "2",
 "Data de Plantio": null,
@@ -8908,7 +8908,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2024,
 "Talhão": 30,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 33.89,
 "Número do Corte": "3",
 "Data de Plantio": null,
@@ -8986,7 +8986,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2024,
 "Talhão": 54,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 14.41,
 "Número do Corte": 1,
 "Data de Plantio": "2023-12-01 00:00:00",
@@ -9025,7 +9025,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2024,
 "Talhão": 61,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 0.9,
 "Número do Corte": "4",
 "Data de Plantio": null,
@@ -9038,7 +9038,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2024,
 "Talhão": 62,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 9.13,
 "Número do Corte": "4",
 "Data de Plantio": null,
@@ -9116,7 +9116,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2024,
 "Talhão": 79,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 24.95,
 "Número do Corte": "3",
 "Data de Plantio": null,
@@ -9129,7 +9129,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2024,
 "Talhão": 83,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 8.25,
 "Número do Corte": "3",
 "Data de Plantio": null,
@@ -9142,7 +9142,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2024,
 "Talhão": 84,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 8.87,
 "Número do Corte": "3",
 "Data de Plantio": null,
@@ -9155,7 +9155,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2024,
 "Talhão": 85,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 3.64,
 "Número do Corte": "3",
 "Data de Plantio": null,
@@ -9168,7 +9168,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2024,
 "Talhão": 86,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 3.01,
 "Número do Corte": "3",
 "Data de Plantio": null,
@@ -9181,7 +9181,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2024,
 "Talhão": 87,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 20.69,
 "Número do Corte": "3",
 "Data de Plantio": null,
@@ -9207,7 +9207,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2024,
 "Talhão": 93,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 27.53,
 "Número do Corte": "5",
 "Data de Plantio": null,
@@ -9220,7 +9220,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2024,
 "Talhão": 94,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 36.92,
 "Número do Corte": "5",
 "Data de Plantio": null,
@@ -9233,7 +9233,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2024,
 "Talhão": 95,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 36.9,
 "Número do Corte": "5",
 "Data de Plantio": null,
@@ -9272,7 +9272,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2024,
 "Talhão": 98,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 14.93,
 "Número do Corte": "4",
 "Data de Plantio": null,
@@ -9324,7 +9324,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2024,
 "Talhão": 102,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 26.5,
 "Número do Corte": "4",
 "Data de Plantio": null,
@@ -9350,7 +9350,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2024,
 "Talhão": 104,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 19.32,
 "Número do Corte": "4",
 "Data de Plantio": null,
@@ -9363,7 +9363,7 @@ let dadosColheita = [
 {
 "Ano Colheita": 2024,
 "Talhão": 105,
-"Variedade": "CTC 4 ",
+"Variedade": "CTC 4",
 "Area Plantada": 38.37,
 "Número do Corte": "3",
 "Data de Plantio": null,
