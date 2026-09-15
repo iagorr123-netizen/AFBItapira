@@ -10256,96 +10256,115 @@ let dadosReforma = [
 {
   "Talhão": 1,
   "Area": 16.46,
-  "Ano Colheita": 2026
+  "Ano Colheita": 2026,
+  "Justificativa": ""
 },
 {
   "Talhão": 3,
   "Area": 20.67,
-  "Ano Colheita": 2026
+  "Ano Colheita": 2026,
+  "Justificativa": ""
 },
 {
   "Talhão": 5,
   "Area": 43.99,
-  "Ano Colheita": 2026
+  "Ano Colheita": 2026,
+  "Justificativa": ""
 },
 {
   "Talhão": 10,
   "Area": 6.54,
-  "Ano Colheita": 2026
+  "Ano Colheita": 2026,
+  "Justificativa": ""
 },
 {
   "Talhão": 12,
   "Area": 4.91,
-  "Ano Colheita": 2026
+  "Ano Colheita": 2026,
+  "Justificativa": ""
 },
 {
   "Talhão": 14,
   "Area": 7.22,
-  "Ano Colheita": 2026
+  "Ano Colheita": 2026,
+  "Justificativa": ""
 },
 {
   "Talhão": 16,
   "Area": 10.25,
-  "Ano Colheita": 2026
+  "Ano Colheita": 2026,
+  "Justificativa": ""
 },
 {
   "Talhão": 17,
   "Area": 9.63,
-  "Ano Colheita": 2026
+  "Ano Colheita": 2026,
+  "Justificativa": ""
 },
 {
   "Talhão": 18,
   "Area": 4.25,
-  "Ano Colheita": 2026
+  "Ano Colheita": 2026,
+  "Justificativa": ""
 },
 {
   "Talhão": 19,
   "Area": 13,
-  "Ano Colheita": 2026
+  "Ano Colheita": 2026,
+  "Justificativa": ""
 },
 {
   "Talhão": 20,
   "Area": 5.08,
-  "Ano Colheita": 2026
+  "Ano Colheita": 2026,
+  "Justificativa": ""
 },
 {
   "Talhão": 21,
   "Area": 12.92,
-  "Ano Colheita": 2026
+  "Ano Colheita": 2026,
+  "Justificativa": ""
 },
 {
   "Talhão": 64,
   "Area": 19.93,
-  "Ano Colheita": 2026
+  "Ano Colheita": 2026,
+  "Justificativa": ""
 },
 {
   "Talhão": 65,
   "Area": 8.53,
-  "Ano Colheita": 2026
+  "Ano Colheita": 2026,
+  "Justificativa": ""
 },
 {
   "Talhão": 66,
   "Area": 9.05,
-  "Ano Colheita": 2026
+  "Ano Colheita": 2026,
+  "Justificativa": ""
 },
 {
   "Talhão": 67,
   "Area": 13.8,
-  "Ano Colheita": 2026
+  "Ano Colheita": 2026,
+  "Justificativa": ""
 },
 {
   "Talhão": 69,
   "Area": 7.26,
-  "Ano Colheita": 2026
+  "Ano Colheita": 2026,
+  "Justificativa": ""
 },
 {
   "Talhão": 87,
   "Area": 20.76,
-  "Ano Colheita": 2026
+  "Ano Colheita": 2026,
+  "Justificativa": ""
 },
 {
   "Talhão": 94,
   "Area": 34.94,
-  "Ano Colheita": 2026
+  "Ano Colheita": 2026,
+  "Justificativa": ""
 }
 ];

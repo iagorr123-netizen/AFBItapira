@@ -128,7 +128,7 @@
         <div class="mudas-reforma-container">
             <div class="chart-reforma-box"><div class="tabla-titulo">📊 Média TCH por Corte</div><div class="chart-canvas"><canvas id="chartCorteAux"></canvas></div></div>
             <div class="table-mudas-box"><div class="tabla-titulo"><span class="badge-info badge-mudas">🌱</span> Mudas 2026</div><div class="tabla-scroll"><table class="tabla-mudas"><thead><tr><th style="width: 70px;">Talhão</th><th style="width: 90px;">Variedade</th><th style="width: 70px;">Área (ha)</th><th style="width: 85px;">Valor (R$)</th><th style="width: 50px;">TCH</th><th style="width: 70px;">A. Plant</th></tr></thead><tbody id="tabelaMudas"></tbody></table></div></div></div>
-            <div class="table-reforma-box"><div class="tabla-titulo"><span class="badge-info badge-reforma">🔄</span> Reforma 2026</div><div class="tabla-scroll"><table class="tabla-reforma"><thead><tr><th>Talhão</th><th>Área (ha)</th></tr></thead><tbody id="tabelaReforma"></tbody></table></div></div></div>
+            <div class="table-reforma-box"><div class="tabla-titulo"><span class="badge-info badge-reforma">🔄</span> Reforma 2026</div><div style="background: #f0f8f5; padding: 12px; border-radius: 6px; margin-bottom: 12px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; font-size: 0.85rem;"><div><strong>Talhões:</strong> <span id="totalTalhoes" style="color: #2ecc71; font-weight: bold;">0</span></div><div><strong>Área Total:</strong> <span id="totalArea" style="color: #2ecc71; font-weight: bold;">0</span> ha</div><div><strong>Média/Talhão:</strong> <span id="mediaArea" style="color: #2ecc71; font-weight: bold;">0</span> ha</div></div><div class="tabla-scroll"><table class="tabla-reforma"><thead><tr><th style="width: 60px;">Talhão</th><th style="width: 60px;">Área (ha)</th><th style="flex: 1;">Justificativa</th></tr></thead><tbody id="tabelaReforma"></tbody></table></div></div></div>
         </div>
         <div class="status-container">
             <h3 style="margin-bottom: 20px;">🎯 Status dos Talhões</h3>
@@ -507,10 +507,23 @@
         function preencherReforma() {
             if (typeof dadosReforma === 'undefined' || !dadosReforma.length) return;
             const tb = document.getElementById('tabelaReforma');
+
+            // Calcular totais
+            const totalTalhoes = dadosReforma.length;
+            const totalArea = dadosReforma.reduce((sum, r) => sum + r['Area'], 0);
+            const mediaArea = (totalArea / totalTalhoes).toFixed(2);
+
+            // Atualizar cards de resumo
+            document.getElementById('totalTalhoes').textContent = totalTalhoes;
+            document.getElementById('totalArea').textContent = totalArea.toFixed(2);
+            document.getElementById('mediaArea').textContent = mediaArea;
+
+            // Preencher tabela
             tb.innerHTML = dadosReforma.map(r => `
                 <tr>
                     <td><span class="talhao-badge">Talhão ${r['Talhão']}</span></td>
                     <td>${r['Area'].toFixed(2)}</td>
+                    <td>${r['Justificativa'] || '-'}</td>
                 </tr>
             `).join('');
         }
