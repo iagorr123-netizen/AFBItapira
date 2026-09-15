@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: afbitapira
+    env: static
+    staticSiteDir: .
+    buildCommand: ""
+    startCommand: ""
+    routes:
+      - path: /
+        destination: /index.html
+      - path: /dashboard.html
+        destination: /dashboard.html
+      - path: /mapa_interativo.html
+        destination: /mapa_interativo.html
+      - path: /analise_avancada.html
+        destination: /analise_avancada.html
