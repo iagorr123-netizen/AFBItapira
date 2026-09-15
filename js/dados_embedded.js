@@ -754,7 +754,19 @@ let dadosColheita = [
 "Produtividade TCH": 85.0,
 "Tonelada Colhida": 3234.25
 },
-
+{
+"Ano Colheita": 2025,
+"Talhão": 106,
+"Variedade": "CTC 9001",
+"Area Plantada": 12.29,
+"Número do Corte": 5,
+"Data de Plantio": null,
+"Idade (meses)": null,
+"Idade (anos)": null,
+"Area Colhida": 12.29,
+"Produtividade TCH": 59.0,
+"Tonelada Colhida": 725.1099999999999
+},
 {
 "Ano Colheita": 2025,
 "Talhão": 108,
@@ -6969,7 +6981,19 @@ let dadosColheita = [
 "Produtividade TCH": 66.84,
 "Tonelada Colhida": 1291.3488
 },
-
+{
+"Ano Colheita": 2021,
+"Talhão": 106,
+"Variedade": "RB 5952",
+"Area Plantada": 5.5,
+"Número do Corte": "1,5",
+"Data de Plantio": null,
+"Idade (meses)": null,
+"Idade (anos)": null,
+"Area Colhida": 5.5,
+"Produtividade TCH": 96.0,
+"Tonelada Colhida": 528.0
+},
 {
 "Ano Colheita": 2022,
 "Talhão": 1,
@@ -7737,7 +7761,19 @@ let dadosColheita = [
 "Produtividade TCH": 85.0,
 "Tonelada Colhida": 3261.45
 },
-
+{
+"Ano Colheita": 2022,
+"Talhão": 106,
+"Variedade": "CTC 9001",
+"Area Plantada": 11.54,
+"Número do Corte": "2",
+"Data de Plantio": null,
+"Idade (meses)": null,
+"Idade (anos)": null,
+"Area Colhida": 11.54,
+"Produtividade TCH": 87.0,
+"Tonelada Colhida": 1003.98
+},
 {
 "Ano Colheita": 2022,
 "Talhão": 108,
@@ -8531,7 +8567,19 @@ let dadosColheita = [
 "Produtividade TCH": 110.0,
 "Tonelada Colhida": 4220.7
 },
-
+{
+"Ano Colheita": 2023,
+"Talhão": 106,
+"Variedade": "CTC 9001",
+"Area Plantada": 11.54,
+"Número do Corte": "3",
+"Data de Plantio": null,
+"Idade (meses)": null,
+"Idade (anos)": null,
+"Area Colhida": 11.54,
+"Produtividade TCH": 87.0,
+"Tonelada Colhida": 1003.98
+},
 {
 "Ano Colheita": 2023,
 "Talhão": 108,
@@ -9325,7 +9373,19 @@ let dadosColheita = [
 "Produtividade TCH": 94.0,
 "Tonelada Colhida": 3606.78
 },
-
+{
+"Ano Colheita": 2024,
+"Talhão": 106,
+"Variedade": "CTC 9001",
+"Area Plantada": 11.54,
+"Número do Corte": "4",
+"Data de Plantio": null,
+"Idade (meses)": null,
+"Idade (anos)": null,
+"Area Colhida": 11.54,
+"Produtividade TCH": 75.0,
+"Tonelada Colhida": 865.4999999999999
+},
 {
 "Ano Colheita": 2024,
 "Talhão": 108,
