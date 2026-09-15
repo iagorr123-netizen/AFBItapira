@@ -10275,67 +10275,67 @@ let dadosReforma = [
   "Talhão": 10,
   "Area": 6.54,
   "Ano Colheita": 2026,
-  "Justificativa": ""
+  "Justificativa": "Baixada, perto da represa (produção fraca)"
 },
 {
   "Talhão": 12,
   "Area": 4.91,
   "Ano Colheita": 2026,
-  "Justificativa": ""
+  "Justificativa": "Baixada, perto da represa (produção fraca)"
 },
 {
   "Talhão": 14,
   "Area": 7.22,
   "Ano Colheita": 2026,
-  "Justificativa": ""
+  "Justificativa": "Baixada, perto da represa (produção fraca)"
 },
 {
   "Talhão": 16,
   "Area": 10.25,
   "Ano Colheita": 2026,
-  "Justificativa": ""
+  "Justificativa": "Quadra pequena para fazer viveiro"
 },
 {
   "Talhão": 17,
   "Area": 9.63,
   "Ano Colheita": 2026,
-  "Justificativa": ""
+  "Justificativa": "Solo B, produção fraca (4º corte não foi bem)"
 },
 {
   "Talhão": 18,
   "Area": 4.25,
   "Ano Colheita": 2026,
-  "Justificativa": ""
+  "Justificativa": "Solo B, produção fraca (4º corte não foi bem)"
 },
 {
   "Talhão": 19,
   "Area": 13,
   "Ano Colheita": 2026,
-  "Justificativa": ""
+  "Justificativa": "Solo B, produção fraca (4º corte não foi bem)"
 },
 {
   "Talhão": 20,
   "Area": 5.08,
   "Ano Colheita": 2026,
-  "Justificativa": ""
+  "Justificativa": "Solo B, produção fraca (4º corte não foi bem)"
 },
 {
   "Talhão": 21,
   "Area": 12.92,
   "Ano Colheita": 2026,
-  "Justificativa": ""
+  "Justificativa": "Solo B, produção fraca (4º corte não foi bem)"
 },
 {
   "Talhão": 64,
   "Area": 19.93,
   "Ano Colheita": 2026,
-  "Justificativa": ""
+  "Justificativa": "Quadra excelente"
 },
 {
   "Talhão": 65,
   "Area": 8.53,
   "Ano Colheita": 2026,
-  "Justificativa": ""
+  "Justificativa": "Quadra excelente"
 },
 {
   "Talhão": 66,
@@ -10347,7 +10347,7 @@ let dadosReforma = [
   "Talhão": 67,
   "Area": 13.8,
   "Ano Colheita": 2026,
-  "Justificativa": ""
+  "Justificativa": "Quadra excelente"
 },
 {
   "Talhão": 69,
@@ -10359,12 +10359,12 @@ let dadosReforma = [
   "Talhão": 87,
   "Area": 20.76,
   "Ano Colheita": 2026,
-  "Justificativa": ""
+  "Justificativa": "Solo B, produção fraca (4º corte não foi bem)"
 },
 {
   "Talhão": 94,
   "Area": 34.94,
   "Ano Colheita": 2026,
-  "Justificativa": ""
+  "Justificativa": "Repetir 4ª cana (produziu 82 ton no 7º corte)"
 }
 ];
