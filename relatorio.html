@@ -190,6 +190,8 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 15px;
             margin-bottom: 30px;
+            page-break-inside: avoid;
+            break-inside: avoid;
         }
 
         .kpi-box {
@@ -197,6 +199,8 @@
             padding: 20px;
             border-radius: 8px;
             border-left: 4px solid #2ecc71;
+            page-break-inside: avoid;
+            break-inside: avoid;
         }
 
         .kpi-label {
@@ -220,10 +224,18 @@
         }
 
         .chart-container {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             padding: 20px;
             background: #f8f9fa;
             border-radius: 8px;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        .chart-canvas {
+            position: relative;
+            height: 350px !important;
+            width: 100% !important;
         }
 
         .chart-title {
@@ -318,12 +330,16 @@
 
                 <div class="chart-container">
                     <div class="chart-title">Produtividade por Variedade</div>
-                    <canvas id="chartResumoVariedade" style="max-height: 300px;"></canvas>
+                    <div class="chart-canvas">
+                        <canvas id="chartResumoVariedade"></canvas>
+                    </div>
                 </div>
 
                 <div class="chart-container">
                     <div class="chart-title">TCH Médio por Corte</div>
-                    <canvas id="chartResumoCorte" style="max-height: 300px;"></canvas>
+                    <div class="chart-canvas">
+                        <canvas id="chartResumoCorte"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
@@ -452,12 +468,12 @@
         async function exportarResumo() {
             const element = document.getElementById('previewResumo');
             const opt = {
-                margin: [15, 15, 15, 15],
+                margin: [12, 12, 12, 12],
                 filename: 'Relatorio_AFB_Itapira_2026.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, allowTaint: true, useCORS: true },
-                jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' },
-                pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+                html2canvas: { scale: 2, allowTaint: true, useCORS: true, logging: false },
+                jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4', compress: true },
+                pagebreak: { mode: 'css', avoid: ['tr', '.chart-container', '.kpi-box'] }
             };
             await html2pdf().set(opt).from(element).save();
         }
