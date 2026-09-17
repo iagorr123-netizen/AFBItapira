@@ -311,8 +311,8 @@
                         <div class="kpi-value"><span id="kpiArea">0</span><span class="kpi-unit">ha</span></div>
                     </div>
                     <div class="kpi-box">
-                        <div class="kpi-label">Número de Cortes</div>
-                        <div class="kpi-value"><span id="kpiCortes">0</span></div>
+                        <div class="kpi-label">Área Não Colhida</div>
+                        <div class="kpi-value"><span id="kpiAreaNao">0</span><span class="kpi-unit">ha</span></div>
                     </div>
                 </div>
 
@@ -362,12 +362,13 @@
             const prodMedia = (dados2026.reduce((sum, d) => sum + (d['Produtividade TCH'] * d['Area Colhida']), 0) / dados2026.reduce((sum, d) => sum + d['Area Colhida'], 0)).toFixed(2);
             const totalColhido = dados2026.reduce((sum, d) => sum + d['Tonelada Colhida'], 0).toFixed(0);
             const areaColhida = dados2026.reduce((sum, d) => sum + d['Area Colhida'], 0).toFixed(2);
-            const numCortes = Math.max(...dados2026.map(d => d['Número do Corte']));
+            const areaPlantada = dados2026.reduce((sum, d) => sum + d['Area Plantada'], 0).toFixed(2);
+            const areaNaoColhida = (areaPlantada - areaColhida).toFixed(2);
 
             document.getElementById('kpiProd').textContent = prodMedia;
             document.getElementById('kpiTotal').textContent = (totalColhido / 1000).toFixed(2) + ' mil';
             document.getElementById('kpiArea').textContent = areaColhida;
-            document.getElementById('kpiCortes').textContent = numCortes;
+            document.getElementById('kpiAreaNao').textContent = areaNaoColhida;
         }
 
         function desenharGraficosResumo() {
@@ -398,8 +399,11 @@
                 options: {
                     responsive: true,
                     maintainAspectRatio: true,
-                    scales: { y: { beginAtZero: true } },
-                    plugins: { legend: { display: false } }
+                    scales: { y: { beginAtZero: true, ticks: { callback: function(value) { return value + ' TCH/ha'; } } } },
+                    plugins: {
+                        legend: { display: true, position: 'top' },
+                        tooltip: { callbacks: { label: function(context) { return context.parsed.y + ' TCH/ha'; } } }
+                    }
                 }
             });
 
@@ -420,20 +424,27 @@
                 data: {
                     labels: corteLabels.map(c => `Corte ${c}`),
                     datasets: [{
-                        label: 'TCH/ha',
+                        label: 'TCH/ha Médio',
                         data: corteProds,
                         borderColor: '#3498db',
                         backgroundColor: 'rgba(52, 152, 219, 0.1)',
                         borderWidth: 2,
                         fill: true,
-                        tension: 0.4
+                        tension: 0.4,
+                        pointRadius: 5,
+                        pointBackgroundColor: '#3498db',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2
                     }]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: true,
-                    scales: { y: { beginAtZero: true } },
-                    plugins: { legend: { display: false } }
+                    scales: { y: { beginAtZero: true, ticks: { callback: function(value) { return value + ' TCH/ha'; } } } },
+                    plugins: {
+                        legend: { display: true, position: 'top' },
+                        tooltip: { callbacks: { label: function(context) { return 'TCH/ha: ' + context.parsed.y; } } }
+                    }
                 }
             });
         }
@@ -441,11 +452,12 @@
         async function exportarResumo() {
             const element = document.getElementById('previewResumo');
             const opt = {
-                margin: 10,
-                filename: 'relatorio_resumido_2026.pdf',
+                margin: [15, 15, 15, 15],
+                filename: 'Relatorio_AFB_Itapira_2026.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+                html2canvas: { scale: 2, allowTaint: true, useCORS: true },
+                jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' },
+                pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
             };
             await html2pdf().set(opt).from(element).save();
         }
