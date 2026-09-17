@@ -126,7 +126,7 @@
             <div class="chart-box"><div class="chart-title">📍 Média TCH por Corte</div><div class="chart-canvas"><canvas id="chartCorte"></canvas></div></div>
         </div>
         <div class="mudas-reforma-container">
-            <div class="table-mudas-box"><div class="tabla-titulo"><span class="badge-info badge-mudas">🌱</span> Mudas 2026</div><div class="tabla-scroll"><table class="tabla-mudas"><thead><tr><th style="width: 70px;">Talhão</th><th style="width: 90px;">Variedade</th><th style="width: 70px;">Área (ha)</th><th style="width: 85px;">Valor (R$)</th><th style="width: 50px;">TCH</th><th style="width: 70px;">A. Plant</th></tr></thead><tbody id="tabelaMudas"></tbody></table></div></div></div>
+            <div class="table-mudas-box"><div class="tabla-titulo"><span class="badge-info badge-mudas">🌱</span> Mudas 2026</div><div class="tabla-scroll"><table class="tabla-mudas"><thead><tr><th style="width: 70px;">Talhão</th><th style="width: 90px;">Variedade</th><th style="width: 100px;">Área Plantada</th><th style="width: 90px;">Área Colhida</th><th style="width: 50px;">TCH</th><th style="width: 90px;">Valor (R$)</th></tr></thead><tbody id="tabelaMudas"></tbody></table></div></div></div>
             <div class="table-reforma-box"><div class="tabla-titulo"><span class="badge-info badge-reforma">🔄</span> Reforma 2026</div><div style="background: #f0f8f5; padding: 12px; border-radius: 6px; margin-bottom: 12px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; font-size: 0.85rem;"><div><strong>Talhões:</strong> <span id="totalTalhoes" style="color: #2ecc71; font-weight: bold;">0</span></div><div><strong>Área Total:</strong> <span id="totalArea" style="color: #2ecc71; font-weight: bold;">0</span> ha</div><div><strong>Média/Talhão:</strong> <span id="mediaArea" style="color: #2ecc71; font-weight: bold;">0</span> ha</div></div><div class="tabla-scroll"><table class="tabla-reforma"><thead><tr><th style="width: 60px;">Talhão</th><th style="width: 60px;">Área (ha)</th><th style="flex: 1;">Justificativa</th></tr></thead><tbody id="tabelaReforma"></tbody></table></div></div></div>
         </div>
         <div class="status-container">
@@ -496,10 +496,10 @@
                 <tr>
                     <td><span class="talhao-badge">Talhão ${m['Talhão']}</span></td>
                     <td>${m['Variedade']}</td>
-                    <td>${m['Area Muda'].toFixed(2)}</td>
-                    <td><span class="valor-positivo">R$ ${m['Valores em Mudas'].toLocaleString('pt-BR', {minimumFractionDigits: 0})}</span></td>
-                    <td>${m['TCH']}</td>
                     <td>${m['Area Plantada'].toFixed(2)}</td>
+                    <td>${m['Area Muda'].toFixed(2)}</td>
+                    <td>${m['TCH']}</td>
+                    <td><span class="valor-positivo">R$ ${m['Valores em Mudas'].toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span></td>
                 </tr>
             `).join('');
         }
