@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios - AFB Itapira</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+            background: #f5f7fa;
+            padding: 20px;
+        }
+
+        .navbar {
+            background: #2c3e50;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .navbar h1 {
+            color: white;
+            font-size: 24px;
+            flex: 1;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .navbar a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .relatorios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .relatorio-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid #2ecc71;
+        }
+
+        .relatorio-card h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .relatorio-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .relatorio-card.resumido {
+            border-left-color: #3498db;
+        }
+
+        .relatorio-card.completo {
+            border-left-color: #e74c3c;
+        }
+
+        .relatorio-card.talhao {
+            border-left-color: #f39c12;
+        }
+
+        .btn-exportar {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: white;
+        }
+
+        .btn-exportar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .btn-resumido {
+            background: #3498db;
+        }
+
+        .btn-completo {
+            background: #e74c3c;
+        }
+
+        .btn-talhao {
+            background: #f39c12;
+        }
+
+        .talhao-selector {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .talhao-selector select {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+
+        .talhao-selector button {
+            padding: 8px 15px;
+            background: #f39c12;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .preview-section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-top: 30px;
+        }
+
+        .preview-section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .relatorio-preview {
+            display: none;
+            padding: 30px;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+
+        .relatorio-preview.active {
+            display: block;
+        }
+
+        .relatorio-header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #2ecc71;
+            padding-bottom: 20px;
+        }
+
+        .relatorio-header h1 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .relatorio-header p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .kpis-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .kpi-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2ecc71;
+        }
+
+        .kpi-label {
+            color: #666;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .kpi-value {
+            color: #2c3e50;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .kpi-unit {
+            color: #999;
+            font-size: 14px;
+            margin-left: 5px;
+        }
+
+        .chart-container {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .chart-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+            .relatorios-grid, .btn-exportar, .talhao-selector {
+                display: none !important;
+            }
+            .relatorio-preview {
+                box-shadow: none;
+                border: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>📊 Relatórios AFB Itapira 2026</h1>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="mapa_interativo.html">Mapa</a>
+        <a href="analise_avancada.html">Análise</a>
+        <a href="index.html">Início</a>
+    </div>
+
+    <div class="container">
+        <div class="relatorios-grid">
+            <!-- Relatório Resumido -->
+            <div class="relatorio-card resumido">
+                <h2>📄 Relatório Resumido</h2>
+                <p>KPIs principais e gráficos essenciais. Ideal para uma visão geral rápida do desempenho em 2026.</p>
+                <button class="btn-exportar btn-resumido" onclick="exportarResumo()">Exportar Resumido (PDF)</button>
+            </div>
+
+            <!-- Relatório Completo -->
+            <div class="relatorio-card completo">
+                <h2>📋 Relatório Completo</h2>
+                <p>Análise detalhada com todos os gráficos, tabelas e dados. Completo para análise profunda.</p>
+                <button class="btn-exportar btn-completo" onclick="exportarCompleto()">Exportar Completo (PDF)</button>
+            </div>
+
+            <!-- Relatório por Talhão -->
+            <div class="relatorio-card talhao">
+                <h2>🌾 Relatório por Talhão</h2>
+                <p>Dados detalhados de um talhão específico com histórico de produtividade.</p>
+                <div class="talhao-selector">
+                    <select id="selectTalhao">
+                        <option value="">Selecionar Talhão...</option>
+                    </select>
+                    <button onclick="exportarTalhao()">Exportar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preview Section -->
+        <div class="preview-section">
+            <h2>Visualizar Relatório</h2>
+
+            <!-- Resumo -->
+            <div id="previewResumo" class="relatorio-preview active">
+                <div class="relatorio-header">
+                    <h1>Relatório Resumido 2026</h1>
+                    <p>AFB Itapira | Data: <span id="dataResumo"></span></p>
+                </div>
+
+                <div class="kpis-grid">
+                    <div class="kpi-box">
+                        <div class="kpi-label">Produtividade Média</div>
+                        <div class="kpi-value"><span id="kpiProd">0</span><span class="kpi-unit">TCH/ha</span></div>
+                    </div>
+                    <div class="kpi-box">
+                        <div class="kpi-label">Total Colhido</div>
+                        <div class="kpi-value"><span id="kpiTotal">0</span><span class="kpi-unit">ton</span></div>
+                    </div>
+                    <div class="kpi-box">
+                        <div class="kpi-label">Área Colhida</div>
+                        <div class="kpi-value"><span id="kpiArea">0</span><span class="kpi-unit">ha</span></div>
+                    </div>
+                    <div class="kpi-box">
+                        <div class="kpi-label">Número de Cortes</div>
+                        <div class="kpi-value"><span id="kpiCortes">0</span></div>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-title">Produtividade por Variedade</div>
+                    <canvas id="chartResumoVariedade" style="max-height: 300px;"></canvas>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-title">TCH Médio por Corte</div>
+                    <canvas id="chartResumoCorte" style="max-height: 300px;"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/dados_embedded.js"></script>
+    <script>
+        // Inicializar
+        document.addEventListener('DOMContentLoaded', () => {
+            inicializarData();
+            preencherSelectTalhao();
+            atualizarKPIs();
+            desenharGraficosResumo();
+        });
+
+        function inicializarData() {
+            const today = new Date().toLocaleDateString('pt-BR');
+            document.getElementById('dataResumo').textContent = today;
+        }
+
+        function preencherSelectTalhao() {
+            const select = document.getElementById('selectTalhao');
+            const talhoes = [...new Set(dadosColheita.filter(d => d['Ano Colheita'] === 2026).map(d => d['Talhão']))].sort((a,b) => a-b);
+
+            talhoes.forEach(t => {
+                const option = document.createElement('option');
+                option.value = t;
+                option.textContent = `Talhão ${t}`;
+                select.appendChild(option);
+            });
+        }
+
+        function atualizarKPIs() {
+            const dados2026 = dadosColheita.filter(d => d['Ano Colheita'] === 2026);
+
+            const prodMedia = (dados2026.reduce((sum, d) => sum + (d['Produtividade TCH'] * d['Area Colhida']), 0) / dados2026.reduce((sum, d) => sum + d['Area Colhida'], 0)).toFixed(2);
+            const totalColhido = dados2026.reduce((sum, d) => sum + d['Tonelada Colhida'], 0).toFixed(0);
+            const areaColhida = dados2026.reduce((sum, d) => sum + d['Area Colhida'], 0).toFixed(2);
+            const numCortes = Math.max(...dados2026.map(d => d['Número do Corte']));
+
+            document.getElementById('kpiProd').textContent = prodMedia;
+            document.getElementById('kpiTotal').textContent = (totalColhido / 1000).toFixed(2) + ' mil';
+            document.getElementById('kpiArea').textContent = areaColhida;
+            document.getElementById('kpiCortes').textContent = numCortes;
+        }
+
+        function desenharGraficosResumo() {
+            // Produtividade por variedade
+            const dados2026 = dadosColheita.filter(d => d['Ano Colheita'] === 2026);
+            const variedades = {};
+
+            dados2026.forEach(d => {
+                const v = d['Variedade'];
+                if (!variedades[v]) variedades[v] = { soma: 0, area: 0 };
+                variedades[v].soma += d['Produtividade TCH'] * d['Area Colhida'];
+                variedades[v].area += d['Area Colhida'];
+            });
+
+            const labels = Object.keys(variedades).sort();
+            const prods = labels.map(v => (variedades[v].soma / variedades[v].area).toFixed(2));
+
+            new Chart(document.getElementById('chartResumoVariedade'), {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'TCH/ha',
+                        data: prods,
+                        backgroundColor: '#2ecc71'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    scales: { y: { beginAtZero: true } },
+                    plugins: { legend: { display: false } }
+                }
+            });
+
+            // TCH por corte
+            const cortes = {};
+            dados2026.forEach(d => {
+                const c = d['Número do Corte'];
+                if (!cortes[c]) cortes[c] = { soma: 0, area: 0 };
+                cortes[c].soma += d['Produtividade TCH'] * d['Area Colhida'];
+                cortes[c].area += d['Area Colhida'];
+            });
+
+            const corteLabels = Object.keys(cortes).sort((a,b) => a-b);
+            const corteProds = corteLabels.map(c => (cortes[c].soma / cortes[c].area).toFixed(2));
+
+            new Chart(document.getElementById('chartResumoCorte'), {
+                type: 'line',
+                data: {
+                    labels: corteLabels.map(c => `Corte ${c}`),
+                    datasets: [{
+                        label: 'TCH/ha',
+                        data: corteProds,
+                        borderColor: '#3498db',
+                        backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    scales: { y: { beginAtZero: true } },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
+        async function exportarResumo() {
+            const element = document.getElementById('previewResumo');
+            const opt = {
+                margin: 10,
+                filename: 'relatorio_resumido_2026.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+            };
+            await html2pdf().set(opt).from(element).save();
+        }
+
+        async function exportarCompleto() {
+            alert('Relatório Completo - em desenvolvimento');
+        }
+
+        async function exportarTalhao() {
+            const talhao = document.getElementById('selectTalhao').value;
+            if (!talhao) {
+                alert('Selecione um talhão');
+                return;
+            }
+            alert(`Exportar Talhão ${talhao} - em desenvolvimento`);
+        }
+    </script>
+</body>
+</html>
