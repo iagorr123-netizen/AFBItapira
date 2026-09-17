@@ -65,7 +65,8 @@ let dadosTalhoes = [
         "media": 65.38,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 11
   },
   {
     "numero": 2,
@@ -133,7 +134,8 @@ let dadosTalhoes = [
         "media": 81.0,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 11
   },
   {
     "numero": 3,
@@ -201,7 +203,8 @@ let dadosTalhoes = [
         "media": 75.55,
         "numCorte": "6"
       }
-    ]
+    ],
+    "registros": 11
   },
   {
     "numero": 4,
@@ -239,7 +242,8 @@ let dadosTalhoes = [
         "media": 1.95,
         "numCorte": "6"
       }
-    ]
+    ],
+    "registros": 5
   },
   {
     "numero": 5,
@@ -307,7 +311,8 @@ let dadosTalhoes = [
         "media": 72.0,
         "numCorte": "5"
       }
-    ]
+    ],
+    "registros": 11
   },
   {
     "numero": 6,
@@ -350,7 +355,8 @@ let dadosTalhoes = [
         "media": 69.98,
         "numCorte": "7"
       }
-    ]
+    ],
+    "registros": 6
   },
   {
     "numero": 7,
@@ -393,7 +399,8 @@ let dadosTalhoes = [
         "media": 69.95,
         "numCorte": "7"
       }
-    ]
+    ],
+    "registros": 6
   },
   {
     "numero": 8,
@@ -461,7 +468,8 @@ let dadosTalhoes = [
         "media": 0.0,
         "numCorte": "1"
       }
-    ]
+    ],
+    "registros": 11
   },
   {
     "numero": 9,
@@ -499,7 +507,8 @@ let dadosTalhoes = [
         "media": 68.27,
         "numCorte": "6"
       }
-    ]
+    ],
+    "registros": 5
   },
   {
     "numero": 10,
@@ -572,7 +581,8 @@ let dadosTalhoes = [
         "media": 65.0,
         "numCorte": "5"
       }
-    ]
+    ],
+    "registros": 12
   },
   {
     "numero": 12,
@@ -645,7 +655,8 @@ let dadosTalhoes = [
         "media": 65.0,
         "numCorte": "5"
       }
-    ]
+    ],
+    "registros": 12
   },
   {
     "numero": 14,
@@ -718,7 +729,8 @@ let dadosTalhoes = [
         "media": 65.0,
         "numCorte": "5"
       }
-    ]
+    ],
+    "registros": 12
   },
   {
     "numero": 15,
@@ -786,7 +798,8 @@ let dadosTalhoes = [
         "media": 80.0,
         "numCorte": "3"
       }
-    ]
+    ],
+    "registros": 11
   },
   {
     "numero": 16,
@@ -859,7 +872,8 @@ let dadosTalhoes = [
         "media": 65.0,
         "numCorte": "5"
       }
-    ]
+    ],
+    "registros": 12
   },
   {
     "numero": 17,
@@ -932,7 +946,8 @@ let dadosTalhoes = [
         "media": 65.0,
         "numCorte": "5"
       }
-    ]
+    ],
+    "registros": 12
   },
   {
     "numero": 18,
@@ -1000,7 +1015,8 @@ let dadosTalhoes = [
         "media": 63.0,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 11
   },
   {
     "numero": 19,
@@ -1068,7 +1084,8 @@ let dadosTalhoes = [
         "media": 63.0,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 11
   },
   {
     "numero": 20,
@@ -1141,7 +1158,8 @@ let dadosTalhoes = [
         "media": 64.54,
         "numCorte": "5"
       }
-    ]
+    ],
+    "registros": 12
   },
   {
     "numero": 21,
@@ -1209,7 +1227,8 @@ let dadosTalhoes = [
         "media": 62.0,
         "numCorte": "5"
       }
-    ]
+    ],
+    "registros": 11
   },
   {
     "numero": 22,
@@ -1277,7 +1296,8 @@ let dadosTalhoes = [
         "media": 82.0,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 11
   },
   {
     "numero": 23,
@@ -1325,7 +1345,8 @@ let dadosTalhoes = [
         "media": 92.0,
         "numCorte": "1"
       }
-    ]
+    ],
+    "registros": 7
   },
   {
     "numero": 24,
@@ -1388,7 +1409,8 @@ let dadosTalhoes = [
         "media": 76.0,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 10
   },
   {
     "numero": 25,
@@ -1456,7 +1478,8 @@ let dadosTalhoes = [
         "media": 76.0,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 11
   },
   {
     "numero": 26,
@@ -1524,7 +1547,8 @@ let dadosTalhoes = [
         "media": 76.0,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 11
   },
   {
     "numero": 27,
@@ -1592,7 +1616,8 @@ let dadosTalhoes = [
         "media": 81.0,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 11
   },
   {
     "numero": 28,
@@ -1660,7 +1685,8 @@ let dadosTalhoes = [
         "media": 81.0,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 11
   },
   {
     "numero": 29,
@@ -1718,7 +1744,8 @@ let dadosTalhoes = [
         "media": 0.0,
         "numCorte": "1"
       }
-    ]
+    ],
+    "registros": 9
   },
   {
     "numero": 30,
@@ -1776,7 +1803,8 @@ let dadosTalhoes = [
         "media": 0.0,
         "numCorte": "5"
       }
-    ]
+    ],
+    "registros": 9
   },
   {
     "numero": 31,
@@ -1834,7 +1862,8 @@ let dadosTalhoes = [
         "media": 45.0,
         "numCorte": "1"
       }
-    ]
+    ],
+    "registros": 9
   },
   {
     "numero": 32,
@@ -1887,7 +1916,8 @@ let dadosTalhoes = [
         "media": 0.0,
         "numCorte": "1"
       }
-    ]
+    ],
+    "registros": 8
   },
   {
     "numero": 33,
@@ -1950,7 +1980,8 @@ let dadosTalhoes = [
         "media": 71.0,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 11
   },
   {
     "numero": 34,
@@ -1983,7 +2014,8 @@ let dadosTalhoes = [
         "media": 55.29,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 4
   },
   {
     "numero": 35,
@@ -2016,7 +2048,8 @@ let dadosTalhoes = [
         "media": 66.12,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 4
   },
   {
     "numero": 36,
@@ -2049,7 +2082,8 @@ let dadosTalhoes = [
         "media": 49.68,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 4
   },
   {
     "numero": 37,
@@ -2082,7 +2116,8 @@ let dadosTalhoes = [
         "media": 63.02,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 4
   },
   {
     "numero": 38,
@@ -2115,7 +2150,8 @@ let dadosTalhoes = [
         "media": 46.0,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 4
   },
   {
     "numero": 39,
@@ -2148,7 +2184,8 @@ let dadosTalhoes = [
         "media": 39.43,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 4
   },
   {
     "numero": 40,
@@ -2181,7 +2218,8 @@ let dadosTalhoes = [
         "media": 47.98,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 4
   },
   {
     "numero": 41,
@@ -2214,7 +2252,8 @@ let dadosTalhoes = [
         "media": 51.58,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 4
   },
   {
     "numero": 42,
@@ -2247,7 +2286,8 @@ let dadosTalhoes = [
         "media": 63.51,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 4
   },
   {
     "numero": 43,
@@ -2280,7 +2320,8 @@ let dadosTalhoes = [
         "media": 63.02,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 4
   },
   {
     "numero": 44,
@@ -2313,7 +2354,8 @@ let dadosTalhoes = [
         "media": 64.56,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 4
   },
   {
     "numero": 45,
@@ -2351,7 +2393,8 @@ let dadosTalhoes = [
         "media": 70.43,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 6
   },
   {
     "numero": 46,
@@ -2389,7 +2432,8 @@ let dadosTalhoes = [
         "media": 70.47,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 5
   },
   {
     "numero": 47,
@@ -2432,7 +2476,8 @@ let dadosTalhoes = [
         "media": 53.31,
         "numCorte": "6"
       }
-    ]
+    ],
+    "registros": 6
   },
   {
     "numero": 48,
@@ -2475,7 +2520,8 @@ let dadosTalhoes = [
         "media": 53.46,
         "numCorte": "6"
       }
-    ]
+    ],
+    "registros": 6
   },
   {
     "numero": 52,
@@ -2543,7 +2589,8 @@ let dadosTalhoes = [
         "media": 98.0,
         "numCorte": "2"
       }
-    ]
+    ],
+    "registros": 11
   },
   {
     "numero": 53,
@@ -2611,7 +2658,8 @@ let dadosTalhoes = [
         "media": 92.0,
         "numCorte": "3"
       }
-    ]
+    ],
+    "registros": 11
   },
   {
     "numero": 54,
@@ -2679,7 +2727,8 @@ let dadosTalhoes = [
         "media": 98.0,
         "numCorte": "2"
       }
-    ]
+    ],
+    "registros": 11
   },
   {
     "numero": 55,
@@ -2747,7 +2796,8 @@ let dadosTalhoes = [
         "media": 98.0,
         "numCorte": "2"
       }
-    ]
+    ],
+    "registros": 11
   },
   {
     "numero": 56,
@@ -2785,7 +2835,8 @@ let dadosTalhoes = [
         "media": 31.13,
         "numCorte": "6"
       }
-    ]
+    ],
+    "registros": 5
   },
   {
     "numero": 57,
@@ -2823,7 +2874,8 @@ let dadosTalhoes = [
         "media": 29.25,
         "numCorte": "6"
       }
-    ]
+    ],
+    "registros": 5
   },
   {
     "numero": 58,
@@ -2886,7 +2938,8 @@ let dadosTalhoes = [
         "media": 78.0,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 10
   },
   {
     "numero": 59,
@@ -2924,7 +2977,8 @@ let dadosTalhoes = [
         "media": 83.87,
         "numCorte": "6"
       }
-    ]
+    ],
+    "registros": 5
   },
   {
     "numero": 60,
@@ -2962,7 +3016,8 @@ let dadosTalhoes = [
         "media": 81.4,
         "numCorte": "6"
       }
-    ]
+    ],
+    "registros": 5
   },
   {
     "numero": 61,
@@ -3030,7 +3085,8 @@ let dadosTalhoes = [
         "media": 0.0,
         "numCorte": "1"
       }
-    ]
+    ],
+    "registros": 11
   },
   {
     "numero": 62,
@@ -3098,7 +3154,8 @@ let dadosTalhoes = [
         "media": 0.0,
         "numCorte": "1"
       }
-    ]
+    ],
+    "registros": 11
   },
   {
     "numero": 63,
@@ -3141,7 +3198,8 @@ let dadosTalhoes = [
         "media": 64.33,
         "numCorte": "9"
       }
-    ]
+    ],
+    "registros": 6
   },
   {
     "numero": 64,
@@ -3214,7 +3272,8 @@ let dadosTalhoes = [
         "media": 77.0,
         "numCorte": "5"
       }
-    ]
+    ],
+    "registros": 12
   },
   {
     "numero": 65,
@@ -3287,7 +3346,8 @@ let dadosTalhoes = [
         "media": 77.0,
         "numCorte": "5"
       }
-    ]
+    ],
+    "registros": 12
   },
   {
     "numero": 66,
@@ -3360,7 +3420,8 @@ let dadosTalhoes = [
         "media": 77.0,
         "numCorte": "5"
       }
-    ]
+    ],
+    "registros": 12
   },
   {
     "numero": 67,
@@ -3433,7 +3494,8 @@ let dadosTalhoes = [
         "media": 77.0,
         "numCorte": "5"
       }
-    ]
+    ],
+    "registros": 12
   },
   {
     "numero": 69,
@@ -3506,7 +3568,8 @@ let dadosTalhoes = [
         "media": 77.0,
         "numCorte": "5"
       }
-    ]
+    ],
+    "registros": 12
   },
   {
     "numero": 73,
@@ -3554,7 +3617,8 @@ let dadosTalhoes = [
         "media": 66.07,
         "numCorte": "8"
       }
-    ]
+    ],
+    "registros": 7
   },
   {
     "numero": 74,
@@ -3597,7 +3661,8 @@ let dadosTalhoes = [
         "media": 64.33,
         "numCorte": "7"
       }
-    ]
+    ],
+    "registros": 6
   },
   {
     "numero": 75,
@@ -3640,7 +3705,8 @@ let dadosTalhoes = [
         "media": 64.26,
         "numCorte": "7"
       }
-    ]
+    ],
+    "registros": 6
   },
   {
     "numero": 76,
@@ -3683,7 +3749,8 @@ let dadosTalhoes = [
         "media": 64.33,
         "numCorte": "7"
       }
-    ]
+    ],
+    "registros": 6
   },
   {
     "numero": 77,
@@ -3726,7 +3793,8 @@ let dadosTalhoes = [
         "media": 64.3,
         "numCorte": "7"
       }
-    ]
+    ],
+    "registros": 6
   },
   {
     "numero": 78,
@@ -3769,7 +3837,8 @@ let dadosTalhoes = [
         "media": 64.21,
         "numCorte": "7"
       }
-    ]
+    ],
+    "registros": 6
   },
   {
     "numero": 79,
@@ -3842,7 +3911,8 @@ let dadosTalhoes = [
         "media": 78.0,
         "numCorte": "5"
       }
-    ]
+    ],
+    "registros": 12
   },
   {
     "numero": 80,
@@ -3885,7 +3955,8 @@ let dadosTalhoes = [
         "media": 53.34,
         "numCorte": "7"
       }
-    ]
+    ],
+    "registros": 6
   },
   {
     "numero": 81,
@@ -3933,7 +4004,8 @@ let dadosTalhoes = [
         "media": 40.29,
         "numCorte": "8"
       }
-    ]
+    ],
+    "registros": 7
   },
   {
     "numero": 82,
@@ -3981,7 +4053,8 @@ let dadosTalhoes = [
         "media": 40.25,
         "numCorte": "8"
       }
-    ]
+    ],
+    "registros": 8
   },
   {
     "numero": 83,
@@ -4049,7 +4122,8 @@ let dadosTalhoes = [
         "media": 108.0,
         "numCorte": "5"
       }
-    ]
+    ],
+    "registros": 11
   },
   {
     "numero": 84,
@@ -4122,7 +4196,8 @@ let dadosTalhoes = [
         "media": 108.0,
         "numCorte": "5"
       }
-    ]
+    ],
+    "registros": 12
   },
   {
     "numero": 85,
@@ -4190,7 +4265,8 @@ let dadosTalhoes = [
         "media": 0.0,
         "numCorte": "1"
       }
-    ]
+    ],
+    "registros": 11
   },
   {
     "numero": 86,
@@ -4258,7 +4334,8 @@ let dadosTalhoes = [
         "media": 0.0,
         "numCorte": "1"
       }
-    ]
+    ],
+    "registros": 11
   },
   {
     "numero": 87,
@@ -4331,7 +4408,8 @@ let dadosTalhoes = [
         "media": 104.0,
         "numCorte": "5"
       }
-    ]
+    ],
+    "registros": 12
   },
   {
     "numero": 88,
@@ -4364,7 +4442,8 @@ let dadosTalhoes = [
         "media": 46.25,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 4
   },
   {
     "numero": 89,
@@ -4397,7 +4476,8 @@ let dadosTalhoes = [
         "media": 58.93,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 4
   },
   {
     "numero": 90,
@@ -4430,7 +4510,8 @@ let dadosTalhoes = [
         "media": 55.73,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 4
   },
   {
     "numero": 91,
@@ -4463,7 +4544,8 @@ let dadosTalhoes = [
         "media": 70.44,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 4
   },
   {
     "numero": 92,
@@ -4516,7 +4598,8 @@ let dadosTalhoes = [
         "media": 98.0,
         "numCorte": "2"
       }
-    ]
+    ],
+    "registros": 8
   },
   {
     "numero": 93,
@@ -4564,7 +4647,8 @@ let dadosTalhoes = [
         "media": 95.0,
         "numCorte": "1"
       }
-    ]
+    ],
+    "registros": 7
   },
   {
     "numero": 94,
@@ -4612,7 +4696,8 @@ let dadosTalhoes = [
         "media": 82.0,
         "numCorte": "7"
       }
-    ]
+    ],
+    "registros": 7
   },
   {
     "numero": 95,
@@ -4660,7 +4745,8 @@ let dadosTalhoes = [
         "media": 95.0,
         "numCorte": "1"
       }
-    ]
+    ],
+    "registros": 7
   },
   {
     "numero": 96,
@@ -4703,7 +4789,8 @@ let dadosTalhoes = [
         "media": 100.0,
         "numCorte": "1"
       }
-    ]
+    ],
+    "registros": 6
   },
   {
     "numero": 97,
@@ -4746,7 +4833,8 @@ let dadosTalhoes = [
         "media": 98.0,
         "numCorte": "3"
       }
-    ]
+    ],
+    "registros": 6
   },
   {
     "numero": 98,
@@ -4789,7 +4877,8 @@ let dadosTalhoes = [
         "media": 0.0,
         "numCorte": "1"
       }
-    ]
+    ],
+    "registros": 6
   },
   {
     "numero": 99,
@@ -4832,7 +4921,8 @@ let dadosTalhoes = [
         "media": 100.0,
         "numCorte": "1"
       }
-    ]
+    ],
+    "registros": 6
   },
   {
     "numero": 100,
@@ -4875,7 +4965,8 @@ let dadosTalhoes = [
         "media": 0.0,
         "numCorte": "1"
       }
-    ]
+    ],
+    "registros": 6
   },
   {
     "numero": 101,
@@ -4918,7 +5009,8 @@ let dadosTalhoes = [
         "media": 110.0,
         "numCorte": "2"
       }
-    ]
+    ],
+    "registros": 6
   },
   {
     "numero": 102,
@@ -4961,7 +5053,8 @@ let dadosTalhoes = [
         "media": 0.0,
         "numCorte": "1"
       }
-    ]
+    ],
+    "registros": 6
   },
   {
     "numero": 103,
@@ -5004,7 +5097,8 @@ let dadosTalhoes = [
         "media": 110.0,
         "numCorte": "2"
       }
-    ]
+    ],
+    "registros": 6
   },
   {
     "numero": 104,
@@ -5047,7 +5141,8 @@ let dadosTalhoes = [
         "media": 80.55,
         "numCorte": "1"
       }
-    ]
+    ],
+    "registros": 6
   },
   {
     "numero": 105,
@@ -5085,7 +5180,8 @@ let dadosTalhoes = [
         "media": 84.0,
         "numCorte": "5"
       }
-    ]
+    ],
+    "registros": 5
   },
   {
     "numero": 106,
@@ -5123,7 +5219,8 @@ let dadosTalhoes = [
         "media": 59.0,
         "numCorte": "5"
       }
-    ]
+    ],
+    "registros": 5
   },
   {
     "numero": 108,
@@ -5161,7 +5258,8 @@ let dadosTalhoes = [
         "media": 78.0,
         "numCorte": "4"
       }
-    ]
+    ],
+    "registros": 5
   },
   {
     "numero": 109,
@@ -5199,7 +5297,8 @@ let dadosTalhoes = [
         "media": 85.0,
         "numCorte": "3"
       }
-    ]
+    ],
+    "registros": 5
   }
 ];
 
