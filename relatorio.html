@@ -467,14 +467,25 @@
         }
 
         async function exportarResumo() {
+            // Converter gráficos Canvas para imagens
+            const charts = document.querySelectorAll('canvas');
+            charts.forEach(canvas => {
+                const img = new Image();
+                img.src = canvas.toDataURL('image/png');
+                img.style.width = '100%';
+                img.style.height = 'auto';
+                img.style.display = 'block';
+                canvas.parentNode.replaceChild(img, canvas);
+            });
+
+            // Gerar PDF
             const element = document.getElementById('previewResumo');
             const opt = {
-                margin: [12, 12, 12, 12],
+                margin: [10, 10, 10, 10],
                 filename: 'Relatorio_AFB_Itapira_2026.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, allowTaint: true, useCORS: true, logging: false },
-                jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4', compress: true },
-                pagebreak: { mode: 'css', avoid: ['tr', '.chart-container', '.kpi-box'] }
+                image: { type: 'png', quality: 1 },
+                html2canvas: { scale: 3, useCORS: true, logging: false, backgroundColor: '#ffffff' },
+                jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
             };
             await html2pdf().set(opt).from(element).save();
         }
