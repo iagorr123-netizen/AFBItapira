@@ -415,9 +415,10 @@
             dados.forEach(r => {
                 const co = parseFloat(String(r[c.numCorte]).replace(',', '.'));
                 const p = parseFloat(r[c.produtividade]) || 0;
-                if (!isNaN(co)) {
-                    if (!cm[co]) cm[co] = { t: 0, n: 0 };
-                    cm[co].t += p; cm[co].n++;
+                const a = parseFloat(r[c.areaColhida]) || 0;
+                if (!isNaN(co) && a > 0) {
+                    if (!cm[co]) cm[co] = { t: 0, a: 0 };
+                    cm[co].t += p * a; cm[co].a += a;
                 }
             });
             const cs = Object.keys(cm).map(Number).sort((x, y) => x - y);
@@ -426,7 +427,7 @@
                 type: 'bar',
                 data: {
                     labels: cs.map(co => 'Corte ' + co),
-                    datasets: [{label: 'TCH/ha', data: cs.map(co => (cm[co].t/cm[co].n).toFixed(2)), backgroundColor: '#9b59b6'}]
+                    datasets: [{label: 'TCH/ha', data: cs.map(co => (cm[co].t/cm[co].a).toFixed(2)), backgroundColor: '#9b59b6'}]
                 },
                 options: {
                     responsive: true,
@@ -447,7 +448,7 @@
                     type: 'bar',
                     data: {
                         labels: cs.map(co => 'Corte ' + co),
-                        datasets: [{label: 'TCH/ha', data: cs.map(co => (cm[co].t/cm[co].n).toFixed(2)), backgroundColor: '#9b59b6'}]
+                        datasets: [{label: 'TCH/ha', data: cs.map(co => (cm[co].t/cm[co].a).toFixed(2)), backgroundColor: '#9b59b6'}]
                     },
                     options: {
                         responsive: true,
