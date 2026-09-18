@@ -291,11 +291,6 @@ function mostrarDadosTalhao(dados, cor) {
             </div>
         </div>
 
-        <div class="info-talhao" style="background: #f0f0f0; border-left-color: #999;">
-            <div class="info-label">Registros de Colheita</div>
-            <div class="info-valor">${dados.registros}</div>
-        </div>
-
         <!-- GRÁFICO DO HISTÓRICO -->
         <div class="info-talhao" style="margin-top: 20px; padding: 15px; border: none;">
             <div class="info-label" style="margin-bottom: 15px;">Histórico de Produtividade</div>
