@@ -56,7 +56,7 @@ function preencherFiltros() {
 
     dadosColheita.forEach(row => {
         if (row[col.ano]) anos.add(row[col.ano]);
-        if (row[col.numCorte]) cortes.add(row[col.numCorte]);
+        if (row[col.numCorte] && row[col.numCorte] !== 'NC') cortes.add(row[col.numCorte]);
         if (row[col.variedade]) variedades.add(row[col.variedade]);
         if (row[col.talhao]) talhoes.add(row[col.talhao]);
     });

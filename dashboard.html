@@ -484,7 +484,7 @@
                 <tr>
                     <td><span class="talhao-badge">Talhão ${r[c.talhao]}</span></td>
                     <td>${r[c.variedade]}</td>
-                    <td>Corte ${r[c.numCorte]}</td>
+                    <td>${r[c.numCorte] === 'NC' ? 'NC' : 'Corte ' + r[c.numCorte]}</td>
                     <td>${r[c.ano]}</td>
                     <td><strong>${parseFloat(r[c.produtividade]).toFixed(2)}</strong></td>
                     <td>${parseFloat(r[c.areaColhida]).toFixed(2)}</td>
