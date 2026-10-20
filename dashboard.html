@@ -128,6 +128,16 @@
             <div class="chart-box"><div class="chart-title">📈 Tendência de Produtividade</div><div class="chart-canvas"><canvas id="chartTendencia"></canvas></div></div>
             <div class="chart-box"><div class="chart-title">📍 Média TCH por Corte</div><div class="chart-canvas"><canvas id="chartCorte"></canvas></div></div>
         </div>
+        <div class="chart-box" style="margin-bottom: 30px;">
+            <div class="chart-title">📈 Comparativo com a média de SP</div>
+            <div id="compBtns" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;"></div>
+            <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 8px; font-size: 12px; color: #7f8c8d;">
+                <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 18px; height: 3px; background: #2a78d6; border-radius: 2px;"></span>Fazenda AFB Itapira</span>
+                <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 18px; border-top: 2px dashed #888780;"></span>Média SP</span>
+            </div>
+            <div style="position: relative; width: 100%; height: 320px;"><canvas id="chartComparativo" role="img" aria-label="Linhas de TCH por ano do corte selecionado, fazenda e média de SP, com anos sem colheita marcados"></canvas></div>
+            <p id="compResumo" style="font-size: 13px; color: #7f8c8d; margin-top: 10px;"></p>
+        </div>
         <div class="mudas-reforma-container">
             <div class="table-mudas-box"><div class="tabla-titulo"><span class="badge-info badge-mudas">🌱</span> Mudas</div><div class="tabla-scroll"><table class="tabla-mudas"><thead><tr><th style="width: 70px;">Talhão</th><th style="width: 90px;">Variedade</th><th style="width: 100px;">Área Muda (ha)</th><th style="width: 50px;">TCH</th><th style="width: 90px;">Valor (R$)</th></tr></thead><tbody id="tabelaMudas"></tbody></table></div></div></div>
             <div class="table-reforma-box"><div class="tabla-titulo"><span class="badge-info badge-reforma">🔄</span> Reforma 2026</div><div style="background: #f0f8f5; padding: 12px; border-radius: 6px; margin-bottom: 12px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; font-size: 0.85rem;"><div><strong>Talhões:</strong> <span id="totalTalhoes" style="color: #2ecc71; font-weight: bold;">0</span></div><div><strong>Área Total:</strong> <span id="totalArea" style="color: #2ecc71; font-weight: bold;">0</span> ha</div><div><strong>Média/Talhão:</strong> <span id="mediaArea" style="color: #2ecc71; font-weight: bold;">0</span> ha</div></div><div class="tabla-scroll"><table class="tabla-reforma"><thead><tr><th style="width: 60px;">Talhão</th><th style="width: 60px;">Área (ha)</th><th style="flex: 1;">Justificativa</th></tr></thead><tbody id="tabelaReforma"></tbody></table></div></div></div>
@@ -532,10 +542,92 @@
                 </tr>
             `).join('');
         }
+        const COMP_NOMES = { '1': 'Corte 1', '2': 'Corte 2', '3': 'Corte 3', '4': 'Corte 4', '5': 'Corte 5', '>5': 'Maior que 5', 'Geral': 'Média geral' };
+        const COMP_TIPOS = { 'Corte 1 (média simples)': '1', '2º corte': '2', '3º corte': '3', '4º corte': '4', '5º corte': '5', 'Maior que 5º corte': '>5', 'Média geral': 'Geral' };
+        let compCorte = '1';
+        let chartComparativo = null;
+        const semColheitaPlugin = {
+            id: 'semColheita',
+            afterDatasetsDraw(chart) {
+                const { ctx, scales: { x, y } } = chart;
+                const serie = chart.data.datasets[0].data;
+                ctx.save();
+                ctx.font = '11px sans-serif';
+                ctx.fillStyle = '#898781';
+                ctx.textAlign = 'center';
+                serie.forEach((v, i) => { if (v == null) ctx.fillText('sem colheita', x.getPixelForValue(i), y.bottom - 8); });
+                ctx.restore();
+            }
+        };
+        function calcularSerieFazenda() {
+            const acc = {};
+            dadosColheita.forEach(r => {
+                const corte = r['Número do Corte'];
+                const area = parseFloat(r['Area Colhida']) || 0;
+                if (corte === 'NC' || area <= 0) return;
+                const n = Number(corte);
+                const g = n > 5 ? '>5' : String(n);
+                const ano = r['Ano Colheita'];
+                const k = ano + '|' + g;
+                const prod = parseFloat(r['Produtividade TCH']) || 0;
+                if (!acc[k]) acc[k] = { t: 0, a: 0 };
+                acc[k].t += prod * area; acc[k].a += area;
+                const kg = ano + '|Geral';
+                if (!acc[kg]) acc[kg] = { t: 0, a: 0 };
+                acc[kg].t += prod * area; acc[kg].a += area;
+            });
+            return acc;
+        }
+        function desenharComparativo() {
+            const anos = [...new Set(dadosRegionalSP.map(x => x['Ano']))].sort((a, b) => a - b);
+            const acc = calcularSerieFazenda();
+            const fazSerie = g => anos.map(a => { const v = acc[a + '|' + g]; return v && v.a > 0 ? Math.round(v.t / v.a * 10) / 10 : null; });
+            const spSerie = g => anos.map(a => { const r = dadosRegionalSP.find(x => x['Ano'] === a && COMP_TIPOS[x['Tipo de corte']] === g); return r ? r['TCH SP'] : null; });
+            const faz = fazSerie(compCorte), sp = spSerie(compCorte);
+            const btns = document.getElementById('compBtns');
+            btns.innerHTML = '';
+            Object.keys(COMP_NOMES).forEach(k => {
+                const b = document.createElement('button');
+                b.textContent = COMP_NOMES[k];
+                b.style.cssText = 'font-size: 13px; padding: 6px 12px; border-radius: 6px; border: 1px solid #ddd; background: white; cursor: pointer;';
+                b.style.fontWeight = k === compCorte ? 'bold' : 'normal';
+                b.onclick = () => { compCorte = k; desenharComparativo(); };
+                btns.appendChild(b);
+            });
+            if (chartComparativo) chartComparativo.destroy();
+            chartComparativo = new Chart(document.getElementById('chartComparativo'), {
+                type: 'line',
+                plugins: [semColheitaPlugin],
+                data: {
+                    labels: anos.map(String),
+                    datasets: [
+                        { label: 'Fazenda', data: faz, borderColor: '#2a78d6', backgroundColor: '#2a78d6', borderWidth: 2.5, pointRadius: 4, spanGaps: false, tension: 0.25 },
+                        { label: 'Média SP', data: sp, borderColor: '#888780', backgroundColor: '#888780', borderWidth: 2, borderDash: [6, 4], pointRadius: 3, spanGaps: false, tension: 0.25 }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { callbacks: { label: c => c.dataset.label + ': ' + (c.parsed.y == null ? 'sem colheita' : c.parsed.y.toFixed(1) + ' TCH/ha') } }
+                    },
+                    scales: {
+                        y: { title: { display: true, text: 'TCH (t/ha)' }, grid: { color: '#e1e0d9' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+            const ult = faz.map((v, i) => i).reverse().find(i => faz[i] != null && sp[i] != null);
+            document.getElementById('compResumo').textContent = ult == null
+                ? 'Sem anos comparáveis para este corte.'
+                : 'Último ano comparável (' + anos[ult] + '): fazenda ' + faz[ult].toFixed(1) + ' × SP ' + sp[ult].toFixed(1) + ' TCH/ha (' + ((faz[ult] - sp[ult]) / sp[ult] * 100 >= 0 ? '+' : '') + ((faz[ult] - sp[ult]) / sp[ult] * 100).toFixed(1) + '%).';
+        }
         document.addEventListener('DOMContentLoaded', () => {
             init();
             preencherMudas();
             preencherReforma();
+            desenharComparativo();
         });
     </script>
 </body>
