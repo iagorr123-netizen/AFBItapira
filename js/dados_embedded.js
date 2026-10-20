@@ -795,24 +795,27 @@ let dadosColheita = [
 let dadosMudas = [
   {"Talhão": 104, "Ano Colheita": 2026, "Area Muda": 6.5, "TCH": 120, "Variedade": "RB 5952", "Valores em Mudas": 83304.0},
   {"Talhão": 23, "Ano Colheita": 2026, "Area Muda": 8.61, "TCH": 120, "Variedade": "CTC 9003", "Valores em Mudas": 110345.76},
-  {"Talhão": 98, "Ano Colheita": 2026, "Area Muda": 7, "TCH": 120, "Variedade": "RB 5014", "Valores em Mudas": 89712.0},
+  {"Talhão": 98, "Ano Colheita": 2026, "Area Muda": 7.0, "TCH": 120, "Variedade": "RB 5014", "Valores em Mudas": 89712.0},
   {"Talhão": 33, "Ano Colheita": 2022, "Area Muda": 9.34, "TCH": 120, "Variedade": "CTC 9003", "Valores em Mudas": 119701.44},
-  {"Talhão": 26, "Ano Colheita": 2020, "Area Muda": 18, "TCH": 120, "Variedade": "CTC 11", "Valores em Mudas": 230688.0},
-  {"Talhão": 93, "Ano Colheita": 2020, "Area Muda": 25, "TCH": 120, "Variedade": "CTC 4", "Valores em Mudas": 320400.0},
-  {"Talhão": 94, "Ano Colheita": 2020, "Area Muda": 25, "TCH": 120, "Variedade": "CTC 4", "Valores em Mudas": 320400.0},
-  {"Talhão": 92, "Ano Colheita": 2024, "Area Muda": 15, "TCH": 120, "Variedade": "CTC 9001", "Valores em Mudas": 192240.0},
+  {"Talhão": 26, "Ano Colheita": 2020, "Area Muda": 18.0, "TCH": 120, "Variedade": "CTC 11", "Valores em Mudas": 230688.0},
+  {"Talhão": 93, "Ano Colheita": 2020, "Area Muda": 25.0, "TCH": 120, "Variedade": "CTC 4", "Valores em Mudas": 320400.0},
+  {"Talhão": 94, "Ano Colheita": 2020, "Area Muda": 25.0, "TCH": 120, "Variedade": "CTC 4", "Valores em Mudas": 320400.0},
+  {"Talhão": 92, "Ano Colheita": 2024, "Area Muda": 15.0, "TCH": 120, "Variedade": "CTC 9001", "Valores em Mudas": 192240.0},
   {"Talhão": 97, "Ano Colheita": 2024, "Area Muda": 6.4, "TCH": 120, "Variedade": "CTC 9003", "Valores em Mudas": 82022.4},
-  {"Talhão": 2, "Ano Colheita": 2023, "Area Muda": 2, "TCH": 120, "Variedade": "CTC 11", "Valores em Mudas": 25632.0},
+  {"Talhão": 2, "Ano Colheita": 2023, "Area Muda": 2.0, "TCH": 120, "Variedade": "CTC 11", "Valores em Mudas": 25632.0},
   {"Talhão": 24, "Ano Colheita": 2023, "Area Muda": 5.9, "TCH": 120, "Variedade": "CTC 9001", "Valores em Mudas": 75614.4},
-  {"Talhão": 26, "Ano Colheita": 2023, "Area Muda": 5, "TCH": 120, "Variedade": "CTC 9001", "Valores em Mudas": 64080.0},
-  {"Talhão": 27, "Ano Colheita": 2023, "Area Muda": 5, "TCH": 120, "Variedade": "CTC 9003", "Valores em Mudas": 64080.0},
+  {"Talhão": 26, "Ano Colheita": 2023, "Area Muda": 5.0, "TCH": 120, "Variedade": "CTC 9001", "Valores em Mudas": 64080.0},
+  {"Talhão": 27, "Ano Colheita": 2023, "Area Muda": 5.0, "TCH": 120, "Variedade": "CTC 9003", "Valores em Mudas": 64080.0},
   {"Talhão": 23, "Ano Colheita": 2022, "Area Muda": 0.8, "TCH": 120, "Variedade": "RB 6928", "Valores em Mudas": 10252.8},
-  {"Talhão": 109, "Ano Colheita": 2022, "Area Muda": 22, "TCH": 120, "Variedade": "CTC 9001", "Valores em Mudas": 281952.0},
-  {"Talhão": 21, "Ano Colheita": 2021, "Area Muda": 2, "TCH": 120, "Variedade": "RB 6928", "Valores em Mudas": 25632.0},
+  {"Talhão": 109, "Ano Colheita": 2022, "Area Muda": 22.0, "TCH": 120, "Variedade": "CTC 9001", "Valores em Mudas": 281952.0},
+  {"Talhão": 21, "Ano Colheita": 2021, "Area Muda": 2.0, "TCH": 120, "Variedade": "RB 6928", "Valores em Mudas": 25632.0},
   {"Talhão": 8, "Ano Colheita": 2021, "Area Muda": 4.4, "TCH": 120, "Variedade": "RB 5952", "Valores em Mudas": 56390.4},
   {"Talhão": 106, "Ano Colheita": 2021, "Area Muda": 4.4, "TCH": 120, "Variedade": "CTC 9001", "Valores em Mudas": 56390.4},
   {"Talhão": 97, "Ano Colheita": 2021, "Area Muda": 4.2, "TCH": 120, "Variedade": "CTC 4", "Valores em Mudas": 53827.2},
-  {"Talhão": 52, "Ano Colheita": 2021, "Area Muda": 3.4, "TCH": 120, "Variedade": "CTC 11", "Valores em Mudas": 43574.4}
+  {"Talhão": 52, "Ano Colheita": 2021, "Area Muda": 3.4, "TCH": 120, "Variedade": "CTC 11", "Valores em Mudas": 43574.4},
+  {"Talhão": 23, "Ano Colheita": 2025, "Area Muda": 7.0, "TCH": 120, "Variedade": "CTC 9003", "Valores em Mudas": 89712.0},
+  {"Talhão": 98, "Ano Colheita": 2025, "Area Muda": 7.3, "TCH": 120, "Variedade": "RB 5014", "Valores em Mudas": 93556.8},
+  {"Talhão": 104, "Ano Colheita": 2025, "Area Muda": 8.4, "TCH": 120, "Variedade": "RB 5952", "Valores em Mudas": 107654.4}
 ];
 
 // Dados de Reforma - Custos e Retorno
