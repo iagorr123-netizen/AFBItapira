@@ -124,7 +124,9 @@
             <div class="chart-box"><div class="chart-title">📈 Tendência de Produtividade</div><div class="chart-canvas"><canvas id="chartTendencia"></canvas></div></div>
             <div class="chart-box"><div class="chart-title">📍 Média TCH por Corte</div><div class="chart-canvas"><canvas id="chartCorte"></canvas></div></div>
         </div>
-        <div id="listaCategoria" class="chart-box" style="display: none; margin-bottom: 30px;"></div>
+        <div id="listaCategoria" onclick="if (event.target === this) fecharListaCategoria()" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.45); z-index: 2000; align-items: center; justify-content: center; padding: 20px;">
+            <div id="listaCategoriaConteudo" class="chart-box" style="max-width: 900px; width: 100%; height: auto; max-height: 80vh; overflow-y: auto;"></div>
+        </div>
         <div class="chart-box" style="margin-bottom: 30px;">
             <div class="chart-title">📈 Evolução por corte: fazenda × média SP</div>
             <div id="linhaBtns" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;"></div>
@@ -309,8 +311,8 @@
                 .filter(r => r[c.numCorte] !== 'NC' && (parseFloat(r[c.areaColhida]) || 0) > 0 && categoriaDeTCH(parseFloat(r[c.produtividade])) === cat)
                 .sort((x, y) => parseFloat(y[c.produtividade]) - parseFloat(x[c.produtividade]));
             const painel = document.getElementById('listaCategoria');
-            painel.style.display = 'block';
-            painel.innerHTML = `
+            painel.style.display = 'flex';
+            document.getElementById('listaCategoriaConteudo').innerHTML = `
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
                     <div class="chart-title" style="margin: 0;">📋 ${CATEGORIAS_NOMES[cat]}: ${lista.length} talhões</div>
                     <button onclick="fecharListaCategoria()" style="padding: 6px 12px; border: 1px solid #ddd; border-radius: 6px; background: white; cursor: pointer; font-size: 13px;">Fechar</button>
@@ -330,11 +332,11 @@
                     </tbody>
                 </table>
                 </div>`;
-            painel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
         function fecharListaCategoria() {
             document.getElementById('listaCategoria').style.display = 'none';
         }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') fecharListaCategoria(); });
         function criarGraficos() {
             const c = CONFIG.columns;
             const dados = obterDadosFiltrados();
