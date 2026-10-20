@@ -9929,7 +9929,7 @@ let dadosColheita = [
 "Idade (meses)": null,
 "Idade (anos)": null,
 "Area Colhida": 20.76,
-"Produtividade TCH": 104.0,
+"Produtividade TCH": 52.0,
 "Tonelada Colhida": 1079.52
 },
 {

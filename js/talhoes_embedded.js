@@ -4343,10 +4343,10 @@ let dadosTalhoes = [
     "variedade_atual": "CTC 4",
     "ultimo_corte": 5,
     "tch_2025": 75.0,
-    "tch_2026": 104.0,
-    "tch_ultimo_ano": 104.0,
+    "tch_2026": 52.0,
+    "tch_ultimo_ano": 52.0,
     "ultimo_ano": 2026,
-    "tch_historico": 71.03,
+    "tch_historico": 66.7,
     "historico_anos": [
       {
         "ano": 2015,
@@ -4405,7 +4405,7 @@ let dadosTalhoes = [
       },
       {
         "ano": 2026,
-        "media": 104.0,
+        "media": 52.0,
         "numCorte": "5"
       }
     ],
