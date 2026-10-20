@@ -7,22 +7,31 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.min.js"></script>
+    <style>
+        .navbar { background: #2c3e50; color: white; padding: 15px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 30px; z-index: 1000; width: 100%; }
+        .navbar-logo { height: 40px; width: auto; margin-right: auto; }
+        .navbar ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
+        .navbar li { list-style: none; }
+        .navbar a { color: white; text-decoration: none; padding: 8px 12px; border-radius: 4px; transition: 0.2s; display: inline-block; line-height: 1; font-weight: 600; }
+        .navbar a:hover { background: rgba(255,255,255,0.1); }
+        .navbar a.active { background: #2ecc71; }
+        @media (max-width: 768px) {
+            .navbar { padding: 10px 8px; gap: 10px; }
+            .navbar ul { gap: 8px; }
+            .navbar a { padding: 6px 10px; font-size: 0.9rem; }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo-container">
-                <img src="images/logoafb.jpg" alt="AFB Logo" class="logo-img">
-                <h1 class="logo">AFB Itapira - Consolidação de Cana</h1>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
-                <li><a href="mapa_interativo.html" class="nav-link">Mapa</a></li>
-                <li><a href="analise_avancada.html" class="nav-link">Análise</a></li>
-                <li><a href="relatorios.html" class="nav-link">Relatórios</a></li>
-                <li><a href="gerenciamento.html" class="nav-link">Gerenciamento</a></li>
-            </ul>
-        </div>
+        <img src="afb-logo.png" alt="AFB Itapira" class="navbar-logo">
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="mapa_interativo.html">Mapa</a></li>
+            <li><a href="analise_avancada.html">Análise</a></li>
+            <li><a href="relatorio.html">Relatório</a></li>
+            <li><a href="index.html" class="active">Início</a></li>
+        </ul>
     </nav>
 
     <main class="container">
