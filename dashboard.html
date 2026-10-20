@@ -27,7 +27,6 @@
         .chart-box { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); height: 380px; display: flex; flex-direction: column; min-width: 0; }
         .chart-title { font-size: 1.2rem; font-weight: bold; color: #2c3e50; margin-bottom: 20px; }
         .chart-canvas { flex: 1; position: relative; }
-        .status-container { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 40px; }
         .status-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
         .status-item { padding: 20px; border-radius: 8px; text-align: center; color: white; font-weight: bold; }
         .status-excelente { background: linear-gradient(135deg, #2ecc71, #27ae60); }
@@ -35,15 +34,13 @@
         .status-medio { background: linear-gradient(135deg, #FFA500, #e89400); }
         .status-baixo { background: linear-gradient(135deg, #FF6B6B, #e63946); }
         .status-numero { font-size: 2.5rem; display: block; margin: 10px 0; }
-        .activities-container { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); overflow-x: auto; }
         .activities-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; white-space: nowrap; }
         .activities-table th { background: #f8f9fa; padding: 10px 8px; text-align: left; font-weight: bold; color: #2c3e50; border-bottom: 2px solid #e0e0e0; font-size: 0.9rem; }
         .activities-table td { padding: 10px 8px; border-bottom: 1px solid #e0e0e0; color: #555; }
         .activities-table tr:hover { background: #f8f9fa; }
 
         @media (max-width: 768px) {
-            .activities-container { padding: 15px; overflow-x: auto; }
-            .activities-table { font-size: 0.85rem; }
+                .activities-table { font-size: 0.85rem; }
             .activities-table th { padding: 8px 6px; font-size: 0.8rem; }
             .activities-table td { padding: 8px 6px; font-size: 0.8rem; }
             .talhao-badge { padding: 4px 10px; font-size: 0.8rem; }
@@ -148,14 +145,6 @@
         <div class="mudas-reforma-container">
             <div class="table-mudas-box"><div class="tabla-titulo"><span class="badge-info badge-mudas">🌱</span> Mudas</div><div class="tabla-scroll"><table class="tabla-mudas"><thead><tr><th style="width: 70px;">Talhão</th><th style="width: 90px;">Variedade</th><th style="width: 100px;">Área Muda (ha)</th><th style="width: 50px;">TCH</th><th style="width: 90px;">Valor (R$)</th></tr></thead><tbody id="tabelaMudas"></tbody></table></div></div>
             <div class="table-reforma-box"><div class="tabla-titulo"><span class="badge-info badge-reforma">🔄</span> Reforma 2026</div><div style="background: #f0f8f5; padding: 12px; border-radius: 6px; margin-bottom: 12px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; font-size: 0.85rem;"><div><strong>Talhões:</strong> <span id="totalTalhoes" style="color: #2ecc71; font-weight: bold;">0</span></div><div><strong>Área Total:</strong> <span id="totalArea" style="color: #2ecc71; font-weight: bold;">0</span> ha</div><div><strong>Média/Talhão:</strong> <span id="mediaArea" style="color: #2ecc71; font-weight: bold;">0</span> ha</div></div><div class="tabla-scroll"><table class="tabla-reforma"><thead><tr><th style="width: 60px;">Talhão</th><th style="width: 60px;">Área (ha)</th><th style="flex: 1;">Justificativa</th></tr></thead><tbody id="tabelaReforma"></tbody></table></div></div></div>
-        <div class="status-container">
-            <h3 style="margin-bottom: 20px;">🎯 Status dos Talhões</h3>
-            <div class="status-grid" id="statusGrid"></div>
-        </div>
-        <div class="activities-container">
-            <h3 style="margin-bottom: 20px;">📋 Últimos Cortes (Top 20)</h3>
-            <table class="activities-table"><thead><tr><th>Talhão</th><th>Variedade</th><th>Corte</th><th>Ano</th><th>TCH/ha</th><th>Área (ha)</th></tr></thead><tbody id="activitiesTbody"></tbody></table>
-        </div>
     </div>
     <script src="js/setup.js"></script>
     <script src="js/dados_embedded.js"></script>
@@ -174,8 +163,6 @@
                     clearInterval(i);
                     calcularKPIs();
                     criarGraficos();
-                    atualizarStatus();
-                    preencherAtividades();
                 } else if (t >= 50) clearInterval(i);
             }, 100);
         }
@@ -218,8 +205,6 @@
             }
             calcularKPIs();
             criarGraficos();
-            atualizarStatus();
-            preencherAtividades();
         }
 
         function filtrarAno(tipo) {
@@ -237,8 +222,6 @@
             calcularKPIs();
             desenharComparativo();
             criarGraficos();
-            atualizarStatus();
-            preencherAtividades();
         }
 
         function calcularKPIs() {
@@ -477,38 +460,6 @@
                     }
                 });
             }
-        }
-        function atualizarStatus() {
-            const c = CONFIG.columns;
-            const dadosTodos = dadosColheita;
-            let e=0, b=0, m=0, l=0;
-            dadosTodos.forEach(r => {
-                const p = parseFloat(r[c.produtividade]);
-                if (p >= 100) e++; else if (p >= 80) b++; else if (p >= 60) m++; else l++;
-            });
-            const ativo = tipoFiltro === 'produtividade';
-            document.getElementById('statusGrid').innerHTML = `
-                <div class="status-item status-excelente" style="cursor: pointer; opacity: ${ativo && filtroAtivo === 'excelente' ? 1 : 0.7}; border: ${ativo && filtroAtivo === 'excelente' ? '3px solid white' : 'none'};" onclick="setarFiltro('produtividade', 'excelente');"><span class="status-numero">${e}</span><span>Excelente (>100)</span></div>
-                <div class="status-item status-bom" style="cursor: pointer; opacity: ${ativo && filtroAtivo === 'bom' ? 1 : 0.7}; border: ${ativo && filtroAtivo === 'bom' ? '3px solid white' : 'none'};" onclick="setarFiltro('produtividade', 'bom');"><span class="status-numero">${b}</span><span>Bom (80-100)</span></div>
-                <div class="status-item status-medio" style="cursor: pointer; opacity: ${ativo && filtroAtivo === 'medio' ? 1 : 0.7}; border: ${ativo && filtroAtivo === 'medio' ? '3px solid white' : 'none'};" onclick="setarFiltro('produtividade', 'medio');"><span class="status-numero">${m}</span><span>Médio (60-80)</span></div>
-                <div class="status-item status-baixo" style="cursor: pointer; opacity: ${ativo && filtroAtivo === 'baixo' ? 1 : 0.7}; border: ${ativo && filtroAtivo === 'baixo' ? '3px solid white' : 'none'};" onclick="setarFiltro('produtividade', 'baixo');"><span class="status-numero">${l}</span><span>Baixo (<60)</span></div>
-            `;
-        }
-        function preencherAtividades() {
-            const c = CONFIG.columns;
-            const dados = obterDadosFiltrados();
-            const at = dados.sort((x, y) => parseInt(y[c.ano]) - parseInt(x[c.ano])).slice(0, 20);
-            const tb = document.getElementById('activitiesTbody');
-            tb.innerHTML = at.map(r => `
-                <tr>
-                    <td><span class="talhao-badge">Talhão ${r[c.talhao]}</span></td>
-                    <td>${r[c.variedade]}</td>
-                    <td>${r[c.numCorte] === 'NC' ? 'NC' : 'Corte ' + r[c.numCorte]}</td>
-                    <td>${r[c.ano]}</td>
-                    <td><strong>${parseFloat(r[c.produtividade]).toFixed(2)}</strong></td>
-                    <td>${parseFloat(r[c.areaColhida]).toFixed(2)}</td>
-                </tr>
-            `).join('');
         }
         function preencherMudas() {
             if (typeof dadosMudas === 'undefined' || !dadosMudas.length) return;
