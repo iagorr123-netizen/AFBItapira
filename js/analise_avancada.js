@@ -56,7 +56,7 @@ function preencherFiltros() {
 
     dadosColheita.forEach(row => {
         if (row[col.ano]) anos.add(row[col.ano]);
-        if (row[col.numCorte] && row[col.numCorte] !== 'NC') cortes.add(row[col.numCorte]);
+        if (row[col.numCorte]) cortes.add(row[col.numCorte]);
         if (row[col.variedade]) variedades.add(row[col.variedade]);
         if (row[col.talhao]) talhoes.add(row[col.talhao]);
     });
@@ -87,6 +87,12 @@ function preencherFiltros() {
         option.textContent = `Corte ${corte}`;
         selectCorte.appendChild(option);
     });
+    if (cortes.has('NC')) {
+        const optionNC = document.createElement('option');
+        optionNC.value = 'NC';
+        optionNC.textContent = 'NC (não colhido)';
+        selectCorte.appendChild(optionNC);
+    }
 
     // Preencher Variedade
     const selectVariedade = document.getElementById('filtroVariedade');
@@ -142,7 +148,7 @@ function aplicarFiltros() {
         let matchCorte = true;
         if (cortesArray.length > 0) {
             const corteRow = parseFloat(String(row[col.numCorte]).replace(',', '.'));
-            matchCorte = cortesArray.some(c => corteRow === parseFloat(c));
+            matchCorte = cortesArray.some(c => c === 'NC' ? row[col.numCorte] === 'NC' : corteRow === parseFloat(c));
         }
 
         const matchVariedade = variedadesArray.length === 0 || variedadesArray.includes(row[col.variedade]);
