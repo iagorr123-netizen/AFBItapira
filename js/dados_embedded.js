@@ -793,33 +793,10 @@ let dadosColheita = [
 
 // Dados de Mudas - Reflexo Financeiro
 let dadosMudas = [
-{
-  "Talhão": 104,
-  "Ano Colheita": 2026,
-  "Area Plantada": 19.16,
-  "Area Muda": 6.5,
-  "TCH": 120,
-  "Variedade": "RB 5952",
-  "Valores em Mudas": 80496
-},
-{
-  "Talhão": 23,
-  "Ano Colheita": 2026,
-  "Area Plantada": 8.61,
-  "Area Muda": 8.61,
-  "TCH": 120,
-  "Variedade": "CTC 9003",
-  "Valores em Mudas": 106626.24
-},
-{
-  "Talhão": 98,
-  "Ano Colheita": 2026,
-  "Area Plantada": 14.49,
-  "Area Muda": 7,
-  "TCH": 120,
-  "Variedade": "RB 5014",
-  "Valores em Mudas": 86688
-}
+  {"Talhão": 104, "Ano Colheita": 2026, "Area Plantada": 19.16, "Area Muda": 6.5, "TCH": 120, "Variedade": "RB 5952", "Valores em Mudas": 80496.0},
+  {"Talhão": 23, "Ano Colheita": 2026, "Area Plantada": 8.61, "Area Muda": 8.61, "TCH": 120, "Variedade": "CTC 9003", "Valores em Mudas": 106626.24},
+  {"Talhão": 98, "Ano Colheita": 2026, "Area Plantada": 14.49, "Area Muda": 7, "TCH": 120, "Variedade": "RB 5014", "Valores em Mudas": 86688.0},
+  {"Talhão": 33, "Ano Colheita": 2022, "Area Plantada": 9.34, "Area Muda": 9.34, "TCH": 120, "Variedade": "CTC 9003", "Valores em Mudas": 119701.44}
 ];
 
 // Dados de Reforma - Custos e Retorno
