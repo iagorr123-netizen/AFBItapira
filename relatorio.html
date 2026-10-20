@@ -15,33 +15,13 @@
             padding: 20px;
         }
 
-        .navbar {
-            background: #2c3e50;
-            padding: 15px 25px;
-            margin-bottom: 30px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .navbar h1 {
-            color: white;
-            font-size: 24px;
-            flex: 1;
-        }
-
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            padding: 8px 15px;
-            border-radius: 4px;
-            transition: background 0.2s;
-        }
-
-        .navbar a:hover {
-            background: rgba(255,255,255,0.2);
-        }
+        .navbar { background: #2c3e50; color: white; padding: 15px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 30px; z-index: 1000; width: 100%; margin-bottom: 30px; border-radius: 8px; }
+        .navbar-logo { height: 40px; width: auto; margin-right: auto; }
+        .navbar ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
+        .navbar li { list-style: none; }
+        .navbar a { color: white; text-decoration: none; padding: 8px 12px; border-radius: 4px; transition: 0.2s; display: inline-block; line-height: 1; font-weight: 600; }
+        .navbar a:hover { background: rgba(255,255,255,0.1); }
+        .navbar a.active { background: #2ecc71; }
 
         .container {
             max-width: 1200px;
@@ -262,13 +242,16 @@
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <h1>📊 Relatórios AFB Itapira 2026</h1>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="mapa_interativo.html">Mapa</a>
-        <a href="analise_avancada.html">Análise</a>
-        <a href="index.html">Início</a>
-    </div>
+    <nav class="navbar">
+        <img src="afb-logo.png" alt="AFB Itapira" class="navbar-logo">
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="mapa_interativo.html">Mapa</a></li>
+            <li><a href="analise_avancada.html">Análise</a></li>
+            <li><a href="relatorio.html" class="active">Relatório</a></li>
+            <li><a href="index.html">Início</a></li>
+        </ul>
+    </nav>
 
     <div class="container">
         <div class="relatorios-grid">
