@@ -4,7 +4,7 @@ let dadosTalhoes = [
     "tamanho_talhao": 16.46,
     "variedade_atual": "CTC 11",
     "ultimo_corte": 4,
-    "tch_2025": 83,
+    "tch_2025": 83.0,
     "tch_2026": 65.38,
     "tch_ultimo_ano": 65.38,
     "ultimo_ano": 2026,
@@ -42,22 +42,22 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 45,
+        "media": 45.0,
         "numCorte": "5"
       },
       {
         "ano": 2023,
-        "media": 101,
+        "media": 101.0,
         "numCorte": "1"
       },
       {
         "ano": 2024,
-        "media": 90,
+        "media": 90.0,
         "numCorte": "2"
       },
       {
         "ano": 2025,
-        "media": 83,
+        "media": 83.0,
         "numCorte": "3"
       },
       {
@@ -73,9 +73,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 21.96,
     "variedade_atual": "CTC 11",
     "ultimo_corte": 4,
-    "tch_2025": 108,
-    "tch_2026": 81,
-    "tch_ultimo_ano": 81,
+    "tch_2025": 108.0,
+    "tch_2026": 81.0,
+    "tch_ultimo_ano": 81.0,
     "ultimo_ano": 2026,
     "tch_historico": 95.99,
     "historico_anos": [
@@ -111,27 +111,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 45,
+        "media": 45.0,
         "numCorte": "5"
       },
       {
         "ano": 2023,
-        "media": 92,
+        "media": 92.0,
         "numCorte": "1"
       },
       {
         "ano": 2024,
-        "media": 103,
+        "media": 103.0,
         "numCorte": "2"
       },
       {
         "ano": 2025,
-        "media": 108,
+        "media": 108.0,
         "numCorte": "3"
       },
       {
         "ano": 2026,
-        "media": 81,
+        "media": 81.0,
         "numCorte": "4"
       }
     ],
@@ -142,7 +142,7 @@ let dadosTalhoes = [
     "tamanho_talhao": 20.67,
     "variedade_atual": "CTC 4",
     "ultimo_corte": 6,
-    "tch_2025": 76,
+    "tch_2025": 76.0,
     "tch_2026": 75.55,
     "tch_ultimo_ano": 75.55,
     "ultimo_ano": 2026,
@@ -180,12 +180,12 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 95,
+        "media": 95.0,
         "numCorte": "2"
       },
       {
         "ano": 2023,
-        "media": 75,
+        "media": 75.0,
         "numCorte": "3"
       },
       {
@@ -195,7 +195,7 @@ let dadosTalhoes = [
       },
       {
         "ano": 2025,
-        "media": 76,
+        "media": 76.0,
         "numCorte": "5"
       },
       {
@@ -250,9 +250,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 43.99,
     "variedade_atual": "RB 5952",
     "ultimo_corte": 5,
-    "tch_2025": 69,
-    "tch_2026": 72,
-    "tch_ultimo_ano": 72,
+    "tch_2025": 69.0,
+    "tch_2026": 72.0,
+    "tch_ultimo_ano": 72.0,
     "ultimo_ano": 2026,
     "tch_historico": 76.94,
     "historico_anos": [
@@ -288,27 +288,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 130,
+        "media": 130.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 112,
+        "media": 112.0,
         "numCorte": "2"
       },
       {
         "ano": 2024,
-        "media": 105,
+        "media": 105.0,
         "numCorte": "3"
       },
       {
         "ano": 2025,
-        "media": 69,
+        "media": 69.0,
         "numCorte": "4"
       },
       {
         "ano": 2026,
-        "media": 72,
+        "media": 72.0,
         "numCorte": "5"
       }
     ],
@@ -407,7 +407,7 @@ let dadosTalhoes = [
     "tamanho_talhao": 22.3,
     "variedade_atual": "CV 7870",
     "ultimo_corte": 1,
-    "tch_2025": 58,
+    "tch_2025": 58.0,
     "tch_2026": 0,
     "tch_ultimo_ano": 0,
     "ultimo_ano": 2026,
@@ -445,22 +445,22 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 97,
+        "media": 97.0,
         "numCorte": "2"
       },
       {
         "ano": 2023,
-        "media": 87,
+        "media": 87.0,
         "numCorte": "3"
       },
       {
         "ano": 2024,
-        "media": 75,
+        "media": 75.0,
         "numCorte": "4"
       },
       {
         "ano": 2025,
-        "media": 58,
+        "media": 58.0,
         "numCorte": "5"
       },
       {
@@ -515,9 +515,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 6.54,
     "variedade_atual": "CTC 4",
     "ultimo_corte": 5,
-    "tch_2025": 78,
-    "tch_2026": 65,
-    "tch_ultimo_ano": 65,
+    "tch_2025": 78.0,
+    "tch_2026": 65.0,
+    "tch_ultimo_ano": 65.0,
     "ultimo_ano": 2026,
     "tch_historico": 64.74,
     "historico_anos": [
@@ -558,27 +558,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 45,
+        "media": 45.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 90,
+        "media": 90.0,
         "numCorte": "2"
       },
       {
         "ano": 2024,
-        "media": 90,
+        "media": 90.0,
         "numCorte": "3"
       },
       {
         "ano": 2025,
-        "media": 78,
+        "media": 78.0,
         "numCorte": "4"
       },
       {
         "ano": 2026,
-        "media": 65,
+        "media": 65.0,
         "numCorte": "5"
       }
     ],
@@ -589,9 +589,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 4.91,
     "variedade_atual": "CTC 4",
     "ultimo_corte": 5,
-    "tch_2025": 78,
-    "tch_2026": 65,
-    "tch_ultimo_ano": 65,
+    "tch_2025": 78.0,
+    "tch_2026": 65.0,
+    "tch_ultimo_ano": 65.0,
     "ultimo_ano": 2026,
     "tch_historico": 73.0,
     "historico_anos": [
@@ -632,27 +632,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 45,
+        "media": 45.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 90,
+        "media": 90.0,
         "numCorte": "2"
       },
       {
         "ano": 2024,
-        "media": 90,
+        "media": 90.0,
         "numCorte": "3"
       },
       {
         "ano": 2025,
-        "media": 78,
+        "media": 78.0,
         "numCorte": "4"
       },
       {
         "ano": 2026,
-        "media": 65,
+        "media": 65.0,
         "numCorte": "5"
       }
     ],
@@ -663,9 +663,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 7.22,
     "variedade_atual": "CTC 4",
     "ultimo_corte": 5,
-    "tch_2025": 78,
-    "tch_2026": 65,
-    "tch_ultimo_ano": 65,
+    "tch_2025": 78.0,
+    "tch_2026": 65.0,
+    "tch_ultimo_ano": 65.0,
     "ultimo_ano": 2026,
     "tch_historico": 62.95,
     "historico_anos": [
@@ -706,27 +706,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 45,
+        "media": 45.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 90,
+        "media": 90.0,
         "numCorte": "2"
       },
       {
         "ano": 2024,
-        "media": 90,
+        "media": 90.0,
         "numCorte": "3"
       },
       {
         "ano": 2025,
-        "media": 78,
+        "media": 78.0,
         "numCorte": "4"
       },
       {
         "ano": 2026,
-        "media": 65,
+        "media": 65.0,
         "numCorte": "5"
       }
     ],
@@ -737,9 +737,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 12.58,
     "variedade_atual": "CTC 9001",
     "ultimo_corte": 3,
-    "tch_2025": 100,
-    "tch_2026": 80,
-    "tch_ultimo_ano": 80,
+    "tch_2025": 100.0,
+    "tch_2026": 80.0,
+    "tch_ultimo_ano": 80.0,
     "ultimo_ano": 2026,
     "tch_historico": 67.62,
     "historico_anos": [
@@ -775,27 +775,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 90,
+        "media": 90.0,
         "numCorte": "2"
       },
       {
         "ano": 2023,
-        "media": 46,
+        "media": 46.0,
         "numCorte": "3"
       },
       {
         "ano": 2024,
-        "media": 75,
+        "media": 75.0,
         "numCorte": "1"
       },
       {
         "ano": 2025,
-        "media": 100,
+        "media": 100.0,
         "numCorte": "2"
       },
       {
         "ano": 2026,
-        "media": 80,
+        "media": 80.0,
         "numCorte": "3"
       }
     ],
@@ -806,9 +806,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 10.25,
     "variedade_atual": "CTC 4",
     "ultimo_corte": 5,
-    "tch_2025": 80,
-    "tch_2026": 65,
-    "tch_ultimo_ano": 65,
+    "tch_2025": 80.0,
+    "tch_2026": 65.0,
+    "tch_ultimo_ano": 65.0,
     "ultimo_ano": 2026,
     "tch_historico": 68.5,
     "historico_anos": [
@@ -849,27 +849,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 45,
+        "media": 45.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 90,
+        "media": 90.0,
         "numCorte": "2"
       },
       {
         "ano": 2024,
-        "media": 90,
+        "media": 90.0,
         "numCorte": "3"
       },
       {
         "ano": 2025,
-        "media": 80,
+        "media": 80.0,
         "numCorte": "4"
       },
       {
         "ano": 2026,
-        "media": 65,
+        "media": 65.0,
         "numCorte": "5"
       }
     ],
@@ -880,9 +880,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 9.629999999999999,
     "variedade_atual": "CTC 4",
     "ultimo_corte": 5,
-    "tch_2025": 80,
-    "tch_2026": 65,
-    "tch_ultimo_ano": 65,
+    "tch_2025": 80.0,
+    "tch_2026": 65.0,
+    "tch_ultimo_ano": 65.0,
     "ultimo_ano": 2026,
     "tch_historico": 68.04,
     "historico_anos": [
@@ -923,27 +923,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 45,
+        "media": 45.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 90,
+        "media": 90.0,
         "numCorte": "2"
       },
       {
         "ano": 2024,
-        "media": 90,
+        "media": 90.0,
         "numCorte": "3"
       },
       {
         "ano": 2025,
-        "media": 80,
+        "media": 80.0,
         "numCorte": "4"
       },
       {
         "ano": 2026,
-        "media": 65,
+        "media": 65.0,
         "numCorte": "5"
       }
     ],
@@ -954,9 +954,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 4.25,
     "variedade_atual": "CTC 9001",
     "ultimo_corte": 4,
-    "tch_2025": 85,
-    "tch_2026": 63,
-    "tch_ultimo_ano": 63,
+    "tch_2025": 85.0,
+    "tch_2026": 63.0,
+    "tch_ultimo_ano": 63.0,
     "ultimo_ano": 2026,
     "tch_historico": 71.16,
     "historico_anos": [
@@ -992,27 +992,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 45,
+        "media": 45.0,
         "numCorte": "5"
       },
       {
         "ano": 2023,
-        "media": 92,
+        "media": 92.0,
         "numCorte": "1"
       },
       {
         "ano": 2024,
-        "media": 95,
+        "media": 95.0,
         "numCorte": "2"
       },
       {
         "ano": 2025,
-        "media": 85,
+        "media": 85.0,
         "numCorte": "3"
       },
       {
         "ano": 2026,
-        "media": 63,
+        "media": 63.0,
         "numCorte": "4"
       }
     ],
@@ -1023,9 +1023,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 13,
     "variedade_atual": "CTC 9001",
     "ultimo_corte": 4,
-    "tch_2025": 85,
-    "tch_2026": 63,
-    "tch_ultimo_ano": 63,
+    "tch_2025": 85.0,
+    "tch_2026": 63.0,
+    "tch_ultimo_ano": 63.0,
     "ultimo_ano": 2026,
     "tch_historico": 73.93,
     "historico_anos": [
@@ -1061,27 +1061,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 43,
+        "media": 43.0,
         "numCorte": "5"
       },
       {
         "ano": 2023,
-        "media": 65,
+        "media": 65.0,
         "numCorte": "1"
       },
       {
         "ano": 2024,
-        "media": 95,
+        "media": 95.0,
         "numCorte": "2"
       },
       {
         "ano": 2025,
-        "media": 85,
+        "media": 85.0,
         "numCorte": "3"
       },
       {
         "ano": 2026,
-        "media": 63,
+        "media": 63.0,
         "numCorte": "4"
       }
     ],
@@ -1092,7 +1092,7 @@ let dadosTalhoes = [
     "tamanho_talhao": 5.08,
     "variedade_atual": "CTC 4",
     "ultimo_corte": 5,
-    "tch_2025": 78,
+    "tch_2025": 78.0,
     "tch_2026": 64.54,
     "tch_ultimo_ano": 64.54,
     "ultimo_ano": 2026,
@@ -1135,22 +1135,22 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 46,
+        "media": 46.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 92,
+        "media": 92.0,
         "numCorte": "1"
       },
       {
         "ano": 2024,
-        "media": 90,
+        "media": 90.0,
         "numCorte": "2"
       },
       {
         "ano": 2025,
-        "media": 78,
+        "media": 78.0,
         "numCorte": "3"
       },
       {
@@ -1166,9 +1166,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 12.92,
     "variedade_atual": "CTC 4",
     "ultimo_corte": 5,
-    "tch_2025": 75,
-    "tch_2026": 62,
-    "tch_ultimo_ano": 62,
+    "tch_2025": 75.0,
+    "tch_2026": 62.0,
+    "tch_ultimo_ano": 62.0,
     "ultimo_ano": 2026,
     "tch_historico": 62.9,
     "historico_anos": [
@@ -1204,27 +1204,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 45,
+        "media": 45.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 90,
+        "media": 90.0,
         "numCorte": "1"
       },
       {
         "ano": 2024,
-        "media": 90,
+        "media": 90.0,
         "numCorte": "2"
       },
       {
         "ano": 2025,
-        "media": 75,
+        "media": 75.0,
         "numCorte": "3"
       },
       {
         "ano": 2026,
-        "media": 62,
+        "media": 62.0,
         "numCorte": "5"
       }
     ],
@@ -1235,9 +1235,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 19.76,
     "variedade_atual": "CTC 9001",
     "ultimo_corte": 4,
-    "tch_2025": 109,
-    "tch_2026": 82,
-    "tch_ultimo_ano": 82,
+    "tch_2025": 109.0,
+    "tch_2026": 82.0,
+    "tch_ultimo_ano": 82.0,
     "ultimo_ano": 2026,
     "tch_historico": 93.62,
     "historico_anos": [
@@ -1273,27 +1273,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 45,
+        "media": 45.0,
         "numCorte": "5"
       },
       {
         "ano": 2023,
-        "media": 85,
+        "media": 85.0,
         "numCorte": "1"
       },
       {
         "ano": 2024,
-        "media": 103,
+        "media": 103.0,
         "numCorte": "2"
       },
       {
         "ano": 2025,
-        "media": 109,
+        "media": 109.0,
         "numCorte": "3"
       },
       {
         "ano": 2026,
-        "media": 82,
+        "media": 82.0,
         "numCorte": "4"
       }
     ],
@@ -1305,8 +1305,8 @@ let dadosTalhoes = [
     "variedade_atual": "CTC 9003",
     "ultimo_corte": 1,
     "tch_2025": 0,
-    "tch_2026": 92,
-    "tch_ultimo_ano": 92,
+    "tch_2026": 92.0,
+    "tch_ultimo_ano": 92.0,
     "ultimo_ano": 2026,
     "tch_historico": 76.9,
     "historico_anos": [
@@ -1322,17 +1322,17 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 110,
+        "media": 110.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 80,
+        "media": 80.0,
         "numCorte": "2"
       },
       {
         "ano": 2024,
-        "media": 80,
+        "media": 80.0,
         "numCorte": "3"
       },
       {
@@ -1342,7 +1342,7 @@ let dadosTalhoes = [
       },
       {
         "ano": 2026,
-        "media": 92,
+        "media": 92.0,
         "numCorte": "1"
       }
     ],
@@ -1353,9 +1353,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 12.12,
     "variedade_atual": "CTC 9001",
     "ultimo_corte": 4,
-    "tch_2025": 90,
-    "tch_2026": 76,
-    "tch_ultimo_ano": 76,
+    "tch_2025": 90.0,
+    "tch_2026": 76.0,
+    "tch_ultimo_ano": 76.0,
     "ultimo_ano": 2026,
     "tch_historico": 78.08,
     "historico_anos": [
@@ -1386,7 +1386,7 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 48,
+        "media": 48.0,
         "numCorte": "3"
       },
       {
@@ -1401,12 +1401,12 @@ let dadosTalhoes = [
       },
       {
         "ano": 2025,
-        "media": 90,
+        "media": 90.0,
         "numCorte": "2"
       },
       {
         "ano": 2026,
-        "media": 76,
+        "media": 76.0,
         "numCorte": "4"
       }
     ],
@@ -1417,9 +1417,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 11.43,
     "variedade_atual": "CTC 9001",
     "ultimo_corte": 4,
-    "tch_2025": 90,
-    "tch_2026": 76,
-    "tch_ultimo_ano": 76,
+    "tch_2025": 90.0,
+    "tch_2026": 76.0,
+    "tch_ultimo_ano": 76.0,
     "ultimo_ano": 2026,
     "tch_historico": 84.39,
     "historico_anos": [
@@ -1455,7 +1455,7 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 48,
+        "media": 48.0,
         "numCorte": "3"
       },
       {
@@ -1465,17 +1465,17 @@ let dadosTalhoes = [
       },
       {
         "ano": 2024,
-        "media": 144,
+        "media": 144.0,
         "numCorte": "1"
       },
       {
         "ano": 2025,
-        "media": 90,
+        "media": 90.0,
         "numCorte": "2"
       },
       {
         "ano": 2026,
-        "media": 76,
+        "media": 76.0,
         "numCorte": "4"
       }
     ],
@@ -1486,9 +1486,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 19,
     "variedade_atual": "CTC 9001",
     "ultimo_corte": 4,
-    "tch_2025": 95,
-    "tch_2026": 76,
-    "tch_ultimo_ano": 76,
+    "tch_2025": 95.0,
+    "tch_2026": 76.0,
+    "tch_ultimo_ano": 76.0,
     "ultimo_ano": 2026,
     "tch_historico": 92.92,
     "historico_anos": [
@@ -1524,7 +1524,7 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 48,
+        "media": 48.0,
         "numCorte": "3"
       },
       {
@@ -1534,17 +1534,17 @@ let dadosTalhoes = [
       },
       {
         "ano": 2024,
-        "media": 144,
+        "media": 144.0,
         "numCorte": "1"
       },
       {
         "ano": 2025,
-        "media": 95,
+        "media": 95.0,
         "numCorte": "2"
       },
       {
         "ano": 2026,
-        "media": 76,
+        "media": 76.0,
         "numCorte": "4"
       }
     ],
@@ -1555,9 +1555,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 28,
     "variedade_atual": "CTC 9003",
     "ultimo_corte": 4,
-    "tch_2025": 95,
-    "tch_2026": 81,
-    "tch_ultimo_ano": 81,
+    "tch_2025": 95.0,
+    "tch_2026": 81.0,
+    "tch_ultimo_ano": 81.0,
     "ultimo_ano": 2026,
     "tch_historico": 92.69,
     "historico_anos": [
@@ -1593,7 +1593,7 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 48,
+        "media": 48.0,
         "numCorte": "3"
       },
       {
@@ -1603,17 +1603,17 @@ let dadosTalhoes = [
       },
       {
         "ano": 2024,
-        "media": 135,
+        "media": 135.0,
         "numCorte": "1"
       },
       {
         "ano": 2025,
-        "media": 95,
+        "media": 95.0,
         "numCorte": "2"
       },
       {
         "ano": 2026,
-        "media": 81,
+        "media": 81.0,
         "numCorte": "4"
       }
     ],
@@ -1624,9 +1624,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 33.37,
     "variedade_atual": "CTC 9003",
     "ultimo_corte": 4,
-    "tch_2025": 96,
-    "tch_2026": 81,
-    "tch_ultimo_ano": 81,
+    "tch_2025": 96.0,
+    "tch_2026": 81.0,
+    "tch_ultimo_ano": 81.0,
     "ultimo_ano": 2026,
     "tch_historico": 71.02,
     "historico_anos": [
@@ -1662,7 +1662,7 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 48,
+        "media": 48.0,
         "numCorte": "3"
       },
       {
@@ -1677,12 +1677,12 @@ let dadosTalhoes = [
       },
       {
         "ano": 2025,
-        "media": 96,
+        "media": 96.0,
         "numCorte": "2"
       },
       {
         "ano": 2026,
-        "media": 81,
+        "media": 81.0,
         "numCorte": "4"
       }
     ],
@@ -1693,9 +1693,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 39.88,
     "variedade_atual": "RB 5014",
     "ultimo_corte": 1,
-    "tch_2025": 65,
-    "tch_2026": 78,
-    "tch_ultimo_ano": 78,
+    "tch_2025": 65.0,
+    "tch_2026": 78.0,
+    "tch_ultimo_ano": 78.0,
     "ultimo_ano": 2026,
     "tch_historico": 108.33,
     "historico_anos": [
@@ -1721,27 +1721,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 130,
+        "media": 130.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 112,
+        "media": 112.0,
         "numCorte": "2"
       },
       {
         "ano": 2024,
-        "media": 92,
+        "media": 92.0,
         "numCorte": "3"
       },
       {
         "ano": 2025,
-        "media": 65,
+        "media": 65.0,
         "numCorte": "4"
       },
       {
         "ano": 2026,
-        "media": 78,
+        "media": 78.0,
         "numCorte": "1"
       }
     ],
@@ -1752,9 +1752,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 34.23,
     "variedade_atual": "CTC 4",
     "ultimo_corte": 5,
-    "tch_2025": 88,
-    "tch_2026": 70,
-    "tch_ultimo_ano": 70,
+    "tch_2025": 88.0,
+    "tch_2026": 70.0,
+    "tch_ultimo_ano": 70.0,
     "ultimo_ano": 2026,
     "tch_historico": 91.07,
     "historico_anos": [
@@ -1780,27 +1780,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 130,
+        "media": 130.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 112,
+        "media": 112.0,
         "numCorte": "2"
       },
       {
         "ano": 2024,
-        "media": 102,
+        "media": 102.0,
         "numCorte": "3"
       },
       {
         "ano": 2025,
-        "media": 88,
+        "media": 88.0,
         "numCorte": "4"
       },
       {
         "ano": 2026,
-        "media": 70,
+        "media": 70.0,
         "numCorte": "5"
       }
     ],
@@ -1811,9 +1811,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 16.71,
     "variedade_atual": "CTC 9003",
     "ultimo_corte": 1,
-    "tch_2025": 50,
-    "tch_2026": 45,
-    "tch_ultimo_ano": 45,
+    "tch_2025": 50.0,
+    "tch_2026": 45.0,
+    "tch_ultimo_ano": 45.0,
     "ultimo_ano": 2026,
     "tch_historico": 83.98,
     "historico_anos": [
@@ -1839,27 +1839,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 125,
+        "media": 125.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 83,
+        "media": 83.0,
         "numCorte": "2"
       },
       {
         "ano": 2024,
-        "media": 102,
+        "media": 102.0,
         "numCorte": "3"
       },
       {
         "ano": 2025,
-        "media": 50,
+        "media": 50.0,
         "numCorte": "4"
       },
       {
         "ano": 2026,
-        "media": 45,
+        "media": 45.0,
         "numCorte": "1"
       }
     ],
@@ -1870,7 +1870,7 @@ let dadosTalhoes = [
     "tamanho_talhao": 12.04,
     "variedade_atual": "CTC 4",
     "ultimo_corte": 1,
-    "tch_2025": 50,
+    "tch_2025": 50.0,
     "tch_2026": 0,
     "tch_ultimo_ano": 0,
     "ultimo_ano": 2026,
@@ -1893,22 +1893,22 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 125,
+        "media": 125.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 94,
+        "media": 94.0,
         "numCorte": "2"
       },
       {
         "ano": 2024,
-        "media": 102,
+        "media": 102.0,
         "numCorte": "3"
       },
       {
         "ano": 2025,
-        "media": 50,
+        "media": 50.0,
         "numCorte": "4"
       },
       {
@@ -1924,15 +1924,15 @@ let dadosTalhoes = [
     "tamanho_talhao": 8.81,
     "variedade_atual": "CTC 9003",
     "ultimo_corte": 4,
-    "tch_2025": 76,
-    "tch_2026": 71,
-    "tch_ultimo_ano": 71,
+    "tch_2025": 76.0,
+    "tch_2026": 71.0,
+    "tch_ultimo_ano": 71.0,
     "ultimo_ano": 2026,
-    "tch_historico": 93.59,
+    "tch_historico": 102.36,
     "historico_anos": [
       {
         "ano": 2015,
-        "media": 104.33,
+        "media": 192.02,
         "numCorte": "2"
       },
       {
@@ -1957,27 +1957,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 0,
+        "media": 0.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 100,
+        "media": 100.0,
         "numCorte": "1"
       },
       {
         "ano": 2024,
-        "media": 113,
+        "media": 113.0,
         "numCorte": "2"
       },
       {
         "ano": 2025,
-        "media": 76,
+        "media": 76.0,
         "numCorte": "3"
       },
       {
         "ano": 2026,
-        "media": 71,
+        "media": 71.0,
         "numCorte": "4"
       }
     ],
@@ -2098,7 +2098,7 @@ let dadosTalhoes = [
     "historico_anos": [
       {
         "ano": 2015,
-        "media": 64,
+        "media": 64.0,
         "numCorte": "1"
       },
       {
@@ -2147,7 +2147,7 @@ let dadosTalhoes = [
       },
       {
         "ano": 2018,
-        "media": 46,
+        "media": 46.0,
         "numCorte": "4"
       }
     ],
@@ -2366,11 +2366,11 @@ let dadosTalhoes = [
     "tch_2026": 0,
     "tch_ultimo_ano": 0,
     "ultimo_ano": 0,
-    "tch_historico": 103.27,
+    "tch_historico": 123.08,
     "historico_anos": [
       {
         "ano": 2015,
-        "media": 106.1,
+        "media": 205.13,
         "numCorte": "1"
       },
       {
@@ -2528,9 +2528,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 13.63,
     "variedade_atual": "RB 5952",
     "ultimo_corte": 2,
-    "tch_2025": 52,
-    "tch_2026": 98,
-    "tch_ultimo_ano": 98,
+    "tch_2025": 52.0,
+    "tch_2026": 98.0,
+    "tch_ultimo_ano": 98.0,
     "ultimo_ano": 2026,
     "tch_historico": 72.57,
     "historico_anos": [
@@ -2566,27 +2566,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 70,
+        "media": 70.0,
         "numCorte": "2"
       },
       {
         "ano": 2023,
-        "media": 65,
+        "media": 65.0,
         "numCorte": "3"
       },
       {
         "ano": 2024,
-        "media": 59,
+        "media": 59.0,
         "numCorte": "4"
       },
       {
         "ano": 2025,
-        "media": 52,
+        "media": 52.0,
         "numCorte": "1"
       },
       {
         "ano": 2026,
-        "media": 98,
+        "media": 98.0,
         "numCorte": "2"
       }
     ],
@@ -2597,9 +2597,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 22.19,
     "variedade_atual": "CTC 9001",
     "ultimo_corte": 3,
-    "tch_2025": 100,
-    "tch_2026": 92,
-    "tch_ultimo_ano": 92,
+    "tch_2025": 100.0,
+    "tch_2026": 92.0,
+    "tch_ultimo_ano": 92.0,
     "ultimo_ano": 2026,
     "tch_historico": 78.37,
     "historico_anos": [
@@ -2635,27 +2635,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 70,
+        "media": 70.0,
         "numCorte": "2"
       },
       {
         "ano": 2023,
-        "media": 52,
+        "media": 52.0,
         "numCorte": "3"
       },
       {
         "ano": 2024,
-        "media": 85,
+        "media": 85.0,
         "numCorte": "1"
       },
       {
         "ano": 2025,
-        "media": 100,
+        "media": 100.0,
         "numCorte": "2"
       },
       {
         "ano": 2026,
-        "media": 92,
+        "media": 92.0,
         "numCorte": "3"
       }
     ],
@@ -2666,9 +2666,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 14.75,
     "variedade_atual": "CTC 9001",
     "ultimo_corte": 2,
-    "tch_2025": 110,
-    "tch_2026": 98,
-    "tch_ultimo_ano": 98,
+    "tch_2025": 110.0,
+    "tch_2026": 98.0,
+    "tch_ultimo_ano": 98.0,
     "ultimo_ano": 2026,
     "tch_historico": 84.56,
     "historico_anos": [
@@ -2704,27 +2704,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 70,
+        "media": 70.0,
         "numCorte": "2"
       },
       {
         "ano": 2023,
-        "media": 52,
+        "media": 52.0,
         "numCorte": "3"
       },
       {
         "ano": 2024,
-        "media": 75,
+        "media": 75.0,
         "numCorte": "1"
       },
       {
         "ano": 2025,
-        "media": 110,
+        "media": 110.0,
         "numCorte": "2"
       },
       {
         "ano": 2026,
-        "media": 98,
+        "media": 98.0,
         "numCorte": "2"
       }
     ],
@@ -2735,9 +2735,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 21.94,
     "variedade_atual": "CTC 9001",
     "ultimo_corte": 2,
-    "tch_2025": 110,
-    "tch_2026": 98,
-    "tch_ultimo_ano": 98,
+    "tch_2025": 110.0,
+    "tch_2026": 98.0,
+    "tch_ultimo_ano": 98.0,
     "ultimo_ano": 2026,
     "tch_historico": 89.04,
     "historico_anos": [
@@ -2773,27 +2773,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 70,
+        "media": 70.0,
         "numCorte": "2"
       },
       {
         "ano": 2023,
-        "media": 52,
+        "media": 52.0,
         "numCorte": "3"
       },
       {
         "ano": 2024,
-        "media": 75,
+        "media": 75.0,
         "numCorte": "1"
       },
       {
         "ano": 2025,
-        "media": 110,
+        "media": 110.0,
         "numCorte": "2"
       },
       {
         "ano": 2026,
-        "media": 98,
+        "media": 98.0,
         "numCorte": "2"
       }
     ],
@@ -2882,9 +2882,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 51.11,
     "variedade_atual": "CTC 9001",
     "ultimo_corte": 4,
-    "tch_2025": 101,
-    "tch_2026": 78,
-    "tch_ultimo_ano": 78,
+    "tch_2025": 101.0,
+    "tch_2026": 78.0,
+    "tch_ultimo_ano": 78.0,
     "ultimo_ano": 2026,
     "tch_historico": 88.37,
     "historico_anos": [
@@ -2915,27 +2915,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 45,
+        "media": 45.0,
         "numCorte": "5"
       },
       {
         "ano": 2023,
-        "media": 92,
+        "media": 92.0,
         "numCorte": "1"
       },
       {
         "ano": 2024,
-        "media": 114,
+        "media": 114.0,
         "numCorte": "2"
       },
       {
         "ano": 2025,
-        "media": 101,
+        "media": 101.0,
         "numCorte": "3"
       },
       {
         "ano": 2026,
-        "media": 78,
+        "media": 78.0,
         "numCorte": "4"
       }
     ],
@@ -3062,17 +3062,17 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 95,
+        "media": 95.0,
         "numCorte": "2"
       },
       {
         "ano": 2023,
-        "media": 75,
+        "media": 75.0,
         "numCorte": "3"
       },
       {
         "ano": 2024,
-        "media": 80,
+        "media": 80.0,
         "numCorte": "4"
       },
       {
@@ -3093,7 +3093,7 @@ let dadosTalhoes = [
     "tamanho_talhao": 9.31,
     "variedade_atual": "RB 5952",
     "ultimo_corte": 1,
-    "tch_2025": 69,
+    "tch_2025": 69.0,
     "tch_2026": 0,
     "tch_ultimo_ano": 0,
     "ultimo_ano": 2026,
@@ -3131,22 +3131,22 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 95,
+        "media": 95.0,
         "numCorte": "2"
       },
       {
         "ano": 2023,
-        "media": 75,
+        "media": 75.0,
         "numCorte": "3"
       },
       {
         "ano": 2024,
-        "media": 80,
+        "media": 80.0,
         "numCorte": "4"
       },
       {
         "ano": 2025,
-        "media": 69,
+        "media": 69.0,
         "numCorte": "5"
       },
       {
@@ -3206,9 +3206,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 19.93,
     "variedade_atual": "CTC 9001",
     "ultimo_corte": 5,
-    "tch_2025": 89,
-    "tch_2026": 77,
-    "tch_ultimo_ano": 77,
+    "tch_2025": 89.0,
+    "tch_2026": 77.0,
+    "tch_ultimo_ano": 77.0,
     "ultimo_ano": 2026,
     "tch_historico": 79.03,
     "historico_anos": [
@@ -3249,27 +3249,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 48,
+        "media": 48.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 112,
+        "media": 112.0,
         "numCorte": "2"
       },
       {
         "ano": 2024,
-        "media": 107,
+        "media": 107.0,
         "numCorte": "3"
       },
       {
         "ano": 2025,
-        "media": 89,
+        "media": 89.0,
         "numCorte": "4"
       },
       {
         "ano": 2026,
-        "media": 77,
+        "media": 77.0,
         "numCorte": "5"
       }
     ],
@@ -3280,9 +3280,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 8.53,
     "variedade_atual": "CTC 9001",
     "ultimo_corte": 5,
-    "tch_2025": 89,
-    "tch_2026": 77,
-    "tch_ultimo_ano": 77,
+    "tch_2025": 89.0,
+    "tch_2026": 77.0,
+    "tch_ultimo_ano": 77.0,
     "ultimo_ano": 2026,
     "tch_historico": 82.58,
     "historico_anos": [
@@ -3323,27 +3323,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 48,
+        "media": 48.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 112,
+        "media": 112.0,
         "numCorte": "2"
       },
       {
         "ano": 2024,
-        "media": 107,
+        "media": 107.0,
         "numCorte": "3"
       },
       {
         "ano": 2025,
-        "media": 89,
+        "media": 89.0,
         "numCorte": "4"
       },
       {
         "ano": 2026,
-        "media": 77,
+        "media": 77.0,
         "numCorte": "5"
       }
     ],
@@ -3354,9 +3354,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 9.05,
     "variedade_atual": "CTC 9001",
     "ultimo_corte": 5,
-    "tch_2025": 89,
-    "tch_2026": 77,
-    "tch_ultimo_ano": 77,
+    "tch_2025": 89.0,
+    "tch_2026": 77.0,
+    "tch_ultimo_ano": 77.0,
     "ultimo_ano": 2026,
     "tch_historico": 83.45,
     "historico_anos": [
@@ -3397,27 +3397,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 48,
+        "media": 48.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 112,
+        "media": 112.0,
         "numCorte": "2"
       },
       {
         "ano": 2024,
-        "media": 107,
+        "media": 107.0,
         "numCorte": "3"
       },
       {
         "ano": 2025,
-        "media": 89,
+        "media": 89.0,
         "numCorte": "4"
       },
       {
         "ano": 2026,
-        "media": 77,
+        "media": 77.0,
         "numCorte": "5"
       }
     ],
@@ -3428,9 +3428,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 13.8,
     "variedade_atual": "CTC 9001",
     "ultimo_corte": 5,
-    "tch_2025": 89,
-    "tch_2026": 77,
-    "tch_ultimo_ano": 77,
+    "tch_2025": 89.0,
+    "tch_2026": 77.0,
+    "tch_ultimo_ano": 77.0,
     "ultimo_ano": 2026,
     "tch_historico": 82.26,
     "historico_anos": [
@@ -3471,27 +3471,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 48,
+        "media": 48.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 112,
+        "media": 112.0,
         "numCorte": "2"
       },
       {
         "ano": 2024,
-        "media": 107,
+        "media": 107.0,
         "numCorte": "3"
       },
       {
         "ano": 2025,
-        "media": 89,
+        "media": 89.0,
         "numCorte": "4"
       },
       {
         "ano": 2026,
-        "media": 77,
+        "media": 77.0,
         "numCorte": "5"
       }
     ],
@@ -3502,9 +3502,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 7.26,
     "variedade_atual": "CTC 9001",
     "ultimo_corte": 5,
-    "tch_2025": 89,
-    "tch_2026": 77,
-    "tch_ultimo_ano": 77,
+    "tch_2025": 89.0,
+    "tch_2026": 77.0,
+    "tch_ultimo_ano": 77.0,
     "ultimo_ano": 2026,
     "tch_historico": 77.22,
     "historico_anos": [
@@ -3545,27 +3545,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 48,
+        "media": 48.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 112,
+        "media": 112.0,
         "numCorte": "2"
       },
       {
         "ano": 2024,
-        "media": 107,
+        "media": 107.0,
         "numCorte": "3"
       },
       {
         "ano": 2025,
-        "media": 89,
+        "media": 89.0,
         "numCorte": "4"
       },
       {
         "ano": 2026,
-        "media": 77,
+        "media": 77.0,
         "numCorte": "5"
       }
     ],
@@ -3845,9 +3845,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 24.76,
     "variedade_atual": "CTC 4",
     "ultimo_corte": 5,
-    "tch_2025": 85,
-    "tch_2026": 78,
-    "tch_ultimo_ano": 78,
+    "tch_2025": 85.0,
+    "tch_2026": 78.0,
+    "tch_ultimo_ano": 78.0,
     "ultimo_ano": 2026,
     "tch_historico": 63.62,
     "historico_anos": [
@@ -3888,27 +3888,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 45,
+        "media": 45.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 90,
+        "media": 90.0,
         "numCorte": "2"
       },
       {
         "ano": 2024,
-        "media": 90,
+        "media": 90.0,
         "numCorte": "3"
       },
       {
         "ano": 2025,
-        "media": 85,
+        "media": 85.0,
         "numCorte": "4"
       },
       {
         "ano": 2026,
-        "media": 78,
+        "media": 78.0,
         "numCorte": "5"
       }
     ],
@@ -4016,7 +4016,7 @@ let dadosTalhoes = [
     "tch_2026": 0,
     "tch_ultimo_ano": 0,
     "ultimo_ano": 0,
-    "tch_historico": 53.65,
+    "tch_historico": 58.3,
     "historico_anos": [
       {
         "ano": 2015,
@@ -4030,7 +4030,7 @@ let dadosTalhoes = [
       },
       {
         "ano": 2017,
-        "media": 64.49,
+        "media": 97.01,
         "numCorte": "4"
       },
       {
@@ -4061,9 +4061,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 0.32,
     "variedade_atual": "CTC 4",
     "ultimo_corte": 5,
-    "tch_2025": 90,
-    "tch_2026": 108,
-    "tch_ultimo_ano": 108,
+    "tch_2025": 90.0,
+    "tch_2026": 108.0,
+    "tch_ultimo_ano": 108.0,
     "ultimo_ano": 2026,
     "tch_historico": 78.83,
     "historico_anos": [
@@ -4099,27 +4099,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 45,
+        "media": 45.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 83,
+        "media": 83.0,
         "numCorte": "2"
       },
       {
         "ano": 2024,
-        "media": 102,
+        "media": 102.0,
         "numCorte": "3"
       },
       {
         "ano": 2025,
-        "media": 90,
+        "media": 90.0,
         "numCorte": "4"
       },
       {
         "ano": 2026,
-        "media": 108,
+        "media": 108.0,
         "numCorte": "5"
       }
     ],
@@ -4130,9 +4130,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 16.54,
     "variedade_atual": "CTC 4",
     "ultimo_corte": 5,
-    "tch_2025": 85,
-    "tch_2026": 108,
-    "tch_ultimo_ano": 108,
+    "tch_2025": 85.0,
+    "tch_2026": 108.0,
+    "tch_ultimo_ano": 108.0,
     "ultimo_ano": 2026,
     "tch_historico": 74.61,
     "historico_anos": [
@@ -4173,27 +4173,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 45,
+        "media": 45.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 83,
+        "media": 83.0,
         "numCorte": "2"
       },
       {
         "ano": 2024,
-        "media": 102,
+        "media": 102.0,
         "numCorte": "3"
       },
       {
         "ano": 2025,
-        "media": 85,
+        "media": 85.0,
         "numCorte": "4"
       },
       {
         "ano": 2026,
-        "media": 108,
+        "media": 108.0,
         "numCorte": "5"
       }
     ],
@@ -4204,7 +4204,7 @@ let dadosTalhoes = [
     "tamanho_talhao": 3.67,
     "variedade_atual": "RB 5952",
     "ultimo_corte": 1,
-    "tch_2025": 49,
+    "tch_2025": 49.0,
     "tch_2026": 0,
     "tch_ultimo_ano": 0,
     "ultimo_ano": 2026,
@@ -4242,22 +4242,22 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 39,
+        "media": 39.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 57,
+        "media": 57.0,
         "numCorte": "2"
       },
       {
         "ano": 2024,
-        "media": 84,
+        "media": 84.0,
         "numCorte": "3"
       },
       {
         "ano": 2025,
-        "media": 49,
+        "media": 49.0,
         "numCorte": "4"
       },
       {
@@ -4273,7 +4273,7 @@ let dadosTalhoes = [
     "tamanho_talhao": 2.99,
     "variedade_atual": "RB 5014",
     "ultimo_corte": 1,
-    "tch_2025": 49,
+    "tch_2025": 49.0,
     "tch_2026": 0,
     "tch_ultimo_ano": 0,
     "ultimo_ano": 2026,
@@ -4311,22 +4311,22 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 40,
+        "media": 40.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 58,
+        "media": 58.0,
         "numCorte": "2"
       },
       {
         "ano": 2024,
-        "media": 84,
+        "media": 84.0,
         "numCorte": "3"
       },
       {
         "ano": 2025,
-        "media": 49,
+        "media": 49.0,
         "numCorte": "4"
       },
       {
@@ -4342,9 +4342,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 20.76,
     "variedade_atual": "CTC 4",
     "ultimo_corte": 5,
-    "tch_2025": 75,
-    "tch_2026": 52,
-    "tch_ultimo_ano": 52,
+    "tch_2025": 75.0,
+    "tch_2026": 52.0,
+    "tch_ultimo_ano": 52.0,
     "ultimo_ano": 2026,
     "tch_historico": 66.7,
     "historico_anos": [
@@ -4385,27 +4385,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 45,
+        "media": 45.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 90,
+        "media": 90.0,
         "numCorte": "2"
       },
       {
         "ano": 2024,
-        "media": 90,
+        "media": 90.0,
         "numCorte": "3"
       },
       {
         "ano": 2025,
-        "media": 75,
+        "media": 75.0,
         "numCorte": "4"
       },
       {
         "ano": 2026,
-        "media": 52,
+        "media": 52.0,
         "numCorte": "5"
       }
     ],
@@ -4552,9 +4552,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 39.67,
     "variedade_atual": "CTC 9001",
     "ultimo_corte": 2,
-    "tch_2025": 120,
-    "tch_2026": 98,
-    "tch_ultimo_ano": 98,
+    "tch_2025": 120.0,
+    "tch_2026": 98.0,
+    "tch_ultimo_ano": 98.0,
     "ultimo_ano": 2026,
     "tch_historico": 78.3,
     "historico_anos": [
@@ -4575,7 +4575,7 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 45,
+        "media": 45.0,
         "numCorte": "4"
       },
       {
@@ -4585,17 +4585,17 @@ let dadosTalhoes = [
       },
       {
         "ano": 2024,
-        "media": 98,
+        "media": 98.0,
         "numCorte": "1"
       },
       {
         "ano": 2025,
-        "media": 120,
+        "media": 120.0,
         "numCorte": "2"
       },
       {
         "ano": 2026,
-        "media": 98,
+        "media": 98.0,
         "numCorte": "2"
       }
     ],
@@ -4606,9 +4606,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 26.99,
     "variedade_atual": "CTC 9003",
     "ultimo_corte": 1,
-    "tch_2025": 73,
-    "tch_2026": 95,
-    "tch_ultimo_ano": 95,
+    "tch_2025": 73.0,
+    "tch_2026": 95.0,
+    "tch_ultimo_ano": 95.0,
     "ultimo_ano": 2026,
     "tch_historico": 94.71,
     "historico_anos": [
@@ -4624,27 +4624,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 83,
+        "media": 83.0,
         "numCorte": "3"
       },
       {
         "ano": 2023,
-        "media": 79,
+        "media": 79.0,
         "numCorte": "4"
       },
       {
         "ano": 2024,
-        "media": 90,
+        "media": 90.0,
         "numCorte": "5"
       },
       {
         "ano": 2025,
-        "media": 73,
+        "media": 73.0,
         "numCorte": "6"
       },
       {
         "ano": 2026,
-        "media": 95,
+        "media": 95.0,
         "numCorte": "1"
       }
     ],
@@ -4655,9 +4655,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 34.94,
     "variedade_atual": "CTC 4",
     "ultimo_corte": 7,
-    "tch_2025": 89,
-    "tch_2026": 82,
-    "tch_ultimo_ano": 82,
+    "tch_2025": 89.0,
+    "tch_2026": 82.0,
+    "tch_ultimo_ano": 82.0,
     "ultimo_ano": 2026,
     "tch_historico": 85.64,
     "historico_anos": [
@@ -4673,27 +4673,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 83,
+        "media": 83.0,
         "numCorte": "3"
       },
       {
         "ano": 2023,
-        "media": 79,
+        "media": 79.0,
         "numCorte": "4"
       },
       {
         "ano": 2024,
-        "media": 90,
+        "media": 90.0,
         "numCorte": "5"
       },
       {
         "ano": 2025,
-        "media": 89,
+        "media": 89.0,
         "numCorte": "6"
       },
       {
         "ano": 2026,
-        "media": 82,
+        "media": 82.0,
         "numCorte": "7"
       }
     ],
@@ -4704,9 +4704,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 38.32,
     "variedade_atual": "CTC 4",
     "ultimo_corte": 1,
-    "tch_2025": 73,
-    "tch_2026": 95,
-    "tch_ultimo_ano": 95,
+    "tch_2025": 73.0,
+    "tch_2026": 95.0,
+    "tch_ultimo_ano": 95.0,
     "ultimo_ano": 2026,
     "tch_historico": 85.62,
     "historico_anos": [
@@ -4722,27 +4722,27 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 83,
+        "media": 83.0,
         "numCorte": "3"
       },
       {
         "ano": 2023,
-        "media": 79,
+        "media": 79.0,
         "numCorte": "4"
       },
       {
         "ano": 2024,
-        "media": 90,
+        "media": 90.0,
         "numCorte": "5"
       },
       {
         "ano": 2025,
-        "media": 73,
+        "media": 73.0,
         "numCorte": "6"
       },
       {
         "ano": 2026,
-        "media": 95,
+        "media": 95.0,
         "numCorte": "1"
       }
     ],
@@ -4754,8 +4754,8 @@ let dadosTalhoes = [
     "variedade_atual": "RB 5952",
     "ultimo_corte": 1,
     "tch_2025": 0,
-    "tch_2026": 100,
-    "tch_ultimo_ano": 100,
+    "tch_2026": 100.0,
+    "tch_ultimo_ano": 100.0,
     "ultimo_ano": 2026,
     "tch_historico": 64.92,
     "historico_anos": [
@@ -4766,17 +4766,17 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 78,
+        "media": 78.0,
         "numCorte": "2"
       },
       {
         "ano": 2023,
-        "media": 79,
+        "media": 79.0,
         "numCorte": "3"
       },
       {
         "ano": 2024,
-        "media": 68,
+        "media": 68.0,
         "numCorte": "4"
       },
       {
@@ -4786,7 +4786,7 @@ let dadosTalhoes = [
       },
       {
         "ano": 2026,
-        "media": 100,
+        "media": 100.0,
         "numCorte": "1"
       }
     ],
@@ -4798,8 +4798,8 @@ let dadosTalhoes = [
     "variedade_atual": "CTC 9001",
     "ultimo_corte": 3,
     "tch_2025": 67.42,
-    "tch_2026": 98,
-    "tch_ultimo_ano": 98,
+    "tch_2026": 98.0,
+    "tch_ultimo_ano": 98.0,
     "ultimo_ano": 2026,
     "tch_historico": 67.64,
     "historico_anos": [
@@ -4810,12 +4810,12 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 99,
+        "media": 99.0,
         "numCorte": "2"
       },
       {
         "ano": 2023,
-        "media": 60,
+        "media": 60.0,
         "numCorte": "3"
       },
       {
@@ -4830,7 +4830,7 @@ let dadosTalhoes = [
       },
       {
         "ano": 2026,
-        "media": 98,
+        "media": 98.0,
         "numCorte": "3"
       }
     ],
@@ -4842,8 +4842,8 @@ let dadosTalhoes = [
     "variedade_atual": "RB 5014",
     "ultimo_corte": 1,
     "tch_2025": 0,
-    "tch_2026": 116,
-    "tch_ultimo_ano": 116,
+    "tch_2026": 116.0,
+    "tch_ultimo_ano": 116.0,
     "ultimo_ano": 2026,
     "tch_historico": 72.18,
     "historico_anos": [
@@ -4854,17 +4854,17 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 78,
+        "media": 78.0,
         "numCorte": "2"
       },
       {
         "ano": 2023,
-        "media": 85,
+        "media": 85.0,
         "numCorte": "3"
       },
       {
         "ano": 2024,
-        "media": 72,
+        "media": 72.0,
         "numCorte": "4"
       },
       {
@@ -4874,7 +4874,7 @@ let dadosTalhoes = [
       },
       {
         "ano": 2026,
-        "media": 116,
+        "media": 116.0,
         "numCorte": "1"
       }
     ],
@@ -4886,8 +4886,8 @@ let dadosTalhoes = [
     "variedade_atual": "RB 5952",
     "ultimo_corte": 1,
     "tch_2025": 0,
-    "tch_2026": 100,
-    "tch_ultimo_ano": 100,
+    "tch_2026": 100.0,
+    "tch_ultimo_ano": 100.0,
     "ultimo_ano": 2026,
     "tch_historico": 62.55,
     "historico_anos": [
@@ -4898,17 +4898,17 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 78,
+        "media": 78.0,
         "numCorte": "2"
       },
       {
         "ano": 2023,
-        "media": 79,
+        "media": 79.0,
         "numCorte": "3"
       },
       {
         "ano": 2024,
-        "media": 54,
+        "media": 54.0,
         "numCorte": "4"
       },
       {
@@ -4918,7 +4918,7 @@ let dadosTalhoes = [
       },
       {
         "ano": 2026,
-        "media": 100,
+        "media": 100.0,
         "numCorte": "1"
       }
     ],
@@ -4929,7 +4929,7 @@ let dadosTalhoes = [
     "tamanho_talhao": 19.1,
     "variedade_atual": "RB 5952",
     "ultimo_corte": 1,
-    "tch_2025": 60,
+    "tch_2025": 60.0,
     "tch_2026": 0,
     "tch_ultimo_ano": 0,
     "ultimo_ano": 2026,
@@ -4942,22 +4942,22 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 78,
+        "media": 78.0,
         "numCorte": "2"
       },
       {
         "ano": 2023,
-        "media": 79,
+        "media": 79.0,
         "numCorte": "3"
       },
       {
         "ano": 2024,
-        "media": 79,
+        "media": 79.0,
         "numCorte": "4"
       },
       {
         "ano": 2025,
-        "media": 60,
+        "media": 60.0,
         "numCorte": "5"
       },
       {
@@ -4974,8 +4974,8 @@ let dadosTalhoes = [
     "variedade_atual": "CTC 9003",
     "ultimo_corte": 2,
     "tch_2025": 48.31,
-    "tch_2026": 110,
-    "tch_ultimo_ano": 110,
+    "tch_2026": 110.0,
+    "tch_ultimo_ano": 110.0,
     "ultimo_ano": 2026,
     "tch_historico": 72.31,
     "historico_anos": [
@@ -4986,17 +4986,17 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 78,
+        "media": 78.0,
         "numCorte": "2"
       },
       {
         "ano": 2023,
-        "media": 79,
+        "media": 79.0,
         "numCorte": "3"
       },
       {
         "ano": 2024,
-        "media": 54,
+        "media": 54.0,
         "numCorte": "4"
       },
       {
@@ -5006,7 +5006,7 @@ let dadosTalhoes = [
       },
       {
         "ano": 2026,
-        "media": 110,
+        "media": 110.0,
         "numCorte": "2"
       }
     ],
@@ -5017,7 +5017,7 @@ let dadosTalhoes = [
     "tamanho_talhao": 26.37,
     "variedade_atual": "CTC 9006",
     "ultimo_corte": 1,
-    "tch_2025": 60,
+    "tch_2025": 60.0,
     "tch_2026": 0,
     "tch_ultimo_ano": 0,
     "ultimo_ano": 2026,
@@ -5030,22 +5030,22 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 78,
+        "media": 78.0,
         "numCorte": "2"
       },
       {
         "ano": 2023,
-        "media": 79,
+        "media": 79.0,
         "numCorte": "3"
       },
       {
         "ano": 2024,
-        "media": 78,
+        "media": 78.0,
         "numCorte": "4"
       },
       {
         "ano": 2025,
-        "media": 60,
+        "media": 60.0,
         "numCorte": "5"
       },
       {
@@ -5062,8 +5062,8 @@ let dadosTalhoes = [
     "variedade_atual": "CTC 9003",
     "ultimo_corte": 2,
     "tch_2025": 48.2,
-    "tch_2026": 110,
-    "tch_ultimo_ano": 110,
+    "tch_2026": 110.0,
+    "tch_ultimo_ano": 110.0,
     "ultimo_ano": 2026,
     "tch_historico": 74.59,
     "historico_anos": [
@@ -5074,17 +5074,17 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 78,
+        "media": 78.0,
         "numCorte": "2"
       },
       {
         "ano": 2023,
-        "media": 79,
+        "media": 79.0,
         "numCorte": "3"
       },
       {
         "ano": 2024,
-        "media": 68,
+        "media": 68.0,
         "numCorte": "4"
       },
       {
@@ -5094,7 +5094,7 @@ let dadosTalhoes = [
       },
       {
         "ano": 2026,
-        "media": 110,
+        "media": 110.0,
         "numCorte": "2"
       }
     ],
@@ -5118,17 +5118,17 @@ let dadosTalhoes = [
       },
       {
         "ano": 2022,
-        "media": 78,
+        "media": 78.0,
         "numCorte": "2"
       },
       {
         "ano": 2023,
-        "media": 79,
+        "media": 79.0,
         "numCorte": "3"
       },
       {
         "ano": 2024,
-        "media": 68,
+        "media": 68.0,
         "numCorte": "4"
       },
       {
@@ -5149,35 +5149,35 @@ let dadosTalhoes = [
     "tamanho_talhao": 38.05,
     "variedade_atual": "CTC 4",
     "ultimo_corte": 5,
-    "tch_2025": 85,
-    "tch_2026": 84,
-    "tch_ultimo_ano": 84,
+    "tch_2025": 85.0,
+    "tch_2026": 84.0,
+    "tch_ultimo_ano": 84.0,
     "ultimo_ano": 2026,
     "tch_historico": 91.6,
     "historico_anos": [
       {
         "ano": 2022,
-        "media": 85,
+        "media": 85.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 110,
+        "media": 110.0,
         "numCorte": "2"
       },
       {
         "ano": 2024,
-        "media": 94,
+        "media": 94.0,
         "numCorte": "3"
       },
       {
         "ano": 2025,
-        "media": 85,
+        "media": 85.0,
         "numCorte": "4"
       },
       {
         "ano": 2026,
-        "media": 84,
+        "media": 84.0,
         "numCorte": "5"
       }
     ],
@@ -5188,7 +5188,7 @@ let dadosTalhoes = [
     "tamanho_talhao": 11.54,
     "variedade_atual": "",
     "ultimo_corte": 0,
-    "tch_2025": 59,
+    "tch_2025": 59.0,
     "tch_2026": 0,
     "tch_ultimo_ano": 0,
     "ultimo_ano": 0,
@@ -5196,27 +5196,27 @@ let dadosTalhoes = [
     "historico_anos": [
       {
         "ano": 2021,
-        "media": 96,
+        "media": 96.0,
         "numCorte": "1"
       },
       {
         "ano": 2022,
-        "media": 87,
+        "media": 87.0,
         "numCorte": "2"
       },
       {
         "ano": 2023,
-        "media": 87,
+        "media": 87.0,
         "numCorte": "3"
       },
       {
         "ano": 2024,
-        "media": 75,
+        "media": 75.0,
         "numCorte": "4"
       },
       {
         "ano": 2025,
-        "media": 59,
+        "media": 59.0,
         "numCorte": "5"
       }
     ],
@@ -5227,20 +5227,20 @@ let dadosTalhoes = [
     "tamanho_talhao": 13.48,
     "variedade_atual": "CV 7870",
     "ultimo_corte": 4,
-    "tch_2025": 70,
-    "tch_2026": 78,
-    "tch_ultimo_ano": 78,
+    "tch_2025": 70.0,
+    "tch_2026": 78.0,
+    "tch_ultimo_ano": 78.0,
     "ultimo_ano": 2026,
     "tch_historico": 92.92,
     "historico_anos": [
       {
         "ano": 2022,
-        "media": 93,
+        "media": 93.0,
         "numCorte": "1"
       },
       {
         "ano": 2023,
-        "media": 88,
+        "media": 88.0,
         "numCorte": "2"
       },
       {
@@ -5250,12 +5250,12 @@ let dadosTalhoes = [
       },
       {
         "ano": 2025,
-        "media": 70,
+        "media": 70.0,
         "numCorte": "3"
       },
       {
         "ano": 2026,
-        "media": 78,
+        "media": 78.0,
         "numCorte": "4"
       }
     ],
@@ -5266,9 +5266,9 @@ let dadosTalhoes = [
     "tamanho_talhao": 45.7,
     "variedade_atual": "CTC 9001",
     "ultimo_corte": 3,
-    "tch_2025": 90,
-    "tch_2026": 85,
-    "tch_ultimo_ano": 85,
+    "tch_2025": 90.0,
+    "tch_2026": 85.0,
+    "tch_ultimo_ano": 85.0,
     "ultimo_ano": 2026,
     "tch_historico": 65.08,
     "historico_anos": [
@@ -5289,12 +5289,12 @@ let dadosTalhoes = [
       },
       {
         "ano": 2025,
-        "media": 90,
+        "media": 90.0,
         "numCorte": "2"
       },
       {
         "ano": 2026,
-        "media": 85,
+        "media": 85.0,
         "numCorte": "3"
       }
     ],
