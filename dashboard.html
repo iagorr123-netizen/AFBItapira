@@ -498,7 +498,7 @@
             const tb = document.getElementById('tabelaMudas');
             const anos = [...new Set(dadosMudas.map(m => m['Ano Colheita']))].sort((a, b) => b - a);
             tb.innerHTML = anos.map(ano => `
-                <tr><td colspan="5" style="background: #eaf7ef; font-weight: bold; color: #2c3e50;">Ano ${ano}</td></tr>
+                <tr><td colspan="5" style="background: #eaf7ef; font-weight: bold; color: #2c3e50; text-align: left;">Ano ${ano}</td></tr>
                 ${dadosMudas.filter(m => m['Ano Colheita'] === ano).map(m => `
                 <tr>
                     <td><span class="talhao-badge">Talhão ${m['Talhão']}</span></td>
