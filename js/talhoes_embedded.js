@@ -1086,7 +1086,7 @@ let dadosTalhoes = [
     "numero": 20,
     "tamanho_talhao": 5.08,
     "variedade_atual": "CTC 4",
-    "ultimo_corte": 4,
+    "ultimo_corte": 5,
     "tch_2025": 78.0,
     "tch_2026": 64.54,
     "tch_ultimo_ano": 64.54,
@@ -1136,22 +1136,22 @@ let dadosTalhoes = [
       {
         "ano": 2023,
         "media": 92.0,
-        "numCorte": "1"
+        "numCorte": "2"
       },
       {
         "ano": 2024,
         "media": 90.0,
-        "numCorte": "2"
+        "numCorte": "3"
       },
       {
         "ano": 2025,
         "media": 78.0,
-        "numCorte": "3"
+        "numCorte": "4"
       },
       {
         "ano": 2026,
         "media": 64.54,
-        "numCorte": "4"
+        "numCorte": "5"
       }
     ],
     "registros": 12
@@ -1160,7 +1160,7 @@ let dadosTalhoes = [
     "numero": 21,
     "tamanho_talhao": 12.92,
     "variedade_atual": "CTC 4",
-    "ultimo_corte": 4,
+    "ultimo_corte": 5,
     "tch_2025": 75.0,
     "tch_2026": 62.0,
     "tch_ultimo_ano": 62.0,
@@ -1205,22 +1205,22 @@ let dadosTalhoes = [
       {
         "ano": 2023,
         "media": 90.0,
-        "numCorte": "1"
+        "numCorte": "2"
       },
       {
         "ano": 2024,
         "media": 90.0,
-        "numCorte": "2"
+        "numCorte": "3"
       },
       {
         "ano": 2025,
         "media": 75.0,
-        "numCorte": "3"
+        "numCorte": "4"
       },
       {
         "ano": 2026,
         "media": 62.0,
-        "numCorte": "4"
+        "numCorte": "5"
       }
     ],
     "registros": 11
@@ -2689,7 +2689,7 @@ let dadosTalhoes = [
     "numero": 55,
     "tamanho_talhao": 21.94,
     "variedade_atual": "CTC 9001",
-    "ultimo_corte": 2,
+    "ultimo_corte": 3,
     "tch_2025": 110.0,
     "tch_2026": 98.0,
     "tch_ultimo_ano": 98.0,
@@ -2749,7 +2749,7 @@ let dadosTalhoes = [
       {
         "ano": 2026,
         "media": 98.0,
-        "numCorte": "2"
+        "numCorte": "3"
       }
     ],
     "registros": 11
@@ -5121,7 +5121,7 @@ let dadosTalhoes = [
     "numero": 108,
     "tamanho_talhao": 13.48,
     "variedade_atual": "CTC 9001",
-    "ultimo_corte": 4,
+    "ultimo_corte": 5,
     "tch_2025": 70.0,
     "tch_2026": 78.0,
     "tch_ultimo_ano": 78.0,
@@ -5146,12 +5146,12 @@ let dadosTalhoes = [
       {
         "ano": 2025,
         "media": 70.0,
-        "numCorte": "3"
+        "numCorte": "4"
       },
       {
         "ano": 2026,
         "media": 78.0,
-        "numCorte": "4"
+        "numCorte": "5"
       }
     ],
     "registros": 5
