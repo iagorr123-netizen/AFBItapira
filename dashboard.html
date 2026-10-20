@@ -119,7 +119,7 @@
         </div>
         <div class="kpis" id="kpis"></div>
         <div class="charts-container">
-            <div class="chart-box"><div class="chart-title">📊 Distribuição de Talhões</div><div class="chart-canvas"><canvas id="chartDistribuicao"></canvas></div></div>
+            <div class="chart-box"><div class="chart-title">📊 Distribuição de Talhões</div><div style="display: flex; gap: 16px; flex: 1; min-height: 0;"><div class="chart-canvas" style="flex: 1; min-width: 0;"><canvas id="chartDistribuicao"></canvas></div><div id="distCounts" style="width: 150px; display: flex; flex-direction: column; gap: 10px; justify-content: center;"></div></div></div>
             <div class="chart-box"><div class="chart-title">🌾 Produtividade por Variedade</div><div class="chart-canvas"><canvas id="chartVariedade"></canvas></div></div>
             <div class="chart-box"><div class="chart-title">📈 Tendência de Produtividade</div><div class="chart-canvas"><canvas id="chartTendencia"></canvas></div></div>
             <div class="chart-box"><div class="chart-title">📍 Média TCH por Corte</div><div class="chart-canvas"><canvas id="chartCorte"></canvas></div></div>
@@ -308,6 +308,12 @@
                 const p = parseFloat(r[c.produtividade]);
                 if (p >= 100) e++; else if (p >= 80) b++; else if (p >= 60) m++; else l++;
             });
+            const categorias = [['Excelente (>100)', e, '#2ecc71'], ['Bom (80-100)', b, '#4ECDC4'], ['Médio (60-80)', m, '#FFA500'], ['Baixo (<60)', l, '#FF6B6B']];
+            document.getElementById('distCounts').innerHTML = categorias.map(([nome, q, cor]) => `
+                <div style="background: var(--surface-1, #f8f9fa); border-left: 4px solid ${cor}; border-radius: 8px; padding: 10px 12px;">
+                    <div style="font-size: 24px; font-weight: bold; color: #2c3e50;">${q}</div>
+                    <div style="font-size: 12px; color: #7f8c8d;">${nome}</div>
+                </div>`).join('');
             if (chartDistribuicao) chartDistribuicao.destroy();
             chartDistribuicao = new Chart(document.getElementById('chartDistribuicao').getContext('2d'), {
                 type: 'doughnut',
