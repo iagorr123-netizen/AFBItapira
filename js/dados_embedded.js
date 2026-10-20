@@ -9707,9 +9707,9 @@ let dadosColheita = [
 "Data de Plantio": null,
 "Idade (meses)": null,
 "Idade (anos)": null,
-"Area Colhida": 0.0,
-"Produtividade TCH": 0.0,
-"Tonelada Colhida": 0.0
+"Area Colhida": 39.88,
+"Produtividade TCH": 78,
+"Tonelada Colhida": 3110.64
 },
 {
 "Ano Colheita": 2026,
@@ -9720,9 +9720,9 @@ let dadosColheita = [
 "Data de Plantio": null,
 "Idade (meses)": null,
 "Idade (anos)": null,
-"Area Colhida": 0.0,
-"Produtividade TCH": 0.0,
-"Tonelada Colhida": 0.0
+"Area Colhida": 34.23,
+"Produtividade TCH": 70,
+"Tonelada Colhida": 2396.1
 },
 {
 "Ano Colheita": 2026,
@@ -10019,9 +10019,9 @@ let dadosColheita = [
 "Data de Plantio": null,
 "Idade (meses)": null,
 "Idade (anos)": null,
-"Area Colhida": 0.0,
-"Produtividade TCH": 0.0,
-"Tonelada Colhida": 0.0
+"Area Colhida": 14.49,
+"Produtividade TCH": 116,
+"Tonelada Colhida": 1680.8355
 },
 {
 "Ano Colheita": 2026,
