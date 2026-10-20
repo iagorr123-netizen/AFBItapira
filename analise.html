@@ -349,12 +349,18 @@
 
             // Insight 4: Variação
             const produtividades = [];
+            let somaProdArea = 0, somaArea = 0;
             dadosColheita.forEach(row => {
                 const prod = parseFloat(row[col.produtividade]) || 0;
-                if (prod > 0) produtividades.push(prod);
+                const area = parseFloat(row[col.areaColhida]) || 0;
+                if (prod > 0 && area > 0) {
+                    produtividades.push(prod);
+                    somaProdArea += prod * area;
+                    somaArea += area;
+                }
             });
             if (produtividades.length > 0) {
-                const media = produtividades.reduce((a, b) => a + b) / produtividades.length;
+                const media = somaProdArea / somaArea;
                 const max = Math.max(...produtividades);
                 const min = Math.min(...produtividades);
                 const variacao = ((max - min) / media * 100).toFixed(1);

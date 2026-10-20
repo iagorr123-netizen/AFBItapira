@@ -37,7 +37,7 @@ function obterConsolidacaoGeral() {
     const col = CONFIG.columns;
     let totalToneladaColhida = 0;
     let totalAreaColhida = 0;
-    let produtividadeMedia = 0;
+    let somaProdArea = 0;
     let contTalhoes = new Set();
 
     dadosColheita.forEach(row => {
@@ -47,14 +47,14 @@ function obterConsolidacaoGeral() {
 
         totalToneladaColhida += tonelada;
         totalAreaColhida += area;
-        produtividadeMedia += produtiv;
+        somaProdArea += produtiv * area;
 
         if (row[col.talhao]) {
             contTalhoes.add(row[col.talhao]);
         }
     });
 
-    produtividadeMedia = produtividadeMedia / Math.max(dadosColheita.length, 1);
+    const produtividadeMedia = totalAreaColhida > 0 ? somaProdArea / totalAreaColhida : 0;
 
     return {
         totalToneladaColhida: totalToneladaColhida.toFixed(2),
@@ -78,7 +78,7 @@ function obterConsolidacaoPorTalhao() {
                 talhao: talhao,
                 totalTonelada: 0,
                 totalArea: 0,
-                produtividadeMedia: 0,
+                somaProdArea: 0,
                 variedades: new Set(),
                 numCortes: new Set(),
                 registros: 0
@@ -87,7 +87,7 @@ function obterConsolidacaoPorTalhao() {
 
         consolidacao[talhao].totalTonelada += parseFloat(row[col.toneladaColhida]) || 0;
         consolidacao[talhao].totalArea += parseFloat(row[col.areaColhida]) || 0;
-        consolidacao[talhao].produtividadeMedia += parseFloat(row[col.produtividade]) || 0;
+        consolidacao[talhao].somaProdArea += (parseFloat(row[col.produtividade]) || 0) * (parseFloat(row[col.areaColhida]) || 0);
         consolidacao[talhao].registros++;
 
         if (row[col.variedade]) {
@@ -100,7 +100,7 @@ function obterConsolidacaoPorTalhao() {
 
     return Object.values(consolidacao).map(t => ({
         ...t,
-        produtividadeMedia: (t.produtividadeMedia / t.registros).toFixed(2),
+        produtividadeMedia: (t.totalArea > 0 ? t.somaProdArea / t.totalArea : 0).toFixed(2),
         variedades: Array.from(t.variedades),
         numCortes: Array.from(t.numCortes)
     })).sort((a, b) => b.totalTonelada - a.totalTonelada);
@@ -119,7 +119,7 @@ function obterConsolidacaoPorVariedade() {
                 variedade: variedade,
                 totalTonelada: 0,
                 totalArea: 0,
-                produtividadeMedia: 0,
+                somaProdArea: 0,
                 talhoes: new Set(),
                 registros: 0
             };
@@ -127,7 +127,7 @@ function obterConsolidacaoPorVariedade() {
 
         consolidacao[variedade].totalTonelada += parseFloat(row[col.toneladaColhida]) || 0;
         consolidacao[variedade].totalArea += parseFloat(row[col.areaColhida]) || 0;
-        consolidacao[variedade].produtividadeMedia += parseFloat(row[col.produtividade]) || 0;
+        consolidacao[variedade].somaProdArea += (parseFloat(row[col.produtividade]) || 0) * (parseFloat(row[col.areaColhida]) || 0);
         consolidacao[variedade].registros++;
 
         if (row[col.talhao]) {
@@ -137,7 +137,7 @@ function obterConsolidacaoPorVariedade() {
 
     return Object.values(consolidacao).map(v => ({
         ...v,
-        produtividadeMedia: (v.produtividadeMedia / v.registros).toFixed(2),
+        produtividadeMedia: (v.totalArea > 0 ? v.somaProdArea / v.totalArea : 0).toFixed(2),
         talhoes: Array.from(v.talhoes)
     })).sort((a, b) => b.totalTonelada - a.totalTonelada);
 }
@@ -156,7 +156,7 @@ function obterConsolidacaoPorCorte() {
                 corte: corte,
                 totalTonelada: 0,
                 totalArea: 0,
-                produtividadeMedia: 0,
+                somaProdArea: 0,
                 talhoes: new Set(),
                 registros: 0
             };
@@ -164,7 +164,7 @@ function obterConsolidacaoPorCorte() {
 
         consolidacao[chave].totalTonelada += parseFloat(row[col.toneladaColhida]) || 0;
         consolidacao[chave].totalArea += parseFloat(row[col.areaColhida]) || 0;
-        consolidacao[chave].produtividadeMedia += parseFloat(row[col.produtividade]) || 0;
+        consolidacao[chave].somaProdArea += (parseFloat(row[col.produtividade]) || 0) * (parseFloat(row[col.areaColhida]) || 0);
         consolidacao[chave].registros++;
 
         if (row[col.talhao]) {
@@ -174,7 +174,7 @@ function obterConsolidacaoPorCorte() {
 
     return Object.values(consolidacao).map(c => ({
         ...c,
-        produtividadeMedia: (c.produtividadeMedia / c.registros).toFixed(2),
+        produtividadeMedia: (c.totalArea > 0 ? c.somaProdArea / c.totalArea : 0).toFixed(2),
         talhoes: Array.from(c.talhoes)
     })).sort((a, b) => b.corte - a.corte);
 }
@@ -192,20 +192,20 @@ function obterConsolidacaoPorAno() {
                 ano: ano,
                 totalTonelada: 0,
                 totalArea: 0,
-                produtividadeMedia: 0,
+                somaProdArea: 0,
                 registros: 0
             };
         }
 
         consolidacao[ano].totalTonelada += parseFloat(row[col.toneladaColhida]) || 0;
         consolidacao[ano].totalArea += parseFloat(row[col.areaColhida]) || 0;
-        consolidacao[ano].produtividadeMedia += parseFloat(row[col.produtividade]) || 0;
+        consolidacao[ano].somaProdArea += (parseFloat(row[col.produtividade]) || 0) * (parseFloat(row[col.areaColhida]) || 0);
         consolidacao[ano].registros++;
     });
 
     return Object.values(consolidacao).map(a => ({
         ...a,
-        produtividadeMedia: (a.produtividadeMedia / a.registros).toFixed(2)
+        produtividadeMedia: (a.totalArea > 0 ? a.somaProdArea / a.totalArea : 0).toFixed(2)
     })).sort((a, b) => b.ano - a.ano);
 }
 
