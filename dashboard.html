@@ -494,7 +494,10 @@
         function preencherMudas() {
             if (typeof dadosMudas === 'undefined' || !dadosMudas.length) return;
             const tb = document.getElementById('tabelaMudas');
-            tb.innerHTML = dadosMudas.map(m => `
+            const anos = [...new Set(dadosMudas.map(m => m['Ano Colheita']))].sort((a, b) => b - a);
+            tb.innerHTML = anos.map(ano => `
+                <tr><td colspan="6" style="background: #eaf7ef; font-weight: bold; color: #2c3e50;">Ano ${ano}</td></tr>
+                ${dadosMudas.filter(m => m['Ano Colheita'] === ano).map(m => `
                 <tr>
                     <td><span class="talhao-badge">Talhão ${m['Talhão']}</span></td>
                     <td>${m['Variedade']}</td>
@@ -502,7 +505,7 @@
                     <td>${m['Area Muda'].toFixed(2)}</td>
                     <td>${m['TCH']}</td>
                     <td><span class="valor-positivo">R$ ${m['Valores em Mudas'].toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span></td>
-                </tr>
+                </tr>`).join('')}
             `).join('');
         }
         function preencherReforma() {
