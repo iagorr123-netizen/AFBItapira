@@ -124,6 +124,7 @@
             <div class="chart-box"><div class="chart-title">📈 Tendência de Produtividade</div><div class="chart-canvas"><canvas id="chartTendencia"></canvas></div></div>
             <div class="chart-box"><div class="chart-title">📍 Média TCH por Corte</div><div class="chart-canvas"><canvas id="chartCorte"></canvas></div></div>
         </div>
+        <div id="listaCategoria" class="chart-box" style="display: none; margin-bottom: 30px;"></div>
         <div class="chart-box" style="margin-bottom: 30px;">
             <div class="chart-title">📈 Evolução por corte: fazenda × média SP</div>
             <div id="linhaBtns" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;"></div>
@@ -300,17 +301,51 @@
                 <div class="kpi-card"><div class="kpi-label">Área Não Colhida</div><div class="kpi-value">${parseInt(areaNaoColhida).toLocaleString('pt-BR')}</div><div class="kpi-unit">ha</div></div>
             `;
         }
+        const CATEGORIAS_NOMES = { excelente: 'Excelente (>100)', bom: 'Bom (80-100)', medio: 'Médio (60-80)', baixo: 'Baixo (<60)' };
+        function categoriaDeTCH(p) { return p >= 100 ? 'excelente' : p >= 80 ? 'bom' : p >= 60 ? 'medio' : 'baixo'; }
+        function abrirListaCategoria(cat) {
+            const c = CONFIG.columns;
+            const lista = obterDadosFiltrados()
+                .filter(r => r[c.numCorte] !== 'NC' && (parseFloat(r[c.areaColhida]) || 0) > 0 && categoriaDeTCH(parseFloat(r[c.produtividade])) === cat)
+                .sort((x, y) => parseFloat(y[c.produtividade]) - parseFloat(x[c.produtividade]));
+            const painel = document.getElementById('listaCategoria');
+            painel.style.display = 'block';
+            painel.innerHTML = `
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <div class="chart-title" style="margin: 0;">📋 ${CATEGORIAS_NOMES[cat]}: ${lista.length} talhões</div>
+                    <button onclick="fecharListaCategoria()" style="padding: 6px 12px; border: 1px solid #ddd; border-radius: 6px; background: white; cursor: pointer; font-size: 13px;">Fechar</button>
+                </div>
+                <div style="overflow-x: auto;">
+                <table class="tabla-reforma" style="width: 100%;">
+                    <thead><tr><th>Talhão</th><th>Variedade</th><th>Corte</th><th>Ano</th><th>TCH/ha</th><th>Área (ha)</th></tr></thead>
+                    <tbody>${lista.map(r => `
+                        <tr>
+                            <td><span class="talhao-badge">Talhão ${r[c.talhao]}</span></td>
+                            <td>${r[c.variedade]}</td>
+                            <td>Corte ${r[c.numCorte]}</td>
+                            <td>${r[c.ano]}</td>
+                            <td><strong>${parseFloat(r[c.produtividade]).toFixed(2)}</strong></td>
+                            <td>${parseFloat(r[c.areaColhida]).toFixed(2)}</td>
+                        </tr>`).join('')}
+                    </tbody>
+                </table>
+                </div>`;
+            painel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        function fecharListaCategoria() {
+            document.getElementById('listaCategoria').style.display = 'none';
+        }
         function criarGraficos() {
             const c = CONFIG.columns;
             const dados = obterDadosFiltrados();
             let e=0, b=0, m=0, l=0;
-            dados.forEach(r => {
+            dados.filter(r => r[c.numCorte] !== 'NC' && (parseFloat(r[c.areaColhida]) || 0) > 0).forEach(r => {
                 const p = parseFloat(r[c.produtividade]);
                 if (p >= 100) e++; else if (p >= 80) b++; else if (p >= 60) m++; else l++;
             });
-            const categorias = [['Excelente (>100)', e, '#2ecc71'], ['Bom (80-100)', b, '#4ECDC4'], ['Médio (60-80)', m, '#FFA500'], ['Baixo (<60)', l, '#FF6B6B']];
-            document.getElementById('distCounts').innerHTML = categorias.map(([nome, q, cor]) => `
-                <div style="background: var(--surface-1, #f8f9fa); border-left: 4px solid ${cor}; border-radius: 8px; padding: 10px 12px;">
+            const categorias = [['excelente', 'Excelente (>100)', e, '#2ecc71'], ['bom', 'Bom (80-100)', b, '#4ECDC4'], ['medio', 'Médio (60-80)', m, '#FFA500'], ['baixo', 'Baixo (<60)', l, '#FF6B6B']];
+            document.getElementById('distCounts').innerHTML = categorias.map(([chave, nome, q, cor]) => `
+                <div onclick="abrirListaCategoria('${chave}')" style="cursor: pointer; background: #f8f9fa; border-left: 4px solid ${cor}; border-radius: 8px; padding: 10px 12px;">
                     <div style="font-size: 24px; font-weight: bold; color: #2c3e50;">${q}</div>
                     <div style="font-size: 12px; color: #7f8c8d;">${nome}</div>
                 </div>`).join('');
