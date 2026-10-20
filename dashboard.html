@@ -129,13 +129,21 @@
             <div class="chart-box"><div class="chart-title">📍 Média TCH por Corte</div><div class="chart-canvas"><canvas id="chartCorte"></canvas></div></div>
         </div>
         <div class="chart-box" style="margin-bottom: 30px;">
-            <div class="chart-title">📈 Fazenda × média histórica de SP</div>
-            <div id="compBtns" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;"></div>
+            <div class="chart-title">📈 Evolução por corte: fazenda × média SP</div>
+            <div id="linhaBtns" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;"></div>
             <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 8px; font-size: 12px; color: #7f8c8d;">
-                <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 12px; height: 12px; background: #2a78d6; border-radius: 2px;"></span>Fazenda no ano selecionado</span>
-                <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 12px; height: 12px; background: #888780; border-radius: 2px;"></span>Média histórica SP (2017 a 2026)</span>
+                <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 18px; height: 3px; background: #2a78d6; border-radius: 2px;"></span>Fazenda AFB Itapira</span>
+                <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 18px; border-top: 2px dashed #888780;"></span>Média SP (a partir de 2017)</span>
             </div>
-            <div style="position: relative; width: 100%; height: 320px;"><canvas id="chartComparativo" role="img" aria-label="Barras de TCH por corte do ano selecionado da fazenda, comparadas com a média histórica de SP"></canvas></div>
+            <div style="position: relative; width: 100%; height: 320px;"><canvas id="chartLinhas" role="img" aria-label="Linhas de TCH por ano do corte selecionado, fazenda e média de SP, com anos sem colheita marcados"></canvas></div>
+        </div>
+        <div class="chart-box" style="margin-bottom: 30px;">
+            <div class="chart-title">📊 Fazenda × média histórica SP no período</div>
+            <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 8px; font-size: 12px; color: #7f8c8d;">
+                <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 12px; height: 12px; background: #2a78d6; border-radius: 2px;"></span>Fazenda no período</span>
+                <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 12px; height: 12px; background: #888780; border-radius: 2px;"></span>Média histórica SP</span>
+            </div>
+            <div style="position: relative; width: 100%; height: 320px;"><canvas id="chartComparativo" role="img" aria-label="Barras de TCH por corte da fazenda no período selecionado, comparadas com a média histórica de SP"></canvas></div>
             <p id="compResumo" style="font-size: 13px; color: #7f8c8d; margin-top: 10px;"></p>
         </div>
         <div class="mudas-reforma-container">
@@ -229,6 +237,7 @@
 
             console.log('🟡 Chamando calcularKPIs com filtroAno:', filtroAno);
             calcularKPIs();
+            desenharComparativo();
             criarGraficos();
             atualizarStatus();
             preencherAtividades();
@@ -551,45 +560,95 @@
             { chave: '>5', rotulo: 'Maior que 5', tipo: 'Maior que 5º corte' },
             { chave: 'Geral', rotulo: 'Média geral', tipo: 'Média geral' }
         ];
-        let compAno = 2026;
+        let linhaCorte = 'Geral';
+        let chartLinhas = null;
         let chartComparativo = null;
-        function calcularFazendaPorAno() {
+        const ANOS_TODOS = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
+        function acumuladoFazenda(anos) {
             const acc = {};
             dadosColheita.forEach(r => {
+                if (!anos.includes(r['Ano Colheita'])) return;
                 const corte = r['Número do Corte'];
                 const area = parseFloat(r['Area Colhida']) || 0;
                 if (corte === 'NC' || area <= 0) return;
                 const n = Number(corte);
                 const g = n > 5 ? '>5' : String(n);
                 const prod = parseFloat(r['Produtividade TCH']) || 0;
-                const ano = r['Ano Colheita'];
                 [g, 'Geral'].forEach(k => {
-                    const c = ano + '|' + k;
-                    if (!acc[c]) acc[c] = { t: 0, a: 0 };
-                    acc[c].t += prod * area; acc[c].a += area;
+                    if (!acc[k]) acc[k] = { t: 0, a: 0 };
+                    acc[k].t += prod * area; acc[k].a += area;
                 });
             });
             return acc;
         }
-        function mediaHistoricaSP(tipo) {
-            const v = dadosRegionalSP.filter(x => x['Tipo de corte'] === tipo && x['TCH SP'] != null).map(x => x['TCH SP']);
+        function mediaSP(tipo, anos) {
+            const v = dadosRegionalSP.filter(x => anos.includes(x['Ano']) && x['Tipo de corte'] === tipo && x['TCH SP'] != null).map(x => x['TCH SP']);
             return v.length ? v.reduce((a, b) => a + b, 0) / v.length : null;
         }
-        function desenharComparativo() {
-            const anos = [...new Set(dadosRegionalSP.map(x => x['Ano']))].sort((a, b) => a - b);
-            const acc = calcularFazendaPorAno();
-            const fazenda = COMP_GRUPOS.map(g => { const v = acc[compAno + '|' + g.chave]; return v && v.a > 0 ? Math.round(v.t / v.a * 10) / 10 : null; });
-            const sp = COMP_GRUPOS.map(g => { const m = mediaHistoricaSP(g.tipo); return m == null ? null : Math.round(m * 10) / 10; });
-            const btns = document.getElementById('compBtns');
-            btns.innerHTML = '';
-            anos.forEach(a => {
+        function desenharLinhas() {
+            const botoes = document.getElementById('linhaBtns');
+            botoes.innerHTML = '';
+            COMP_GRUPOS.forEach(g => {
                 const b = document.createElement('button');
-                b.textContent = a;
+                b.textContent = g.rotulo;
                 b.style.cssText = 'font-size: 13px; padding: 6px 12px; border-radius: 6px; border: 1px solid #ddd; background: white; cursor: pointer;';
-                b.style.fontWeight = a === compAno ? 'bold' : 'normal';
-                b.onclick = () => { compAno = a; desenharComparativo(); };
-                btns.appendChild(b);
+                b.style.fontWeight = g.chave === linhaCorte ? 'bold' : 'normal';
+                b.onclick = () => { linhaCorte = g.chave; desenharLinhas(); };
+                botoes.appendChild(b);
             });
+            const grupo = COMP_GRUPOS.find(g => g.chave === linhaCorte);
+            const fazenda = ANOS_TODOS.map(a => {
+                const acc = acumuladoFazenda([a])[linhaCorte];
+                return acc && acc.a > 0 ? Math.round(acc.t / acc.a * 10) / 10 : null;
+            });
+            const sp = ANOS_TODOS.map(a => {
+                const v = dadosRegionalSP.find(x => x['Ano'] === a && x['Tipo de corte'] === grupo.tipo);
+                return v ? v['TCH SP'] : null;
+            });
+            if (chartLinhas) chartLinhas.destroy();
+            chartLinhas = new Chart(document.getElementById('chartLinhas'), {
+                type: 'line',
+                plugins: [{
+                    id: 'semColheita',
+                    afterDatasetsDraw(chart) {
+                        const { ctx, scales: { x, y } } = chart;
+                        ctx.save();
+                        ctx.font = '11px sans-serif';
+                        ctx.fillStyle = '#898781';
+                        ctx.textAlign = 'center';
+                        fazenda.forEach((v, i) => { if (v == null) ctx.fillText('sem colheita', x.getPixelForValue(i), y.bottom - 8); });
+                        ctx.restore();
+                    }
+                }],
+                data: {
+                    labels: ANOS_TODOS.map(String),
+                    datasets: [
+                        { label: 'Fazenda', data: fazenda, borderColor: '#2a78d6', backgroundColor: '#2a78d6', borderWidth: 2.5, pointRadius: 4, spanGaps: false, tension: 0.25 },
+                        { label: 'Média SP', data: sp, borderColor: '#888780', backgroundColor: '#888780', borderWidth: 2, borderDash: [6, 4], pointRadius: 3, spanGaps: false, tension: 0.25 }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { callbacks: { label: c => c.dataset.label + ': ' + (c.parsed.y == null ? 'sem colheita' : c.parsed.y.toFixed(1) + ' TCH/ha') } }
+                    },
+                    scales: {
+                        y: { title: { display: true, text: 'TCH (t/ha)' }, grid: { color: '#e1e0d9' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+        }
+        function desenharComparativo() {
+            let anosFaz, anosSP, rotuloPeriodo;
+            if (filtroAno === 'historico') { anosFaz = ANOS_TODOS.filter(a => a >= 2017 && a <= 2025); anosSP = anosFaz; rotuloPeriodo = '2017 a 2025'; }
+            else if (filtroAno === 'projecao') { anosFaz = [2026]; anosSP = ANOS_TODOS.filter(a => a >= 2017 && a <= 2025); rotuloPeriodo = '2026 (SP: 2017 a 2025)'; }
+            else { anosFaz = ANOS_TODOS.filter(a => a >= 2017); anosSP = anosFaz; rotuloPeriodo = '2017 a 2026'; }
+            const acc = acumuladoFazenda(anosFaz);
+            const fazenda = COMP_GRUPOS.map(g => acc[g.chave] && acc[g.chave].a > 0 ? Math.round(acc[g.chave].t / acc[g.chave].a * 10) / 10 : null);
+            const sp = COMP_GRUPOS.map(g => { const m = mediaSP(g.tipo, anosSP); return m == null ? null : Math.round(m * 10) / 10; });
             const rotulos = COMP_GRUPOS.map((g, i) => fazenda[i] == null ? g.rotulo + ' (sem colheita)' : g.rotulo);
             if (chartComparativo) chartComparativo.destroy();
             chartComparativo = new Chart(document.getElementById('chartComparativo'), {
@@ -597,7 +656,7 @@
                 data: {
                     labels: rotulos,
                     datasets: [
-                        { label: 'Fazenda ' + compAno, data: fazenda, backgroundColor: '#2a78d6' },
+                        { label: 'Fazenda', data: fazenda, backgroundColor: '#2a78d6' },
                         { label: 'Média histórica SP', data: sp, backgroundColor: '#888780' }
                     ]
                 },
@@ -616,13 +675,14 @@
             });
             const i = COMP_GRUPOS.length - 1;
             document.getElementById('compResumo').textContent = fazenda[i] == null || sp[i] == null
-                ? 'Sem colheita geral em ' + compAno + '.'
-                : 'Média geral ' + compAno + ': fazenda ' + fazenda[i].toFixed(1) + ' × média histórica SP ' + sp[i].toFixed(1) + ' TCH/ha (' + ((fazenda[i] - sp[i]) / sp[i] * 100 >= 0 ? '+' : '') + ((fazenda[i] - sp[i]) / sp[i] * 100).toFixed(1) + '%).';
+                ? 'Sem colheita geral no período ' + rotuloPeriodo + '.'
+                : 'Média geral (' + rotuloPeriodo + '): fazenda ' + fazenda[i].toFixed(1) + ' × SP ' + sp[i].toFixed(1) + ' TCH/ha (' + ((fazenda[i] - sp[i]) / sp[i] * 100 >= 0 ? '+' : '') + ((fazenda[i] - sp[i]) / sp[i] * 100).toFixed(1) + '%).';
         }
         document.addEventListener('DOMContentLoaded', () => {
             init();
             preencherMudas();
             preencherReforma();
+            desenharLinhas();
             desenharComparativo();
         });
     </script>
