@@ -317,6 +317,7 @@ function mostrarDadosTalhao(dados, cor) {
     setTimeout(() => {
         if (dados.historico_anos && dados.historico_anos.length > 0) {
             const labels = dados.historico_anos.map(h => {
+                if (h.reforma) return `${h.ano} - Reforma`;
                 const corteLabel = h.numCorte ? ` - Corte ${h.numCorte}` : '';
                 return `${h.ano}${corteLabel}`;
             });

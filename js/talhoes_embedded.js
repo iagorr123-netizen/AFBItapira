@@ -439,6 +439,12 @@ let dadosTalhoes = [
         "numCorte": "6"
       },
       {
+        "ano": 2020,
+        "media": null,
+        "numCorte": "NC",
+        "reforma": true
+      },
+      {
         "ano": 2021,
         "media": 96.04,
         "numCorte": "1"
@@ -462,6 +468,12 @@ let dadosTalhoes = [
         "ano": 2025,
         "media": 58.0,
         "numCorte": "5"
+      },
+      {
+        "ano": 2026,
+        "media": null,
+        "numCorte": "NC",
+        "reforma": true
       }
     ],
     "registros": 12
@@ -1331,6 +1343,12 @@ let dadosTalhoes = [
         "numCorte": "3"
       },
       {
+        "ano": 2025,
+        "media": null,
+        "numCorte": "NC",
+        "reforma": true
+      },
+      {
         "ano": 2026,
         "media": 92.0,
         "numCorte": "1"
@@ -1378,6 +1396,12 @@ let dadosTalhoes = [
         "ano": 2022,
         "media": 48.0,
         "numCorte": "3"
+      },
+      {
+        "ano": 2023,
+        "media": null,
+        "numCorte": "NC",
+        "reforma": true
       },
       {
         "ano": 2024,
@@ -1444,6 +1468,12 @@ let dadosTalhoes = [
         "numCorte": "3"
       },
       {
+        "ano": 2023,
+        "media": null,
+        "numCorte": "NC",
+        "reforma": true
+      },
+      {
         "ano": 2024,
         "media": 144.0,
         "numCorte": "1"
@@ -1506,6 +1536,12 @@ let dadosTalhoes = [
         "ano": 2022,
         "media": 48.0,
         "numCorte": "3"
+      },
+      {
+        "ano": 2023,
+        "media": null,
+        "numCorte": "NC",
+        "reforma": true
       },
       {
         "ano": 2024,
@@ -1572,6 +1608,12 @@ let dadosTalhoes = [
         "numCorte": "3"
       },
       {
+        "ano": 2023,
+        "media": null,
+        "numCorte": "NC",
+        "reforma": true
+      },
+      {
         "ano": 2024,
         "media": 135.0,
         "numCorte": "1"
@@ -1634,6 +1676,12 @@ let dadosTalhoes = [
         "ano": 2022,
         "media": 48.0,
         "numCorte": "3"
+      },
+      {
+        "ano": 2023,
+        "media": null,
+        "numCorte": "NC",
+        "reforma": true
       },
       {
         "ano": 2024,
@@ -1875,6 +1923,12 @@ let dadosTalhoes = [
         "ano": 2025,
         "media": 50.0,
         "numCorte": "4"
+      },
+      {
+        "ano": 2026,
+        "media": null,
+        "numCorte": "NC",
+        "reforma": true
       }
     ],
     "registros": 8
@@ -1914,6 +1968,12 @@ let dadosTalhoes = [
         "ano": 2021,
         "media": 4.72,
         "numCorte": "3"
+      },
+      {
+        "ano": 2022,
+        "media": null,
+        "numCorte": "NC",
+        "reforma": true
       },
       {
         "ano": 2023,
@@ -2653,6 +2713,12 @@ let dadosTalhoes = [
         "numCorte": "6"
       },
       {
+        "ano": 2020,
+        "media": null,
+        "numCorte": "NC",
+        "reforma": true
+      },
+      {
         "ano": 2021,
         "media": 110.62,
         "numCorte": "1"
@@ -3011,6 +3077,12 @@ let dadosTalhoes = [
         "numCorte": "6"
       },
       {
+        "ano": 2020,
+        "media": null,
+        "numCorte": "NC",
+        "reforma": true
+      },
+      {
         "ano": 2021,
         "media": 104.39,
         "numCorte": "1"
@@ -3034,6 +3106,12 @@ let dadosTalhoes = [
         "ano": 2025,
         "media": 67.94,
         "numCorte": "5"
+      },
+      {
+        "ano": 2026,
+        "media": null,
+        "numCorte": "NC",
+        "reforma": true
       }
     ],
     "registros": 12
@@ -3098,6 +3176,12 @@ let dadosTalhoes = [
         "ano": 2025,
         "media": 69.0,
         "numCorte": "5"
+      },
+      {
+        "ano": 2026,
+        "media": null,
+        "numCorte": "NC",
+        "reforma": true
       }
     ],
     "registros": 11
@@ -4204,6 +4288,12 @@ let dadosTalhoes = [
         "ano": 2025,
         "media": 49.0,
         "numCorte": "4"
+      },
+      {
+        "ano": 2026,
+        "media": null,
+        "numCorte": "NC",
+        "reforma": true
       }
     ],
     "registros": 11
@@ -4268,6 +4358,12 @@ let dadosTalhoes = [
         "ano": 2025,
         "media": 49.0,
         "numCorte": "4"
+      },
+      {
+        "ano": 2026,
+        "media": null,
+        "numCorte": "NC",
+        "reforma": true
       }
     ],
     "registros": 11
@@ -4514,6 +4610,12 @@ let dadosTalhoes = [
         "numCorte": "4"
       },
       {
+        "ano": 2023,
+        "media": null,
+        "numCorte": "NC",
+        "reforma": true
+      },
+      {
         "ano": 2024,
         "media": 98.0,
         "numCorte": "1"
@@ -4710,6 +4812,12 @@ let dadosTalhoes = [
         "numCorte": "4"
       },
       {
+        "ano": 2025,
+        "media": null,
+        "numCorte": "NC",
+        "reforma": true
+      },
+      {
         "ano": 2026,
         "media": 100.0,
         "numCorte": "1"
@@ -4742,6 +4850,12 @@ let dadosTalhoes = [
         "ano": 2023,
         "media": 60.0,
         "numCorte": "3"
+      },
+      {
+        "ano": 2024,
+        "media": null,
+        "numCorte": "NC",
+        "reforma": true
       },
       {
         "ano": 2025,
@@ -4788,6 +4902,12 @@ let dadosTalhoes = [
         "numCorte": "4"
       },
       {
+        "ano": 2025,
+        "media": null,
+        "numCorte": "NC",
+        "reforma": true
+      },
+      {
         "ano": 2026,
         "media": 116.0,
         "numCorte": "1"
@@ -4825,6 +4945,12 @@ let dadosTalhoes = [
         "ano": 2024,
         "media": 54.0,
         "numCorte": "4"
+      },
+      {
+        "ano": 2025,
+        "media": null,
+        "numCorte": "NC",
+        "reforma": true
       },
       {
         "ano": 2026,
@@ -4869,6 +4995,12 @@ let dadosTalhoes = [
         "ano": 2025,
         "media": 60.0,
         "numCorte": "5"
+      },
+      {
+        "ano": 2026,
+        "media": null,
+        "numCorte": "NC",
+        "reforma": true
       }
     ],
     "registros": 6
@@ -4952,6 +5084,12 @@ let dadosTalhoes = [
         "ano": 2025,
         "media": 60.0,
         "numCorte": "5"
+      },
+      {
+        "ano": 2026,
+        "media": null,
+        "numCorte": "NC",
+        "reforma": true
       }
     ],
     "registros": 6
@@ -5030,6 +5168,12 @@ let dadosTalhoes = [
         "ano": 2024,
         "media": 68.0,
         "numCorte": "4"
+      },
+      {
+        "ano": 2025,
+        "media": null,
+        "numCorte": "NC",
+        "reforma": true
       },
       {
         "ano": 2026,
@@ -5167,6 +5311,12 @@ let dadosTalhoes = [
     "ultimo_ano": 2026,
     "tch_historico": 108.47,
     "historico_anos": [
+      {
+        "ano": 2023,
+        "media": null,
+        "numCorte": "NC",
+        "reforma": true
+      },
       {
         "ano": 2024,
         "media": 150.4,

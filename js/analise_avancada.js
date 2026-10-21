@@ -90,7 +90,7 @@ function preencherFiltros() {
     if (cortes.has('NC')) {
         const optionNC = document.createElement('option');
         optionNC.value = 'NC';
-        optionNC.textContent = 'NC (não colhido)';
+        optionNC.textContent = 'Reforma (NC)';
         selectCorte.appendChild(optionNC);
     }
 
