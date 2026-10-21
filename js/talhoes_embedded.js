@@ -66,7 +66,8 @@ let dadosTalhoes = [
         "numCorte": "4"
       }
     ],
-    "registros": 11
+    "registros": 11,
+    "variedade_ultima": "CTC 11"
   },
   {
     "numero": 2,
@@ -135,7 +136,8 @@ let dadosTalhoes = [
         "numCorte": "4"
       }
     ],
-    "registros": 11
+    "registros": 11,
+    "variedade_ultima": "CTC 11"
   },
   {
     "numero": 3,
@@ -204,7 +206,8 @@ let dadosTalhoes = [
         "numCorte": "6"
       }
     ],
-    "registros": 11
+    "registros": 11,
+    "variedade_ultima": "CTC 4"
   },
   {
     "numero": 4,
@@ -243,7 +246,8 @@ let dadosTalhoes = [
         "numCorte": "6"
       }
     ],
-    "registros": 5
+    "registros": 5,
+    "variedade_ultima": "RB 7515"
   },
   {
     "numero": 5,
@@ -312,7 +316,8 @@ let dadosTalhoes = [
         "numCorte": "5"
       }
     ],
-    "registros": 11
+    "registros": 11,
+    "variedade_ultima": "RB 5952"
   },
   {
     "numero": 6,
@@ -356,7 +361,8 @@ let dadosTalhoes = [
         "numCorte": "7"
       }
     ],
-    "registros": 6
+    "registros": 6,
+    "variedade_ultima": "CTC 11"
   },
   {
     "numero": 7,
@@ -400,7 +406,8 @@ let dadosTalhoes = [
         "numCorte": "7"
       }
     ],
-    "registros": 6
+    "registros": 6,
+    "variedade_ultima": "CTC 11"
   },
   {
     "numero": 8,
@@ -476,7 +483,8 @@ let dadosTalhoes = [
         "reforma": true
       }
     ],
-    "registros": 12
+    "registros": 12,
+    "variedade_ultima": "CV 7870"
   },
   {
     "numero": 9,
@@ -515,7 +523,8 @@ let dadosTalhoes = [
         "numCorte": "6"
       }
     ],
-    "registros": 5
+    "registros": 5,
+    "variedade_ultima": "RB 7515"
   },
   {
     "numero": 10,
@@ -589,7 +598,8 @@ let dadosTalhoes = [
         "numCorte": "5"
       }
     ],
-    "registros": 12
+    "registros": 12,
+    "variedade_ultima": "CTC 4"
   },
   {
     "numero": 12,
@@ -663,7 +673,8 @@ let dadosTalhoes = [
         "numCorte": "5"
       }
     ],
-    "registros": 12
+    "registros": 12,
+    "variedade_ultima": "CTC 4"
   },
   {
     "numero": 14,
@@ -737,7 +748,8 @@ let dadosTalhoes = [
         "numCorte": "5"
       }
     ],
-    "registros": 12
+    "registros": 12,
+    "variedade_ultima": "CTC 4"
   },
   {
     "numero": 15,
@@ -806,7 +818,8 @@ let dadosTalhoes = [
         "numCorte": "3"
       }
     ],
-    "registros": 11
+    "registros": 11,
+    "variedade_ultima": "CTC 9001"
   },
   {
     "numero": 16,
@@ -880,7 +893,8 @@ let dadosTalhoes = [
         "numCorte": "5"
       }
     ],
-    "registros": 12
+    "registros": 12,
+    "variedade_ultima": "CTC 4"
   },
   {
     "numero": 17,
@@ -954,7 +968,8 @@ let dadosTalhoes = [
         "numCorte": "5"
       }
     ],
-    "registros": 12
+    "registros": 12,
+    "variedade_ultima": "CTC 4"
   },
   {
     "numero": 18,
@@ -1023,7 +1038,8 @@ let dadosTalhoes = [
         "numCorte": "4"
       }
     ],
-    "registros": 11
+    "registros": 11,
+    "variedade_ultima": "CTC 9001"
   },
   {
     "numero": 19,
@@ -1092,7 +1108,8 @@ let dadosTalhoes = [
         "numCorte": "4"
       }
     ],
-    "registros": 11
+    "registros": 11,
+    "variedade_ultima": "CTC 9001"
   },
   {
     "numero": 20,
@@ -1166,7 +1183,8 @@ let dadosTalhoes = [
         "numCorte": "5"
       }
     ],
-    "registros": 12
+    "registros": 12,
+    "variedade_ultima": "CTC 4"
   },
   {
     "numero": 21,
@@ -1235,7 +1253,8 @@ let dadosTalhoes = [
         "numCorte": "5"
       }
     ],
-    "registros": 11
+    "registros": 11,
+    "variedade_ultima": "CTC 4"
   },
   {
     "numero": 22,
@@ -1304,7 +1323,8 @@ let dadosTalhoes = [
         "numCorte": "4"
       }
     ],
-    "registros": 11
+    "registros": 11,
+    "variedade_ultima": "CTC 9001"
   },
   {
     "numero": 23,
@@ -1354,7 +1374,8 @@ let dadosTalhoes = [
         "numCorte": "1"
       }
     ],
-    "registros": 7
+    "registros": 7,
+    "variedade_ultima": "CTC 9003"
   },
   {
     "numero": 24,
@@ -1419,7 +1440,8 @@ let dadosTalhoes = [
         "numCorte": "3"
       }
     ],
-    "registros": 10
+    "registros": 10,
+    "variedade_ultima": "CTC 9001"
   },
   {
     "numero": 25,
@@ -1489,7 +1511,8 @@ let dadosTalhoes = [
         "numCorte": "3"
       }
     ],
-    "registros": 11
+    "registros": 11,
+    "variedade_ultima": "CTC 9001"
   },
   {
     "numero": 26,
@@ -1559,7 +1582,8 @@ let dadosTalhoes = [
         "numCorte": "3"
       }
     ],
-    "registros": 11
+    "registros": 11,
+    "variedade_ultima": "CTC 9001"
   },
   {
     "numero": 27,
@@ -1629,7 +1653,8 @@ let dadosTalhoes = [
         "numCorte": "3"
       }
     ],
-    "registros": 11
+    "registros": 11,
+    "variedade_ultima": "CTC 9003"
   },
   {
     "numero": 28,
@@ -1699,7 +1724,8 @@ let dadosTalhoes = [
         "numCorte": "3"
       }
     ],
-    "registros": 11
+    "registros": 11,
+    "variedade_ultima": "CTC 9003"
   },
   {
     "numero": 29,
@@ -1758,7 +1784,8 @@ let dadosTalhoes = [
         "numCorte": "1"
       }
     ],
-    "registros": 9
+    "registros": 9,
+    "variedade_ultima": "RB 5014"
   },
   {
     "numero": 30,
@@ -1817,7 +1844,8 @@ let dadosTalhoes = [
         "numCorte": "5"
       }
     ],
-    "registros": 9
+    "registros": 9,
+    "variedade_ultima": "CTC 4"
   },
   {
     "numero": 31,
@@ -1876,7 +1904,8 @@ let dadosTalhoes = [
         "numCorte": "1"
       }
     ],
-    "registros": 9
+    "registros": 9,
+    "variedade_ultima": "CTC 9003"
   },
   {
     "numero": 32,
@@ -1931,7 +1960,8 @@ let dadosTalhoes = [
         "reforma": true
       }
     ],
-    "registros": 8
+    "registros": 8,
+    "variedade_ultima": "CTC 4"
   },
   {
     "numero": 33,
@@ -1996,7 +2026,8 @@ let dadosTalhoes = [
         "numCorte": "4"
       }
     ],
-    "registros": 11
+    "registros": 11,
+    "variedade_ultima": "CTC 9003"
   },
   {
     "numero": 34,
@@ -2030,7 +2061,8 @@ let dadosTalhoes = [
         "numCorte": "4"
       }
     ],
-    "registros": 4
+    "registros": 4,
+    "variedade_ultima": "CTC 14"
   },
   {
     "numero": 35,
@@ -2064,7 +2096,8 @@ let dadosTalhoes = [
         "numCorte": "4"
       }
     ],
-    "registros": 4
+    "registros": 4,
+    "variedade_ultima": "CTC 14"
   },
   {
     "numero": 36,
@@ -2098,7 +2131,8 @@ let dadosTalhoes = [
         "numCorte": "4"
       }
     ],
-    "registros": 4
+    "registros": 4,
+    "variedade_ultima": "CTC 14"
   },
   {
     "numero": 37,
@@ -2132,7 +2166,8 @@ let dadosTalhoes = [
         "numCorte": "4"
       }
     ],
-    "registros": 4
+    "registros": 4,
+    "variedade_ultima": "CTC 14"
   },
   {
     "numero": 38,
@@ -2166,7 +2201,8 @@ let dadosTalhoes = [
         "numCorte": "4"
       }
     ],
-    "registros": 4
+    "registros": 4,
+    "variedade_ultima": "CTC 14"
   },
   {
     "numero": 39,
@@ -2200,7 +2236,8 @@ let dadosTalhoes = [
         "numCorte": "4"
       }
     ],
-    "registros": 4
+    "registros": 4,
+    "variedade_ultima": "CTC 14"
   },
   {
     "numero": 40,
@@ -2234,7 +2271,8 @@ let dadosTalhoes = [
         "numCorte": "4"
       }
     ],
-    "registros": 4
+    "registros": 4,
+    "variedade_ultima": "SP 2847"
   },
   {
     "numero": 41,
@@ -2268,7 +2306,8 @@ let dadosTalhoes = [
         "numCorte": "4"
       }
     ],
-    "registros": 4
+    "registros": 4,
+    "variedade_ultima": "SP 2847"
   },
   {
     "numero": 42,
@@ -2302,7 +2341,8 @@ let dadosTalhoes = [
         "numCorte": "4"
       }
     ],
-    "registros": 4
+    "registros": 4,
+    "variedade_ultima": "SP 2847"
   },
   {
     "numero": 43,
@@ -2336,7 +2376,8 @@ let dadosTalhoes = [
         "numCorte": "4"
       }
     ],
-    "registros": 4
+    "registros": 4,
+    "variedade_ultima": "SP 2847"
   },
   {
     "numero": 44,
@@ -2370,7 +2411,8 @@ let dadosTalhoes = [
         "numCorte": "4"
       }
     ],
-    "registros": 4
+    "registros": 4,
+    "variedade_ultima": "SP 2847"
   },
   {
     "numero": 45,
@@ -2409,7 +2451,8 @@ let dadosTalhoes = [
         "numCorte": "4"
       }
     ],
-    "registros": 6
+    "registros": 6,
+    "variedade_ultima": "RB 6928"
   },
   {
     "numero": 46,
@@ -2448,7 +2491,8 @@ let dadosTalhoes = [
         "numCorte": "4"
       }
     ],
-    "registros": 5
+    "registros": 5,
+    "variedade_ultima": "RB 6928"
   },
   {
     "numero": 47,
@@ -2492,7 +2536,8 @@ let dadosTalhoes = [
         "numCorte": "6"
       }
     ],
-    "registros": 6
+    "registros": 6,
+    "variedade_ultima": "CTC 11"
   },
   {
     "numero": 48,
@@ -2536,7 +2581,8 @@ let dadosTalhoes = [
         "numCorte": "6"
       }
     ],
-    "registros": 6
+    "registros": 6,
+    "variedade_ultima": "CTC 11"
   },
   {
     "numero": 52,
@@ -2605,7 +2651,8 @@ let dadosTalhoes = [
         "numCorte": "2"
       }
     ],
-    "registros": 11
+    "registros": 11,
+    "variedade_ultima": "RB 5952"
   },
   {
     "numero": 53,
@@ -2674,7 +2721,8 @@ let dadosTalhoes = [
         "numCorte": "3"
       }
     ],
-    "registros": 11
+    "registros": 11,
+    "variedade_ultima": "CTC 9001"
   },
   {
     "numero": 54,
@@ -2749,7 +2797,8 @@ let dadosTalhoes = [
         "numCorte": "3"
       }
     ],
-    "registros": 12
+    "registros": 12,
+    "variedade_ultima": "CTC 9001"
   },
   {
     "numero": 55,
@@ -2818,7 +2867,8 @@ let dadosTalhoes = [
         "numCorte": "3"
       }
     ],
-    "registros": 11
+    "registros": 11,
+    "variedade_ultima": "CTC 9001"
   },
   {
     "numero": 56,
@@ -2857,7 +2907,8 @@ let dadosTalhoes = [
         "numCorte": "6"
       }
     ],
-    "registros": 5
+    "registros": 5,
+    "variedade_ultima": "SP 2847"
   },
   {
     "numero": 57,
@@ -2896,7 +2947,8 @@ let dadosTalhoes = [
         "numCorte": "6"
       }
     ],
-    "registros": 5
+    "registros": 5,
+    "variedade_ultima": "SP 2847"
   },
   {
     "numero": 58,
@@ -2960,7 +3012,8 @@ let dadosTalhoes = [
         "numCorte": "4"
       }
     ],
-    "registros": 10
+    "registros": 10,
+    "variedade_ultima": "CTC 9001"
   },
   {
     "numero": 59,
@@ -2999,7 +3052,8 @@ let dadosTalhoes = [
         "numCorte": "6"
       }
     ],
-    "registros": 5
+    "registros": 5,
+    "variedade_ultima": "SP 2847"
   },
   {
     "numero": 60,
@@ -3038,7 +3092,8 @@ let dadosTalhoes = [
         "numCorte": "6"
       }
     ],
-    "registros": 5
+    "registros": 5,
+    "variedade_ultima": "SP 2847"
   },
   {
     "numero": 61,
@@ -3114,7 +3169,8 @@ let dadosTalhoes = [
         "reforma": true
       }
     ],
-    "registros": 12
+    "registros": 12,
+    "variedade_ultima": "RB 5952"
   },
   {
     "numero": 62,
@@ -3184,7 +3240,8 @@ let dadosTalhoes = [
         "reforma": true
       }
     ],
-    "registros": 11
+    "registros": 11,
+    "variedade_ultima": "RB 5952"
   },
   {
     "numero": 63,
@@ -3228,7 +3285,8 @@ let dadosTalhoes = [
         "numCorte": "9"
       }
     ],
-    "registros": 6
+    "registros": 6,
+    "variedade_ultima": "CTC 11"
   },
   {
     "numero": 64,
@@ -3302,7 +3360,8 @@ let dadosTalhoes = [
         "numCorte": "5"
       }
     ],
-    "registros": 12
+    "registros": 12,
+    "variedade_ultima": "CTC 9001"
   },
   {
     "numero": 65,
@@ -3376,7 +3435,8 @@ let dadosTalhoes = [
         "numCorte": "5"
       }
     ],
-    "registros": 12
+    "registros": 12,
+    "variedade_ultima": "CTC 9001"
   },
   {
     "numero": 66,
@@ -3450,7 +3510,8 @@ let dadosTalhoes = [
         "numCorte": "5"
       }
     ],
-    "registros": 12
+    "registros": 12,
+    "variedade_ultima": "CTC 9001"
   },
   {
     "numero": 67,
@@ -3524,7 +3585,8 @@ let dadosTalhoes = [
         "numCorte": "5"
       }
     ],
-    "registros": 12
+    "registros": 12,
+    "variedade_ultima": "CTC 9001"
   },
   {
     "numero": 69,
@@ -3598,7 +3660,8 @@ let dadosTalhoes = [
         "numCorte": "5"
       }
     ],
-    "registros": 12
+    "registros": 12,
+    "variedade_ultima": "CTC 9001"
   },
   {
     "numero": 73,
@@ -3647,7 +3710,8 @@ let dadosTalhoes = [
         "numCorte": "8"
       }
     ],
-    "registros": 7
+    "registros": 7,
+    "variedade_ultima": "CTC 11"
   },
   {
     "numero": 74,
@@ -3691,7 +3755,8 @@ let dadosTalhoes = [
         "numCorte": "7"
       }
     ],
-    "registros": 6
+    "registros": 6,
+    "variedade_ultima": "CTC 11"
   },
   {
     "numero": 75,
@@ -3735,7 +3800,8 @@ let dadosTalhoes = [
         "numCorte": "7"
       }
     ],
-    "registros": 6
+    "registros": 6,
+    "variedade_ultima": "CTC 11"
   },
   {
     "numero": 76,
@@ -3779,7 +3845,8 @@ let dadosTalhoes = [
         "numCorte": "7"
       }
     ],
-    "registros": 6
+    "registros": 6,
+    "variedade_ultima": "CTC 11"
   },
   {
     "numero": 77,
@@ -3823,7 +3890,8 @@ let dadosTalhoes = [
         "numCorte": "7"
       }
     ],
-    "registros": 6
+    "registros": 6,
+    "variedade_ultima": "CTC 11"
   },
   {
     "numero": 78,
@@ -3867,7 +3935,8 @@ let dadosTalhoes = [
         "numCorte": "7"
       }
     ],
-    "registros": 6
+    "registros": 6,
+    "variedade_ultima": "CTC 11"
   },
   {
     "numero": 79,
@@ -3941,7 +4010,8 @@ let dadosTalhoes = [
         "numCorte": "5"
       }
     ],
-    "registros": 12
+    "registros": 12,
+    "variedade_ultima": "CTC 4"
   },
   {
     "numero": 80,
@@ -3985,7 +4055,8 @@ let dadosTalhoes = [
         "numCorte": "7"
       }
     ],
-    "registros": 6
+    "registros": 6,
+    "variedade_ultima": "CTC 11"
   },
   {
     "numero": 81,
@@ -4034,7 +4105,8 @@ let dadosTalhoes = [
         "numCorte": "8"
       }
     ],
-    "registros": 7
+    "registros": 7,
+    "variedade_ultima": "CTC 11"
   },
   {
     "numero": 82,
@@ -4083,7 +4155,8 @@ let dadosTalhoes = [
         "numCorte": "8"
       }
     ],
-    "registros": 8
+    "registros": 8,
+    "variedade_ultima": "CTC 11"
   },
   {
     "numero": 83,
@@ -4152,7 +4225,8 @@ let dadosTalhoes = [
         "numCorte": "5"
       }
     ],
-    "registros": 11
+    "registros": 11,
+    "variedade_ultima": "CTC 4"
   },
   {
     "numero": 84,
@@ -4226,7 +4300,8 @@ let dadosTalhoes = [
         "numCorte": "5"
       }
     ],
-    "registros": 12
+    "registros": 12,
+    "variedade_ultima": "CTC 4"
   },
   {
     "numero": 85,
@@ -4296,7 +4371,8 @@ let dadosTalhoes = [
         "reforma": true
       }
     ],
-    "registros": 11
+    "registros": 11,
+    "variedade_ultima": "RB 5952"
   },
   {
     "numero": 86,
@@ -4366,7 +4442,8 @@ let dadosTalhoes = [
         "reforma": true
       }
     ],
-    "registros": 11
+    "registros": 11,
+    "variedade_ultima": "RB 5014"
   },
   {
     "numero": 87,
@@ -4440,7 +4517,8 @@ let dadosTalhoes = [
         "numCorte": "5"
       }
     ],
-    "registros": 12
+    "registros": 12,
+    "variedade_ultima": "CTC 4"
   },
   {
     "numero": 88,
@@ -4474,7 +4552,8 @@ let dadosTalhoes = [
         "numCorte": "4"
       }
     ],
-    "registros": 4
+    "registros": 4,
+    "variedade_ultima": "CTC 14"
   },
   {
     "numero": 89,
@@ -4508,7 +4587,8 @@ let dadosTalhoes = [
         "numCorte": "4"
       }
     ],
-    "registros": 4
+    "registros": 4,
+    "variedade_ultima": "CTC 14"
   },
   {
     "numero": 90,
@@ -4542,7 +4622,8 @@ let dadosTalhoes = [
         "numCorte": "4"
       }
     ],
-    "registros": 4
+    "registros": 4,
+    "variedade_ultima": "CTC 14"
   },
   {
     "numero": 91,
@@ -4576,7 +4657,8 @@ let dadosTalhoes = [
         "numCorte": "4"
       }
     ],
-    "registros": 4
+    "registros": 4,
+    "variedade_ultima": "RB 6928"
   },
   {
     "numero": 92,
@@ -4631,7 +4713,8 @@ let dadosTalhoes = [
         "numCorte": "3"
       }
     ],
-    "registros": 8
+    "registros": 8,
+    "variedade_ultima": "CTC 9001"
   },
   {
     "numero": 93,
@@ -4680,7 +4763,8 @@ let dadosTalhoes = [
         "numCorte": "1"
       }
     ],
-    "registros": 7
+    "registros": 7,
+    "variedade_ultima": "CTC 9003"
   },
   {
     "numero": 94,
@@ -4729,7 +4813,8 @@ let dadosTalhoes = [
         "numCorte": "7"
       }
     ],
-    "registros": 7
+    "registros": 7,
+    "variedade_ultima": "CTC 4"
   },
   {
     "numero": 95,
@@ -4778,7 +4863,8 @@ let dadosTalhoes = [
         "numCorte": "1"
       }
     ],
-    "registros": 7
+    "registros": 7,
+    "variedade_ultima": "CTC 9003"
   },
   {
     "numero": 96,
@@ -4823,7 +4909,8 @@ let dadosTalhoes = [
         "numCorte": "1"
       }
     ],
-    "registros": 6
+    "registros": 6,
+    "variedade_ultima": "RB 5952"
   },
   {
     "numero": 97,
@@ -4868,7 +4955,8 @@ let dadosTalhoes = [
         "numCorte": "3"
       }
     ],
-    "registros": 6
+    "registros": 6,
+    "variedade_ultima": "CTC 9003"
   },
   {
     "numero": 98,
@@ -4913,7 +5001,8 @@ let dadosTalhoes = [
         "numCorte": "1"
       }
     ],
-    "registros": 6
+    "registros": 6,
+    "variedade_ultima": "RB 5014"
   },
   {
     "numero": 99,
@@ -4958,7 +5047,8 @@ let dadosTalhoes = [
         "numCorte": "1"
       }
     ],
-    "registros": 6
+    "registros": 6,
+    "variedade_ultima": "RB 5952"
   },
   {
     "numero": 100,
@@ -5003,7 +5093,8 @@ let dadosTalhoes = [
         "reforma": true
       }
     ],
-    "registros": 6
+    "registros": 6,
+    "variedade_ultima": "RB 5952"
   },
   {
     "numero": 101,
@@ -5047,7 +5138,8 @@ let dadosTalhoes = [
         "numCorte": "2"
       }
     ],
-    "registros": 6
+    "registros": 6,
+    "variedade_ultima": "CTC 9003"
   },
   {
     "numero": 102,
@@ -5092,7 +5184,8 @@ let dadosTalhoes = [
         "reforma": true
       }
     ],
-    "registros": 6
+    "registros": 6,
+    "variedade_ultima": "CTC 9006"
   },
   {
     "numero": 103,
@@ -5136,7 +5229,8 @@ let dadosTalhoes = [
         "numCorte": "2"
       }
     ],
-    "registros": 6
+    "registros": 6,
+    "variedade_ultima": "CTC 9003"
   },
   {
     "numero": 104,
@@ -5181,7 +5275,8 @@ let dadosTalhoes = [
         "numCorte": "1"
       }
     ],
-    "registros": 6
+    "registros": 6,
+    "variedade_ultima": "RB 5952"
   },
   {
     "numero": 105,
@@ -5220,7 +5315,8 @@ let dadosTalhoes = [
         "numCorte": "5"
       }
     ],
-    "registros": 5
+    "registros": 5,
+    "variedade_ultima": "CTC 4"
   },
   {
     "numero": 106,
@@ -5259,7 +5355,8 @@ let dadosTalhoes = [
         "numCorte": "5"
       }
     ],
-    "registros": 5
+    "registros": 5,
+    "variedade_ultima": "CTC 9001"
   },
   {
     "numero": 108,
@@ -5298,7 +5395,8 @@ let dadosTalhoes = [
         "numCorte": "5"
       }
     ],
-    "registros": 5
+    "registros": 5,
+    "variedade_ultima": "CTC 9001"
   },
   {
     "numero": 109,
@@ -5339,7 +5437,8 @@ let dadosTalhoes = [
         "numCorte": "3"
       }
     ],
-    "registros": 5
+    "registros": 5,
+    "variedade_ultima": "CTC 9001"
   }
 ];
 

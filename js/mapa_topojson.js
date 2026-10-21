@@ -31,6 +31,8 @@ function inicializarMapaInterativo() {
         minZoom: 5
     }).addTo(mapa);
 
+    const legendaEl = document.querySelector('.legenda');
+    if (legendaEl) legendaOriginal = legendaEl.innerHTML;
     carregarTopoJSON();
     return true;
 }
@@ -172,6 +174,7 @@ function buscarDadosTalhao(numTalhao) {
             tchUltimoAno: t.tch_ultimo_ano,
             ultimoAno: t.ultimo_ano,
             tchHistorico: t.tch_historico,
+            variedadeUltima: t.variedade_ultima,
             historico_anos: t.historico_anos,
             registros: t.registros
         };
@@ -179,6 +182,44 @@ function buscarDadosTalhao(numTalhao) {
 
     return null;
 }
+
+const CORES_VARIEDADE = {
+    'CTC 9001': '#e6194B', 'CTC 11': '#3cb44b', 'CTC 4': '#4363d8', 'CTC 9003': '#f58231',
+    'RB 5952': '#911eb4', 'CTC 14': '#42d4f4', 'SP 2847': '#f032e6', 'RB 5014': '#bfef45',
+    'RB 6928': '#9A6324', 'RB 7515': '#469990', 'CV 7870': '#800000', 'CTC 9006': '#808000'
+};
+let modoMapa = 'dados';
+const poligonosMapa = [];
+
+function corDoModo(dados) {
+    return modoMapa === 'variedade'
+        ? (CORES_VARIEDADE[dados.variedadeUltima] || '#CCCCCC')
+        : obterCorPorProdutividade(dados.tchHistorico);
+}
+
+function aplicarModoMapa(modo) {
+    modoMapa = modo;
+    poligonosMapa.forEach(({ poligono, dados }) => {
+        const cor = corDoModo(dados);
+        poligono.setStyle({ color: cor, fillColor: cor });
+    });
+    document.querySelectorAll('#menuMapa button').forEach(b => {
+        b.style.background = b.dataset.modo === modo ? '#2ecc71' : 'white';
+        b.style.color = b.dataset.modo === modo ? 'white' : '#2c3e50';
+    });
+    const legenda = document.querySelector('.legenda');
+    if (modo === 'variedade') {
+        const contagem = {};
+        poligonosMapa.forEach(({ dados }) => { contagem[dados.variedadeUltima] = (contagem[dados.variedadeUltima] || 0) + 1; });
+        legenda.innerHTML = '<div class="legenda-titulo">Variedade</div>' + Object.keys(CORES_VARIEDADE)
+            .filter(v => contagem[v])
+            .map(v => `<div class="legenda-item"><div class="legenda-cor" style="background: ${CORES_VARIEDADE[v]};"></div><span>${v} (${contagem[v]})</span></div>`).join('');
+    } else {
+        legenda.innerHTML = legendaOriginal;
+    }
+}
+
+let legendaOriginal = '';
 
 function adicionarPoligonoInterativo(coords, numTalhao, cor, dadosTalhao) {
     if (coords.length < 3) return;
@@ -190,6 +231,7 @@ function adicionarPoligonoInterativo(coords, numTalhao, cor, dadosTalhao) {
         fillColor: cor,
         fillOpacity: 0.6
     }).addTo(mapa);
+    poligonosMapa.push({ poligono, dados: dadosTalhao });
 
     poligono.on('click', () => {
         talhaoSelecionado = numTalhao;
