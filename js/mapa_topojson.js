@@ -8,9 +8,8 @@ function obterCorPorProdutividade(produtividade) {
     if (!produtividade) return '#CCCCCC';
     const prod = parseFloat(produtividade);
 
-    if (prod < 60) return '#FF6B6B';
-    if (prod < 80) return '#FFA500';
-    if (prod < 100) return '#4ECDC4';
+    if (prod < 75) return '#e74c3c';
+    if (prod < 85) return '#f1c40f';
     return '#2ecc71';
 }
 
