@@ -226,6 +226,12 @@ function calcularMediasCorteAnalise() {
     return medias;
 }
 
+function corSemaforoGeral(valor) {
+    if (valor < 75) return CORES_SEMAFORO_ANALISE.vermelho;
+    if (valor < 85) return CORES_SEMAFORO_ANALISE.amarelo;
+    return CORES_SEMAFORO_ANALISE.verde;
+}
+
 function corSemaforoCorte(corte, valor) {
     if (!mediasCorteAnalise) mediasCorteAnalise = calcularMediasCorteAnalise();
     const g = grupoCorteAnalise(corte);
@@ -336,9 +342,12 @@ function atualizarGraficoProdAnual() {
         (consolidacao[a].totalArea > 0 ? (consolidacao[a].totalProd / consolidacao[a].totalArea).toFixed(2) : 0)
     );
 
+    const coresAnuais = dados.map(v => corSemaforoGeral(parseFloat(v)));
     if (chartProdAnual) {
         chartProdAnual.data.labels = labels;
         chartProdAnual.data.datasets[0].data = dados;
+        chartProdAnual.data.datasets[0].pointBackgroundColor = coresAnuais;
+        chartProdAnual.data.datasets[0].pointBorderColor = coresAnuais;
         chartProdAnual.update();
     } else {
         const ctx = document.getElementById('chartProdAnual').getContext('2d');
@@ -354,8 +363,9 @@ function atualizarGraficoProdAnual() {
                     borderWidth: 2,
                     fill: true,
                     tension: 0.4,
-                    pointRadius: 5,
-                    pointBackgroundColor: CONFIG.colors.secondary
+                    pointRadius: 6,
+                    pointBackgroundColor: coresAnuais,
+                    pointBorderColor: coresAnuais
                 }]
             },
             options: {
