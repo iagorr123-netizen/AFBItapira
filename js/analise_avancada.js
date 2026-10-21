@@ -383,7 +383,9 @@ function preencherTabelaDetalhada() {
     const tbody = document.getElementById('tabelaDetalhada');
     tbody.innerHTML = '';
 
-    dadosFiltrados.forEach(row => {
+    [...dadosFiltrados]
+        .sort((x, y) => Number(y[col.ano]) - Number(x[col.ano]) || Number(x[col.talhao]) - Number(y[col.talhao]))
+        .forEach(row => {
         const linha = document.createElement('tr');
         linha.innerHTML = `
             <td>${row[col.ano]}</td>
