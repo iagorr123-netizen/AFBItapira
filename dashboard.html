@@ -191,6 +191,10 @@
             Object.keys(acc).forEach(g => { medias[g] = acc[g].t / acc[g].a; });
             return medias;
         }
+        function mediaDoCorte(corte) {
+            if (!mediasCorte) mediasCorte = calcularMediasCorte();
+            return mediasCorte[grupoCorte(Number(String(corte).replace(',', '.')))] || 0;
+        }
         function classificarRegistro(r) {
             const c = CONFIG.columns;
             return classificarValorCorte(r[c.numCorte], parseFloat(r[c.produtividade]) || 0);
@@ -352,7 +356,7 @@
                 </div>
                 <div style="overflow-x: auto;">
                 <table class="tabla-reforma" style="width: 100%;">
-                    <thead><tr><th>Talhão</th><th>Variedade</th><th>Corte</th><th>Ano</th><th>TCH/ha</th><th>Área (ha)</th></tr></thead>
+                    <thead><tr><th>Talhão</th><th>Variedade</th><th>Corte</th><th>Ano</th><th>TCH/ha</th><th>Área (ha)</th><th>Média do corte</th><th>Diferença</th></tr></thead>
                     <tbody>${lista.map(r => `
                         <tr>
                             <td><span class="talhao-badge">Talhão ${r[c.talhao]}</span></td>
@@ -361,6 +365,8 @@
                             <td>${r[c.ano]}</td>
                             <td><strong>${parseFloat(r[c.produtividade]).toFixed(2)}</strong></td>
                             <td>${parseFloat(r[c.areaColhida]).toFixed(2)}</td>
+                            <td>${mediaDoCorte(r[c.numCorte]).toFixed(2)}</td>
+                            <td style="color: ${parseFloat(r[c.produtividade]) - mediaDoCorte(r[c.numCorte]) >= 0 ? '#1e8449' : '#c0392b'}; font-weight: bold;">${(parseFloat(r[c.produtividade]) - mediaDoCorte(r[c.numCorte]) >= 0 ? '+' : '') + (parseFloat(r[c.produtividade]) - mediaDoCorte(r[c.numCorte])).toFixed(1)}</td>
                         </tr>`).join('')}
                     </tbody>
                 </table>
