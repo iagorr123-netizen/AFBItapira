@@ -5312,6 +5312,12 @@ let dadosTalhoes = [
     "tch_historico": 108.47,
     "historico_anos": [
       {
+        "ano": 2022,
+        "media": null,
+        "numCorte": "NC",
+        "reforma": true
+      },
+      {
         "ano": 2023,
         "media": null,
         "numCorte": "NC",

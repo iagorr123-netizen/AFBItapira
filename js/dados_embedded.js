@@ -602,7 +602,7 @@ let dadosColheita = [
   {"Ano Colheita": 2022, "Talhão": 105, "Variedade": "CTC 4", "Area Plantada": 38.37, "Número do Corte": 1, "Area Colhida": 38.37, "Produtividade TCH": 85, "Tonelada Colhida": 3261.45},
   {"Ano Colheita": 2022, "Talhão": 106, "Variedade": "CTC 9001", "Area Plantada": 11.54, "Número do Corte": 2, "Area Colhida": 11.54, "Produtividade TCH": 87, "Tonelada Colhida": 1003.98},
   {"Ano Colheita": 2022, "Talhão": 108, "Variedade": "CTC 9001", "Area Plantada": 13.48, "Número do Corte": 1, "Area Colhida": 13.48, "Produtividade TCH": 93, "Tonelada Colhida": 1253.64},
-  {"Ano Colheita": 2022, "Talhão": 109, "Variedade": "CTC 9001", "Area Plantada": 43.45, "Número do Corte": 4, "Area Colhida": 0, "Produtividade TCH": 0, "Tonelada Colhida": 0},
+  {"Ano Colheita": 2022, "Talhão": 109, "Variedade": "CTC 9001", "Area Plantada": 43.45, "Número do Corte": "NC", "Area Colhida": 0, "Produtividade TCH": 0, "Tonelada Colhida": 0},
   {"Ano Colheita": 2023, "Talhão": 1, "Variedade": "CTC 11", "Area Plantada": 16.64, "Número do Corte": 1, "Area Colhida": 16.64, "Produtividade TCH": 101, "Tonelada Colhida": 1680.64},
   {"Ano Colheita": 2023, "Talhão": 2, "Variedade": "CTC 11", "Area Plantada": 22.24, "Número do Corte": 1, "Area Colhida": 22.24, "Produtividade TCH": 92, "Tonelada Colhida": 2046.08},
   {"Ano Colheita": 2023, "Talhão": 3, "Variedade": "CTC 4", "Area Plantada": 20.6, "Número do Corte": 3, "Area Colhida": 20.6, "Produtividade TCH": 75, "Tonelada Colhida": 1545},
