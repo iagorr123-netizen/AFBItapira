@@ -190,10 +190,55 @@ const CORES_VARIEDADE = {
 let modoMapa = 'dados';
 const poligonosMapa = [];
 
+const LIMITE_VERDE_CORTE = { '2': 110, '3': 95, '4': 85, '5': 76, '6+': 70 };
+const CORES_SEMAFORO = { verde: '#2ecc71', amarelo: '#f1c40f', vermelho: '#e74c3c' };
+let mediasCorteMapa = null;
+const ANO_ATUAL = Math.max(...dadosColheita.map(r => r['Ano Colheita']));
+
+function grupoCorteMapa(n) { return n >= 6 ? '6+' : String(n); }
+
+function mediasCortePeriodo() {
+    const acc = {};
+    dadosColheita.forEach(r => {
+        const ano = r['Ano Colheita'];
+        if (ano < 2017 || ano > 2025) return;
+        const n = Number(String(r['Número do Corte']).replace(',', '.'));
+        const a = parseFloat(r['Area Colhida']) || 0;
+        if (!n || a <= 0) return;
+        const g = grupoCorteMapa(n);
+        if (!acc[g]) acc[g] = { t: 0, a: 0 };
+        acc[g].t += (parseFloat(r['Produtividade TCH']) || 0) * a;
+        acc[g].a += a;
+    });
+    const medias = {};
+    Object.keys(acc).forEach(g => { medias[g] = acc[g].t / acc[g].a; });
+    return medias;
+}
+
+function classificarAnoAtual(dados) {
+    if (dados.ultimoAno !== ANO_ATUAL || !dados.ultimoCorte) return null;
+    if (!mediasCorteMapa) mediasCorteMapa = mediasCortePeriodo();
+    const n = Number(String(dados.ultimoCorte).replace(',', '.'));
+    if (!n) return null;
+    const g = grupoCorteMapa(n);
+    const m = mediasCorteMapa[g];
+    const p = parseFloat(dados.tchUltimoAno) || 0;
+    if (m == null) return null;
+    if (g === '1') {
+        if (p < 80) return 'vermelho';
+        return p > m ? 'verde' : 'amarelo';
+    }
+    if (p < m) return 'vermelho';
+    return p >= LIMITE_VERDE_CORTE[g] ? 'verde' : 'amarelo';
+}
+
 function corDoModo(dados) {
-    return modoMapa === 'variedade'
-        ? (CORES_VARIEDADE[dados.variedadeUltima] || '#CCCCCC')
-        : obterCorPorProdutividade(dados.tchHistorico);
+    if (modoMapa === 'variedade') return CORES_VARIEDADE[dados.variedadeUltima] || '#CCCCCC';
+    if (modoMapa === 'anoatual') {
+        const k = classificarAnoAtual(dados);
+        return k ? CORES_SEMAFORO[k] : '#CCCCCC';
+    }
+    return obterCorPorProdutividade(dados.tchHistorico);
 }
 
 let variedadeDestacada = null;
@@ -234,6 +279,12 @@ function aplicarModoMapa(modo) {
         legenda.innerHTML = '<div class="legenda-titulo" style="font-size: 16px;">Variedade</div><div id="legendaVariedades">' + Object.keys(CORES_VARIEDADE)
             .filter(v => contagem[v])
             .map(v => `<div class="legenda-item" data-variedade="${v}" onclick="destacarVariedade('${v}')" style="cursor: pointer; font-size: 14px; padding: 3px 6px; border-radius: 4px;"><div class="legenda-cor" style="background: ${CORES_VARIEDADE[v]}; width: 18px; height: 18px;"></div><span>${v} (${contagem[v]})</span></div>`).join('') + '</div>';
+    } else if (modo === 'anoatual') {
+        legenda.innerHTML = `<div class="legenda-titulo" style="font-size: 16px;">Ano atual (${ANO_ATUAL})</div>
+            <div class="legenda-item" style="font-size: 14px;"><div class="legenda-cor" style="background: #2ecc71; width: 18px; height: 18px;"></div><span>Ótimo</span></div>
+            <div class="legenda-item" style="font-size: 14px;"><div class="legenda-cor" style="background: #f1c40f; width: 18px; height: 18px;"></div><span>Regular</span></div>
+            <div class="legenda-item" style="font-size: 14px;"><div class="legenda-cor" style="background: #e74c3c; width: 18px; height: 18px;"></div><span>Ruim</span></div>
+            <div class="legenda-item" style="font-size: 14px;"><div class="legenda-cor" style="background: #CCCCCC; width: 18px; height: 18px;"></div><span>Sem colheita no ano</span></div>`;
     } else {
         legenda.innerHTML = legendaOriginal;
     }
