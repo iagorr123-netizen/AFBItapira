@@ -4734,7 +4734,7 @@ let dadosTalhoes = [
   {
     "numero": 95,
     "tamanho_talhao": 38.32,
-    "variedade_atual": "CTC 4",
+    "variedade_atual": "CTC 9003",
     "ultimo_corte": 1,
     "tch_2025": 73.0,
     "tch_2026": 95.0,
