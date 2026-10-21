@@ -170,6 +170,7 @@
             }, 100);
         }
         let mediasCorte = null;
+        const CORES_SEMAFORO_DASH = { verde: '#2ecc71', amarelo: '#f1c40f', vermelho: '#e74c3c' };
         const LIMITE_VERDE_CORTE = { '2': 110, '3': 95, '4': 85, '5': 76, '6+': 70 };
         function grupoCorte(n) { return n >= 6 ? '6+' : String(n); }
         function calcularMediasCorte() {
@@ -192,13 +193,15 @@
         }
         function classificarRegistro(r) {
             const c = CONFIG.columns;
+            return classificarValorCorte(r[c.numCorte], parseFloat(r[c.produtividade]) || 0);
+        }
+        function classificarValorCorte(corte, p) {
             if (!mediasCorte) mediasCorte = calcularMediasCorte();
-            const n = Number(String(r[c.numCorte]).replace(',', '.'));
+            const n = Number(String(corte).replace(',', '.'));
             if (!n) return null;
             const g = grupoCorte(n);
             const m = mediasCorte[g];
             if (m == null) return null;
-            const p = parseFloat(r[c.produtividade]) || 0;
             if (g === '1') {
                 if (p < 80) return 'vermelho';
                 return p > m ? 'verde' : 'amarelo';
@@ -502,7 +505,7 @@
                 type: 'bar',
                 data: {
                     labels: cs.map(co => 'Corte ' + co),
-                    datasets: [{label: 'TCH/ha', data: cs.map(co => (cm[co].t/cm[co].a).toFixed(2)), backgroundColor: '#9b59b6'}]
+                    datasets: [{label: 'TCH/ha', data: cs.map(co => (cm[co].t/cm[co].a).toFixed(2)), backgroundColor: cs.map(co => CORES_SEMAFORO_DASH[classificarValorCorte(co, cm[co].t/cm[co].a)] || '#9b59b6')}]
                 },
                 options: {
                     responsive: true,
@@ -523,7 +526,7 @@
                     type: 'bar',
                     data: {
                         labels: cs.map(co => 'Corte ' + co),
-                        datasets: [{label: 'TCH/ha', data: cs.map(co => (cm[co].t/cm[co].a).toFixed(2)), backgroundColor: '#9b59b6'}]
+                        datasets: [{label: 'TCH/ha', data: cs.map(co => (cm[co].t/cm[co].a).toFixed(2)), backgroundColor: cs.map(co => CORES_SEMAFORO_DASH[classificarValorCorte(co, cm[co].t/cm[co].a)] || '#9b59b6')}]
                     },
                     options: {
                         responsive: true,
