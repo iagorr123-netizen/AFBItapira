@@ -197,12 +197,33 @@ function corDoModo(dados) {
         : obterCorPorProdutividade(dados.tchHistorico);
 }
 
+let variedadeDestacada = null;
+
+function estiloPadrao(poligono, dados) {
+    const cor = corDoModo(dados);
+    poligono.setStyle({ color: cor, fillColor: cor, weight: 2, fillOpacity: 0.6, opacity: 0.9 });
+}
+
+function destacarVariedade(v) {
+    variedadeDestacada = variedadeDestacada === v ? null : v;
+    poligonosMapa.forEach(({ poligono, dados }) => {
+        if (!variedadeDestacada) return estiloPadrao(poligono, dados);
+        if (dados.variedadeUltima === variedadeDestacada) {
+            poligono.setStyle({ color: '#222', fillColor: corDoModo(dados), weight: 3, fillOpacity: 0.95, opacity: 1 });
+        } else {
+            poligono.setStyle({ color: '#bbb', fillColor: '#ddd', weight: 1, fillOpacity: 0.15, opacity: 0.4 });
+        }
+    });
+    document.querySelectorAll('#legendaVariedades .legenda-item').forEach(el => {
+        el.style.fontWeight = el.dataset.variedade === variedadeDestacada ? 'bold' : 'normal';
+        el.style.background = el.dataset.variedade === variedadeDestacada ? '#eaf7ef' : 'transparent';
+    });
+}
+
 function aplicarModoMapa(modo) {
     modoMapa = modo;
-    poligonosMapa.forEach(({ poligono, dados }) => {
-        const cor = corDoModo(dados);
-        poligono.setStyle({ color: cor, fillColor: cor });
-    });
+    variedadeDestacada = null;
+    poligonosMapa.forEach(({ poligono, dados }) => estiloPadrao(poligono, dados));
     document.querySelectorAll('#menuMapa button').forEach(b => {
         b.style.background = b.dataset.modo === modo ? '#2ecc71' : 'white';
         b.style.color = b.dataset.modo === modo ? 'white' : '#2c3e50';
@@ -211,9 +232,9 @@ function aplicarModoMapa(modo) {
     if (modo === 'variedade') {
         const contagem = {};
         poligonosMapa.forEach(({ dados }) => { contagem[dados.variedadeUltima] = (contagem[dados.variedadeUltima] || 0) + 1; });
-        legenda.innerHTML = '<div class="legenda-titulo">Variedade</div>' + Object.keys(CORES_VARIEDADE)
+        legenda.innerHTML = '<div class="legenda-titulo" style="font-size: 16px;">Variedade</div><div id="legendaVariedades">' + Object.keys(CORES_VARIEDADE)
             .filter(v => contagem[v])
-            .map(v => `<div class="legenda-item"><div class="legenda-cor" style="background: ${CORES_VARIEDADE[v]};"></div><span>${v} (${contagem[v]})</span></div>`).join('');
+            .map(v => `<div class="legenda-item" data-variedade="${v}" onclick="destacarVariedade('${v}')" style="cursor: pointer; font-size: 14px; padding: 3px 6px; border-radius: 4px;"><div class="legenda-cor" style="background: ${CORES_VARIEDADE[v]}; width: 18px; height: 18px;"></div><span>${v} (${contagem[v]})</span></div>`).join('') + '</div>';
     } else {
         legenda.innerHTML = legendaOriginal;
     }
