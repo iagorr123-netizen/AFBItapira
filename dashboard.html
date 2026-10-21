@@ -191,10 +191,13 @@
             Object.keys(acc).forEach(g => { medias[g] = acc[g].t / acc[g].a; });
             return medias;
         }
+        function valorLimiteOtimo(corte) {
+            const g = grupoCorte(Number(String(corte).replace(',', '.')));
+            return g === '1' ? mediaDoCorte(corte) : LIMITE_VERDE_CORTE[g];
+        }
         function limiteOtimo(corte) {
             const g = grupoCorte(Number(String(corte).replace(',', '.')));
-            if (g === '1') return '> ' + mediaDoCorte(corte).toFixed(2);
-            return '≥ ' + LIMITE_VERDE_CORTE[g];
+            return g === '1' ? '> ' + mediaDoCorte(corte).toFixed(2) : '≥ ' + LIMITE_VERDE_CORTE[g];
         }
         function mediaDoCorte(corte) {
             if (!mediasCorte) mediasCorte = calcularMediasCorte();
@@ -361,7 +364,7 @@
                 </div>
                 <div style="overflow-x: auto;">
                 <table class="tabla-reforma" style="width: 100%;">
-                    <thead><tr><th>Talhão</th><th>Variedade</th><th>Corte</th><th>Ano</th><th>TCH/ha</th><th>Área (ha)</th><th>Média do corte</th><th>Limite Ótimo</th><th>Diferença</th></tr></thead>
+                    <thead><tr><th>Talhão</th><th>Variedade</th><th>Corte</th><th>Ano</th><th>TCH/ha</th><th>Área (ha)</th><th>Limite Ótimo</th><th>Diferença</th></tr></thead>
                     <tbody>${lista.map(r => `
                         <tr>
                             <td><span class="talhao-badge">Talhão ${r[c.talhao]}</span></td>
@@ -370,9 +373,8 @@
                             <td>${r[c.ano]}</td>
                             <td><strong>${parseFloat(r[c.produtividade]).toFixed(2)}</strong></td>
                             <td>${parseFloat(r[c.areaColhida]).toFixed(2)}</td>
-                            <td>${mediaDoCorte(r[c.numCorte]).toFixed(2)}</td>
                             <td>${limiteOtimo(r[c.numCorte])}</td>
-                            <td style="color: ${parseFloat(r[c.produtividade]) - mediaDoCorte(r[c.numCorte]) >= 0 ? '#1e8449' : '#c0392b'}; font-weight: bold;">${(parseFloat(r[c.produtividade]) - mediaDoCorte(r[c.numCorte]) >= 0 ? '+' : '') + (parseFloat(r[c.produtividade]) - mediaDoCorte(r[c.numCorte])).toFixed(1)}</td>
+                            <td style="color: ${parseFloat(r[c.produtividade]) - valorLimiteOtimo(r[c.numCorte]) >= 0 ? '#1e8449' : '#c0392b'}; font-weight: bold;">${(parseFloat(r[c.produtividade]) - valorLimiteOtimo(r[c.numCorte]) >= 0 ? '+' : '') + (parseFloat(r[c.produtividade]) - valorLimiteOtimo(r[c.numCorte])).toFixed(1)}</td>
                         </tr>`).join('')}
                     </tbody>
                 </table>
