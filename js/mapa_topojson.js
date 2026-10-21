@@ -300,14 +300,14 @@ function mostrarDadosTalhao(dados, cor) {
         </div>
     `;
 
-    const painel = document.getElementById('painelConteudo');
-    if (painel) {
-        painel.innerHTML = html;
-        painel.style.display = 'block';
-        painel.style.color = '#333';
-        console.log('✅ Painel renderizado com sucesso');
+    const modal = document.getElementById('modalTalhao');
+    const conteudo = document.getElementById('modalTalhaoConteudo');
+    if (modal && conteudo) {
+        conteudo.innerHTML = `<div style="display: flex; justify-content: flex-end; margin-bottom: 8px;"><button onclick="fecharModalTalhao()" style="padding: 6px 12px; border: 1px solid #ddd; border-radius: 6px; background: white; cursor: pointer; font-size: 13px;">Fechar</button></div>` + html;
+        conteudo.style.color = '#333';
+        modal.style.display = 'flex';
     } else {
-        console.error('❌ Elemento painelConteudo não encontrado!');
+        console.error('❌ Elemento modalTalhao não encontrado!');
     }
 
     console.log('Dados do talhão:', dados);
@@ -377,3 +377,10 @@ function mostrarDadosTalhao(dados, cor) {
         }
     }, 100);
 }
+
+function fecharModalTalhao() {
+    const modal = document.getElementById('modalTalhao');
+    if (modal) modal.style.display = 'none';
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') fecharModalTalhao(); });
