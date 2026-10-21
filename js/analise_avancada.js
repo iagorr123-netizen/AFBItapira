@@ -201,6 +201,47 @@ function atualizarMetricas() {
     document.getElementById('metricaAreaColhida').textContent = totalAreaColhida.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
 }
 
+const CORES_SEMAFORO_ANALISE = { verde: '#2ecc71', amarelo: '#f1c40f', vermelho: '#e74c3c' };
+const LIMITE_VERDE_ANALISE = { '2': 110, '3': 95, '4': 85, '5': 76, '6+': 70 };
+let mediasCorteAnalise = null;
+
+function grupoCorteAnalise(n) { return n >= 6 ? '6+' : String(n); }
+
+function calcularMediasCorteAnalise() {
+    const c = CONFIG.columns;
+    const acc = {};
+    dadosColheita.forEach(r => {
+        const ano = parseInt(r[c.ano]);
+        if (ano < 2017 || ano > 2025) return;
+        const n = Number(String(r[c.numCorte]).replace(',', '.'));
+        const a = parseFloat(r[c.areaColhida]) || 0;
+        if (!n || a <= 0) return;
+        const g = grupoCorteAnalise(n);
+        if (!acc[g]) acc[g] = { t: 0, a: 0 };
+        acc[g].t += (parseFloat(r[c.produtividade]) || 0) * a;
+        acc[g].a += a;
+    });
+    const medias = {};
+    Object.keys(acc).forEach(g => { medias[g] = acc[g].t / acc[g].a; });
+    return medias;
+}
+
+function corSemaforoCorte(corte, valor) {
+    if (!mediasCorteAnalise) mediasCorteAnalise = calcularMediasCorteAnalise();
+    const g = grupoCorteAnalise(corte);
+    const m = mediasCorteAnalise[g];
+    if (m == null) return '#CCCCCC';
+    let k;
+    if (g === '1') {
+        k = valor < 80 ? 'vermelho' : (valor > m ? 'verde' : 'amarelo');
+    } else if (valor < m) {
+        k = 'vermelho';
+    } else {
+        k = valor >= LIMITE_VERDE_ANALISE[g] ? 'verde' : 'amarelo';
+    }
+    return CORES_SEMAFORO_ANALISE[k];
+}
+
 function atualizarGraficoTCHCorte() {
     const col = CONFIG.columns;
     const consolidacao = {};
@@ -232,14 +273,16 @@ function atualizarGraficoTCHCorte() {
         .map(Number)
         .sort((a, b) => a - b)
         .map(c => `Corte ${c}`);
-    const dados = Object.keys(consolidacao)
-        .map(Number)
-        .sort((a, b) => a - b)
+    const cortesOrdenados = Object.keys(consolidacao).map(Number).sort((a, b) => a - b);
+    const dados = cortesOrdenados
         .map(c => (consolidacao[c].totalArea > 0 ? (consolidacao[c].totalProd / consolidacao[c].totalArea).toFixed(2) : 0));
+    const cores = cortesOrdenados.map((c, i) => corSemaforoCorte(c, parseFloat(dados[i])));
 
     if (chartTCHCorte) {
         chartTCHCorte.data.labels = labels;
         chartTCHCorte.data.datasets[0].data = dados;
+        chartTCHCorte.data.datasets[0].backgroundColor = cores;
+        chartTCHCorte.data.datasets[0].borderColor = cores;
         chartTCHCorte.update();
     } else {
         const ctx = document.getElementById('chartTCHCorte').getContext('2d');
@@ -250,8 +293,8 @@ function atualizarGraficoTCHCorte() {
                 datasets: [{
                     label: 'TCH Médio',
                     data: dados,
-                    backgroundColor: CONFIG.colors.primary,
-                    borderColor: CONFIG.colors.primary,
+                    backgroundColor: cores,
+                    borderColor: cores,
                     borderWidth: 1
                 }]
             },
