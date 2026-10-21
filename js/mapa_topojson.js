@@ -247,7 +247,7 @@ function mostrarDadosTalhao(dados, cor) {
         </div>
 
         <div class="info-talhao">
-            <div class="info-label">Último Corte (2025)</div>
+            <div class="info-label">Último Corte (${dados.ultimoAno})</div>
             <div class="info-valor">${dados.ultimoCorte > 0 ? 'Corte ' + dados.ultimoCorte : 'N/A'}</div>
         </div>
 
