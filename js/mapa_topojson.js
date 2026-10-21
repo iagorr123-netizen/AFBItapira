@@ -174,6 +174,7 @@ function buscarDadosTalhao(numTalhao) {
             ultimoAno: t.ultimo_ano,
             tchHistorico: t.tch_historico,
             variedadeUltima: t.variedade_ultima,
+            qualidadeSolo: t.qualidade_solo,
             historico_anos: t.historico_anos,
             registros: t.registros
         };
@@ -232,7 +233,11 @@ function classificarAnoAtual(dados) {
     return p >= LIMITE_VERDE_CORTE[g] ? 'verde' : 'amarelo';
 }
 
+const CORES_SOLO = { A: '#1e8449', B: '#58d68d', C: '#f5b041', D: '#c0392b' };
+const NOMES_SOLO = { A: 'A (melhor)', B: 'B', C: 'C', D: 'D (pior)' };
+
 function corDoModo(dados) {
+    if (modoMapa === 'solo') return CORES_SOLO[dados.qualidadeSolo] || '#CCCCCC';
     if (modoMapa === 'variedade') return CORES_VARIEDADE[dados.variedadeUltima] || '#CCCCCC';
     if (modoMapa === 'anoatual') {
         const k = classificarAnoAtual(dados);
@@ -279,6 +284,8 @@ function aplicarModoMapa(modo) {
         legenda.innerHTML = '<div class="legenda-titulo" style="font-size: 16px;">Variedade</div><div id="legendaVariedades">' + Object.keys(CORES_VARIEDADE)
             .filter(v => contagem[v])
             .map(v => `<div class="legenda-item" data-variedade="${v}" onclick="destacarVariedade('${v}')" style="cursor: pointer; font-size: 14px; padding: 3px 6px; border-radius: 4px;"><div class="legenda-cor" style="background: ${CORES_VARIEDADE[v]}; width: 18px; height: 18px;"></div><span>${v} (${contagem[v]})</span></div>`).join('') + '</div>';
+    } else if (modo === 'solo') {
+        legenda.innerHTML = `<div class="legenda-titulo" style="font-size: 16px;">Qualidade do solo</div>` + Object.keys(CORES_SOLO).map(k => `<div class="legenda-item" style="font-size: 14px;"><div class="legenda-cor" style="background: ${CORES_SOLO[k]}; width: 18px; height: 18px;"></div><span>${NOMES_SOLO[k]}</span></div>`).join('') + `<div class="legenda-item" style="font-size: 14px;"><div class="legenda-cor" style="background: #CCCCCC; width: 18px; height: 18px;"></div><span>Sem informação</span></div>`;
     } else if (modo === 'anoatual') {
         legenda.innerHTML = `<div class="legenda-titulo" style="font-size: 16px;">Ano atual (${ANO_ATUAL})</div>
             <div class="legenda-item" style="font-size: 14px;"><div class="legenda-cor" style="background: #2ecc71; width: 18px; height: 18px;"></div><span>Ótimo</span></div>
@@ -357,6 +364,11 @@ function mostrarDadosTalhao(dados, cor) {
         <div class="info-talhao">
             <div class="info-label">Variedade Atual</div>
             <div class="info-valor">${dados.variedadeAtual}</div>
+        </div>
+
+        <div class="info-talhao">
+            <div class="info-label">Qualidade do Solo</div>
+            <div class="info-valor">${dados.qualidadeSolo ? dados.qualidadeSolo : 'Sem informação'}</div>
         </div>
 
         <div class="info-talhao">

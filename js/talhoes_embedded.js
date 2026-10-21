@@ -67,7 +67,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 11,
-    "variedade_ultima": "CTC 11"
+    "variedade_ultima": "CTC 11",
+    "qualidade_solo": "B"
   },
   {
     "numero": 2,
@@ -137,7 +138,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 11,
-    "variedade_ultima": "CTC 11"
+    "variedade_ultima": "CTC 11",
+    "qualidade_solo": "C"
   },
   {
     "numero": 3,
@@ -207,7 +209,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 11,
-    "variedade_ultima": "CTC 4"
+    "variedade_ultima": "CTC 4",
+    "qualidade_solo": "B"
   },
   {
     "numero": 4,
@@ -247,7 +250,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 5,
-    "variedade_ultima": "RB 7515"
+    "variedade_ultima": "RB 7515",
+    "qualidade_solo": null
   },
   {
     "numero": 5,
@@ -317,7 +321,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 11,
-    "variedade_ultima": "RB 5952"
+    "variedade_ultima": "RB 5952",
+    "qualidade_solo": "B"
   },
   {
     "numero": 6,
@@ -362,7 +367,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 6,
-    "variedade_ultima": "CTC 11"
+    "variedade_ultima": "CTC 11",
+    "qualidade_solo": null
   },
   {
     "numero": 7,
@@ -407,7 +413,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 6,
-    "variedade_ultima": "CTC 11"
+    "variedade_ultima": "CTC 11",
+    "qualidade_solo": null
   },
   {
     "numero": 8,
@@ -484,7 +491,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 12,
-    "variedade_ultima": "CV 7870"
+    "variedade_ultima": "CV 7870",
+    "qualidade_solo": "B"
   },
   {
     "numero": 9,
@@ -524,7 +532,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 5,
-    "variedade_ultima": "RB 7515"
+    "variedade_ultima": "RB 7515",
+    "qualidade_solo": null
   },
   {
     "numero": 10,
@@ -599,7 +608,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 12,
-    "variedade_ultima": "CTC 4"
+    "variedade_ultima": "CTC 4",
+    "qualidade_solo": "B"
   },
   {
     "numero": 12,
@@ -674,7 +684,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 12,
-    "variedade_ultima": "CTC 4"
+    "variedade_ultima": "CTC 4",
+    "qualidade_solo": "B"
   },
   {
     "numero": 14,
@@ -749,7 +760,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 12,
-    "variedade_ultima": "CTC 4"
+    "variedade_ultima": "CTC 4",
+    "qualidade_solo": "B"
   },
   {
     "numero": 15,
@@ -819,7 +831,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 11,
-    "variedade_ultima": "CTC 9001"
+    "variedade_ultima": "CTC 9001",
+    "qualidade_solo": "B"
   },
   {
     "numero": 16,
@@ -894,7 +907,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 12,
-    "variedade_ultima": "CTC 4"
+    "variedade_ultima": "CTC 4",
+    "qualidade_solo": "B"
   },
   {
     "numero": 17,
@@ -969,7 +983,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 12,
-    "variedade_ultima": "CTC 4"
+    "variedade_ultima": "CTC 4",
+    "qualidade_solo": "B"
   },
   {
     "numero": 18,
@@ -1039,7 +1054,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 11,
-    "variedade_ultima": "CTC 9001"
+    "variedade_ultima": "CTC 9001",
+    "qualidade_solo": "B"
   },
   {
     "numero": 19,
@@ -1109,7 +1125,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 11,
-    "variedade_ultima": "CTC 9001"
+    "variedade_ultima": "CTC 9001",
+    "qualidade_solo": "B"
   },
   {
     "numero": 20,
@@ -1184,7 +1201,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 12,
-    "variedade_ultima": "CTC 4"
+    "variedade_ultima": "CTC 4",
+    "qualidade_solo": "B"
   },
   {
     "numero": 21,
@@ -1254,7 +1272,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 11,
-    "variedade_ultima": "CTC 4"
+    "variedade_ultima": "CTC 4",
+    "qualidade_solo": "B"
   },
   {
     "numero": 22,
@@ -1324,7 +1343,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 11,
-    "variedade_ultima": "CTC 9001"
+    "variedade_ultima": "CTC 9001",
+    "qualidade_solo": "B"
   },
   {
     "numero": 23,
@@ -1375,7 +1395,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 7,
-    "variedade_ultima": "CTC 9003"
+    "variedade_ultima": "CTC 9003",
+    "qualidade_solo": "A"
   },
   {
     "numero": 24,
@@ -1441,7 +1462,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 10,
-    "variedade_ultima": "CTC 9001"
+    "variedade_ultima": "CTC 9001",
+    "qualidade_solo": "C"
   },
   {
     "numero": 25,
@@ -1512,7 +1534,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 11,
-    "variedade_ultima": "CTC 9001"
+    "variedade_ultima": "CTC 9001",
+    "qualidade_solo": "B"
   },
   {
     "numero": 26,
@@ -1583,7 +1606,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 11,
-    "variedade_ultima": "CTC 9001"
+    "variedade_ultima": "CTC 9001",
+    "qualidade_solo": "B"
   },
   {
     "numero": 27,
@@ -1654,7 +1678,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 11,
-    "variedade_ultima": "CTC 9003"
+    "variedade_ultima": "CTC 9003",
+    "qualidade_solo": "B"
   },
   {
     "numero": 28,
@@ -1725,7 +1750,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 11,
-    "variedade_ultima": "CTC 9003"
+    "variedade_ultima": "CTC 9003",
+    "qualidade_solo": "A"
   },
   {
     "numero": 29,
@@ -1785,7 +1811,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 9,
-    "variedade_ultima": "RB 5014"
+    "variedade_ultima": "RB 5014",
+    "qualidade_solo": "A"
   },
   {
     "numero": 30,
@@ -1845,7 +1872,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 9,
-    "variedade_ultima": "CTC 4"
+    "variedade_ultima": "CTC 4",
+    "qualidade_solo": "B"
   },
   {
     "numero": 31,
@@ -1905,7 +1933,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 9,
-    "variedade_ultima": "CTC 9003"
+    "variedade_ultima": "CTC 9003",
+    "qualidade_solo": "A"
   },
   {
     "numero": 32,
@@ -1961,7 +1990,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 8,
-    "variedade_ultima": "CTC 4"
+    "variedade_ultima": "CTC 4",
+    "qualidade_solo": "B"
   },
   {
     "numero": 33,
@@ -2027,7 +2057,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 11,
-    "variedade_ultima": "CTC 9003"
+    "variedade_ultima": "CTC 9003",
+    "qualidade_solo": "C"
   },
   {
     "numero": 34,
@@ -2062,7 +2093,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 4,
-    "variedade_ultima": "CTC 14"
+    "variedade_ultima": "CTC 14",
+    "qualidade_solo": null
   },
   {
     "numero": 35,
@@ -2097,7 +2129,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 4,
-    "variedade_ultima": "CTC 14"
+    "variedade_ultima": "CTC 14",
+    "qualidade_solo": null
   },
   {
     "numero": 36,
@@ -2132,7 +2165,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 4,
-    "variedade_ultima": "CTC 14"
+    "variedade_ultima": "CTC 14",
+    "qualidade_solo": null
   },
   {
     "numero": 37,
@@ -2167,7 +2201,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 4,
-    "variedade_ultima": "CTC 14"
+    "variedade_ultima": "CTC 14",
+    "qualidade_solo": null
   },
   {
     "numero": 38,
@@ -2202,7 +2237,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 4,
-    "variedade_ultima": "CTC 14"
+    "variedade_ultima": "CTC 14",
+    "qualidade_solo": null
   },
   {
     "numero": 39,
@@ -2237,7 +2273,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 4,
-    "variedade_ultima": "CTC 14"
+    "variedade_ultima": "CTC 14",
+    "qualidade_solo": null
   },
   {
     "numero": 40,
@@ -2272,7 +2309,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 4,
-    "variedade_ultima": "SP 2847"
+    "variedade_ultima": "SP 2847",
+    "qualidade_solo": null
   },
   {
     "numero": 41,
@@ -2307,7 +2345,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 4,
-    "variedade_ultima": "SP 2847"
+    "variedade_ultima": "SP 2847",
+    "qualidade_solo": null
   },
   {
     "numero": 42,
@@ -2342,7 +2381,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 4,
-    "variedade_ultima": "SP 2847"
+    "variedade_ultima": "SP 2847",
+    "qualidade_solo": null
   },
   {
     "numero": 43,
@@ -2377,7 +2417,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 4,
-    "variedade_ultima": "SP 2847"
+    "variedade_ultima": "SP 2847",
+    "qualidade_solo": null
   },
   {
     "numero": 44,
@@ -2412,7 +2453,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 4,
-    "variedade_ultima": "SP 2847"
+    "variedade_ultima": "SP 2847",
+    "qualidade_solo": null
   },
   {
     "numero": 45,
@@ -2452,7 +2494,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 6,
-    "variedade_ultima": "RB 6928"
+    "variedade_ultima": "RB 6928",
+    "qualidade_solo": null
   },
   {
     "numero": 46,
@@ -2492,7 +2535,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 5,
-    "variedade_ultima": "RB 6928"
+    "variedade_ultima": "RB 6928",
+    "qualidade_solo": null
   },
   {
     "numero": 47,
@@ -2537,7 +2581,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 6,
-    "variedade_ultima": "CTC 11"
+    "variedade_ultima": "CTC 11",
+    "qualidade_solo": null
   },
   {
     "numero": 48,
@@ -2582,7 +2627,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 6,
-    "variedade_ultima": "CTC 11"
+    "variedade_ultima": "CTC 11",
+    "qualidade_solo": null
   },
   {
     "numero": 52,
@@ -2652,7 +2698,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 11,
-    "variedade_ultima": "RB 5952"
+    "variedade_ultima": "RB 5952",
+    "qualidade_solo": "B"
   },
   {
     "numero": 53,
@@ -2722,7 +2769,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 11,
-    "variedade_ultima": "CTC 9001"
+    "variedade_ultima": "CTC 9001",
+    "qualidade_solo": "B"
   },
   {
     "numero": 54,
@@ -2798,7 +2846,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 12,
-    "variedade_ultima": "CTC 9001"
+    "variedade_ultima": "CTC 9001",
+    "qualidade_solo": "A"
   },
   {
     "numero": 55,
@@ -2868,7 +2917,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 11,
-    "variedade_ultima": "CTC 9001"
+    "variedade_ultima": "CTC 9001",
+    "qualidade_solo": "C"
   },
   {
     "numero": 56,
@@ -2908,7 +2958,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 5,
-    "variedade_ultima": "SP 2847"
+    "variedade_ultima": "SP 2847",
+    "qualidade_solo": null
   },
   {
     "numero": 57,
@@ -2948,7 +2999,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 5,
-    "variedade_ultima": "SP 2847"
+    "variedade_ultima": "SP 2847",
+    "qualidade_solo": null
   },
   {
     "numero": 58,
@@ -3013,7 +3065,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 10,
-    "variedade_ultima": "CTC 9001"
+    "variedade_ultima": "CTC 9001",
+    "qualidade_solo": "B"
   },
   {
     "numero": 59,
@@ -3053,7 +3106,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 5,
-    "variedade_ultima": "SP 2847"
+    "variedade_ultima": "SP 2847",
+    "qualidade_solo": null
   },
   {
     "numero": 60,
@@ -3093,7 +3147,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 5,
-    "variedade_ultima": "SP 2847"
+    "variedade_ultima": "SP 2847",
+    "qualidade_solo": null
   },
   {
     "numero": 61,
@@ -3170,7 +3225,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 12,
-    "variedade_ultima": "RB 5952"
+    "variedade_ultima": "RB 5952",
+    "qualidade_solo": "C"
   },
   {
     "numero": 62,
@@ -3241,7 +3297,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 11,
-    "variedade_ultima": "RB 5952"
+    "variedade_ultima": "RB 5952",
+    "qualidade_solo": "C"
   },
   {
     "numero": 63,
@@ -3286,7 +3343,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 6,
-    "variedade_ultima": "CTC 11"
+    "variedade_ultima": "CTC 11",
+    "qualidade_solo": null
   },
   {
     "numero": 64,
@@ -3361,7 +3419,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 12,
-    "variedade_ultima": "CTC 9001"
+    "variedade_ultima": "CTC 9001",
+    "qualidade_solo": "B"
   },
   {
     "numero": 65,
@@ -3436,7 +3495,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 12,
-    "variedade_ultima": "CTC 9001"
+    "variedade_ultima": "CTC 9001",
+    "qualidade_solo": "B"
   },
   {
     "numero": 66,
@@ -3511,7 +3571,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 12,
-    "variedade_ultima": "CTC 9001"
+    "variedade_ultima": "CTC 9001",
+    "qualidade_solo": "B"
   },
   {
     "numero": 67,
@@ -3586,7 +3647,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 12,
-    "variedade_ultima": "CTC 9001"
+    "variedade_ultima": "CTC 9001",
+    "qualidade_solo": "B"
   },
   {
     "numero": 69,
@@ -3661,7 +3723,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 12,
-    "variedade_ultima": "CTC 9001"
+    "variedade_ultima": "CTC 9001",
+    "qualidade_solo": "D"
   },
   {
     "numero": 73,
@@ -3711,7 +3774,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 7,
-    "variedade_ultima": "CTC 11"
+    "variedade_ultima": "CTC 11",
+    "qualidade_solo": null
   },
   {
     "numero": 74,
@@ -3756,7 +3820,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 6,
-    "variedade_ultima": "CTC 11"
+    "variedade_ultima": "CTC 11",
+    "qualidade_solo": null
   },
   {
     "numero": 75,
@@ -3801,7 +3866,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 6,
-    "variedade_ultima": "CTC 11"
+    "variedade_ultima": "CTC 11",
+    "qualidade_solo": null
   },
   {
     "numero": 76,
@@ -3846,7 +3912,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 6,
-    "variedade_ultima": "CTC 11"
+    "variedade_ultima": "CTC 11",
+    "qualidade_solo": null
   },
   {
     "numero": 77,
@@ -3891,7 +3958,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 6,
-    "variedade_ultima": "CTC 11"
+    "variedade_ultima": "CTC 11",
+    "qualidade_solo": null
   },
   {
     "numero": 78,
@@ -3936,7 +4004,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 6,
-    "variedade_ultima": "CTC 11"
+    "variedade_ultima": "CTC 11",
+    "qualidade_solo": null
   },
   {
     "numero": 79,
@@ -4011,7 +4080,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 12,
-    "variedade_ultima": "CTC 4"
+    "variedade_ultima": "CTC 4",
+    "qualidade_solo": "B"
   },
   {
     "numero": 80,
@@ -4056,7 +4126,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 6,
-    "variedade_ultima": "CTC 11"
+    "variedade_ultima": "CTC 11",
+    "qualidade_solo": null
   },
   {
     "numero": 81,
@@ -4106,7 +4177,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 7,
-    "variedade_ultima": "CTC 11"
+    "variedade_ultima": "CTC 11",
+    "qualidade_solo": null
   },
   {
     "numero": 82,
@@ -4156,7 +4228,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 8,
-    "variedade_ultima": "CTC 11"
+    "variedade_ultima": "CTC 11",
+    "qualidade_solo": null
   },
   {
     "numero": 83,
@@ -4226,7 +4299,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 11,
-    "variedade_ultima": "CTC 4"
+    "variedade_ultima": "CTC 4",
+    "qualidade_solo": "B"
   },
   {
     "numero": 84,
@@ -4301,7 +4375,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 12,
-    "variedade_ultima": "CTC 4"
+    "variedade_ultima": "CTC 4",
+    "qualidade_solo": "B"
   },
   {
     "numero": 85,
@@ -4372,7 +4447,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 11,
-    "variedade_ultima": "RB 5952"
+    "variedade_ultima": "RB 5952",
+    "qualidade_solo": "B"
   },
   {
     "numero": 86,
@@ -4443,7 +4519,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 11,
-    "variedade_ultima": "RB 5014"
+    "variedade_ultima": "RB 5014",
+    "qualidade_solo": "B"
   },
   {
     "numero": 87,
@@ -4518,7 +4595,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 12,
-    "variedade_ultima": "CTC 4"
+    "variedade_ultima": "CTC 4",
+    "qualidade_solo": "B"
   },
   {
     "numero": 88,
@@ -4553,7 +4631,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 4,
-    "variedade_ultima": "CTC 14"
+    "variedade_ultima": "CTC 14",
+    "qualidade_solo": null
   },
   {
     "numero": 89,
@@ -4588,7 +4667,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 4,
-    "variedade_ultima": "CTC 14"
+    "variedade_ultima": "CTC 14",
+    "qualidade_solo": null
   },
   {
     "numero": 90,
@@ -4623,7 +4703,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 4,
-    "variedade_ultima": "CTC 14"
+    "variedade_ultima": "CTC 14",
+    "qualidade_solo": null
   },
   {
     "numero": 91,
@@ -4658,7 +4739,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 4,
-    "variedade_ultima": "RB 6928"
+    "variedade_ultima": "RB 6928",
+    "qualidade_solo": null
   },
   {
     "numero": 92,
@@ -4714,7 +4796,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 8,
-    "variedade_ultima": "CTC 9001"
+    "variedade_ultima": "CTC 9001",
+    "qualidade_solo": "B"
   },
   {
     "numero": 93,
@@ -4764,7 +4847,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 7,
-    "variedade_ultima": "CTC 9003"
+    "variedade_ultima": "CTC 9003",
+    "qualidade_solo": "B"
   },
   {
     "numero": 94,
@@ -4814,7 +4898,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 7,
-    "variedade_ultima": "CTC 4"
+    "variedade_ultima": "CTC 4",
+    "qualidade_solo": "C"
   },
   {
     "numero": 95,
@@ -4864,7 +4949,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 7,
-    "variedade_ultima": "CTC 9003"
+    "variedade_ultima": "CTC 9003",
+    "qualidade_solo": "B"
   },
   {
     "numero": 96,
@@ -4910,7 +4996,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 6,
-    "variedade_ultima": "RB 5952"
+    "variedade_ultima": "RB 5952",
+    "qualidade_solo": "C"
   },
   {
     "numero": 97,
@@ -4956,7 +5043,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 6,
-    "variedade_ultima": "CTC 9003"
+    "variedade_ultima": "CTC 9003",
+    "qualidade_solo": "D"
   },
   {
     "numero": 98,
@@ -5002,7 +5090,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 6,
-    "variedade_ultima": "RB 5014"
+    "variedade_ultima": "RB 5014",
+    "qualidade_solo": "B"
   },
   {
     "numero": 99,
@@ -5048,7 +5137,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 6,
-    "variedade_ultima": "RB 5952"
+    "variedade_ultima": "RB 5952",
+    "qualidade_solo": "C"
   },
   {
     "numero": 100,
@@ -5094,7 +5184,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 6,
-    "variedade_ultima": "RB 5952"
+    "variedade_ultima": "RB 5952",
+    "qualidade_solo": "D"
   },
   {
     "numero": 101,
@@ -5139,7 +5230,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 6,
-    "variedade_ultima": "CTC 9003"
+    "variedade_ultima": "CTC 9003",
+    "qualidade_solo": "C"
   },
   {
     "numero": 102,
@@ -5185,7 +5277,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 6,
-    "variedade_ultima": "CTC 9006"
+    "variedade_ultima": "CTC 9006",
+    "qualidade_solo": "C"
   },
   {
     "numero": 103,
@@ -5230,7 +5323,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 6,
-    "variedade_ultima": "CTC 9003"
+    "variedade_ultima": "CTC 9003",
+    "qualidade_solo": "C"
   },
   {
     "numero": 104,
@@ -5276,7 +5370,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 6,
-    "variedade_ultima": "RB 5952"
+    "variedade_ultima": "RB 5952",
+    "qualidade_solo": "B"
   },
   {
     "numero": 105,
@@ -5316,7 +5411,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 5,
-    "variedade_ultima": "CTC 4"
+    "variedade_ultima": "CTC 4",
+    "qualidade_solo": "C"
   },
   {
     "numero": 106,
@@ -5356,7 +5452,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 5,
-    "variedade_ultima": "CTC 9001"
+    "variedade_ultima": "CTC 9001",
+    "qualidade_solo": null
   },
   {
     "numero": 108,
@@ -5396,7 +5493,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 5,
-    "variedade_ultima": "CTC 9001"
+    "variedade_ultima": "CTC 9001",
+    "qualidade_solo": "A"
   },
   {
     "numero": 109,
@@ -5438,7 +5536,8 @@ let dadosTalhoes = [
       }
     ],
     "registros": 5,
-    "variedade_ultima": "CTC 9001"
+    "variedade_ultima": "CTC 9001",
+    "qualidade_solo": "B"
   }
 ];
 
