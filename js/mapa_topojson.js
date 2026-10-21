@@ -175,6 +175,8 @@ function buscarDadosTalhao(numTalhao) {
             tchHistorico: t.tch_historico,
             variedadeUltima: t.variedade_ultima,
             qualidadeSolo: t.qualidade_solo,
+            incorporadoAo: t.incorporado_ao,
+            incorporadoEm: t.incorporado_em,
             historico_anos: t.historico_anos,
             registros: t.registros
         };
@@ -237,6 +239,7 @@ const CORES_SOLO = { A: '#1e8449', B: '#58d68d', C: '#f5b041', D: '#c0392b' };
 const NOMES_SOLO = { A: 'A (melhor)', B: 'B', C: 'C', D: 'D (pior)' };
 
 function corDoModo(dados) {
+    if (dados.incorporadoAo) return '#bdc3c7';
     if (modoMapa === 'solo') return CORES_SOLO[dados.qualidadeSolo] || '#CCCCCC';
     if (modoMapa === 'variedade') return CORES_VARIEDADE[dados.variedadeUltima] || '#CCCCCC';
     if (modoMapa === 'anoatual') {
@@ -327,7 +330,8 @@ function adicionarPoligonoInterativo(coords, numTalhao, cor, dadosTalhao) {
         }
     });
 
-    poligono.bindTooltip(`Talhão ${numTalhao} - ${dadosTalhao.tchHistorico} TCH/ha`, {
+    const textoTooltip = dadosTalhao.incorporadoAo ? `Talhão ${numTalhao} - incorporado ao Talhão ${dadosTalhao.incorporadoAo} em ${dadosTalhao.incorporadoEm}` : `Talhão ${numTalhao} - ${dadosTalhao.tchHistorico} TCH/ha`;
+    poligono.bindTooltip(textoTooltip, {
         permanent: false,
         sticky: true
     });
@@ -351,6 +355,7 @@ function mostrarDadosTalhao(dados, cor) {
     }
 
     const html = `
+        ${dados.incorporadoAo ? `<div class="info-talhao" style="background: #f4f6f7; border-left-color: #95a5a6;"><div class="info-label">Incorporado</div><div class="info-valor">Ao Talhão ${dados.incorporadoAo} em ${dados.incorporadoEm}</div></div>` : ''}
         <div class="info-talhao">
             <div class="info-label">Talhão</div>
             <div class="info-valor grande" style="color: ${cor};">#${dados.talhao}</div>

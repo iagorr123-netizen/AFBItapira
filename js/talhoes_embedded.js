@@ -5453,7 +5453,9 @@ let dadosTalhoes = [
     ],
     "registros": 5,
     "variedade_ultima": "CTC 9001",
-    "qualidade_solo": null
+    "qualidade_solo": null,
+    "incorporado_ao": 8,
+    "incorporado_em": 2026
   },
   {
     "numero": 108,
