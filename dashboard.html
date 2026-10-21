@@ -186,10 +186,9 @@
             return dados.filter(r => {
                 if (tipoFiltro === 'produtividade') {
                     const p = parseFloat(r[c.produtividade]);
-                    if (filtroAtivo === 'excelente') return p >= 100;
-                    if (filtroAtivo === 'bom') return p >= 80 && p < 100;
-                    if (filtroAtivo === 'medio') return p >= 60 && p < 80;
-                    if (filtroAtivo === 'baixo') return p < 60;
+                    if (filtroAtivo === 'verde') return p >= 85;
+                    if (filtroAtivo === 'amarelo') return p >= 75 && p < 85;
+                                        if (filtroAtivo === 'vermelho') return p < 75;
                 }
                 if (tipoFiltro === 'variedade') return r[c.variedade] === filtroAtivo;
                 if (tipoFiltro === 'ano') return r[c.ano] === filtroAtivo;
@@ -238,10 +237,9 @@
                 dados = dados.filter(r => {
                     if (tipoFiltro === 'produtividade') {
                         const p = parseFloat(r[c.produtividade]);
-                        if (filtroAtivo === 'excelente') return p >= 100;
-                        if (filtroAtivo === 'bom') return p >= 80 && p < 100;
-                        if (filtroAtivo === 'medio') return p >= 60 && p < 80;
-                        if (filtroAtivo === 'baixo') return p < 60;
+                        if (filtroAtivo === 'verde') return p >= 85;
+                        if (filtroAtivo === 'amarelo') return p >= 75 && p < 85;
+                                                if (filtroAtivo === 'vermelho') return p < 75;
                     }
                     if (tipoFiltro === 'variedade') return r[c.variedade] === filtroAtivo;
                     if (tipoFiltro === 'ano') return r[c.ano] === filtroAtivo;
@@ -303,8 +301,8 @@
                 <div class="kpi-card"><div class="kpi-label">Área Não Colhida</div><div class="kpi-value">${parseInt(areaNaoColhida).toLocaleString('pt-BR')}</div><div class="kpi-unit">ha</div></div>
             `;
         }
-        const CATEGORIAS_NOMES = { excelente: 'Excelente (>100)', bom: 'Bom (80-100)', medio: 'Médio (60-80)', baixo: 'Baixo (<60)' };
-        function categoriaDeTCH(p) { return p >= 100 ? 'excelente' : p >= 80 ? 'bom' : p >= 60 ? 'medio' : 'baixo'; }
+        const CATEGORIAS_NOMES = { verde: 'Verde (85 ou mais)', amarelo: 'Amarelo (75 a 84,99)', vermelho: 'Vermelho (abaixo de 75)' };
+        function categoriaDeTCH(p) { return p >= 85 ? 'verde' : p >= 75 ? 'amarelo' : 'vermelho'; }
         function abrirListaCategoria(cat) {
             const c = CONFIG.columns;
             const lista = obterDadosFiltrados()
@@ -340,12 +338,12 @@
         function criarGraficos() {
             const c = CONFIG.columns;
             const dados = obterDadosFiltrados();
-            let e=0, b=0, m=0, l=0;
+            let e=0, b=0, l=0;
             dados.filter(r => r[c.numCorte] !== 'NC' && (parseFloat(r[c.areaColhida]) || 0) > 0).forEach(r => {
                 const p = parseFloat(r[c.produtividade]);
-                if (p >= 100) e++; else if (p >= 80) b++; else if (p >= 60) m++; else l++;
+                if (p >= 85) e++; else if (p >= 75) b++; else l++;
             });
-            const categorias = [['excelente', 'Excelente (>100)', e, '#2ecc71'], ['bom', 'Bom (80-100)', b, '#4ECDC4'], ['medio', 'Médio (60-80)', m, '#FFA500'], ['baixo', 'Baixo (<60)', l, '#FF6B6B']];
+            const categorias = [['verde', 'Verde (85 ou mais)', e, '#2ecc71'], ['amarelo', 'Amarelo (75 a 84,99)', b, '#f1c40f'], ['vermelho', 'Vermelho (abaixo de 75)', l, '#e74c3c']];
             document.getElementById('distCounts').innerHTML = categorias.map(([chave, nome, q, cor]) => `
                 <div onclick="abrirListaCategoria('${chave}')" style="cursor: pointer; background: #f8f9fa; border-left: 4px solid ${cor}; border-radius: 8px; padding: 10px 12px;">
                     <div style="font-size: 24px; font-weight: bold; color: #2c3e50;">${q}</div>
@@ -355,8 +353,8 @@
             chartDistribuicao = new Chart(document.getElementById('chartDistribuicao').getContext('2d'), {
                 type: 'doughnut',
                 data: {
-                    labels: ['Excelente (>100)', 'Bom (80-100)', 'Médio (60-80)', 'Baixo (<60)'],
-                    datasets: [{data: [e,b,m,l], backgroundColor: ['#2ecc71', '#4ECDC4', '#FFA500', '#FF6B6B']}]
+                    labels: ['Verde (85 ou mais)', 'Amarelo (75 a 84,99)', 'Vermelho (abaixo de 75)'],
+                    datasets: [{data: [e,b,l], backgroundColor: ['#2ecc71', '#f1c40f', '#e74c3c']}]
                 },
                 options: {
                     responsive: true,
@@ -365,7 +363,7 @@
                     onClick: (evt, activeElements) => {
                         if (activeElements.length > 0) {
                             const idx = activeElements[0].index;
-                            const categorias = ['excelente', 'bom', 'medio', 'baixo'];
+                            const categorias = ['verde', 'amarelo', 'vermelho'];
                             setarFiltro('produtividade', categorias[idx]);
                         }
                     }
