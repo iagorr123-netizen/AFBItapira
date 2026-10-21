@@ -201,7 +201,7 @@ let variedadeDestacada = null;
 
 function estiloPadrao(poligono, dados) {
     const cor = corDoModo(dados);
-    poligono.setStyle({ color: cor, fillColor: cor, weight: 2, fillOpacity: 0.6, opacity: 0.9 });
+    poligono.setStyle({ color: cor, fillColor: cor, weight: 1, fillOpacity: 0.6, opacity: 0.9 });
 }
 
 function destacarVariedade(v) {
@@ -209,7 +209,7 @@ function destacarVariedade(v) {
     poligonosMapa.forEach(({ poligono, dados }) => {
         if (!variedadeDestacada) return estiloPadrao(poligono, dados);
         if (dados.variedadeUltima === variedadeDestacada) {
-            poligono.setStyle({ color: '#222', fillColor: corDoModo(dados), weight: 3, fillOpacity: 0.95, opacity: 1 });
+            poligono.setStyle({ color: '#333', fillColor: corDoModo(dados), weight: 1.5, fillOpacity: 0.95, opacity: 1 });
         } else {
             poligono.setStyle({ color: '#bbb', fillColor: '#ddd', weight: 1, fillOpacity: 0.15, opacity: 0.4 });
         }
@@ -247,7 +247,7 @@ function adicionarPoligonoInterativo(coords, numTalhao, cor, dadosTalhao) {
 
     const poligono = L.polygon(coords, {
         color: cor,
-        weight: 2,
+        weight: 1,
         opacity: 0.9,
         fillColor: cor,
         fillOpacity: 0.6
@@ -257,16 +257,16 @@ function adicionarPoligonoInterativo(coords, numTalhao, cor, dadosTalhao) {
     poligono.on('click', () => {
         talhaoSelecionado = numTalhao;
         mostrarDadosTalhao(dadosTalhao, cor);
-        poligono.setStyle({ weight: 4, fillOpacity: 0.8 });
+        poligono.setStyle({ weight: 2, fillOpacity: 0.8 });
     });
 
     poligono.on('mouseover', () => {
-        poligono.setStyle({ weight: 3 });
+        poligono.setStyle({ weight: 1.5 });
     });
 
     poligono.on('mouseout', () => {
         if (talhaoSelecionado !== numTalhao) {
-            poligono.setStyle({ weight: 2 });
+            poligono.setStyle({ weight: 1 });
         }
     });
 
