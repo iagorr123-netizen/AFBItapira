@@ -317,7 +317,10 @@ function mostrarDadosTalhao(dados, cor) {
     setTimeout(() => {
         if (dados.historico_anos && dados.historico_anos.length > 0) {
             const labels = dados.historico_anos.map(h => {
-                if (h.reforma) return `${h.ano} - Reforma`;
+                if (h.reforma) {
+                    const ehMuda = typeof dadosMudas !== 'undefined' && dadosMudas.some(m => m['Talhão'] === dados.talhao && m['Ano Colheita'] === h.ano);
+                    return `${h.ano} - ${ehMuda ? 'Muda' : 'Reforma'}`;
+                }
                 const corteLabel = h.numCorte ? ` - Corte ${h.numCorte}` : '';
                 return `${h.ano}${corteLabel}`;
             });
