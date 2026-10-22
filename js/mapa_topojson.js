@@ -518,3 +518,64 @@ function fecharModalTalhao() {
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') fecharModalTalhao(); });
+
+let marcadorLocal = null;
+let circuloLocal = null;
+let talhaoAtualLocal = null;
+
+function anelDoPoligono(poligono) {
+    let l = poligono.getLatLngs();
+    while (Array.isArray(l) && Array.isArray(l[0])) l = l[0];
+    return l;
+}
+
+function pontoDentroDoAnel(lat, lng, anel) {
+    let dentro = false;
+    for (let i = 0, j = anel.length - 1; i < anel.length; j = i++) {
+        const xi = anel[i].lng, yi = anel[i].lat, xj = anel[j].lng, yj = anel[j].lat;
+        if (((yi > lat) !== (yj > lat)) && (lng < (xj - xi) * (lat - yi) / (yj - yi) + xi)) dentro = !dentro;
+    }
+    return dentro;
+}
+
+function talhaoNoPonto(lat, lng) {
+    const achado = poligonosMapa.find(({ poligono }) => pontoDentroDoAnel(lat, lng, anelDoPoligono(poligono)));
+    return achado ? achado.dados : null;
+}
+
+function mostrarAvisoLocal(texto) {
+    const aviso = document.getElementById('avisoLocal');
+    aviso.innerHTML = texto;
+    aviso.style.display = 'block';
+}
+
+function localizarUsuario() {
+    if (!navigator.geolocation) {
+        mostrarAvisoLocal('Seu aparelho não permite localização.');
+        return;
+    }
+    mostrarAvisoLocal('Buscando sua posição...');
+    navigator.geolocation.getCurrentPosition(pos => {
+        const lat = pos.coords.latitude, lng = pos.coords.longitude, precisao = Math.round(pos.coords.accuracy);
+        if (marcadorLocal) mapa.removeLayer(marcadorLocal);
+        if (circuloLocal) mapa.removeLayer(circuloLocal);
+        circuloLocal = L.circle([lat, lng], { radius: pos.coords.accuracy, color: '#3498db', weight: 1, fillColor: '#3498db', fillOpacity: 0.12 }).addTo(mapa);
+        marcadorLocal = L.circleMarker([lat, lng], { radius: 8, color: '#ffffff', weight: 2, fillColor: '#2980b9', fillOpacity: 1 }).addTo(mapa);
+        mapa.setView([lat, lng], Math.max(mapa.getZoom(), 17));
+        talhaoAtualLocal = talhaoNoPonto(lat, lng);
+        const incerto = precisao > 15 ? ' (posição incerta, precisão de ' + precisao + ' m)' : '';
+        if (talhaoAtualLocal) {
+            mostrarAvisoLocal('Você está no Talhão ' + talhaoAtualLocal.talhao + '. Clique para ver os dados' + incerto);
+        } else {
+            talhaoAtualLocal = null;
+            mostrarAvisoLocal('Você está fora dos talhões mapeados' + incerto);
+        }
+    }, erro => {
+        const motivos = { 1: 'Permissão de localização negada.', 2: 'Posição indisponível no momento.', 3: 'Tempo esgotado ao buscar a posição.' };
+        mostrarAvisoLocal(motivos[erro.code] || 'Não foi possível obter sua posição.');
+    }, { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 });
+}
+
+function abrirTalhaoAtual() {
+    if (talhaoAtualLocal) mostrarDadosTalhao(talhaoAtualLocal, corDoModo(talhaoAtualLocal));
+}
