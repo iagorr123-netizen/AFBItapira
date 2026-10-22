@@ -186,9 +186,9 @@ function buscarDadosTalhao(numTalhao) {
 }
 
 const CORES_VARIEDADE = {
-    'CTC 9001': '#8fa3ad', 'CTC 11': '#a3b18a', 'CTC 4': '#8fb8de', 'CTC 9003': '#d4a373',
-    'RB 5952': '#b5838d', 'CTC 14': '#9fc5c1', 'SP 2847': '#c9ada7', 'RB 5014': '#cfc08b',
-    'RB 6928': '#8d99ae', 'RB 7515': '#6d8f7a', 'CV 7870': '#a68a64', 'CTC 9006': '#bcb8b1'
+    'CTC 9001': '#c0392b', 'CTC 11': '#2e8b57', 'CTC 4': '#f4d03f', 'CTC 9003': '#922b21',
+    'RB 5952': '#1e5631', 'CTC 14': '#d4ac0d', 'SP 2847': '#e6a1a1', 'RB 5014': '#8fd19e',
+    'RB 6928': '#fbe9a3', 'RB 7515': '#6b8e23', 'CV 7870': '#e74c3c', 'CTC 9006': '#b7950b'
 };
 let modoMapa = 'dados';
 const poligonosMapa = [];
