@@ -158,8 +158,8 @@
         @media (max-width: 768px) {
             .legenda { max-width: 42%; padding: 6px 8px !important; }
             .legenda .legenda-titulo { font-size: 12px !important; }
-            #legendaVariedades .legenda-item { font-size: 10px !important; padding: 1px 3px !important; }
-            #legendaVariedades .legenda-cor { width: 10px !important; height: 10px !important; }
+            .legenda .legenda-item { font-size: 10px !important; padding: 1px 3px !important; }
+            .legenda .legenda-cor { width: 10px !important; height: 10px !important; }
             .navbar { padding: 10px 8px; gap: 10px; }
             .navbar h1 { font-size: 1.2rem; }
             .navbar ul { gap: 8px; }
@@ -230,17 +230,17 @@
             </div>
             <!-- Legenda no canto inferior direito do mapa -->
             <div class="legenda" style="position: absolute; bottom: 10px; right: 10px; z-index: 500;">
-                <div class="legenda-titulo">Média histórica</div>
-                <div class="legenda-item">
-                    <div class="legenda-cor" style="background: #e74c3c;"></div>
+                <div class="legenda-titulo" style="font-size: 16px;">Média histórica</div>
+                <div class="legenda-item" style="font-size: 14px;">
+                    <div class="legenda-cor" style="width: 18px; height: 18px; background: #e74c3c;"></div>
                     <span>Ruim (abaixo de 75)</span>
                 </div>
-                <div class="legenda-item">
-                    <div class="legenda-cor" style="background: #f1c40f;"></div>
+                <div class="legenda-item" style="font-size: 14px;">
+                    <div class="legenda-cor" style="width: 18px; height: 18px; background: #f1c40f;"></div>
                     <span>Regular (75 a 84,99)</span>
                 </div>
-                <div class="legenda-item">
-                    <div class="legenda-cor" style="background: #2ecc71;"></div>
+                <div class="legenda-item" style="font-size: 14px;">
+                    <div class="legenda-cor" style="width: 18px; height: 18px; background: #2ecc71;"></div>
                     <span>Ótimo (85 ou mais)</span>
                 </div>
             </div>
