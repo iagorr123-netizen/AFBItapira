@@ -148,7 +148,7 @@ function parseTopoJSON(topoData) {
         });
 
         if (bounds.isValid()) {
-            mapa.setView(bounds.getCenter(), 15);
+            mapa.fitBounds(bounds, { padding: [40, 40] });
         }
 
         console.log(`✅ Mapa carregado com ${totalProcessados} talhões coloridos!`);
