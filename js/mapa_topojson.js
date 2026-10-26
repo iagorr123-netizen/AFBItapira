@@ -44,8 +44,7 @@ function carregarTopoJSON() {
         })
         .catch(error => {
             console.error('Erro ao carregar mapa:', error);
-            document.getElementById('painelConteudo').innerHTML =
-                `<div style="color: #c33; padding: 20px;">Erro: ${error.message}</div>`;
+            mostrarAvisoLocal('Erro ao carregar o mapa: ' + error.message);
         });
 }
 
@@ -149,7 +148,7 @@ function parseTopoJSON(topoData) {
         });
 
         if (bounds.isValid()) {
-            mapa.fitBounds(bounds, { padding: [50, 50] });
+            mapa.setView(bounds.getCenter(), 17);
         }
 
         console.log(`✅ Mapa carregado com ${totalProcessados} talhões coloridos!`);
